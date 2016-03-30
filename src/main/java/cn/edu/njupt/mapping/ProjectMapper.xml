@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.Project" >
+    <id column="ProjectID" property="projectid" jdbcType="INTEGER" />
+    <result column="ProjectName" property="projectname" jdbcType="VARCHAR" />
+    <result column="ProjectAbstract" property="projectabstract" jdbcType="VARCHAR" />
+    <result column="ProjecType" property="projectype" jdbcType="VARCHAR" />
+    <result column="ProjectTime" property="projecttime" jdbcType="TIMESTAMP" />
+    <result column="ProjectPeople" property="projectpeople" jdbcType="VARCHAR" />
+    <result column="ProjectReference" property="projectreference" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ProjectID, ProjectName, ProjectAbstract, ProjecType, ProjectTime, ProjectPeople, 
+    ProjectReference, Remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_project
+    where ProjectID = #{projectid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_project
+    where ProjectID = #{projectid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.Project" >
+    insert into lab_project (ProjectID, ProjectName, ProjectAbstract, 
+      ProjecType, ProjectTime, ProjectPeople, 
+      ProjectReference, Remark)
+    values (#{projectid,jdbcType=INTEGER}, #{projectname,jdbcType=VARCHAR}, #{projectabstract,jdbcType=VARCHAR}, 
+      #{projectype,jdbcType=VARCHAR}, #{projecttime,jdbcType=TIMESTAMP}, #{projectpeople,jdbcType=VARCHAR}, 
+      #{projectreference,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.Project" >
+    insert into lab_project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="projectid != null" >
+        ProjectID,
+      </if>
+      <if test="projectname != null" >
+        ProjectName,
+      </if>
+      <if test="projectabstract != null" >
+        ProjectAbstract,
+      </if>
+      <if test="projectype != null" >
+        ProjecType,
+      </if>
+      <if test="projecttime != null" >
+        ProjectTime,
+      </if>
+      <if test="projectpeople != null" >
+        ProjectPeople,
+      </if>
+      <if test="projectreference != null" >
+        ProjectReference,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="projectid != null" >
+        #{projectid,jdbcType=INTEGER},
+      </if>
+      <if test="projectname != null" >
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="projectabstract != null" >
+        #{projectabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="projectype != null" >
+        #{projectype,jdbcType=VARCHAR},
+      </if>
+      <if test="projecttime != null" >
+        #{projecttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projectpeople != null" >
+        #{projectpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="projectreference != null" >
+        #{projectreference,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.Project" >
+    update lab_project
+    <set >
+      <if test="projectname != null" >
+        ProjectName = #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="projectabstract != null" >
+        ProjectAbstract = #{projectabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="projectype != null" >
+        ProjecType = #{projectype,jdbcType=VARCHAR},
+      </if>
+      <if test="projecttime != null" >
+        ProjectTime = #{projecttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projectpeople != null" >
+        ProjectPeople = #{projectpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="projectreference != null" >
+        ProjectReference = #{projectreference,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ProjectID = #{projectid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.Project" >
+    update lab_project
+    set ProjectName = #{projectname,jdbcType=VARCHAR},
+      ProjectAbstract = #{projectabstract,jdbcType=VARCHAR},
+      ProjecType = #{projectype,jdbcType=VARCHAR},
+      ProjectTime = #{projecttime,jdbcType=TIMESTAMP},
+      ProjectPeople = #{projectpeople,jdbcType=VARCHAR},
+      ProjectReference = #{projectreference,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where ProjectID = #{projectid,jdbcType=INTEGER}
+  </update>
+</mapper>

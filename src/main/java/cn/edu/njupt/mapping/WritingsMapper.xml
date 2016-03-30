@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.WritingsMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.Writings" >
+    <id column="WtringsID" property="wtringsid" jdbcType="INTEGER" />
+    <result column="WritingsName" property="writingsname" jdbcType="VARCHAR" />
+    <result column="WritingsAbstract" property="writingsabstract" jdbcType="VARCHAR" />
+    <result column="WritingsType" property="writingstype" jdbcType="VARCHAR" />
+    <result column="WritingsTime" property="writingstime" jdbcType="TIMESTAMP" />
+    <result column="WritingsPeople" property="writingspeople" jdbcType="VARCHAR" />
+    <result column="WritingsQuote" property="writingsquote" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    WtringsID, WritingsName, WritingsAbstract, WritingsType, WritingsTime, WritingsPeople, 
+    WritingsQuote, Remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_writings
+    where WtringsID = #{wtringsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_writings
+    where WtringsID = #{wtringsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.Writings" >
+    insert into lab_writings (WtringsID, WritingsName, WritingsAbstract, 
+      WritingsType, WritingsTime, WritingsPeople, 
+      WritingsQuote, Remark)
+    values (#{wtringsid,jdbcType=INTEGER}, #{writingsname,jdbcType=VARCHAR}, #{writingsabstract,jdbcType=VARCHAR}, 
+      #{writingstype,jdbcType=VARCHAR}, #{writingstime,jdbcType=TIMESTAMP}, #{writingspeople,jdbcType=VARCHAR}, 
+      #{writingsquote,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.Writings" >
+    insert into lab_writings
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wtringsid != null" >
+        WtringsID,
+      </if>
+      <if test="writingsname != null" >
+        WritingsName,
+      </if>
+      <if test="writingsabstract != null" >
+        WritingsAbstract,
+      </if>
+      <if test="writingstype != null" >
+        WritingsType,
+      </if>
+      <if test="writingstime != null" >
+        WritingsTime,
+      </if>
+      <if test="writingspeople != null" >
+        WritingsPeople,
+      </if>
+      <if test="writingsquote != null" >
+        WritingsQuote,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wtringsid != null" >
+        #{wtringsid,jdbcType=INTEGER},
+      </if>
+      <if test="writingsname != null" >
+        #{writingsname,jdbcType=VARCHAR},
+      </if>
+      <if test="writingsabstract != null" >
+        #{writingsabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="writingstype != null" >
+        #{writingstype,jdbcType=VARCHAR},
+      </if>
+      <if test="writingstime != null" >
+        #{writingstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="writingspeople != null" >
+        #{writingspeople,jdbcType=VARCHAR},
+      </if>
+      <if test="writingsquote != null" >
+        #{writingsquote,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.Writings" >
+    update lab_writings
+    <set >
+      <if test="writingsname != null" >
+        WritingsName = #{writingsname,jdbcType=VARCHAR},
+      </if>
+      <if test="writingsabstract != null" >
+        WritingsAbstract = #{writingsabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="writingstype != null" >
+        WritingsType = #{writingstype,jdbcType=VARCHAR},
+      </if>
+      <if test="writingstime != null" >
+        WritingsTime = #{writingstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="writingspeople != null" >
+        WritingsPeople = #{writingspeople,jdbcType=VARCHAR},
+      </if>
+      <if test="writingsquote != null" >
+        WritingsQuote = #{writingsquote,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where WtringsID = #{wtringsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.Writings" >
+    update lab_writings
+    set WritingsName = #{writingsname,jdbcType=VARCHAR},
+      WritingsAbstract = #{writingsabstract,jdbcType=VARCHAR},
+      WritingsType = #{writingstype,jdbcType=VARCHAR},
+      WritingsTime = #{writingstime,jdbcType=TIMESTAMP},
+      WritingsPeople = #{writingspeople,jdbcType=VARCHAR},
+      WritingsQuote = #{writingsquote,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where WtringsID = #{wtringsid,jdbcType=INTEGER}
+  </update>
+</mapper>

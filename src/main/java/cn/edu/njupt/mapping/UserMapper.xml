@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.User" >
+    <id column="UserID" property="userid" jdbcType="INTEGER" />
+    <result column="CompanyID" property="companyid" jdbcType="VARCHAR" />
+    <result column="WorkDetail" property="workdetail" jdbcType="VARCHAR" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="LogonName" property="logonname" jdbcType="VARCHAR" />
+    <result column="LogonPwd" property="logonpwd" jdbcType="VARCHAR" />
+    <result column="SexID" property="sexid" jdbcType="VARCHAR" />
+    <result column="Birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="Address" property="address" jdbcType="VARCHAR" />
+    <result column="Email" property="email" jdbcType="VARCHAR" />
+    <result column="Mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="IsDuty" property="isduty" jdbcType="VARCHAR" />
+    <result column="OnDutyDate" property="ondutydate" jdbcType="TIMESTAMP" />
+    <result column="OffDutyDate" property="offdutydate" jdbcType="TIMESTAMP" />
+    <result column="PersonPage" property="personpage" jdbcType="VARCHAR" />
+    <result column="PhotoUrl" property="photourl" jdbcType="VARCHAR" />
+    <result column="Education" property="education" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    UserID, CompanyID, WorkDetail, UserName, LogonName, LogonPwd, SexID, Birthday, Address, 
+    Email, Mobile, IsDuty, OnDutyDate, OffDutyDate, PersonPage, PhotoUrl, Education, 
+    Remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user
+    where UserID = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_user
+    where UserID = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.User" >
+    insert into lab_user (UserID, CompanyID, WorkDetail, 
+      UserName, LogonName, LogonPwd, 
+      SexID, Birthday, Address, 
+      Email, Mobile, IsDuty, 
+      OnDutyDate, OffDutyDate, PersonPage, 
+      PhotoUrl, Education, Remark
+      )
+    values (#{userid,jdbcType=INTEGER}, #{companyid,jdbcType=VARCHAR}, #{workdetail,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{logonname,jdbcType=VARCHAR}, #{logonpwd,jdbcType=VARCHAR}, 
+      #{sexid,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, #{address,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{isduty,jdbcType=VARCHAR}, 
+      #{ondutydate,jdbcType=TIMESTAMP}, #{offdutydate,jdbcType=TIMESTAMP}, #{personpage,jdbcType=VARCHAR}, 
+      #{photourl,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.User" >
+    insert into lab_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        UserID,
+      </if>
+      <if test="companyid != null" >
+        CompanyID,
+      </if>
+      <if test="workdetail != null" >
+        WorkDetail,
+      </if>
+      <if test="username != null" >
+        UserName,
+      </if>
+      <if test="logonname != null" >
+        LogonName,
+      </if>
+      <if test="logonpwd != null" >
+        LogonPwd,
+      </if>
+      <if test="sexid != null" >
+        SexID,
+      </if>
+      <if test="birthday != null" >
+        Birthday,
+      </if>
+      <if test="address != null" >
+        Address,
+      </if>
+      <if test="email != null" >
+        Email,
+      </if>
+      <if test="mobile != null" >
+        Mobile,
+      </if>
+      <if test="isduty != null" >
+        IsDuty,
+      </if>
+      <if test="ondutydate != null" >
+        OnDutyDate,
+      </if>
+      <if test="offdutydate != null" >
+        OffDutyDate,
+      </if>
+      <if test="personpage != null" >
+        PersonPage,
+      </if>
+      <if test="photourl != null" >
+        PhotoUrl,
+      </if>
+      <if test="education != null" >
+        Education,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=VARCHAR},
+      </if>
+      <if test="workdetail != null" >
+        #{workdetail,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="logonname != null" >
+        #{logonname,jdbcType=VARCHAR},
+      </if>
+      <if test="logonpwd != null" >
+        #{logonpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sexid != null" >
+        #{sexid,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="isduty != null" >
+        #{isduty,jdbcType=VARCHAR},
+      </if>
+      <if test="ondutydate != null" >
+        #{ondutydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="offdutydate != null" >
+        #{offdutydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="personpage != null" >
+        #{personpage,jdbcType=VARCHAR},
+      </if>
+      <if test="photourl != null" >
+        #{photourl,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.User" >
+    update lab_user
+    <set >
+      <if test="companyid != null" >
+        CompanyID = #{companyid,jdbcType=VARCHAR},
+      </if>
+      <if test="workdetail != null" >
+        WorkDetail = #{workdetail,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        UserName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="logonname != null" >
+        LogonName = #{logonname,jdbcType=VARCHAR},
+      </if>
+      <if test="logonpwd != null" >
+        LogonPwd = #{logonpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sexid != null" >
+        SexID = #{sexid,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        Birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="address != null" >
+        Address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        Email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        Mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="isduty != null" >
+        IsDuty = #{isduty,jdbcType=VARCHAR},
+      </if>
+      <if test="ondutydate != null" >
+        OnDutyDate = #{ondutydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="offdutydate != null" >
+        OffDutyDate = #{offdutydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="personpage != null" >
+        PersonPage = #{personpage,jdbcType=VARCHAR},
+      </if>
+      <if test="photourl != null" >
+        PhotoUrl = #{photourl,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        Education = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where UserID = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.User" >
+    update lab_user
+    set CompanyID = #{companyid,jdbcType=VARCHAR},
+      WorkDetail = #{workdetail,jdbcType=VARCHAR},
+      UserName = #{username,jdbcType=VARCHAR},
+      LogonName = #{logonname,jdbcType=VARCHAR},
+      LogonPwd = #{logonpwd,jdbcType=VARCHAR},
+      SexID = #{sexid,jdbcType=VARCHAR},
+      Birthday = #{birthday,jdbcType=TIMESTAMP},
+      Address = #{address,jdbcType=VARCHAR},
+      Email = #{email,jdbcType=VARCHAR},
+      Mobile = #{mobile,jdbcType=VARCHAR},
+      IsDuty = #{isduty,jdbcType=VARCHAR},
+      OnDutyDate = #{ondutydate,jdbcType=TIMESTAMP},
+      OffDutyDate = #{offdutydate,jdbcType=TIMESTAMP},
+      PersonPage = #{personpage,jdbcType=VARCHAR},
+      PhotoUrl = #{photourl,jdbcType=VARCHAR},
+      Education = #{education,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where UserID = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.RolePopedomMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.RolePopedom" >
+    <id column="RoleID" property="roleid" jdbcType="INTEGER" />
+    <result column="Popedomcode" property="popedomcode" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RoleID, Popedomcode, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_role_popedom
+    where RoleID = #{roleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_role_popedom
+    where RoleID = #{roleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.RolePopedom" >
+    insert into lab_role_popedom (RoleID, Popedomcode, remark
+      )
+    values (#{roleid,jdbcType=INTEGER}, #{popedomcode,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.RolePopedom" >
+    insert into lab_role_popedom
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        RoleID,
+      </if>
+      <if test="popedomcode != null" >
+        Popedomcode,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="popedomcode != null" >
+        #{popedomcode,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.RolePopedom" >
+    update lab_role_popedom
+    <set >
+      <if test="popedomcode != null" >
+        Popedomcode = #{popedomcode,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where RoleID = #{roleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.RolePopedom" >
+    update lab_role_popedom
+    set Popedomcode = #{popedomcode,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where RoleID = #{roleid,jdbcType=INTEGER}
+  </update>
+</mapper>

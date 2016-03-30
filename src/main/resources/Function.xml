@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<LaboratoryData>
+
+  <Function>
+     <FunctionCode>a</FunctionCode>
+     <FunctionName>首页焦点管理</FunctionName>
+     <ParentCode>home</ParentCode>
+     <ParentName>首页管理</ParentName>
+  </Function>    
+  <Function>
+     <FunctionCode>b</FunctionCode>
+     <FunctionName>首页新闻管理</FunctionName>
+     <ParentCode>home</ParentCode>
+     <ParentName>首页管理</ParentName>
+  </Function>  
+  <Function>
+     <FunctionCode>c</FunctionCode>
+     <FunctionName>首页链接管理</FunctionName>
+     <ParentCode>home</ParentCode>
+     <ParentName>技术设施维护管理</ParentName>
+  </Function>
+
+  <Function>
+     <FunctionCode>d</FunctionCode>
+     <FunctionName>新闻管理</FunctionName>
+     <ParentCode>news</ParentCode>
+     <ParentName>新闻管理</ParentName>
+  </Function> 
+
+  <Function>
+     <FunctionCode>e</FunctionCode>
+     <FunctionName>科研项目管理</FunctionName>
+     <ParentCode>project</ParentCode>
+     <ParentName>科研项目管理</ParentName>
+  </Function> 
+  <Function>
+     <FunctionCode>f</FunctionCode>
+     <FunctionName>论文著作管理</FunctionName>
+     <ParentCode>Wrtings</ParentCode>
+     <ParentName>论文著作管理</ParentName>
+  </Function>  
+  <Function>
+     <FunctionCode>g</FunctionCode>
+     <FunctionName>影集管理</FunctionName>
+     <ParentCode>photo</ParentCode>
+     <ParentName>影集管理</ParentName>
+  </Function> 
+     
+  <Function>
+     <FunctionCode>l</FunctionCode>
+     <FunctionName>角色管理</FunctionName>
+     <ParentCode>sysmng</ParentCode>
+     <ParentName>系统管理</ParentName>
+  </Function>
+  <Function>
+     <FunctionCode>n</FunctionCode>
+     <FunctionName>数据字典维护</FunctionName>
+     <ParentCode>sysmng</ParentCode>
+     <ParentName>系统管理</ParentName>
+  </Function> 
+       
+<Function>
+     <FunctionCode>o</FunctionCode>
+     <FunctionName>新增功能</FunctionName>
+     <ParentCode>operate</ParentCode>
+     <ParentName>操作权限分配</ParentName>
+  </Function>
+  <Function>
+     <FunctionCode>p</FunctionCode>
+     <FunctionName>删除功能</FunctionName>
+     <ParentCode>operate</ParentCode>
+     <ParentName>操作权限分配</ParentName>
+  </Function>  
+  <Function>
+     <FunctionCode>q</FunctionCode>
+     <FunctionName>编辑功能</FunctionName>
+     <ParentCode>operate</ParentCode>
+     <ParentName>操作权限分配</ParentName>
+  </Function>
+
+</LaboratoryData>

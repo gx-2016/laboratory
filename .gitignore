@@ -1,0 +1,9 @@
+*.classpath
+.externalToolBuilders/org.eclipse.wst.jsdt.core.javascriptValidator.launch
+*.project
+*.jsdtscope
+*.prefs
+*.component
+*.container
+*.name
+.settings/org.eclipse.wst.common.project.facet.core.xml

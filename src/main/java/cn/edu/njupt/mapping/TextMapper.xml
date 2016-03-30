@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.TextMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.Text" >
+    <id column="testID" property="testid" jdbcType="INTEGER" />
+    <result column="testName" property="testname" jdbcType="VARCHAR" />
+    <result column="testDate" property="testdate" jdbcType="TIMESTAMP" />
+    <result column="testRemark" property="testremark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    testID, testName, testDate, testRemark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_test
+    where testID = #{testid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_test
+    where testID = #{testid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.Text" >
+    insert into lab_test (testID, testName, testDate, 
+      testRemark)
+    values (#{testid,jdbcType=INTEGER}, #{testname,jdbcType=VARCHAR}, #{testdate,jdbcType=TIMESTAMP}, 
+      #{testremark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.Text" >
+    insert into lab_test
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="testid != null" >
+        testID,
+      </if>
+      <if test="testname != null" >
+        testName,
+      </if>
+      <if test="testdate != null" >
+        testDate,
+      </if>
+      <if test="testremark != null" >
+        testRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="testid != null" >
+        #{testid,jdbcType=INTEGER},
+      </if>
+      <if test="testname != null" >
+        #{testname,jdbcType=VARCHAR},
+      </if>
+      <if test="testdate != null" >
+        #{testdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="testremark != null" >
+        #{testremark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.Text" >
+    update lab_test
+    <set >
+      <if test="testname != null" >
+        testName = #{testname,jdbcType=VARCHAR},
+      </if>
+      <if test="testdate != null" >
+        testDate = #{testdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="testremark != null" >
+        testRemark = #{testremark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where testID = #{testid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.Text" >
+    update lab_test
+    set testName = #{testname,jdbcType=VARCHAR},
+      testDate = #{testdate,jdbcType=TIMESTAMP},
+      testRemark = #{testremark,jdbcType=VARCHAR}
+    where testID = #{testid,jdbcType=INTEGER}
+  </update>
+</mapper>

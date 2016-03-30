@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.HomeSpotLightMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.HomeSpotLight" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="SpotlightName" property="spotlightname" jdbcType="VARCHAR" />
+    <result column="SpotlightPicURL" property="spotlightpicurl" jdbcType="VARCHAR" />
+    <result column="ProgressTime" property="progresstime" jdbcType="TIMESTAMP" />
+    <result column="CreateUserID" property="createuserid" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SeqID, SpotlightName, SpotlightPicURL, ProgressTime, CreateUserID, Remark
+  </sql>
+  
+  <select id="getAllSpotlights" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_home_spotlight
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_home_spotlight
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_home_spotlight
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.HomeSpotLight" >
+    insert into lab_home_spotlight (SeqID, SpotlightName, SpotlightPicURL, 
+      ProgressTime, CreateUserID, Remark
+      )
+    values (#{seqid,jdbcType=INTEGER}, #{spotlightname,jdbcType=VARCHAR}, #{spotlightpicurl,jdbcType=VARCHAR}, 
+      #{progresstime,jdbcType=TIMESTAMP}, #{createuserid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.HomeSpotLight" >
+    insert into lab_home_spotlight
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="spotlightname != null" >
+        SpotlightName,
+      </if>
+      <if test="spotlightpicurl != null" >
+        SpotlightPicURL,
+      </if>
+      <if test="progresstime != null" >
+        ProgressTime,
+      </if>
+      <if test="createuserid != null" >
+        CreateUserID,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="spotlightname != null" >
+        #{spotlightname,jdbcType=VARCHAR},
+      </if>
+      <if test="spotlightpicurl != null" >
+        #{spotlightpicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="progresstime != null" >
+        #{progresstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        #{createuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.HomeSpotLight" >
+    update lab_home_spotlight
+    <set >
+      <if test="spotlightname != null" >
+        SpotlightName = #{spotlightname,jdbcType=VARCHAR},
+      </if>
+      <if test="spotlightpicurl != null" >
+        SpotlightPicURL = #{spotlightpicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="progresstime != null" >
+        ProgressTime = #{progresstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        CreateUserID = #{createuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.HomeSpotLight" >
+    update lab_home_spotlight
+    set SpotlightName = #{spotlightname,jdbcType=VARCHAR},
+      SpotlightPicURL = #{spotlightpicurl,jdbcType=VARCHAR},
+      ProgressTime = #{progresstime,jdbcType=TIMESTAMP},
+      CreateUserID = #{createuserid,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

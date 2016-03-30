@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.LogMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.Log" >
+    <id column="LogID" property="logid" jdbcType="INTEGER" />
+    <result column="OpeName" property="opename" jdbcType="VARCHAR" />
+    <result column="OpeTime" property="opetime" jdbcType="TIMESTAMP" />
+    <result column="Details" property="details" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    LogID, OpeName, OpeTime, Details
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_log
+    where LogID = #{logid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_log
+    where LogID = #{logid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.Log" >
+    insert into lab_log (LogID, OpeName, OpeTime, 
+      Details)
+    values (#{logid,jdbcType=INTEGER}, #{opename,jdbcType=VARCHAR}, #{opetime,jdbcType=TIMESTAMP}, 
+      #{details,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.Log" >
+    insert into lab_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logid != null" >
+        LogID,
+      </if>
+      <if test="opename != null" >
+        OpeName,
+      </if>
+      <if test="opetime != null" >
+        OpeTime,
+      </if>
+      <if test="details != null" >
+        Details,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logid != null" >
+        #{logid,jdbcType=INTEGER},
+      </if>
+      <if test="opename != null" >
+        #{opename,jdbcType=VARCHAR},
+      </if>
+      <if test="opetime != null" >
+        #{opetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="details != null" >
+        #{details,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.Log" >
+    update lab_log
+    <set >
+      <if test="opename != null" >
+        OpeName = #{opename,jdbcType=VARCHAR},
+      </if>
+      <if test="opetime != null" >
+        OpeTime = #{opetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="details != null" >
+        Details = #{details,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where LogID = #{logid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.Log" >
+    update lab_log
+    set OpeName = #{opename,jdbcType=VARCHAR},
+      OpeTime = #{opetime,jdbcType=TIMESTAMP},
+      Details = #{details,jdbcType=VARCHAR}
+    where LogID = #{logid,jdbcType=INTEGER}
+  </update>
+</mapper>

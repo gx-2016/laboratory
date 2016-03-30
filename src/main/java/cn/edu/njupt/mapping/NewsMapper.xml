@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.NewsMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.News" >
+    <id column="NewsID" property="newsid" jdbcType="INTEGER" />
+    <result column="NewsTitle" property="newstitle" jdbcType="VARCHAR" />
+    <result column="NewsAbstract" property="newsabstract" jdbcType="VARCHAR" />
+    <result column="NewsContent" property="newscontent" jdbcType="VARCHAR" />
+    <result column="NewsTime" property="newstime" jdbcType="TIMESTAMP" />
+    <result column="NewsType" property="newstype" jdbcType="VARCHAR" />
+    <result column="NewsAuthor" property="newsauthor" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    NewsID, NewsTitle, NewsAbstract, NewsContent, NewsTime, NewsType, NewsAuthor, Remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_news
+    where NewsID = #{newsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_news
+    where NewsID = #{newsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.News" >
+    insert into lab_news (NewsID, NewsTitle, NewsAbstract, 
+      NewsContent, NewsTime, NewsType, 
+      NewsAuthor, Remark)
+    values (#{newsid,jdbcType=INTEGER}, #{newstitle,jdbcType=VARCHAR}, #{newsabstract,jdbcType=VARCHAR}, 
+      #{newscontent,jdbcType=VARCHAR}, #{newstime,jdbcType=TIMESTAMP}, #{newstype,jdbcType=VARCHAR}, 
+      #{newsauthor,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.News" >
+    insert into lab_news
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="newsid != null" >
+        NewsID,
+      </if>
+      <if test="newstitle != null" >
+        NewsTitle,
+      </if>
+      <if test="newsabstract != null" >
+        NewsAbstract,
+      </if>
+      <if test="newscontent != null" >
+        NewsContent,
+      </if>
+      <if test="newstime != null" >
+        NewsTime,
+      </if>
+      <if test="newstype != null" >
+        NewsType,
+      </if>
+      <if test="newsauthor != null" >
+        NewsAuthor,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="newsid != null" >
+        #{newsid,jdbcType=INTEGER},
+      </if>
+      <if test="newstitle != null" >
+        #{newstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newsabstract != null" >
+        #{newsabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="newscontent != null" >
+        #{newscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="newstime != null" >
+        #{newstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newstype != null" >
+        #{newstype,jdbcType=VARCHAR},
+      </if>
+      <if test="newsauthor != null" >
+        #{newsauthor,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.News" >
+    update lab_news
+    <set >
+      <if test="newstitle != null" >
+        NewsTitle = #{newstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newsabstract != null" >
+        NewsAbstract = #{newsabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="newscontent != null" >
+        NewsContent = #{newscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="newstime != null" >
+        NewsTime = #{newstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newstype != null" >
+        NewsType = #{newstype,jdbcType=VARCHAR},
+      </if>
+      <if test="newsauthor != null" >
+        NewsAuthor = #{newsauthor,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where NewsID = #{newsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.News" >
+    update lab_news
+    set NewsTitle = #{newstitle,jdbcType=VARCHAR},
+      NewsAbstract = #{newsabstract,jdbcType=VARCHAR},
+      NewsContent = #{newscontent,jdbcType=VARCHAR},
+      NewsTime = #{newstime,jdbcType=TIMESTAMP},
+      NewsType = #{newstype,jdbcType=VARCHAR},
+      NewsAuthor = #{newsauthor,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where NewsID = #{newsid,jdbcType=INTEGER}
+  </update>
+</mapper>

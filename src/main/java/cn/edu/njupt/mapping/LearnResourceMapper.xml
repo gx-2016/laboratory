@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.LearnResourceMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.LearnResource" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="LearnResourceName" property="learnresourcename" jdbcType="VARCHAR" />
+    <result column="LearnResourceAbstract" property="learnresourceabstract" jdbcType="VARCHAR" />
+    <result column="LearnResourceType" property="learnresourcetype" jdbcType="VARCHAR" />
+    <result column="LearnResourceURL" property="learnresourceurl" jdbcType="VARCHAR" />
+    <result column="ProgressTime" property="progresstime" jdbcType="TIMESTAMP" />
+    <result column="CreateUserID" property="createuserid" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SeqID, LearnResourceName, LearnResourceAbstract, LearnResourceType, LearnResourceURL, 
+    ProgressTime, CreateUserID, Remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_learn_resource
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_learn_resource
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.LearnResource" >
+    insert into lab_learn_resource (SeqID, LearnResourceName, LearnResourceAbstract, 
+      LearnResourceType, LearnResourceURL, ProgressTime, 
+      CreateUserID, Remark)
+    values (#{seqid,jdbcType=INTEGER}, #{learnresourcename,jdbcType=VARCHAR}, #{learnresourceabstract,jdbcType=VARCHAR}, 
+      #{learnresourcetype,jdbcType=VARCHAR}, #{learnresourceurl,jdbcType=VARCHAR}, #{progresstime,jdbcType=TIMESTAMP}, 
+      #{createuserid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.LearnResource" >
+    insert into lab_learn_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="learnresourcename != null" >
+        LearnResourceName,
+      </if>
+      <if test="learnresourceabstract != null" >
+        LearnResourceAbstract,
+      </if>
+      <if test="learnresourcetype != null" >
+        LearnResourceType,
+      </if>
+      <if test="learnresourceurl != null" >
+        LearnResourceURL,
+      </if>
+      <if test="progresstime != null" >
+        ProgressTime,
+      </if>
+      <if test="createuserid != null" >
+        CreateUserID,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="learnresourcename != null" >
+        #{learnresourcename,jdbcType=VARCHAR},
+      </if>
+      <if test="learnresourceabstract != null" >
+        #{learnresourceabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="learnresourcetype != null" >
+        #{learnresourcetype,jdbcType=VARCHAR},
+      </if>
+      <if test="learnresourceurl != null" >
+        #{learnresourceurl,jdbcType=VARCHAR},
+      </if>
+      <if test="progresstime != null" >
+        #{progresstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        #{createuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.LearnResource" >
+    update lab_learn_resource
+    <set >
+      <if test="learnresourcename != null" >
+        LearnResourceName = #{learnresourcename,jdbcType=VARCHAR},
+      </if>
+      <if test="learnresourceabstract != null" >
+        LearnResourceAbstract = #{learnresourceabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="learnresourcetype != null" >
+        LearnResourceType = #{learnresourcetype,jdbcType=VARCHAR},
+      </if>
+      <if test="learnresourceurl != null" >
+        LearnResourceURL = #{learnresourceurl,jdbcType=VARCHAR},
+      </if>
+      <if test="progresstime != null" >
+        ProgressTime = #{progresstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        CreateUserID = #{createuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.LearnResource" >
+    update lab_learn_resource
+    set LearnResourceName = #{learnresourcename,jdbcType=VARCHAR},
+      LearnResourceAbstract = #{learnresourceabstract,jdbcType=VARCHAR},
+      LearnResourceType = #{learnresourcetype,jdbcType=VARCHAR},
+      LearnResourceURL = #{learnresourceurl,jdbcType=VARCHAR},
+      ProgressTime = #{progresstime,jdbcType=TIMESTAMP},
+      CreateUserID = #{createuserid,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

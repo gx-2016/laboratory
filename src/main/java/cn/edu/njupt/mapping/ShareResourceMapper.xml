@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.ShareResourceMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.ShareResource" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="ShareResourceName" property="shareresourcename" jdbcType="VARCHAR" />
+    <result column="ShareResourceAbstarct" property="shareresourceabstarct" jdbcType="VARCHAR" />
+    <result column="ShareResourceType" property="shareresourcetype" jdbcType="VARCHAR" />
+    <result column="ShareResourceURL" property="shareresourceurl" jdbcType="VARCHAR" />
+    <result column="ProgressTime" property="progresstime" jdbcType="TIMESTAMP" />
+    <result column="CreateUserID" property="createuserid" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SeqID, ShareResourceName, ShareResourceAbstarct, ShareResourceType, ShareResourceURL, 
+    ProgressTime, CreateUserID, Remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_share_resource
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_share_resource
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.ShareResource" >
+    insert into lab_share_resource (SeqID, ShareResourceName, ShareResourceAbstarct, 
+      ShareResourceType, ShareResourceURL, ProgressTime, 
+      CreateUserID, Remark)
+    values (#{seqid,jdbcType=INTEGER}, #{shareresourcename,jdbcType=VARCHAR}, #{shareresourceabstarct,jdbcType=VARCHAR}, 
+      #{shareresourcetype,jdbcType=VARCHAR}, #{shareresourceurl,jdbcType=VARCHAR}, #{progresstime,jdbcType=TIMESTAMP}, 
+      #{createuserid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.ShareResource" >
+    insert into lab_share_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="shareresourcename != null" >
+        ShareResourceName,
+      </if>
+      <if test="shareresourceabstarct != null" >
+        ShareResourceAbstarct,
+      </if>
+      <if test="shareresourcetype != null" >
+        ShareResourceType,
+      </if>
+      <if test="shareresourceurl != null" >
+        ShareResourceURL,
+      </if>
+      <if test="progresstime != null" >
+        ProgressTime,
+      </if>
+      <if test="createuserid != null" >
+        CreateUserID,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="shareresourcename != null" >
+        #{shareresourcename,jdbcType=VARCHAR},
+      </if>
+      <if test="shareresourceabstarct != null" >
+        #{shareresourceabstarct,jdbcType=VARCHAR},
+      </if>
+      <if test="shareresourcetype != null" >
+        #{shareresourcetype,jdbcType=VARCHAR},
+      </if>
+      <if test="shareresourceurl != null" >
+        #{shareresourceurl,jdbcType=VARCHAR},
+      </if>
+      <if test="progresstime != null" >
+        #{progresstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        #{createuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.ShareResource" >
+    update lab_share_resource
+    <set >
+      <if test="shareresourcename != null" >
+        ShareResourceName = #{shareresourcename,jdbcType=VARCHAR},
+      </if>
+      <if test="shareresourceabstarct != null" >
+        ShareResourceAbstarct = #{shareresourceabstarct,jdbcType=VARCHAR},
+      </if>
+      <if test="shareresourcetype != null" >
+        ShareResourceType = #{shareresourcetype,jdbcType=VARCHAR},
+      </if>
+      <if test="shareresourceurl != null" >
+        ShareResourceURL = #{shareresourceurl,jdbcType=VARCHAR},
+      </if>
+      <if test="progresstime != null" >
+        ProgressTime = #{progresstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuserid != null" >
+        CreateUserID = #{createuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.ShareResource" >
+    update lab_share_resource
+    set ShareResourceName = #{shareresourcename,jdbcType=VARCHAR},
+      ShareResourceAbstarct = #{shareresourceabstarct,jdbcType=VARCHAR},
+      ShareResourceType = #{shareresourcetype,jdbcType=VARCHAR},
+      ShareResourceURL = #{shareresourceurl,jdbcType=VARCHAR},
+      ProgressTime = #{progresstime,jdbcType=TIMESTAMP},
+      CreateUserID = #{createuserid,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>
