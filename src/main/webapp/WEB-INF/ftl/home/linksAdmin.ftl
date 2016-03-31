@@ -150,7 +150,7 @@
                 <footer class="footer text-right">
                     2016 © Minton.
                 </footer>
-
+                
             </div>
             <!-- ============================================================== -->
             <!-- End Right content here -->
