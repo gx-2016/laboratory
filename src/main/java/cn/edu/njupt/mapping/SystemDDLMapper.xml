@@ -10,6 +10,46 @@
   <sql id="Base_Column_List" >
     SeqID, Keyword, DdlCode, DdlName
   </sql>
+  <!-- 查询数据字典中的所有数据类型 -->
+   <!--数据字典中的所有数据类型对应的resultMap  -->
+   <resultMap id="keyWordList" type="java.lang.String" >
+    <result column="Keyword" property="keyword" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <select id="findkeyWordList" resultMap="keyWordList"  >
+    select 
+    distinct o.Keyword
+    from lab_systemddl o
+  </select>
+  
+  <!--根据数据类型查询数据项  -->
+  <select id="findDDLListByKeyWord" resultMap="BaseResultMap"  parameterType="java.lang.String">
+    select 
+    <include refid="Base_Column_List" />
+    from lab_systemddl 
+     where Keyword = #{keyword,jdbcType=VARCHAR}
+  </select>
+  
+  <!-- 根据关键字类型和数据项编号查询数据项-->
+  <select id="findDDLListByDdlCode" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
+    select 
+   <include refid="Base_Column_List" />
+    from lab_systemddl o
+    where o.Keyword = #{keyword,jdbcType=VARCHAR} 
+    and o.DdlCode = #{ddlcode,jdbcType=INTEGER}
+  </select>
+  
+   <!-- 根据关键字类型和数据项名称查询数据项-->
+  <select id="findDDLListByDdlName" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_systemddl o
+    where o.Keyword = #{keyword,jdbcType=VARCHAR} 
+    and o.DdlName = #{ddlname,jdbcType=VARCHAR}
+  </select>
+  
+  
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

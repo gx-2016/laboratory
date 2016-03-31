@@ -1,5 +1,5 @@
-<section id="fh5co-home" data-section="home" style="background-image: url(assets/images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
-		<!--<div class="gradient"></div>-->
+<section  data-section="home" style="background-image: url(assets/images/full_image_2.jpg);" data-stellar-background-ratio="0.7">
+		<div class="gradient"></div>
 		<div class="container">
 			<div class="text-wrap">
 				<div class="text-inner">
@@ -19,9 +19,9 @@
 		<div class="container">
 			<div class="row">
 			    <h2><i class="fh5co-intro-icon icon-bulb"></i>
-			        <font color="#c24d67">  SpotLight | 焦点</font>
+			       <strong> <font color="#c24d67">  SpotLight | 焦点</font></strong>
 			    </h2>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<!--carousel start-->
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <!-- Indicators -->
@@ -105,7 +105,7 @@
 				<div class="row">
 					<#--新闻 -->
 					<div class="col-md-6">
-						<h2><i class="fh5co-intro-icon icon-wrench"></i> <font color="#c24d67">  NEWS | 新闻</font></h2>
+						<h2><i class="fh5co-intro-icon icon-wrench"></i><strong> <font color="#c24d67">  NEWS | 新闻</font></strong></h2>
 						<ul>
 						   <li><p><a href="#" > some </a></p></li>
 						   <li><p><a href="#" > some </a></p></li>
@@ -116,7 +116,7 @@
 					</div>
 					<#--链接-->
 					<div class="col-md-6">
-					 	<h2><i class="fh5co-intro-icon icon-rocket"></i> <font color="#c24d67">  LINKS | 链接</font></h2>
+					 	<h2><i class="fh5co-intro-icon icon-rocket"></i> <strong><font color="#c24d67">  LINKS | 链接</strong></font></h2>
 					    <ul>
 						  <li><p><a href="#" > some </a></p></li>
 						   <li><p><a href="#" > some </a></p></li>

@@ -1,5 +1,8 @@
 package cn.edu.njupt.dao;
 
+import java.util.HashMap;
+import java.util.List;
+
 import cn.edu.njupt.model.SystemDDL;
 
 public interface SystemDDLMapper {
@@ -14,4 +17,13 @@ public interface SystemDDLMapper {
     int updateByPrimaryKeySelective(SystemDDL record);
 
     int updateByPrimaryKey(SystemDDL record);
+
+	List<String> findkeyWordList();
+
+	List<SystemDDL> findDDLListByKeyWord(String keyword);
+
+	SystemDDL findDDLListByDdlCode(HashMap<Object, Object> param);
+
+	SystemDDL findDDLListByDdlName(HashMap<Object, Object> param);
+
 }
