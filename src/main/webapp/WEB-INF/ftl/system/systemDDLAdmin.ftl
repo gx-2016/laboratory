@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="../assets/images/favicon_1.ico">
 
-        <title>后台管理主页面</title>
+        <title>后台管理数据字典管理</title>
         
          <!-- DataTables -->
         <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -43,37 +43,40 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">新增链接</h4>
+                        <h4 class="modal-title">新增选项</h4>
                     </div>
                     <!--新增的form表单-->
-                    <form id="saveLinksForm" action="saveLinks.do" method="post" enctype="multipart/form-data">
+                    <form id="saveSpotlightForm" action="saveSpotlight.do" method="post" enctype="multipart/form-data">
 	                    <div class="modal-body">
+	                        
 	                        <div class="row">
 	                            <div class="col-md-6">
 	                                <div class="form-group">
-	                                    <label for="field-1" class="control-label">名称</label>
-	                                    <input type="text" class="form-control" id="linkname" name= "linkname" placeholder="链接标题">
-	                                </div>
-	                            </div>
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                    <label for="field-2" class="control-label">备注</label>
-	                                    <input type="text" class="form-control" id="remark" name="remark" placeholder="链接备注">
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="row">
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                    <label for="field-2" class="control-label">链接地址</label>
-	                                    <input type="text" class="form-control" id="linkurl" name="linkurl" onblur="checkURL()" placeholder="链接地址">
+	                                 <label for="field-1" id="newKeywordLabel" class="control-label">类型</label>
+	                                
+	                                    <input type="text" class="form-control" id="newKeyword" name="newKeyword" placeholder="输入类型名称">
 	                                </div>
 	                            </div>
 	                        </div>
 	                    </div>
+	                    <hr/>
+	                    <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">编号</label>
+	                                    <input type="text" class="form-control" id="ddlcode" name= "ddlcode"  onblur="checkDdlCode()" placeholder="输入编号(数字)">
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-3" class="control-label">名称</label>
+	                                    <input type="text" class="form-control" id="ddlname" name="ddlname" onblur="checkDdlName()" placeholder="输入名称">
+	                                </div>
+	                            </div>
+	                        </div>
 	                    <div class="modal-footer">
 	                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">关闭</button>
-	                        <input type="sunbmit" class="btn btn-default btn-info" onclick="saveLinks()" value="保存"/>
+	                        <button type="button"  class="btn btn-default btn-info" onclick="saveDDL()" data-dismiss="modal">保存</button>
 	                    </div>
                     </form>
                 </div>
@@ -106,14 +109,15 @@
                                 <div class="page-title-box">
                                     <ol class="breadcrumb pull-right">
                                         <li><a href="#">Minton</a></li>
-                                        <li class="active">链接管理</li>
+                                        <li class="active">数据字典管理</li>
                                     </ol>
                                     <h4 class="page-title">Welcome !</h4>
                                 </div>
                             </div>
                         </div>
+                        
                         <!--Page-Content-->
-                        <!--链接管理-->
+                        <!--数据字典管理-->
                          <!-- 提示信息 -->
 					       <#if message??>
 						       <div class="alert alert-success alert-dismissable">
@@ -125,22 +129,33 @@
 							  </div>
 						  </#if>
 					      <!-- /.提示信息 -->
-                         <div class="row">
-                            <div class="col-sm-12">
-                                    <h4 class="m-t-0 header-title">
+		                    <div class="row">
+		                         <div class="form-group " >
+                                        <label class="col-sm-1 control-label">类型列表:</label>
+                                        <div class="col-sm-2">
+                                           <select  id="keyword" class="form-control" name="keyword"  onchange="changetype()">
+											    <option value="-1">--增加类型和选项--</option>
+												<#if keyWordList??>
+													<#list keyWordList as keyWord>
+													 <option>${keyWord}</option>
+													</#list>
+												</#if>
+											</select>
+                                        </div>
+								  </div>
+								  <br/>
+		                          <div class="card-box table-responsive">
+		                           <h4 class="m-t-0 header-title">
                                         <b>
                                             <!-- Full width modal -->
-                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">新增链接</button>
+                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">增加选项</button>
                                        </b>
                                     </h4>
-                                <div class="card-box table-responsive">
-                                    <div id ="dataList">
-                                    <#include "linksData.ftl">
-                                    </div>
-                                </div>
-                            </div>
+		                                <div id ="dataList">
+		                                 <#include "systemDDLData.ftl">
+		                                </div>
+		                          </div>
                         </div>
-                        
                         <!--end Page-Content-->
                      </div>
                     <!-- end container -->
@@ -150,7 +165,7 @@
                 <footer class="footer text-right">
                     2016 © Minton.
                 </footer>
-                
+
             </div>
             <!-- ============================================================== -->
             <!-- End Right content here -->
@@ -183,16 +198,25 @@
         <script src="../assets/js/jquery.scrollTo.min.js"></script>
         <script src="../assets/plugins/switchery/switchery.min.js"></script>
 
-        <!-- Moment  
+        <!-- Moment  -->
         <script src="../assets/plugins/moment/moment.js"></script>
-        -->
-        <!-- Counter Up  
+        
+        <!-- Counter Up  -->
         <script src="../assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
         <script src="../assets/plugins/counterup/jquery.counterup.min.js"></script>
-        -->
-        <!-- Sweet Alert  
+        
+        <!-- Sweet Alert  -->
         <script src="../assets/plugins/sweetalert/dist/sweetalert.min.js"></script>
-        -->
+        
+        <!-- flot Chart -->
+        <script src="../assets/plugins/flot-chart/jquery.flot.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.time.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.pie.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
 
         <!-- Custom main Js -->
         <script src="../assets/js/jquery.core.js"></script>
@@ -208,42 +232,140 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#datatable').dataTable();
+            //    $('#datatable').dataTable();
             } );
             
-            function saveLinks()
-            {
-               var linkname = $("#linkname").val();
-               var linkurl = $("#linkurl").val();
-               var remark = $("#remark").val();
-              
-               if(linkname =="")
-               {
-                alert("链接标题不能为空！");
-                return false;
-               }
-                else if(linkurl =="")
-               {
-                alert("链接路径不能为空！");
-                return false;
-               } 
-               else{
-                  $("#saveLinksForm").submit();
-                }
-            }
-            
-            function checkURL()
-            {
-                  /**
-                   var linkurl = $("#linkurl").val();
-	                var regUrl = new RegExp("/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/");
-	               if(!regUrl.test(linkurl)){
-					    alert("请输入网址!");
+             function changetype()
+	          {
+	           var keyword =  $('#keyword').val();
+	           if(keyword =='-1')
+	            {
+	              $('#newKeywordLabel').show();
+	              $('#newKeyword').show();
+	            }
+	            else{
+	              $('#newKeywordLabel').hide();
+	              $('#newKeyword').hide();
+				}
+				
+				  //查询出下拉框中选中的关键字对应的数据项
+		           	$.ajax({
+							type: "post",
+							url: "getDDLByKeyWord.do",
+							data: {
+							    keyword:keyword
+							},
+							 success: function(data) {
+					             $("#dataList").html(data);
+					         },
+						});
+	          }
+	          
+	          //检查是否已经存该类型的数据编号
+	          function checkDdlCode(){
+	             var keyword =  $('#keyword').val();
+	                if(keyword=='-1')
+			        {
+			           keyword =  $('#newKeyword').val();
+			        }
+			        //判断关键字是否填写
+			        if(keyword=='')
+			        {
+			           alert("类型不能为空！");
+			           return false;
+			        }
+	               var ddlcode =  $('#ddlcode').val();
+	               var reg = new RegExp("^[0-9]*$");  
+				   if(!reg.test(ddlcode)){
+					    alert("编号请输入数字!");
 					    return false;
 				    }
-				    */
-            }
+				    
+	               //判断该关键字对应的数据项编号是否已经存在
+	               	$.ajax({
+							type: "post",
+							url: "findDDLByDdlCode.do",
+							data: {
+							    keyword : keyword,
+							    ddlcode : ddlcode
+							},
+							 success: function(data) {
+					            if(data.result=='1')
+					            {
+						            alert("该数据项编号已存在！");
+						            return false;
+					            }
+					         },
+						});
+	          }
+	          
+	          
+	           //检查是否已经存该类型的数据名称
+	          function checkDdlName(){
+	             var keyword =  $('#keyword').val();
+	                if(keyword=='-1')
+			        {
+			           keyword =  $('#newKeyword').val();
+			        }
+			        //判断关键字是否填写
+			        if(keyword=='')
+			        {
+			           alert("类型不能为空！");
+			           return false;
+			        }
+			        
+	                 var ddlname =  $('#ddlname').val();
+	               //判断该关键字对应的数据项名称是否已经存在
+	              	$.ajax({
+							type: "post",
+							url: "findDDLByDdlName.do",
+							data: {
+							    keyword : keyword,
+							    ddlname : ddlname
+							},
+							 success: function(data) {
+					            if(data.result=='1')
+					            {
+					             alert("该数据项名称已存在！");
+					              return false;
+					            }
+					         },
+						});
+	          }
+	          
+	          
+	          function saveDDL(){
+	               var keyword =  $('#keyword').val();
+	                if(keyword=='-1')
+			        {
+			           keyword =  $('#newKeyword').val();
+			        }
+			        //判断关键字是否填写
+			        if(keyword=='')
+			        {
+			           alert("类型不能为空！");
+			           return false;
+			        }
+			        
+	               var ddlcode =  $('#ddlcode').val();
+	               var ddlname =  $('#ddlname').val();
+	               
+			        //保存选中的关键字对应的数据项
+		           	$.ajax({
+							type: "post",
+							url: "saveDDLByKeyWord.do",
+							data: {
+							    keyword : keyword,
+							    ddlcode : ddlcode,
+							    ddlname : ddlname
+							},
+							 success: function(data) {
+					             $("#dataList").html(data);
+					         },
+						});
+	          }
+	          
         </script>
-    
+        
     </body>
 </html>

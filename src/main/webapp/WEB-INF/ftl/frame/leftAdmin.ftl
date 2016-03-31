@@ -11,31 +11,31 @@
                                 </a>
                             
 							     <ul class="list-unstyled">
-								     <li><a href="spotlightAdmin.do">焦点管理</a></li>
-								  	 <li><a href="linksAdmin.do">链接管理</a></li>
+								     <li><a href="../home/spotlightAdmin.do">焦点管理</a></li>
+								  	 <li><a href="../home/linksAdmin.do">链接管理</a></li>
 								 </ul>
 							</li>
 
                              
 							<li >
-                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 新闻管理 </span>
+                                <a href="../news/newsAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 新闻管理 </span>
                                 </a>
                             </li>
 							
 							
 							<li >
-                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 项目管理 </span>
+                                <a href="../project/projectAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 项目管理 </span>
                                 </a>
                             </li>
 							
 							
 							<li >
-                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 著作管理 </span>
+                                <a href="../writtings/writtingsAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 著作管理 </span>
                                 </a>
                             </li>
 
 							<li >
-                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 影集管理 </span>
+                                <a href="../photo/photoAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 影集管理 </span>
                                 </a>
                             </li>
 							
@@ -43,9 +43,9 @@
                                 <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 系统管理 </span>
                                 </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="ui-buttons.html">角色管理</a></li>
-								     <li><a href="ui-buttons.html">成员管理</a></li>
-								  	 <li><a href="ui-buttons.html">数据字典维护</a></li>
+                                    <li><a href="../system/roleAdmin.do">角色管理</a></li>
+								     <li><a href="../system/userAdmin.do">成员管理</a></li>
+								  	 <li><a href="../system/systemDDLAdmin.do">数据字典维护</a></li>
                                 </ul>
                             </li>
 							

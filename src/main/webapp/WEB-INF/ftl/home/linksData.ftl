@@ -9,7 +9,7 @@
 	   <#if links?exists>
 		    <#list links as link>
 		    <tr>
-		        <td>${link_index}</td>
+		        <td>${link_index+1}</td>
 		        <td>${link.linkname!}</td>
 		        <td>${link.linkurl!}</td>
 		        <th><a>删除</a></th>

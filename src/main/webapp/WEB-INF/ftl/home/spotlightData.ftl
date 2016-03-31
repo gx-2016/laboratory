@@ -9,7 +9,7 @@
 	   <#if spotlights?exists>
 		    <#list spotlights as spotlight>
 		    <tr>
-		        <th>${spotlight_index}+1</th>
+		        <th>${spotlight_index + 1}</th>
 		        <td>${spotlight.spotlightname!}</td>
 		        <td>${spotlight.spotlightpicurl!}</td>
 		        <th><a>删除</a></th>
