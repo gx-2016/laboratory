@@ -3,7 +3,7 @@
 <mapper namespace="cn.edu.njupt.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="cn.edu.njupt.model.User" >
     <id column="UserID" property="userid" jdbcType="INTEGER" />
-    <result column="CompanyID" property="companyid" jdbcType="VARCHAR" />
+    <result column="CompanyName" property="companyname" jdbcType="VARCHAR" />
     <result column="WorkDetail" property="workdetail" jdbcType="VARCHAR" />
     <result column="UserName" property="username" jdbcType="VARCHAR" />
     <result column="LogonName" property="logonname" jdbcType="VARCHAR" />
@@ -22,10 +22,18 @@
     <result column="Remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    UserID, CompanyID, WorkDetail, UserName, LogonName, LogonPwd, SexID, Birthday, Address, 
+    UserID, CompanyName, WorkDetail, UserName, LogonName, LogonPwd, SexID, Birthday, Address, 
     Email, Mobile, IsDuty, OnDutyDate, OffDutyDate, PersonPage, PhotoUrl, Education, 
     Remark
   </sql>
+  
+  <!--查询所有用户  -->
+ <select id="getAllUser" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user
+  </select>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -37,14 +45,14 @@
     where UserID = #{userid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.edu.njupt.model.User" >
-    insert into lab_user (UserID, CompanyID, WorkDetail, 
+    insert into lab_user (UserID, CompanyName, WorkDetail, 
       UserName, LogonName, LogonPwd, 
       SexID, Birthday, Address, 
       Email, Mobile, IsDuty, 
       OnDutyDate, OffDutyDate, PersonPage, 
       PhotoUrl, Education, Remark
       )
-    values (#{userid,jdbcType=INTEGER}, #{companyid,jdbcType=VARCHAR}, #{workdetail,jdbcType=VARCHAR}, 
+    values (#{userid,jdbcType=INTEGER}, #{CompanyName,jdbcType=VARCHAR}, #{workdetail,jdbcType=VARCHAR}, 
       #{username,jdbcType=VARCHAR}, #{logonname,jdbcType=VARCHAR}, #{logonpwd,jdbcType=VARCHAR}, 
       #{sexid,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, #{address,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{isduty,jdbcType=VARCHAR}, 
@@ -58,8 +66,8 @@
       <if test="userid != null" >
         UserID,
       </if>
-      <if test="companyid != null" >
-        CompanyID,
+      <if test="CompanyName != null" >
+        CompanyName,
       </if>
       <if test="workdetail != null" >
         WorkDetail,
@@ -114,8 +122,8 @@
       <if test="userid != null" >
         #{userid,jdbcType=INTEGER},
       </if>
-      <if test="companyid != null" >
-        #{companyid,jdbcType=VARCHAR},
+      <if test="CompanyName != null" >
+        #{CompanyName,jdbcType=VARCHAR},
       </if>
       <if test="workdetail != null" >
         #{workdetail,jdbcType=VARCHAR},
@@ -170,8 +178,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.User" >
     update lab_user
     <set >
-      <if test="companyid != null" >
-        CompanyID = #{companyid,jdbcType=VARCHAR},
+      <if test="CompanyName != null" >
+        CompanyName = #{CompanyName,jdbcType=VARCHAR},
       </if>
       <if test="workdetail != null" >
         WorkDetail = #{workdetail,jdbcType=VARCHAR},
@@ -226,7 +234,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.User" >
     update lab_user
-    set CompanyID = #{companyid,jdbcType=VARCHAR},
+    set CompanyName = #{CompanyName,jdbcType=VARCHAR},
       WorkDetail = #{workdetail,jdbcType=VARCHAR},
       UserName = #{username,jdbcType=VARCHAR},
       LogonName = #{logonname,jdbcType=VARCHAR},

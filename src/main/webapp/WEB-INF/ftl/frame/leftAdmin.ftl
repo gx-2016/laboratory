@@ -43,8 +43,8 @@
                                 <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 系统管理 </span>
                                 </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="../system/roleAdmin.do">角色管理</a></li>
-								     <li><a href="../system/userAdmin.do">成员管理</a></li>
+                                    <li><a href="../role/roleAdmin.do">角色管理</a></li>
+								     <li><a href="../user/userAdmin.do">成员管理</a></li>
 								  	 <li><a href="../system/systemDDLAdmin.do">数据字典维护</a></li>
                                 </ul>
                             </li>

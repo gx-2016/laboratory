@@ -5,7 +5,7 @@ import java.util.Date;
 public class User {
     private Integer userid;
 
-    private String companyid;
+    private String companyname;
 
     private String workdetail;
 
@@ -47,15 +47,15 @@ public class User {
         this.userid = userid;
     }
 
-    public String getCompanyid() {
-        return companyid;
-    }
+    public String getCompanyname() {
+		return companyname;
+	}
 
-    public void setCompanyid(String companyid) {
-        this.companyid = companyid == null ? null : companyid.trim();
-    }
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
+	}
 
-    public String getWorkdetail() {
+	public String getWorkdetail() {
         return workdetail;
     }
 
