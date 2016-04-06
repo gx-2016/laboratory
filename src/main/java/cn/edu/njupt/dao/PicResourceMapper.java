@@ -1,5 +1,7 @@
 package cn.edu.njupt.dao;
 
+import java.util.List;
+
 import cn.edu.njupt.model.PicResource;
 
 public interface PicResourceMapper {
@@ -14,4 +16,6 @@ public interface PicResourceMapper {
     int updateByPrimaryKeySelective(PicResource record);
 
     int updateByPrimaryKey(PicResource record);
+    
+    List<PicResource> getAllPicResource();
 }
