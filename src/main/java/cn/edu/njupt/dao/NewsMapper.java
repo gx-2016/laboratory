@@ -1,5 +1,7 @@
 package cn.edu.njupt.dao;
 
+import java.util.List;
+
 import cn.edu.njupt.model.News;
 
 public interface NewsMapper {
@@ -14,4 +16,6 @@ public interface NewsMapper {
     int updateByPrimaryKeySelective(News record);
 
     int updateByPrimaryKey(News record);
+    
+    List<News> queryNews(int num);
 }
