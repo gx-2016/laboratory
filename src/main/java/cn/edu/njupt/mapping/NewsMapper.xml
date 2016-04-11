@@ -125,7 +125,10 @@
       Remark = #{remark,jdbcType=VARCHAR}
     where NewsID = #{newsid,jdbcType=INTEGER}
   </update>
-  <select id="queryNews">
+  <select id="queryNews" resultMap="BaseResultMap" parameterType="java.lang.Integer">
   		select * from lab_news order by NewsTime desc limit ${0}
+  </select>
+  <select id = "queryAllNews" resultMap="BaseResultMap" >
+  		select * from lab_news order by NewsTime desc
   </select>
 </mapper>

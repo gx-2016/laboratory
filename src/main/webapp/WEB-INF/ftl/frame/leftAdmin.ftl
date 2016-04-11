@@ -18,8 +18,11 @@
 
                              
 							<li >
-                                <a href="../news/newsAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 新闻管理 </span>
+                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 新闻管理 </span>
                                 </a>
+                                 <ul class="list-unstyled">
+								     <li><a href="../news/newsAdmin.do">编辑新闻</a></li>
+								 </ul>
                             </li>
 							
 							

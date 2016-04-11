@@ -35,4 +35,10 @@ public class NewsSericeImpl implements NewsServiceI{
 		return newsMapper.queryNews(num);
 	}
 
+	@Override
+	public List<News> queryAllNews() {
+		// TODO Auto-generated method stub
+		return newsMapper.queryAllNews();
+	}
+
 }

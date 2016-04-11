@@ -15,4 +15,5 @@ import cn.edu.njupt.model.News;
 public interface NewsServiceI {
 	public List<News> queryNewsforHomeNews(int num);
 	public List<News> queryNews(int num);
+	public List<News> queryAllNews();
 }

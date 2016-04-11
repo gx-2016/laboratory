@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.njupt.service.NewsServiceI;
@@ -15,8 +16,9 @@ public class NewsController {
 	private NewsServiceI newsService;
 	
 	@RequestMapping("/newsAdmin.do")
-	public String toNews(){
-		System.out.println("newsAdmin.do");
+	public String toNews(ModelMap modelMap){
+		//System.out.println("newsAdmin.do");
+		modelMap.put("newsList",newsService.queryAllNews());
 		return "news/newsAdmin";
 	}
 	

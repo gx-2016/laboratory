@@ -10,6 +10,14 @@
 
         <title>Minton - Responsive Admin Dashboard Template</title>
 
+ 		
+ 		<!-- DataTables -->
+        <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/custombox/dist/custombox.min.css" rel="stylesheet">
+
+        <!-- wangEdit-->
+         <link href="../assets/css/wangEditor.css" rel="stylesheet">
+
         <link href="../assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
         <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
@@ -49,7 +57,7 @@
             <#include "../frame/leftAdmin.ftl">
             <!-- Left Sidebar End --> 
 
-
+			<#include "../news/addNewsModal.ftl">
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -64,15 +72,29 @@
                             <div class="col-sm-12">
                                 <div class="page-title-box">
                                     <ol class="breadcrumb pull-right">
-                                        <li><a href="#">Minton</a></li>
+                                        <li><a href="#">首页</a></li>
                                         <li class="active">新闻管理</li>
                                     </ol>
                                     <h4 class="page-title">Welcome !</h4>
                                 </div>
                             </div>
                         </div>
-
-                
+						<div class="row">
+                            <div class="col-sm-12">
+                                    <h4 class="m-t-0 header-title">
+                                        <b>
+                                            <!-- Full width modal -->
+                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-addNews-modal">新增新闻</button>
+                                            
+                                       </b>
+                                    </h4>
+                                <div class="card-box table-responsive">
+                                    <div id ="dataList">
+                                    <#include "newsData.ftl">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                      </div>
                     <!-- end container -->
                 </div>
@@ -145,34 +167,24 @@
         <!-- Custom main Js -->
         <script src="../assets/js/jquery.core.js"></script>
         <script src="../assets/js/jquery.app.js"></script>
-
+        
+        <!-- Datatables-->
+        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        
+        <!-- Modal-Effect -->
+        <script src="../assets/plugins/custombox/dist/custombox.min.js"></script>
+        <script src="../assets/plugins/custombox/dist/legacy.min.js"></script>
+        
+		<!-- wangEdit-->
+		<script src="../assets/js/wangEditor.js"></script>
         
         <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-                $('.circliful-chart').circliful();
-            });
-
-            /* BEGIN SVG WEATHER ICON */
-            if (typeof Skycons !== 'undefined'){
-            var icons = new Skycons(
-                {"color": "#3bafda"},
-                {"resizeClear": true}
-                ),
-                    list  = [
-                        "clear-day", "clear-night", "partly-cloudy-day",
-                        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                        "fog"
-                    ],
-                    i;
-
-                for(i = list.length; i--; )
-                icons.set(list[i], list[i]);
-                icons.play();
-            };
+         $(document).ready(function() {
+                $('#datatable').dataTable();
+            } );
+         var editor = new wangEditor('newsContext');
+   		 editor.create();
 
         </script>
     
