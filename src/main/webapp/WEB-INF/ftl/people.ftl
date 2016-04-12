@@ -86,7 +86,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>高翔</h3>
 						<span>2134@qq.com</span>
@@ -95,7 +95,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>高翔</h3>
 						<span>2134@qq.com</span>
@@ -104,7 +104,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>王峰</h3>
 						<span>3545@qq.com</span>
@@ -113,7 +113,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>张洪成</h3>
 						<span>1424@qq.com</span>
@@ -122,7 +122,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>高翔</h3>
 						<span>2134@qq.com</span>
@@ -131,7 +131,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>高翔</h3>
 						<span>2134@qq.com</span>
@@ -140,7 +140,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>高翔</h3>
 						<span>2134@qq.com</span>
@@ -149,7 +149,7 @@
 				<div class="span3">
 					<div>
 						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image">
+							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
 						</figure>
 						<h3>高翔</h3>
 						<span>2134@qq.com</span>
@@ -157,7 +157,14 @@
 				</div>
 			</div>
 			<div>
-
+			<hr>
+			<div align="center">
+					<div class="row">
+						<div>
+							<h3>毕业生信息</h3>
+						</div>
+					</div>
+				</div>
 				<div class="row" align="center">
 
 					<table style="height: 570px;">
