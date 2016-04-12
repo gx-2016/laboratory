@@ -2,7 +2,6 @@ package cn.edu.njupt.controller;
 
 import javax.annotation.Resource;
 
-import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
