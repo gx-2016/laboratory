@@ -8,5 +8,7 @@ public interface UserServiceI {
 
 	public User getUserById(int userid);
 
-	public List<User> getAllUser(); 
+	public List<User> getAllUser();
+
+	public int updateUser(User user); 
 }

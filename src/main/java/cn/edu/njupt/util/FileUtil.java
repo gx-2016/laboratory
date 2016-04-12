@@ -63,7 +63,7 @@ public class FileUtil {
 		   if(fileDir.exists()){
 			   file2 = new File(path,fileName.substring(0,fileName.lastIndexOf("."))+"_"+new Date().getTime() + fileType); //新建一个文件
 		   }else{
-			   fileDir.mkdir();
+			   fileDir.mkdirs();
 		   }
 		return file2;
 	}

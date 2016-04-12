@@ -52,7 +52,7 @@
       OnDutyDate, OffDutyDate, PersonPage, 
       PhotoUrl, Education, Remark
       )
-    values (#{userid,jdbcType=INTEGER}, #{CompanyName,jdbcType=VARCHAR}, #{workdetail,jdbcType=VARCHAR}, 
+    values (#{userid,jdbcType=INTEGER}, #{companyname,jdbcType=VARCHAR}, #{workdetail,jdbcType=VARCHAR}, 
       #{username,jdbcType=VARCHAR}, #{logonname,jdbcType=VARCHAR}, #{logonpwd,jdbcType=VARCHAR}, 
       #{sexid,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, #{address,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{isduty,jdbcType=VARCHAR}, 
@@ -66,7 +66,7 @@
       <if test="userid != null" >
         UserID,
       </if>
-      <if test="CompanyName != null" >
+      <if test="companyname != null" >
         CompanyName,
       </if>
       <if test="workdetail != null" >
@@ -122,8 +122,8 @@
       <if test="userid != null" >
         #{userid,jdbcType=INTEGER},
       </if>
-      <if test="CompanyName != null" >
-        #{CompanyName,jdbcType=VARCHAR},
+      <if test="companyname != null" >
+        #{companyname,jdbcType=VARCHAR},
       </if>
       <if test="workdetail != null" >
         #{workdetail,jdbcType=VARCHAR},
@@ -178,8 +178,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.User" >
     update lab_user
     <set >
-      <if test="CompanyName != null" >
-        CompanyName = #{CompanyName,jdbcType=VARCHAR},
+      <if test="companyname != null" >
+        CompanyName = #{companyname,jdbcType=VARCHAR},
       </if>
       <if test="workdetail != null" >
         WorkDetail = #{workdetail,jdbcType=VARCHAR},
@@ -234,7 +234,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.User" >
     update lab_user
-    set CompanyName = #{CompanyName,jdbcType=VARCHAR},
+    set CompanyName = #{companyname,jdbcType=VARCHAR},
       WorkDetail = #{workdetail,jdbcType=VARCHAR},
       UserName = #{username,jdbcType=VARCHAR},
       LogonName = #{logonname,jdbcType=VARCHAR},

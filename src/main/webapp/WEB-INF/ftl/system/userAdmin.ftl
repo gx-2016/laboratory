@@ -48,7 +48,7 @@
                         <h4 class="modal-title">新增用户</h4>
                     </div>
                     <!--新增的form表单-->
-                    <form id="saveUserForm" action="saveUser.do" method="post" enctype="multipart/form-data">
+                    <form id="saveUserForm" action="savedo" method="post" enctype="multipart/form-data">
 	                    <div class="modal-body">
 	                        <div class="row">
 	                            <div class="col-md-6">
@@ -138,8 +138,8 @@
 	                            
 	                            <div class="col-md-6">
 	                                <div class="form-group">
-	                                    <label for="field-3" class="control-label">输入电话</label>
-	                                    <input type="text" class="form-control" id="mobile" name="mobile"  placeholder="电话">
+	                                    <label for="field-3" class="control-label">电话</label>
+	                                    <input type="text" class="form-control" id="mobile" name="mobile"  placeholder="输入电话">
 	                                </div>
 	                            </div>
 	                             <div class="col-md-6">
@@ -195,7 +195,168 @@
             </div>
         </div>
        <!-- /.modal -->
-        
+       
+       
+           <!-- 修改用户模态框 modal -->
+        <div id="update" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">修改用户</h4>
+                    </div>
+                    <!--新增的form表单-->
+                    <form id="updateUserForm"  action="updateUser.do" method="post" enctype="multipart/form-data">
+	                    <div class="modal-body">
+	                        <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">姓名</label>
+	                                    <input type="text" class="form-control" id="update_username" name= "username"  placeholder="输入姓名">
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-3" class="control-label">登录名</label>
+	                                    <input type="text" class="form-control" id="update_logonname" name="logonname"  placeholder="输入登录名">
+	                                </div>
+	                            </div>
+	                         </div>
+	                         
+	                          <div class="row">
+	                           <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">密码</label>
+	                                    <input type="text" class="form-control" id="update_logonpwd" name= "logonpwd" placeholder="输入登陆密码" >
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">入学日期</label>
+	                                    <input type="text" class="form-control" id="update_ondutydate" name= "ondutydate"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly" >
+	                                </div>
+	                            </div>
+	                         </div>
+	                         
+	                              <div class="row">
+			                           <div class="col-md-6">
+			                                <div class="form-group">
+			                                    <label for="field-2" class="control-label">生日</label>
+			                                    <input type="text" class="form-control" id="update_birthday" name= "birthday" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly">
+			                                </div>
+			                            </div>
+			                            <div class="col-md-6">
+			                                <div class="form-group">
+			                                    <label for="field-2" class="control-label">毕业日期</label>
+			                                    <input type="text" class="form-control" id="update_offdutydate" name= "offdutydate"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly" >
+			                                </div>
+			                            </div>
+	                             </div>
+	                         
+	                         <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                     <label class="col-sm-4 control-label">性别:</label>
+                                        <div class="col-sm-8">
+                                           <select  id="update_sex" class="form-control" name="sex" >
+													 <option value="0">男</option>
+													 <option value="1">女</option>
+											</select>
+                                        </div>
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                     <label class="col-sm-4 control-label">是否毕业</label>
+                                        <div class="col-sm-8">
+                                           <select  id="update_isduty" class="form-control" name="isduty" >
+													 <option value="0">毕业</option>
+													 <option value="1">在读</option>
+											</select>
+                                        </div>
+	                                </div>
+	                            </div>
+	                         </div>
+	                         
+	                         <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">邮箱</label>
+	                                    <input type="text" class="form-control" id="update_email" name= "email"  placeholder="输入邮箱">
+	                                </div>
+	                            </div>
+	                          <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">学历</label>
+	                                    <input type="text" class="form-control" id="update_education" name= "education"  placeholder="输入学历">
+	                                </div>
+	                            </div>
+	                         </div>
+	                         <div class="row">
+	                            
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-3" class="control-label">电话</label>
+	                                    <input type="text" class="form-control" id="update_mobile" name="mobile"  placeholder="输入电话">
+	                                </div>
+	                            </div>
+	                             <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">个人主页</label>
+	                                    <input type="text" class="form-control" id="update_personpage" name= "personpage" placeholder="输入个人主页网址"  >
+	                                </div>
+	                            </div>
+	                         </div>
+	                         
+	                             <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">公司名称</label>
+	                                    <input type="text" class="form-control" id="update_companyname" name= "companyname"  placeholder="输入公司">
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-3" class="control-label">公司职务</label>
+	                                    <input type="text" class="form-control" id="update_workdetail" name="workdetail"  placeholder="输入公司职务">
+	                                </div>
+	                            </div>
+	                         </div>
+	                         
+	                          <div class="row">
+	                            <div class="col-md-12">
+	                                <div class="form-group">
+	                                    <label for="field-3" class="control-label">家庭地址</label>
+	                                    <input type="textarea" class="form-control" id="update_address" name="address"  placeholder="输入地址">
+	                                </div>
+	                            </div>
+	                         </div>
+
+	                         <div class="row">
+	                           <div class="col-md-6">
+	                                <div class="form-group">
+	                                 <div class="fileupload btn btn-primary waves-effect waves-light">
+	                                        <span><i class="ion-upload m-r-5"></i>上传头像</span>
+	                                        <input type="file" class="upload form-control" id="update_file" name="file" placeholder="上传头像">
+                                        </div>
+	                                </div>
+	                            </div>
+	                         </div>
+	                         <!--隐藏域主键id-->
+	                         <input type="hidden" class="form-control" id="update_userid" name= "userid" >
+	                         <input type="hidden" class="form-control" id="update_remark" name= "remark" >
+	                         <input type="hidden" class="form-control" id="update_photourl" name= "photourl" >
+	                     </div>
+	                    <div class="modal-footer">
+	                        
+	                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">关闭</button>
+	                        <button type="button"  class="btn btn-default btn-info" onclick="updateUser()" data-dismiss="modal">保存</button>
+	                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+       <!-- /.modal -->
         <!-- Begin page -->
         <div id="wrapper">
         
@@ -229,6 +390,18 @@
                         </div>
                         
                         <!--Page-Content-->
+                        
+                        <!-- 提示信息 -->
+					       <#if message??>
+						       <div class="alert alert-warning alert-dismissable">
+								   <button type="button" class="close" data-dismiss="alert" 
+								      aria-hidden="true">
+								      &times;
+								   </button>
+								      ${message}
+							  </div>
+						  </#if>
+					      <!-- /.提示信息 -->
 		                          <div class="card-box table-responsive">
 		                           <h4 class="m-t-0 header-title">
                                         <b>
@@ -236,9 +409,10 @@
                                             <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">增加用户</button>
                                        </b>
                                     </h4>
-		                                <div id ="dataList">
-		                                 <#include "userData.ftl">
-		                                </div>
+                                    <div id ="dataList">
+                                    <#include "userData.ftl">
+                                    </div>
+		                                
 		                          </div>
                         </div>
                         <!--end Page-Content-->
@@ -336,37 +510,28 @@
 	           }
 	           
 	          
-	          
+	          function updateUser(){
+	          //修改选中的关键字对应的数据项
+	              $("#updateUserForm").submit();
+			        
+				}
+						
 	          function saveUser(){
-	               
+	             $("#saveUserForm").submit();
 			        //保存选中的关键字对应的数据项
-		           	$.ajax({
-							type: "post",
-							url: "saveUser.do",
-							data: {
-							     companyname:companyname,
-							     workdetail:workdetail,
-							     username:username,
-							     logonname:logonname,
-							     logonpwd:logonpwd,
-							     sexid:sexid,
-                                 birthday:birthday,
-                                 address:address,
-							     email:email,
-							     mobile:mobile,
-							     isduty:isduty,
-							     ondutydate:ondutydate,
-							     offdutydate:offdutydate,
-				                 personpage:personpage,
-		                         photourl:photourl,
-			                     education:education,
-				                 remark:remark
-							},
-							 success: function(data) {
-					             $("#dataList").html(data);
-					         },
-						});
-	          }
+			  }
+		
+			  function update(obj){
+				var tds=$(obj).parent().parent().find('td');
+				var inputs=$(obj).parent().parent().find('input');
+				$('#update_username').val(tds.eq(1).text());
+				$('#update_logonname').val(tds.eq(2).text());
+				
+				
+				$('#update_personpage').val(inputs.eq(0).val());
+			   $('#update_userid').val(inputs.eq(1).val());
+				$('#update').modal('show');
+			}
         </script>
         
     </body>

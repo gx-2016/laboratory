@@ -31,4 +31,12 @@ public class UserServiceImpl implements UserServiceI{
 		return userMapper.getAllUser();
 	}
 
+
+	@Override
+	public int updateUser(User user) {
+		// TODO 自动生成的方法存根
+		System.out.println(user.getUserid()+" :::  "+user.getUsername());
+		return userMapper.updateByPrimaryKeySelective(user);
+	}
+
 }

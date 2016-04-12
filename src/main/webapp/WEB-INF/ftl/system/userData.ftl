@@ -8,8 +8,8 @@
 		        <th>邮箱</th>
 		        <th>是否毕业</th>
 		        <th>毕业去向</th>
-		        <th>删除</th>
 		        <th>编辑</th>
+	
 		    </thead>
 		    <tbody>
 			   <#if userList?exists>
@@ -60,8 +60,9 @@
 				        <#else>
 				        <td></td>
 				        </#if>
-				        <td><a class="btn btn-success" href='editUser.do'>编辑</a></td>
-				        <td><a class="btn btn-success" href='deleteUser.do'>删除</a></td>
+				        <td><a onclick="update(this)"  >修改</a> | <a href="javascript:del('${user.userid}')">删除</a></td>
+				        <input type="hidden" name='personpage' value='${user.personpage}'>
+				         <input type="hidden" name='userid' value='${user.userid}'>
 				    </tr>
 				    </#list>
 			   </#if>
