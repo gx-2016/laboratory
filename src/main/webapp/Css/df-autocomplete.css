@@ -1,0 +1,40 @@
+﻿.ui-autocomplete {
+	max-height: 360px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+    overflow-x: hidden;
+	/* add padding to account for vertical scrollbar */
+    padding-right: 20px;
+	padding-left: 20px;
+	-moz-box-shadow: -2px 2px 20px #999;
+	-webkit-box-shadow: -2px 2px 20px #999;
+	box-shadow:-2px 2px 20px #999;
+	/* For IE 8 */
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=235, Color='#999999')";
+/* For IE 5.5 - 7 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=235, Color='#999999');
+	zoom:1;
+}
+.ui-autocomplete-category {
+	font-weight: bold;
+	padding: .2em .4em;
+	margin: .8em 0 .2em;
+	line-height: 26px;
+	font-size: 1.385em;
+	color: #666;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+}
+.ui-autocomplete a {
+	color: #999;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.385em;
+}
+.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
+	font-weight:normal;
+	margin:0px;
+}
+.ui-pod-degreefinder-wide .action-icon-btn:hover {
+	color:#ccc;
+}

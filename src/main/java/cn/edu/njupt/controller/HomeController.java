@@ -37,7 +37,6 @@ public class HomeController {
 		modelMap.put("spotlights", spotlights);
 		return "home/spotlightAdmin";
 	}
-	
 
 	@RequestMapping("/linksAdmin.do")
 	public String linksAdmin(ModelMap  modelMap){

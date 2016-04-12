@@ -7,9 +7,36 @@
     <result column="RoleID" property="roleid" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
+  
   <sql id="Base_Column_List" >
     SeqID, UserID, RoleID, remark
   </sql>
+   <!--用户角色表  -->
+  <resultMap id="UserRoleResultMap" type="cn.edu.njupt.model.UserRole" >
+    <result column="UserID" property="userid" jdbcType="VARCHAR" />
+    <result column="RoleID" property="roleid" jdbcType="VARCHAR" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="LogonName" property="logonname" jdbcType="VARCHAR" />
+    <result column="flag" property="flag" jdbcType="VARCHAR" />
+  </resultMap>
+   <select id="findUserRoleByRoleId"   resultMap="UserRoleResultMap" parameterType="string" >
+	  select distinct case b.RoleID 
+		when  
+		  <if test="_parameter != null" >
+	        #{_parameter}
+	      </if>
+	     then '1' else '0' end as flag,
+		a.UserID,
+		a.UserName,
+		a.LogonName
+		from lab_user a left join lab_user_role b
+		on a.UserID = b.UserID
+	    <if test="_parameter != null" >
+	      and b.RoleID = #{_parameter}
+	    </if>
+  </select>
+  
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -79,4 +106,5 @@
       remark = #{remark,jdbcType=VARCHAR}
     where SeqID = #{seqid,jdbcType=INTEGER}
   </update>
+  
 </mapper>

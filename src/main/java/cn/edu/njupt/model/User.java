@@ -38,8 +38,8 @@ public class User {
     private String education;
 
     private String remark;
-
-    public Integer getUserid() {
+    
+	public Integer getUserid() {
         return userid;
     }
 

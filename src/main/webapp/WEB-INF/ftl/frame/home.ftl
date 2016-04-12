@@ -1,4 +1,4 @@
-<section  data-section="home" style="background-image: url(assets/images/full_image_2.jpg);" data-stellar-background-ratio="0.7">
+<section  data-section="home" style="background-color: #005ca4;" data-stellar-background-ratio="0.7">
 		<div class="gradient"></div>
 		<div class="container">
 			<div class="text-wrap">
@@ -18,10 +18,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-			    <h2><i class="fh5co-intro-icon icon-bulb"></i>
-			       <strong> <font color="#c24d67">  SpotLight | 焦点</font></strong>
-			    </h2>
-				<div class="col-md-8">
+				<div class="col-md-12">
 					<!--carousel start-->
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <!-- Indicators -->
@@ -60,7 +57,7 @@
 				   <div class="col-md-4 well well-lg" >
 					    <br/>
 					    <br/>
-					    <h1><font color="#c24d67"><strong>欢迎访问南邮计算机视觉计算实验室</strong></font></h1>
+					    <h1><font color="#b38808"><strong>欢迎访问南邮计算机视觉计算实验室</strong></font></h1>
 						<br/>
 						<h3><strong><span class="label label-warning">
 						团队理念：踏应用实地，攀学术高峰.</span></strong></h3>
@@ -73,7 +70,7 @@
 							<div class="fh5co-text">
 							    <br>
 							    <br>
-								<h2><strong><font color="#c24d67"> <i class="glyphicon glyphicon-star-empty" aria-hidden="true"></i>  
+								<h2><strong><font color="#b38808"> <i class="glyphicon glyphicon-star-empty" aria-hidden="true"></i>  
 								      <abbr title="Intelligent Computer Visual">ICV</abbr> of NUPT</font></strong></h2>
 								<h2><span class="label label-warning">团队理念：踏应用实地，攀学术高峰.</span></h2>
 								<br>
@@ -81,7 +78,7 @@
 							</div>
 						</div>
 				  </div>
-				  -->
+				  
 			      <div class="col-lg-4">
                         <div class="panel panel-color panel-success">
                             <div class="panel-heading">
@@ -97,7 +94,7 @@
                             </div>
                         </div>
                   </div>
-				  
+				  -->
 			   </div>
 			   <!--第一行結束-->
                 <br/>
@@ -105,7 +102,7 @@
 				<div class="row">
 					<#--新闻 -->
 					<div class="col-md-6">
-						<h2><i class="fh5co-intro-icon icon-wrench"></i><strong> <font color="#c24d67">  NEWS | 新闻</font></strong></h2>
+						<h2><i class="fh5co-intro-icon icon-wrench"></i><strong> <font color="#b38808">  NEWS | 新闻</font></strong></h2>
 						<ul>
 						   <li><p><a href="#" > some </a></p></li>
 						   <li><p><a href="#" > some </a></p></li>
@@ -116,7 +113,7 @@
 					</div>
 					<#--链接-->
 					<div class="col-md-6">
-					 	<h2><i class="fh5co-intro-icon icon-rocket"></i> <strong><font color="#c24d67">  LINKS | 链接</strong></font></h2>
+					 	<h2><i class="fh5co-intro-icon icon-rocket"></i> <strong><font color="#b38808">  LINKS | 链接</strong></font></h2>
 					    <ul>
 						  <li><p><a href="#" > some </a></p></li>
 						   <li><p><a href="#" > some </a></p></li>

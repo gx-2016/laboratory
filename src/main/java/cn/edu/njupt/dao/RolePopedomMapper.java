@@ -9,7 +9,7 @@ public interface RolePopedomMapper {
 
     int insertSelective(RolePopedom record);
 
-    RolePopedom selectByPrimaryKey(Integer roleid);
+    RolePopedom selectByPrimaryKey(String roleid);
 
     int updateByPrimaryKeySelective(RolePopedom record);
 

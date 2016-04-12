@@ -8,8 +8,39 @@ public class UserRole {
     private String roleid;
 
     private String remark;
+    
+    //业务逻辑相关
+    private String username;
+    
+    private String logonname;
+    
+    private String flag;
+    
+    public String getUsername() {
+		return username;
+	}
 
-    public Integer getSeqid() {
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getLogonname() {
+		return logonname;
+	}
+
+	public void setLogonname(String logonname) {
+		this.logonname = logonname;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+
+	public Integer getSeqid() {
         return seqid;
     }
 

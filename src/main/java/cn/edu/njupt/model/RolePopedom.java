@@ -6,8 +6,8 @@ public class RolePopedom {
     private String popedomcode;
 
     private String remark;
-
-    public Integer getRoleid() {
+    
+	public Integer getRoleid() {
         return roleid;
     }
 
