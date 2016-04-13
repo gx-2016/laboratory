@@ -60,8 +60,14 @@
 				        <#else>
 				        <td></td>
 				        </#if>
-				        <td><a onclick="update(this)"  >修改</a> | <a href="javascript:del('${user.userid}')">删除</a></td>
-				        <input type="hidden" name='personpage' value='${user.personpage}'>
+				        <td><a onclick="update(this)">修改</a> | <a href="javascript:del('${user.userid}')">删除</a></td>
+				        <#if user.personpage??>
+				        
+				         <input type="hidden" name='personpage' value='${user.personpage}'>
+				        <#else>
+				        <td></td>
+				        </#if>
+				        
 				         <input type="hidden" name='userid' value='${user.userid}'>
 				    </tr>
 				    </#list>

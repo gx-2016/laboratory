@@ -63,44 +63,30 @@
 					<br>
 
 					<div class="addPad">
-
 						<!-- News and Events feeds -->
-						<div class="row-fluid">
-							<div class="span4">
-								<a href="assets/images/work_1.jpg"
-									class="fh5co-project-item image-popup to-animate"> <img
-									src="assets/images/work_1.jpg" alt="Image"
-									class="img-responsive">
-									<div>
-										<h2>Project 1</h2>
-										<span>Branding</span>
-									</div>
-								</a>
-							</div>
-							<div class="span4">
-								<a href="assets/images/work_1.jpg"
-									class="fh5co-project-item image-popup to-animate"> <img
-									src="assets/images/work_1.jpg" alt="Image"
-									class="img-responsive">
-									<div class="fh5co-text">
-										<h2>Project 1</h2>
-										<span>Branding</span>
-									</div>
-								</a>
-							</div>
-							<div class="span4">
-								<a href="assets/images/work_1.jpg"
-									class="fh5co-project-item image-popup to-animate"> <img
-									src="assets/images/work_1.jpg" alt="Image"
-									class="img-responsive">
-									<div >
-										<h2>Project 1</h2>
-										<span>Branding</span>
-									</div>
-								</a>
-							</div>
-
-						</div>
+						<#assign i =1>
+						<#if photos? exists>
+						 <#list photos as photo>
+							 <#if i%3 ==0>
+							 <div class="row-fluid" float:left>
+							 </#if>
+								<div class="span4"  style="padding:4px 8px; width:350px;" float:left>
+								  <a href="photo/${photo.picurl}" >
+									<img src="photo/${photo.picurl}" 
+									style="width:450px;height:250px;" 
+									alt="Image">
+											<h3>${photo.picname}</h3>
+									</a>
+								</div>
+						    <#if i%3 ==0>
+								 </div>
+							</#if>
+							 <#assign i = i+1>
+						 </#list>
+	                     </#if>
+					
+						
+						
 					</div>
 					<!-- addPad -->
 
