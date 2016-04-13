@@ -62,8 +62,8 @@
 
 					<div class="addPad">
 						<!-- News and Events feeds -->
-						<div class="row-fluid">
-							<div class="span6">
+						<div  class="row-fluid">
+							<div class="span10">
 							   <div class="news-events-feed">
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
@@ -74,9 +74,28 @@
 												class="news-events-feed__title-more-link"><span
 												class="btn-icon"></span>More</a>
 										</h2>
+										<#if newsList?exists>
+										<#list newsList as news>
+											<ul class="news-events-feed__content">
+												<li class="news-events-feed__content__item"><a
+													href="http://www.adelaide.edu.au/news/news84042.html"
+													title="Read More About New models predicting where to find fossils">
+														<div class="news-events-feed__date">
+															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>
+															<span class="news-events-feed__date__day"><strong>${news.newstime?string("dd")}</strong></span>
+															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
+														</div>
+														<div class="news-events-feed__excerpt">
+															<strong>${news.newstitle}</strong> <br>${news.newscontent}
+														</div>
+												</a></li>
+											</ul>
+										</#list>
+										</#if>
 									</div>
 								</div>
 							</div>
+							<!--
 							<div class="span6">
 								<div class="news-events-feed">
 									<div class="news-events-feed__wrapper">
@@ -91,6 +110,7 @@
 									</div>
 								</div>
 							</div>
+							-->
 						</div>
 					</div>
 					<!-- addPad -->

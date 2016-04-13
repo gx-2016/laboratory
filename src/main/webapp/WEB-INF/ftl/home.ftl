@@ -93,29 +93,30 @@
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="http://www.adelaide.edu.au/news/"
-												title="Read more Latest News">Latest News</a> <a
+												title="阅读更多新闻">最新校内新闻</a> <a
 												href="http://www.adelaide.edu.au/news/"
-												title="Read More Latest News"
+												title="阅读更多新闻"
 												class="news-events-feed__title-more-link"><span
-												class="btn-icon"></span>More</a>
+												class="btn-icon"></span>更多...</a>
 										</h2>
-										<ul class="news-events-feed__content">
-											<li class="news-events-feed__content__item"><a
-												href="http://www.adelaide.edu.au/news/news84042.html"
-												title="Read More About New models predicting where to find fossils">
-													<div class="news-events-feed__date">
-														<span class="news-events-feed__date__day-abbr"><strong>Fri</strong></span>
-														<span class="news-events-feed__date__day"><strong>8</strong></span>
-														<span class="news-events-feed__date__month--blue">Apr</span>
-													</div>
-													<div class="news-events-feed__excerpt">
-														<strong>New models predicting where to find
-															fossils</strong> <br> An international team of scientists
-														have developed a way to help locate fossils of
-														long-extinct animals. 、
-													</div>
-											</a></li>
-										</ul>
+										<#if newsList?exists>
+										<#list newsList as news>
+											<ul class="news-events-feed__content">
+												<li class="news-events-feed__content__item"><a
+													href="http://www.adelaide.edu.au/news/news84042.html"
+													title="Read More About New models predicting where to find fossils">
+														<div class="news-events-feed__date">
+															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>
+															<span class="news-events-feed__date__day"><strong>${news.newstime?string("dd")}</strong></span>
+															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
+														</div>
+														<div class="news-events-feed__excerpt">
+															<strong>${news.newstitle}</strong> <br>${news.newstitle}
+														</div>
+												</a></li>
+											</ul>
+										</#list>
+										</#if>
 									</div>
 
 
@@ -127,30 +128,30 @@
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="http://www.adelaide.edu.au/events/"
-												title="Read more What's On">What's On</a> <a
+												title="更多">校外连接</a> <a
 												href="http://www.adelaide.edu.au/events/"
-												title="Read More What's On"
+												title="更多"
 												class="news-events-feed__title-more-link"><span
-												class="btn-icon"></span>More</a>
+												class="btn-icon"></span>更多...</a>
 										</h2>
-										<ul class="news-events-feed__content">
-											<li class="news-events-feed__content__item"><a
-												href="http://www.adelaide.edu.au/events/event34122.html"
-												title="Read More About Shakespeare in the Playhouse">
-													<div class="news-events-feed__date">
-														<span class="news-events-feed__date__day-abbr"><strong>Tue</strong></span>
-														<span class="news-events-feed__date__day"><strong>5</strong></span>
-														<span class="news-events-feed__date__month--red">Apr</span>
-													</div>
-													<div class="news-events-feed__excerpt">
-														<strong>Shakespeare in the Playhouse</strong> <br>
-														Illustrating the performance history of Henry V, Midsummer
-														Night&#39;s Dream, Othello, The Winter&#39;s Tale and The
-														Merchant of Venice in Australia<abbr
-															title="...and overseas. Barr Smith Library, Rare Books &amp; Special Collections, Level 1 Free: All Welcome Ms Cheryl Hoskin (email), Special Collections Librarian, Business: (08) 8313 5224 http://www.adelaide.edu.au/library/special/">...</abbr>
-													</div>
-											</a></li>
-										</ul>
+										<#if newsList?exists>
+										<#list newsList as news>
+											<ul class="news-events-feed__content">
+												<li class="news-events-feed__content__item"><a
+													href="http://www.adelaide.edu.au/news/news84042.html"
+													title="Read More About New models predicting where to find fossils">
+														<div class="news-events-feed__date">
+															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>
+															<span class="news-events-feed__date__day"><strong>${news.newstime?string("dd")}</strong></span>
+															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
+														</div>
+														<div class="news-events-feed__excerpt">
+															<strong>${news.newstitle}</strong> <br>${news.newstitle}
+														</div>
+												</a></li>
+											</ul>
+										</#list>
+										</#if>
 									</div>
 
 
