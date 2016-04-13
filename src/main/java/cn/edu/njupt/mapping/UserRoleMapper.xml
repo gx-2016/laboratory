@@ -35,7 +35,7 @@
       ( #{item.userid,jdbcType=VARCHAR}, #{item.roleid,jdbcType=VARCHAR})
     </foreach>  
 </insert>  
-  
+  <!-- 根据角色id获取用户角色 -->
    <select id="findUserRoleByRoleId"   resultMap="UserRoleResultMap" parameterType="string" >
 	  select distinct case b.RoleID 
 		when  
@@ -53,6 +53,14 @@
 	    </if>
   </select>
   
+    <!-- 根据用户id获取用户角色 -->
+   <select id="findUserRoleByRoleId"   resultMap="UserRoleResultMap" parameterType="string" >
+	  select 
+		<include refid="Base_Column_List" />
+		from lab_user
+		where UserID = #{_parameter,jdbcType=VARCHAR}
+  </select>
+  
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -60,6 +68,7 @@
     from lab_user_role
     where SeqID = #{seqid,jdbcType=INTEGER}
   </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from lab_user_role
     where SeqID = #{seqid,jdbcType=INTEGER}
