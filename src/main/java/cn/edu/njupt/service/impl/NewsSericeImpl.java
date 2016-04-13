@@ -41,4 +41,10 @@ public class NewsSericeImpl implements NewsServiceI{
 		return newsMapper.queryAllNews();
 	}
 
+	@Override
+	public News queryNewsById(int newsId) {
+		// TODO Auto-generated method stub
+		return newsMapper.selectByPrimaryKey(newsId);
+	}
+
 }
