@@ -53,6 +53,7 @@ public class IndexController {
 	
 	@RequestMapping("/people.do")
 	public String peopele(){
+		
 		return "people";
 	}
 	

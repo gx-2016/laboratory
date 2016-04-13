@@ -19,6 +19,23 @@
     <result column="LogonName" property="logonname" jdbcType="VARCHAR" />
     <result column="flag" property="flag" jdbcType="VARCHAR" />
   </resultMap>
+  <!-- 根据角色id删除用户角色关联 -->
+  <delete id="deleteByRoleid" parameterType="java.lang.Integer" >
+    delete from lab_user_role
+    where RoleID = #{roleid,jdbcType=VARCHAR}
+  </delete>
+  <!-- 保存用户角色关联 -->
+  <insert id="insertUserRole" useGeneratedKeys="true" parameterType="java.util.List">  
+    <selectKey resultType="long" keyProperty="SeqID" order="AFTER">  
+        SELECT  
+        LAST_INSERT_ID()  
+    </selectKey>  
+    insert into lab_user_role ( UserID, RoleID)  values 
+    <foreach collection="list" item="item" index="index" separator="," >  
+      ( #{item.userid,jdbcType=VARCHAR}, #{item.roleid,jdbcType=VARCHAR})
+    </foreach>  
+</insert>  
+  
    <select id="findUserRoleByRoleId"   resultMap="UserRoleResultMap" parameterType="string" >
 	  select distinct case b.RoleID 
 		when  

@@ -97,6 +97,39 @@ public class RoleServiceImpl implements RoleServiceI{
 	public List<UserRole> findUserRoleByRoleId(String roleid) {
 		return userRoleMapper.findUserRoleByRoleId(roleid);
 	}
+
+	/*
+	 * 根据角色id删除角色权限关联
+	 */
+	@Override
+	public int deleteRolePadomById(String roleid) {
+		return rolePopedomMapper.deleteByPrimaryKey(Integer.parseInt(roleid));
+		
+	}
+
+	/* 
+	 * 保存角色权限关联
+	 */
+	@Override
+	public int insertRolePadom(RolePopedom popedom) {
+		return rolePopedomMapper.insert(popedom);
+	}
+
+	/* 
+	 * 根据角色id删除用户角色关联
+	 */
+	@Override
+	public int deleteRoleUserById(String roleid) {
+		return userRoleMapper.deleteByRoleid(roleid);
+	}
+
+	/*
+	 * 保存用户角色关联 
+	 */
+	@Override
+	public int insertUserRole(List<UserRole> list) {
+		return userRoleMapper.insertUserRole(list);
+	}
 	
 
 }

@@ -11,36 +11,26 @@ public interface RoleServiceI {
 
 	List<XmlObject> readXml(String realpath);
 
-	/**
-	 * @Description: TODO
-	 * @Parameter: @param roleid
-	 * @Parameter: @return
-	 * @Return:RolePopedom
-	 * @Author: 高翔
-	 * @Date: 2016年4月6日
-	 */
 	RolePopedom findRolePopedomByRoleId(String roleid);
 
-	/**
-	 * @Description: TODO
-	 * @Parameter: @param realpath
-	 * @Parameter: @param popedom
-	 * @Parameter: @return
-	 * @Return:List<XmlObject>
-	 * @Author: 高翔
-	 * @Date: 2016年4月6日
-	 */
 	List<XmlObject> macthRolePopedom(String realpath, RolePopedom popedom);
+
+	List<UserRole> findUserRoleByRoleId(String roleid);
+
+	int deleteRolePadomById(String roleid);
+	
+	int insertRolePadom(RolePopedom popedom);
+
+	int deleteRoleUserById(String roleid);
 
 	/**
 	 * @Description: TODO
-	 * @Parameter: @param roleid
-	 * @Parameter: @return
-	 * @Return:List<UserRole>
+	 * @Parameter: @param list
+	 * @Return:void
 	 * @Author: 高翔
-	 * @Date: 2016年4月10日
+	 * @Date: 2016年4月12日
 	 */
-	List<UserRole> findUserRoleByRoleId(String roleid);
+	int insertUserRole(List<UserRole> list);
 
 
 }
