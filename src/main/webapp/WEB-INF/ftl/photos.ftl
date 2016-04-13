@@ -64,13 +64,14 @@
 
 					<div class="addPad">
 						<!-- News and Events feeds -->
-						<#assign i =1>
+						<#assign leftindex =3>
+						<#assign rightindex =1>
 						<#if photos? exists>
 						 <#list photos as photo>
-							 <#if i%3 ==0>
-							 <div class="row-fluid" float:left>
+							 <#if leftindex % 3 ==0>
+							 <div class="row-fluid" >
 							 </#if>
-								<div class="span4"  style="padding:4px 8px; width:350px;" float:left>
+								<div class="span4"  style="padding:4px 8px; width:350px;" style="float:left">
 								  <a href="photo/${photo.picurl}" >
 									<img src="photo/${photo.picurl}" 
 									style="width:450px;height:250px;" 
@@ -78,14 +79,13 @@
 											<h3>${photo.picname}</h3>
 									</a>
 								</div>
-						    <#if i%3 ==0>
+						    <#if rightindex % 3 ==0>
 								 </div>
 							</#if>
-							 <#assign i = i+1>
+							 <#assign leftindex = leftindex+1>
+							 <#assign rightindex = rightindex+1>
 						 </#list>
 	                     </#if>
-					
-						
 						
 					</div>
 					<!-- addPad -->
