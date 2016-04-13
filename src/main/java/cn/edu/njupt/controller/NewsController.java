@@ -35,7 +35,7 @@ public class NewsController {
 		newsList.add(news);
 		
 		modelMap.put("newsList", newsList);
-		return "news";
+		return "news/newsDetails";
 	}
 	
 	
