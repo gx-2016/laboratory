@@ -9,7 +9,7 @@ public interface UserMapper {
 
     int insert(User record);
 
-    int insertSelective(User record);
+    int insertSelective(User user1);
 
     User selectByPrimaryKey(Integer userid);
 
@@ -18,6 +18,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User user);
 
 	List<User> getAllUser();
+
+	User findUserExist(String logonname);
 
 
 }

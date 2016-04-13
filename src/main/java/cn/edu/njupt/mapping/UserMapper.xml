@@ -26,6 +26,15 @@
     Email, Mobile, IsDuty, OnDutyDate, OffDutyDate, PersonPage, PhotoUrl, Education, 
     Remark
   </sql>
+  <!--根据登录名查询用户  -->
+  <select id="findUserExist" resultMap="BaseResultMap" parameterType="string" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user
+    where LogonName = #{logonname,jdbcType=VARCHAR}
+	       
+  </select>
+  
   
   <!--查询所有用户  -->
  <select id="getAllUser" resultMap="BaseResultMap"  >

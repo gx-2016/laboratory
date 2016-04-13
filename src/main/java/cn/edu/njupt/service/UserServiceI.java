@@ -11,4 +11,10 @@ public interface UserServiceI {
 	public List<User> getAllUser();
 
 	public int updateUser(User user); 
+	
+	public int deleteUser(Integer userid);
+
+	public User findUserExist(String logonname);
+
+	public int addUser(User user1);
 }

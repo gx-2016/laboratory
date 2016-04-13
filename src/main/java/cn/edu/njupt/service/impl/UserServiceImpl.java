@@ -35,8 +35,38 @@ public class UserServiceImpl implements UserServiceI{
 	@Override
 	public int updateUser(User user) {
 		// TODO 自动生成的方法存根
-		System.out.println(user.getUserid()+" :::  "+user.getUsername());
 		return userMapper.updateByPrimaryKeySelective(user);
 	}
+
+    
+	/**
+	 * 后台删除成员
+	 */
+	@Override
+	public int deleteUser(Integer userid) {
+		// TODO 自动生成的方法存根
+		return userMapper.deleteByPrimaryKey(userid);
+	}
+
+
+	
+	 /**
+     * 验证登录名是否存在
+     */
+	@Override
+	public User findUserExist(String logonname) {
+		return userMapper.findUserExist(logonname);
+	}
+
+
+	@Override
+	public int addUser(User user1) {
+		// TODO 自动生成的方法存根
+		return userMapper.insertSelective(user1);
+	}
+	
+	
+
+   
 
 }

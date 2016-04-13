@@ -48,23 +48,30 @@
                         <h4 class="modal-title">新增用户</h4>
                     </div>
                     <!--新增的form表单-->
-                    <form id="saveUserForm" action="savedo" method="post" enctype="multipart/form-data">
+                    <form id="saveUserForm" action="addUser.do" method="post" enctype="multipart/form-data">
 	                    <div class="modal-body">
 	                        <div class="row">
-	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-2" class="control-label">姓名</label>
-	                                    <input type="text" class="form-control" id="username" name= "username"  placeholder="输入姓名">
+	                                    <input type="text" class="form-control" id="username" name= "username"  placeholder="输入姓名" >
 	                                </div>
-	                            </div>
+	                            
+	                         </div>
+	                          <div class="row">
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-3" class="control-label">登录名</label>
-	                                    <input type="text" class="form-control" id="logonname" name="logonname"  placeholder="输入登录名">
+	                                    <input type="text" class="form-control" id="logonname" name="logonname"  placeholder="输入登录名" onblur="checklogonname()">
 	                                </div>
 	                            </div>
-	                         </div>
-	                         
+	                           <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">密码</label>
+	                                    <input type="text" class="form-control" id="logonpwd" name= "logonpwd" placeholder="输入登陆密码" >
+	                                </div>
+	                            </div>
+	                           </div>
+	                           <!--
 	                          <div class="row">
 	                           <div class="col-md-6">
 	                                <div class="form-group">
@@ -94,13 +101,13 @@
 			                                </div>
 			                            </div>
 	                             </div>
-	                         
+	                         -->
 	                         <div class="row">
 	                            <div class="col-md-6">
 	                                <div class="form-group">
-	                                     <label class="col-sm-4 control-label">性别:</label>
+	                                     <label class="col-sm-4 control-label">性别</label>
                                         <div class="col-sm-8">
-                                           <select  id="sex" class="form-control" name="sex" >
+                                           <select  id="sexid" class="form-control" name="sexid" >
 													 <option value="0">男</option>
 													 <option value="1">女</option>
 											</select>
@@ -136,43 +143,28 @@
 	                         </div>
 	                         <div class="row">
 	                            
+	                            <!--
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-3" class="control-label">电话</label>
 	                                    <input type="text" class="form-control" id="mobile" name="mobile"  placeholder="输入电话">
 	                                </div>
 	                            </div>
+	                            -->
 	                             <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-2" class="control-label">个人主页</label>
 	                                    <input type="text" class="form-control" id="personpage" name= "personpage" placeholder="输入个人主页网址"  >
 	                                </div>
 	                            </div>
-	                         </div>
-	                         
-	                             <div class="row">
 	                            <div class="col-md-6">
 	                                <div class="form-group">
-	                                    <label for="field-2" class="control-label">公司名称</label>
+	                                    <label for="field-2" class="control-label">毕业去向</label>
 	                                    <input type="text" class="form-control" id="companyname" name= "companyname"  placeholder="输入公司">
 	                                </div>
 	                            </div>
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                    <label for="field-3" class="control-label">公司职务</label>
-	                                    <input type="text" class="form-control" id="workdetail" name="workdetail"  placeholder="输入公司职务">
-	                                </div>
-	                            </div>
 	                         </div>
 	                         
-	                          <div class="row">
-	                            <div class="col-md-12">
-	                                <div class="form-group">
-	                                    <label for="field-3" class="control-label">家庭地址</label>
-	                                    <input type="textarea" class="form-control" id="address" name="address"  placeholder="输入地址">
-	                                </div>
-	                            </div>
-	                         </div>
 
 	                         <div class="row">
 	                           <div class="col-md-6">
@@ -215,14 +207,26 @@
 	                                    <input type="text" class="form-control" id="update_username" name= "username"  placeholder="输入姓名">
 	                                </div>
 	                            </div>
+	                                <div class="form-group">
+	                                     <label class="col-sm-6 control-label">性别</label>
+                                        <div class="col-sm-6">
+                                           <select  id="update_sexid" class="form-control" name="sexid" >
+													 <option value="0">男</option>
+													 <option value="1">女</option>
+											</select>
+                                        </div>
+	                             </div>
+	                                
+	                             <!--  
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-3" class="control-label">登录名</label>
 	                                    <input type="text" class="form-control" id="update_logonname" name="logonname"  placeholder="输入登录名">
 	                                </div>
 	                            </div>
+	                            --> 
 	                         </div>
-	                         
+	                         <!--
 	                          <div class="row">
 	                           <div class="col-md-6">
 	                                <div class="form-group">
@@ -252,8 +256,10 @@
 			                                </div>
 			                            </div>
 	                             </div>
+	                             -->
 	                         
 	                         <div class="row">
+	                            <!--
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                     <label class="col-sm-4 control-label">性别:</label>
@@ -265,6 +271,7 @@
                                         </div>
 	                                </div>
 	                            </div>
+	                            -->
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                     <label class="col-sm-4 control-label">是否毕业</label>
@@ -293,13 +300,20 @@
 	                            </div>
 	                         </div>
 	                         <div class="row">
-	                            
+	                            <!--
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-3" class="control-label">电话</label>
 	                                    <input type="text" class="form-control" id="update_mobile" name="mobile"  placeholder="输入电话">
 	                                </div>
 	                            </div>
+	                            -->
+		                            <div class="col-md-6">
+		                                <div class="form-group">
+		                                    <label for="field-2" class="control-label">毕业去向</label>
+		                                    <input type="text" class="form-control" id="update_companyname" name= "companyname"  placeholder="输入公司">
+		                                </div>
+		                            </div>
 	                             <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-2" class="control-label">个人主页</label>
@@ -309,28 +323,18 @@
 	                         </div>
 	                         
 	                             <div class="row">
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                    <label for="field-2" class="control-label">公司名称</label>
-	                                    <input type="text" class="form-control" id="update_companyname" name= "companyname"  placeholder="输入公司">
-	                                </div>
-	                            </div>
+	                            <!--
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-3" class="control-label">公司职务</label>
 	                                    <input type="text" class="form-control" id="update_workdetail" name="workdetail"  placeholder="输入公司职务">
 	                                </div>
 	                            </div>
+	                            -->
+	                            
 	                         </div>
 	                         
-	                          <div class="row">
-	                            <div class="col-md-12">
-	                                <div class="form-group">
-	                                    <label for="field-3" class="control-label">家庭地址</label>
-	                                    <input type="textarea" class="form-control" id="update_address" name="address"  placeholder="输入地址">
-	                                </div>
-	                            </div>
-	                         </div>
+	                          
 
 	                         <div class="row">
 	                           <div class="col-md-6">
@@ -410,7 +414,7 @@
                                        </b>
                                     </h4>
                                     <div id ="dataList">
-                                    <#include "userData.ftl">
+                                       <#include "userData.ftl">
                                     </div>
 		                                
 		                          </div>
@@ -473,8 +477,12 @@
             $(document).ready(function() {
                 $('#datatable').dataTable();
             } );
-	          function checklogonname(){
-	                //判断该用户是否已经存在
+	          
+	           
+	            //判断该用户是否已经存在
+	           function checklogonname(){
+	           
+	           var logonname = $("#logonname").val();
 	               	$.ajax({
 							type: "post",
 							url: "findUserExist.do",
@@ -482,28 +490,11 @@
 								logonname:logonname
 							},
 							 success: function(data) {
-					            if(data.result=='1')
-					            {
-						            alert("该用户已存在！");
-						            return false;
-					            }
-					         },
-						});
-				  }
-	           
-	           function checkusername(){
-	                //判断该用户是否已经存在
-	               	$.ajax({
-							type: "post",
-							url: "findUserExist.do",
-							data: {
-								username:username
-							},
-							 success: function(data) {
-					            if(data.result=='1')
-					            {
-						            alert("该用户已存在！");
-						            return false;
+					            if(data.result=='ok')
+					            {   
+					                document.getElementById("logonname").value="";
+						            alert("该登录名已存在！");
+						            
 					            }
 					         },
 						});
@@ -515,12 +506,42 @@
 	              $("#updateUserForm").submit();
 			        
 				}
-						
+					
+					//提交新增用户信息	
 	          function saveUser(){
+	             var username = $("#username").val();
+	             var logonname = $("#logonname").val();
+	             var logonpwd = $("#logonpwd").val();
+	             var isduty = $("#isduty").val();
+	             var education = $("#education").val();
+	             var companyname = $("#companyname").val();
+	             
+	             if(username==""){
+	             alert("姓名不能为空");
+	             return false;
+	             }
+	             
+	             if(logonname==""){
+	             alert("登录名不能为空");
+	              return false;
+	             }
+	             
+	             if(logonpwd==""){
+	             alert("密码不能为空");
+	              return false;
+	             }
+	             
+	             if(isduty==""){
+	             alert("是否毕业不能为空");
+	              return false;
+	             }
+	             
 	             $("#saveUserForm").submit();
-			        //保存选中的关键字对应的数据项
+			        
+			        
 			  }
-		
+		      
+		      //后台修改成员信息
 			  function update(obj){
 				var tds=$(obj).parent().parent().find('td');
 				var inputs=$(obj).parent().parent().find('input');
@@ -529,7 +550,7 @@
 				
 				
 				$('#update_personpage').val(inputs.eq(0).val());
-			   $('#update_userid').val(inputs.eq(1).val());
+			    $('#update_userid').val(inputs.eq(1).val());
 				$('#update').modal('show');
 			}
         </script>

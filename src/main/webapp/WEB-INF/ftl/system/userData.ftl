@@ -3,9 +3,8 @@
 		        <th>编号</th>
 		        <th>姓名</th>
 		        <th>性别</th>
-		        <th>住址</th>
-		        <th>电话</th>
-		        <th>邮箱</th>
+		        <th>学历</th>
+		        <th>个人主页</th>
 		        <th>是否毕业</th>
 		        <th>毕业去向</th>
 		        <th>编辑</th>
@@ -16,7 +15,7 @@
 				    <#list userList as user>
 				    <tr>
 				        <td>${(user_index)+1}</td>
-				        <td>${user.username}</td>
+				        <td align="center">${user.username}</td>
 				        <#if user.sexid??>
 					        <#if  user.sexid == '0' >
 					        <td>男</td>
@@ -27,20 +26,20 @@
 					        <td></td>
 					    </#if>
 				        
-				        <#if user.address??>
-				        <td>${user.address}</td>
+				        <#if user.education??>
+				        <td>${user.education}</td>
 				        <#else>
 				        <td></td>
 				        </#if>
-				        
-				         <#if user.mobile??>
-				        <td>${user.mobile}</td>
-				        <#else>
-				        <td></td>
-				        </#if>
-				        
-				          <#if user.email??>
+				        <!--
+				         <#if user.email??>
 				        <td>${user.email}</td>
+				        <#else>
+				        <td></td>
+				        </#if>
+				        --> 
+				        <#if user.personpage??>
+				        <td>${user.personpage}</td>
 				        <#else>
 				        <td></td>
 				        </#if>
@@ -55,12 +54,15 @@
 					        <td></td>
 					    </#if>
 				        
-				           <#if user.companyname??>
-				        <td>${user.companyname}</td>
-				        <#else>
-				        <td></td>
+				        <#if user.companyname??>
+					        <td>${user.companyname}</td>
+					        <#else>
+					        <td></td>
 				        </#if>
-				        <td><a onclick="update(this)">修改</a> | <a href="javascript:del('${user.userid}')">删除</a></td>
+				        
+				        
+				        
+				        <td><a onclick="update(this)">修改</a> | <a href="deleteUser.do?userid=${user.userid}" onclick="javascript:return confirm('确实要删除吗？')">删除</a></td>
 				        <#if user.personpage??>
 				        
 				         <input type="hidden" name='personpage' value='${user.personpage}'>
