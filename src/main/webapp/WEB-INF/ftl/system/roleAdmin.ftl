@@ -55,7 +55,17 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
+                       <!-- 提示信息 -->
+					       <#if message??>
+						       <div class="alert alert-success alert-dismissable">
+								   <button type="button" class="close" data-dismiss="alert" 
+								      aria-hidden="true">
+								      &times;
+								   </button>
+								      ${message}
+							  </div>
+						  </#if>
+					      <!-- /.提示信息 -->
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -163,27 +173,28 @@
 	        }
 	      
 	        //保存
-	         function   saveRolePopedom()
+	         function  saveRolePopedom()
 	        {
 	          var ddlcode = $("#keyword").val();
-	          var rolepadomlist =""; 
+	          var rolepadom =""; 
 				$('input[name="rolepadom"]:checked').each(function(){ 
-				rolepadomlist += $(this).val(); 
+				rolepadom += $(this).val(); 
 				}); 
-	           var roleuserlist =[]; 
+	           var roleuser = new Array(); 
 				$('input[name="roleuser"]:checked').each(function(){ 
-				roleuserlist.push($(this).val()); 
+				roleuser.push($(this).val()); 
 				}); 
-	          alert(rolepadomlist);
-	          alert(roleuserlist);
+	          alert(rolepadom);
+	          alert(roleuser);
 
 	          $.ajax({
 	              type: "post",
 	              url: "roleSave.do",
+	              dataType: "json",
 	              data:{
-	                roleid:ddlcode,
-	                rolepadomlist:rolepadomlist,
-	                roleuserlist:roleuserlist
+	                "roleid":ddlcode,
+	                "rolepadom":rolepadom,
+	                "roleuser":roleuser
 	              },
 	              success: function(data){
 	                 $("#dataList").html(data);
@@ -194,14 +205,14 @@
 	        
 	        //全部选择
 			 $("#all").click(function(){  
-			  $("input[name='checkbox1']").each(function(){
+			  $("input[name='roleuser']").each(function(){
 			   $(this).attr("checked",true);
 			  });  
 			 });
 			 
 			 //取消选择
 			 $("#delAll").click(function(){  
-			  $("input[name='checkbox1']").each(function(){
+			  $("input[name='roleuser']").each(function(){
 			   $(this).attr("checked",false);
 			  });  
 			 });

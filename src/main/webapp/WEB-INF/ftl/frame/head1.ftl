@@ -31,7 +31,7 @@
     <!-- Branding -->
     <div class="row brandCont">
       <div class="span8 branding-title"> <a href="home.do" title="The Laboratory of ICV" class="branding-title home-title"> The Laboratory <em>of</em> ICV </a> </div>
-      <div class="span4 branding-logo"> <a href="//http://www.njupt.edu.cn//" title="Nanjing University Of Posts And Telecommunications"> <img src="Picture/head_1.gif" alt="The Logo of NJUPT "> </a> </div>
+      <div class="span4 branding-logo"> <a href="//http://www.njupt.edu.cn//" title="Nanjing University Of Posts And Telecommunications"> <img src="/laboratory/Picture/head_1.gif" alt="The Logo of NJUPT "> </a> </div>
     </div>
     
     <!-- Megamenu -->
@@ -47,36 +47,36 @@
 		                </div>
 						<ul class="nav">
 							<li class="parent menu-btn-home" id="ui-menu-btn-home">
-								<a href="home.do"> Home <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/home.do"> Home <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-news" id="ui-menu-btn-news">
-								<a href="news.do"> <span class="divider-lt">&nbsp;</span>News <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/news.do"> <span class="divider-lt">&nbsp;</span>News <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-learn" id="ui-menu-btn-learn">
-								<a href="learn.do"> <span class="divider-lt">&nbsp;</span> Learn <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/learn.do"> <span class="divider-lt">&nbsp;</span> Learn <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-share" id="ui-menu-btn-share">
-								<a href="share.do"> <span class="divider-lt">&nbsp;</span>Share <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/share.do"> <span class="divider-lt">&nbsp;</span>Share <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-research" id="ui-menu-btn-research">
-								<a href="research.do"> <span class="divider-lt">&nbsp;</span> Research <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/research.do"> <span class="divider-lt">&nbsp;</span> Research <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-projects" id="ui-menu-btn-projects">
-								<a href="projects.do"> <span class="divider-lt">&nbsp;</span> Projects <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/projects.do"> <span class="divider-lt">&nbsp;</span> Projects <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						
 							<li class="parent menu-btn-people" id="ui-menu-btn-people">
-								<a href="people.do"> <span class="divider-lt">&nbsp;</span> People <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/people.do"> <span class="divider-lt">&nbsp;</span> People <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-photos" id="ui-menu-btn-photos">
-								<a href="photos.do"> <span class="divider-lt">&nbsp;</span>Photos <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/photos.do"> <span class="divider-lt">&nbsp;</span>Photos <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						</ul>

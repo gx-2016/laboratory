@@ -23,10 +23,10 @@
 <meta name="author" content="">
 
 <!-- Le styles -->
-<link href="Css/jquery-ui-1.8.13.uoa.css" media="all" rel="stylesheet">
-<link href="Css/df-autocomplete.css" media="all" rel="stylesheet">
-<link href="Css/styles.min.css" media="screen" rel="stylesheet">
-<!-- <link href="Css/print.min.css" media="print" rel="stylesheet" /> -->
+<link href="../Css/jquery-ui-1.8.13.uoa.css" media="all" rel="stylesheet">
+<link href="../Css/df-autocomplete.css" media="all" rel="stylesheet">
+<link href="../Css/styles.min.css" media="screen" rel="stylesheet">
+<!-- <link href="../Css/print.min.css" media="print" rel="stylesheet" /> -->
 
 <!--[if lt IE 9]>
       <script src="Scripts/html5.js"></script>
@@ -34,26 +34,26 @@
 
 <!-- Fav and touch icons -->
 <link rel="shortcut icon"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
+	href="../global/v/response1/img/apple-touch-icon-57-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="global/v/response1/img/apple-touch-icon-144-precomposed.png" />
+	href="../global/v/response1/img/apple-touch-icon-144-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="global/v/response1/img/apple-touch-icon-114-precomposed.png" />
+	href="../global/v/response1/img/apple-touch-icon-114-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="global/v/response1/img/apple-touch-icon-72-precomposed.png" />
+	href="../global/v/response1/img/apple-touch-icon-72-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="57x57"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
+	href="../global/v/response1/img/apple-touch-icon-57-precomposed.png" />
 <link rel="apple-touch-icon-precomposed"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
+	href="../global/v/response1/img/apple-touch-icon-57-precomposed.png" />
 <link rel="apple-touch-icon"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
-<script src="Scripts/production.min.js"></script>
+	href="../global/v/response1/img/apple-touch-icon-57-precomposed.png" />
+<script src="../Scripts/production.min.js"></script>
 
 </head>
 
 <body>
 
-	<#include "frame/head1.ftl">
+	<#include "../frame/head1.ftl">
 	<!--page content-->
 	<section class="new-home">
 		<div id="page-container" class="container">
@@ -121,6 +121,6 @@
 		</div>
 	</section>
 
-	<#include "frame/footer1.ftl">
+	<#include "../frame/footer1.ftl">
 </body>
 </html>

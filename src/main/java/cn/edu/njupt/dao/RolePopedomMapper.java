@@ -14,4 +14,6 @@ public interface RolePopedomMapper {
     int updateByPrimaryKeySelective(RolePopedom record);
 
     int updateByPrimaryKey(RolePopedom record);
+
+	void deleteRolePadomById(String roleid);
 }

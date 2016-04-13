@@ -1,5 +1,6 @@
 package cn.edu.njupt.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.edu.njupt.model.RolePopedom;
 import cn.edu.njupt.model.SystemDDL;
@@ -64,14 +66,34 @@ public class RoleController {
 	
 	@Transactional(readOnly=false,isolation=Isolation.DEFAULT,propagation=Propagation.REQUIRED)
 	@RequestMapping("/roleSave.do")
-	public String roleSave(ModelMap map,String roleid,String rolepadomlist,String roleuserlist)
+	public String roleSave(ModelMap map,String roleid,String rolepadom,@RequestParam("roleuser[]") String roleuser[])
 	{
-		//根据角色id删除角色和权限关联
-		//1.保存角色和权限关联
-		
-		
-		//根据角色id删除角色和用户关联
-		//2.保存角色和用户关联
+		try {
+			//根据角色id删除角色和权限关联
+		    roleServiceI.deleteRolePadomById(roleid);
+			//1.保存角色和权限关联
+			RolePopedom popedom = new RolePopedom();
+			popedom.setRoleid(Integer.parseInt(roleid));
+			popedom.setPopedomcode(rolepadom);
+			roleServiceI.insertRolePadom(popedom);
+			
+			//根据角色id删除角色和用户关联
+			 roleServiceI.deleteRoleUserById(roleid);
+			 List<UserRole> list = new ArrayList<UserRole>();
+			//2.保存角色和用户关联
+	         for (String string : roleuser) {
+	        	 UserRole userRole = new UserRole();
+	        	 userRole.setRoleid(roleid);
+	        	 userRole.setUserid(string);
+	        	 list.add(userRole);
+			}	
+	         roleServiceI.insertUserRole(list);
+	         map.put("message", "修改成功！");
+			
+		} catch (Exception e) {
+			 map.put("message", "修改失败！");
+		e.printStackTrace();
+		}
 		return "system/roleEdit";
 	}
 }

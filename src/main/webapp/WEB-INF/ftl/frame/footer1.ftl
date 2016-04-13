@@ -2,7 +2,7 @@
   <div class="container"> 
     <div class="row">
 	<div class="span12 tagline">
-		<a href="http://www.adelaide.edu.au/seek-light/" title="seek LIGHT"> <img src="Picture/ui-tagline-seek-light.png" alt="seek LIGHT"> </a>
+		<a href="http://www.adelaide.edu.au/seek-light/" title="seek LIGHT"> <img src="/laboratory/Picture/ui-tagline-seek-light.png" alt="seek LIGHT"> </a>
 	</div>
 </div>
 
@@ -17,8 +17,8 @@
 				<li class="hidden-desktop"><a href="//www.adelaide.edu.au/legals/disclaim.html" title="Website Disclaimer">Disclaimer</a></li>
 				<li><a href="//www.adelaide.edu.au/feedback/" title="Website Feedback">Feedback</a></li>
 			</ul>
-			<a href="http://www.go8.edu.au/" title="A member of the Group of Eight"><img src="Picture/bg-footer-contents-group8-logo.png" alt="Group of 8 Member" class="footer-g8logo"></a>
-			<a href="http://www.southaustralia.com/" title="South Australia, the Festival State"><img src="Picture/brandsa-foot_logo.png" alt="South Australia" class="footer-brandsalogo"></a>
+			<a href="http://www.go8.edu.au/" title="A member of the Group of Eight"><img src="/laboratory/Picture/bg-footer-contents-group8-logo.png" alt="Group of 8 Member" class="footer-g8logo"></a>
+			<a href="http://www.southaustralia.com/" title="South Australia, the Festival State"><img src="/laboratory/Picture/brandsa-foot_logo.png" alt="South Australia" class="footer-brandsalogo"></a>
 		</div>
 		<div class="span2 no-mobile">
 			<h4 class="footer-title">Information For</h4>
@@ -62,7 +62,7 @@
 		<div class="span2">
 			<div class="prefix_1 vcard">
 				<div class="logo">
-					<a href="//www.adelaide.edu.au/" title="Nanjing University Of Posts And Telecommunications"><img src="Picture/bg-footer-logo.png" alt="Nanjing University Of Posts And Telecommunications"></a> 
+					<a href="//www.adelaide.edu.au/" title="Nanjing University Of Posts And Telecommunications"><img src="/laboratory/Picture/bg-footer-logo.png" alt="Nanjing University Of Posts And Telecommunications"></a> 
 				</div>
 				<div class="address"><a class="fn org summary" href="//www.adelaide.edu.au/">Nanjing University Of Posts And Telecommunications</a><br>
 					<span class="adr"> <span class="locality">Adelaide</span>, <span class="region">South Australia</span><br>
