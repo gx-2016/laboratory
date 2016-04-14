@@ -24,17 +24,14 @@ public class IndexController {
 	private NewsServiceI newsService;
 	
 	@RequestMapping("/home.do")
-	public String home(ModelMap modelMap){	
-		 	List<News> newsList= newsService.queryNewsforHomeNews(5);	
-		 	modelMap.put("newsList", newsList);
-		  		return "home";
-}
+	public String home(){
+		return "home";
+	}
 	
 	@RequestMapping("/news.do")
 	public String news(ModelMap  modelMap){
 		 	List<News> newsList= newsService.queryAllNews();	
 		 	modelMap.put("newsList", newsList);
-		 	int j = 0;
 		  	return "news";
 	}
 	
