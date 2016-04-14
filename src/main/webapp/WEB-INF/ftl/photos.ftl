@@ -49,6 +49,9 @@
 	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
 <script src="Scripts/production.min.js"></script>
 
+
+<!--点击放大图片特效-->
+<link rel="stylesheet" href="Css/lightbox.css" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -72,12 +75,12 @@
 							 <div class="row-fluid" >
 							 </#if>
 								<div class="span4"  style="padding:4px 8px; width:350px;" style="float:left">
-								 <!-- <a href="photo/${photo.picurl}" >-->
+								  <a href="photo/${photo.picurl}"  rel="lightbox">
 									<img src="photo/${photo.picurl}" 
 									style="width:450px;height:250px;" 
 									alt="Image">
-											<h3>${photo.picname}</h3>
-								<!-- </a> -->
+									<h3>${photo.picname}</h3>
+								   </a> 
 								</div>
 						    <#if rightindex % 3 ==0>
 								 </div>
@@ -113,8 +116,13 @@
 	<!-- Magnific Popup -->
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	<script src="assets/js/magnific-popup-options.js"></script>
-
-
+    
+    <!--点击放大图片特效-->
+    <script src="assets/js/prototype.js" type="text/javascript"></script>
+	<script src="assets/js/scriptaculous.js?load=effects" type="text/javascript"></script>
+	<script src="assets/js/lightbox.js" type="text/javascript"></script>
+	
+	
 	<!-- Main JS (Do not remove) -->
 	<script src="assets/js/main.js"></script>
 
