@@ -49,8 +49,8 @@ public class UserController {
 	 * @Author: gx
 	 * @Date: 2016年4月13日
 	 */
-	@RequestMapping("/userAdminByUserId/{userid}.do")
-	public String userAdminByUserId(ModelMap map,@PathVariable("userid") Integer userid) {
+	@RequestMapping("/userAdminByUserId")
+	public String userAdminByUserId(ModelMap map, Integer userid) {
 		List<User> userList =new ArrayList<User>();
 		userList.add(userServiceI.getUserById(userid));
 		map.put("userList", userList);

@@ -55,17 +55,6 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-                       <!-- 提示信息 -->
-					       <#if message??>
-						       <div class="alert alert-success alert-dismissable">
-								   <button type="button" class="close" data-dismiss="alert" 
-								      aria-hidden="true">
-								      &times;
-								   </button>
-								      ${message}
-							  </div>
-						  </#if>
-					      <!-- /.提示信息 -->
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -97,6 +86,17 @@
 					   </div>
 					   <hr>
                           <div id ="dataList">
+                            <!-- 提示信息 -->
+					       <#if message??>
+						       <div class="alert alert-success alert-dismissable">
+								   <button type="button" class="close" data-dismiss="alert" 
+								      aria-hidden="true">
+								      &times;
+								   </button>
+								      ${message}
+							  </div>
+						  </#if>
+					      <!-- /.提示信息 -->
                            <#include "roleData.ftl">
                          </div>
                         <!--end Page-Content-->
@@ -184,38 +184,36 @@
 				$('input[name="roleuser"]:checked').each(function(){ 
 				roleuser.push($(this).val()); 
 				}); 
-	          alert(rolepadom);
-	          alert(roleuser);
 
 	          $.ajax({
 	              type: "post",
 	              url: "roleSave.do",
-	              dataType: "json",
+	              dataType:"json",
 	              data:{
 	                "roleid":ddlcode,
 	                "rolepadom":rolepadom,
 	                "roleuser":roleuser
 	              },
 	              success: function(data){
-	                 $("#dataList").html(data);
+	                alert(data.message);
 	              },
 	          });
 	        
 	        }
 	        
 	        //全部选择
-			 $("#all").click(function(){  
+			function selectAll(){  
 			  $("input[name='roleuser']").each(function(){
 			   $(this).attr("checked",true);
 			  });  
-			 });
+			 }
 			 
 			 //取消选择
-			 $("#delAll").click(function(){  
+			function unSelect(){  
 			  $("input[name='roleuser']").each(function(){
 			   $(this).attr("checked",false);
 			  });  
-			 });
+			 }
         </script>
         
     </body>

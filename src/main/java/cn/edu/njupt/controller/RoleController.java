@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.edu.njupt.model.RolePopedom;
 import cn.edu.njupt.model.SystemDDL;
@@ -65,8 +66,9 @@ public class RoleController {
 	}
 	
 	@Transactional(readOnly=false,isolation=Isolation.DEFAULT,propagation=Propagation.REQUIRED)
+	@ResponseBody
 	@RequestMapping("/roleSave.do")
-	public String roleSave(ModelMap map,String roleid,String rolepadom,@RequestParam("roleuser[]") String roleuser[])
+	public ModelMap roleSave(ModelMap map,String roleid,String rolepadom,@RequestParam("roleuser[]") String roleuser[])
 	{
 		try {
 			//根据角色id删除角色和权限关联
@@ -94,6 +96,6 @@ public class RoleController {
 			 map.put("message", "修改失败！");
 		e.printStackTrace();
 		}
-		return "system/roleEdit";
+		return map;
 	}
 }

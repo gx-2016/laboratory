@@ -61,11 +61,15 @@
                                     <li><a href="../role/roleAdmin.do">角色管理</a></li>
                                  </#if>
                                  <!--根据用户角色，管理员可以管理所有，普通用户只能编辑自己-->
-                                   <#if userRoleMap.containsKey("1") >
-								     <li><a href="../user/userAdmin.do">用户管理</a></li>
-					               <#else>
-					                  <li><a href="../user/userAdminByUserId/${logonuser.userid}.do">用户管理</a></li>
-					               </#if>
+                                    <#if userRoleMap?? >
+		                                   <#if userRoleMap['1']?? >
+										     <li><a href="../user/userAdmin.do">用户管理</a></li>
+							               <#else>
+							                  <li><a href="../user/userAdminByUserId.do?userid=${logonuser.userid}">用户管理</a></li>
+							               </#if>
+								    </#if>
+								      
+								      
 								      <#if Popedom?index_of('h')!=-1>
 								  	 <li><a href="../system/systemDDLAdmin.do">数据字典维护</a></li>
                                        </#if>
