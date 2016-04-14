@@ -41,7 +41,8 @@ public class AccessInteceptor implements HandlerInterceptor {
 			return true;
 		}
 		else {
-			request.getRequestDispatcher("/loginIndex.do").forward(request, response);
+			
+			response.sendRedirect("/laboratory/loginIndex.do");
 			return false;
 		}
 	}
