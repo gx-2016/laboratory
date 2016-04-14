@@ -50,8 +50,6 @@
 <script src="Scripts/production.min.js"></script>
 
 
-<!--点击放大图片特效-->
-<link rel="stylesheet" href="Css/lightbox.css" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -59,7 +57,7 @@
 	<#include "frame/head1.ftl">
 	<!--page content-->
 
-	<section class="new-home">
+	<section id="fh5co-work" class="new-home">
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
@@ -75,12 +73,13 @@
 							 <div class="row-fluid" >
 							 </#if>
 								<div class="span4"  style="padding:4px 8px; width:350px;" style="float:left">
-								  <a href="photo/${photo.picurl}"  rel="lightbox">
+								<!--  <a href="photo/${photo.picurl}" >-->
 									<img src="photo/${photo.picurl}" 
 									style="width:450px;height:250px;" 
-									alt="Image">
+									alt="Image" 
+									>
 									<h3>${photo.picname}</h3>
-								   </a> 
+								<!--   </a> -->
 								</div>
 						    <#if rightindex % 3 ==0>
 								 </div>
@@ -117,11 +116,6 @@
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	<script src="assets/js/magnific-popup-options.js"></script>
     
-    <!--点击放大图片特效-->
-    <script src="assets/js/prototype.js" type="text/javascript"></script>
-	<script src="assets/js/scriptaculous.js?load=effects" type="text/javascript"></script>
-	<script src="assets/js/lightbox.js" type="text/javascript"></script>
-	
 	
 	<!-- Main JS (Do not remove) -->
 	<script src="assets/js/main.js"></script>
