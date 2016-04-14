@@ -72,12 +72,12 @@
 							 <div class="row-fluid" >
 							 </#if>
 								<div class="span4"  style="padding:4px 8px; width:350px;" style="float:left">
-								  <a href="photo/${photo.picurl}" >
+								 <!-- <a href="photo/${photo.picurl}" >-->
 									<img src="photo/${photo.picurl}" 
 									style="width:450px;height:250px;" 
 									alt="Image">
 											<h3>${photo.picname}</h3>
-									</a>
+								<!-- </a> -->
 								</div>
 						    <#if rightindex % 3 ==0>
 								 </div>

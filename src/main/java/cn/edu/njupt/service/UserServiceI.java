@@ -8,7 +8,9 @@ public interface UserServiceI {
 
 	public User getUserById(int userid);
 
-	public List<User> getAllUser();
+	public List<User> getNotdutyUser(String isduty);
+
+	public List<User> getIsdutyUser(String isduty);
 
 	public int updateUser(User user); 
 	
@@ -17,4 +19,9 @@ public interface UserServiceI {
 	public User findUserExist(String logonname);
 
 	public int addUser(User user1);
+    
+	//后台获取成员信息
+	public List<User> getAllUser();
+
+	
 }

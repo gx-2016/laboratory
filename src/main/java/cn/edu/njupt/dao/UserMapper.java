@@ -17,9 +17,15 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User user);
 
+	List<User> getNotdutyUser(String isduty);
+	
+	List<User> getIsdutyUser(String isduty);
+	
 	List<User> getAllUser();
 
 	User findUserExist(String logonname);
+
+	
 
 
 }

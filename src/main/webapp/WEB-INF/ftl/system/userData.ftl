@@ -4,7 +4,6 @@
 		        <th>姓名</th>
 		        <th>性别</th>
 		        <th>学历</th>
-		        <th>个人主页</th>
 		        <th>是否毕业</th>
 		        <th>毕业去向</th>
 		        <th>编辑</th>
@@ -38,12 +37,13 @@
 				        <td></td>
 				        </#if>
 				        --> 
+				        <!--
 				        <#if user.personpage??>
 				        <td>${user.personpage}</td>
 				        <#else>
 				        <td></td>
 				        </#if>
-				        
+				        --> 
 				         <#if user.isduty??>
 					        <#if  user.isduty == '0' >
 					        <td>毕业</td>

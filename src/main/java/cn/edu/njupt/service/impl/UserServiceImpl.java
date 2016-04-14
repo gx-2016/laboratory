@@ -24,14 +24,23 @@ public class UserServiceImpl implements UserServiceI{
 
 
 	/* 
-	 * 查询所有用户
+	 * 查询所有未毕业学生
 	 */
 	@Override
-	public List<User> getAllUser() {
-		return userMapper.getAllUser();
+	public List<User> getNotdutyUser(String isduty) {
+		return userMapper.getNotdutyUser(isduty);
 	}
 
 
+	/*
+	 * 查询所有已毕业学生
+	 */
+	@Override
+	public List<User> getIsdutyUser(String isduty) {
+		
+		return userMapper.getIsdutyUser(isduty);
+	}
+	
 	@Override
 	public int updateUser(User user) {
 		// TODO 自动生成的方法存根
@@ -64,6 +73,16 @@ public class UserServiceImpl implements UserServiceI{
 		// TODO 自动生成的方法存根
 		return userMapper.insertSelective(user1);
 	}
+
+    //后台获取成员信息
+	@Override
+	public List<User> getAllUser() {
+		// TODO 自动生成的方法存根
+		return userMapper.getAllUser();
+	}
+
+
+	
 	
 	
 

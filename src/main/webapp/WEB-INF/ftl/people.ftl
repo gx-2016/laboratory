@@ -82,80 +82,43 @@
 					</div>
 				</div>
 			</div>
-			<div class="row" align="center">
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>高翔</h3>
-						<span>2134@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>高翔</h3>
-						<span>2134@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>王峰</h3>
-						<span>3545@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>张洪成</h3>
-						<span>1424@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>高翔</h3>
-						<span>2134@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>高翔</h3>
-						<span>2134@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>高翔</h3>
-						<span>2134@qq.com</span>
-					</div>
-				</div>
-				<div class="span3">
-					<div>
-						<figure>
-							<img src="assets/images/avatar-1.jpg" alt="Image" style="width:200px;height:200px;">
-						</figure>
-						<h3>高翔</h3>
-						<span>2134@qq.com</span>
-					</div>
-				</div>
-			</div>
+			
+			<div>
+			<#assign leftindex =4>
+						<#assign rightindex =1>
+						<#if peoples? exists>
+						 <#list peoples as people>
+							 <#if leftindex % 4 ==0>
+							 <div class="row-fluid" >
+							 </#if>
+									<div class="span3">
+										<div>
+											<figure>
+											    <#if people.photourl??>
+												<img src="system/${people.photourl}" alt="Image" style="width:200px;height:200px;">
+												<#else>
+												<img src="system/default.jpg" alt="Image" style="width:200px;height:200px;">
+												</#if>
+											</figure>
+											<#if people.personpage??>
+											<a href="${people.personpage}">
+									        <h3 align="center"><b>${people.username}</b></h3>
+									        </a>
+									        </#if>
+											<#if people.email??>
+											<h4 align="center">${people.email}</h4>
+											</#if>
+										</div>
+									</div>
+									
+									<#if rightindex % 4 ==0>
+										 </div>
+									</#if>
+									 <#assign leftindex = leftindex+1>
+									 <#assign rightindex = rightindex+1>
+								 </#list>
+			                     </#if>		
+			        </div>
 			<div>
 			<hr>
 			<div align="center">
@@ -166,151 +129,43 @@
 					</div>
 				</div>
 				<div class="row" align="center">
-
-					<table style="height: 570px;">
-						<tbody>
-							<tr>
-								<td style="text-align: center;">姓名</td>
-								<td style="text-align: left;">学位(毕业年份)</td>
-								<td style="text-align: left;">&nbsp;&nbsp;毕业后去向</td>
-								<td style="text-align: left;">&nbsp;
-									&nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong>
-								</td>
-								<td style="text-align: left;">&nbsp; &nbsp; &nbsp;姓名</td>
-								<td style="text-align: left;">学位(毕业年份)</td>
-								<td style="text-align: left;">毕业后去向</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;林涛</td>
-								<td width="63">硕士(2013)</td>
-								<td>微软</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;|</td>
-								<td width="59">&nbsp; &nbsp; &nbsp;万里进</td>
-								<td width="63">硕士(2013)</td>
-								<td>百度</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;黄兴东</td>
-								<td width="63">硕士(2013)</td>
-								<td>百度</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</td>
-								<td width="59">&nbsp; &nbsp; &nbsp;叶喜龙</td>
-								<td width="63">硕士(2013)</td>
-								<td width="132">腾讯</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;伍少茹</td>
-								<td width="63">硕士(2013)</td>
-								<td width="132">爱立信</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</td>
-								<td width="59">&nbsp; &nbsp; &nbsp;周宏斐</td>
-								<td width="63">硕士(2013)</td>
-								<td>广州维安电子技术有限公司</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;黄俊</td>
-								<td width="63">硕士(2013)</td>
-								<td>中国建设银行(广州开发中心)</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;|</td>
-								<td width="59">&nbsp; &nbsp; &nbsp;吴越</td>
-								<td width="63">硕士(2012)</td>
-								<td>北京大学图书馆</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;张奕武</td>
-								<td width="63">硕士(2012)</td>
-								<td>广东农信社</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;|</td>
-								<td width="59">&nbsp; &nbsp; &nbsp;王海明</td>
-								<td width="63">硕士(2012)</td>
-								<td>深圳金融电子结算中心</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;刘发林</td>
-								<td width="63">硕士(2012)</td>
-								<td>广东省科技厅</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> |</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;石克阳</td>
-								<td width="63">硕士(2013)</td>
-								<td>阿里巴巴</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;王小龙</td>
-								<td width="63">硕士(2014)</td>
-								<td>美国卡耐基梅隆大学（读博士，全奖）</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> |</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;杨巍</td>
-								<td width="63">硕士(2014)</td>
-								<td>香港中文大学（读博士，全奖）</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;卢永毅</td>
-								<td width="63">硕士(2014)</td>
-								<td>香港科技大学（读博士，全奖）</td>
-								<td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>|</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;徐元璐</td>
-								<td width="63">硕士(2015)</td>
-								<td>美国加州大学洛杉矶分校（读博士，全奖）</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;李梦悠</td>
-								<td width="63">硕士(2014)</td>
-								<td>中山大学工学院</td>
-								<td>&nbsp;<strong> &nbsp;&nbsp;&nbsp;&nbsp;|</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;徐忠勇</td>
-								<td width="63">硕士(2014)</td>
-								<td>普联技术有限公司（TP-LINK）</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;王喆</td>
-								<td width="63">硕士(2014)</td>
-								<td>&nbsp;广州维安电子技术有限公司</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;赖泽锋</td>
-								<td width="63">硕士(2014)</td>
-								<td>阿里巴巴</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;周励琨</td>
-								<td width="63">硕士(2014)</td>
-								<td>&nbsp;广州维安电子技术有限公司</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;刘雄浩</td>
-								<td width="63">硕士(2015)</td>
-								<td>阿里巴巴</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;唐俊军</td>
-								<td width="63">硕士(2015)</td>
-								<td>&nbsp;上海浦东发展银行</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;叶泽雄</td>
-								<td width="63">硕士(2015)</td>
-								<td>腾讯</td>
-							</tr>
-							<tr>
-								<td width="59">&nbsp; &nbsp; &nbsp; &nbsp;戎浩</td>
-								<td width="63">硕士(2015)</td>
-								<td>&nbsp;新浪微博</td>
-								<td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong></td>
-								<td width="59">&nbsp; &nbsp; &nbsp;何旺岚</td>
-								<td width="63">硕士(2015)</td>
-								<td>广州证券</td>
-							</tr>
-							<tr>
-								<td style="text-align: left;" width="59">&nbsp; &nbsp;
-									&nbsp; &nbsp;冯娇</td>
-								<td style="text-align: left;" width="63">硕士(2015)</td>
-								<td style="text-align: left;">&nbsp;4399</td>
-								<td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<strong>|</strong>
-								</td>
-								<td style="text-align: left;" width="59"></td>
-								<td style="text-align: left;" width="63"></td>
-								<td style="text-align: left;"></td>
-							</tr>
-						</tbody>
-					</table>
+				          <table  class="table " >
+						    <thead>
+						        <th>编号</th>
+						        <th>姓名</th>
+						        <th>学历</th>
+						        <th>毕业去向</th>
+						        <th>邮箱</th>
+					
+						    </thead>
+						    <tbody>
+							   <#if isdutypeoples?exists>
+								    <#list isdutypeoples as isdutypeople>
+								    <tr>
+								        <td>${(isdutypeople_index)+1}</td>
+								        <td align="center">${isdutypeople.username}</td>
+								        
+								        <#if isdutypeople.education??>
+								        <td>${isdutypeople.education}</td>
+								        <#else>
+								        <td></td>
+								        </#if>
+								        
+								        <#if isdutypeople.companyname??>
+									        <td>${isdutypeople.companyname}</td>
+									        <#else>
+									        <td></td>
+								        </#if>
+								        <#if isdutypeople.email??>
+									        <td>${isdutypeople.email}</td>
+									        <#else>
+									        <td></td>
+								        </#if>
+								    </tr>
+								    </#list>
+							   </#if>
+						    </tbody>
+						</table>
 				</div>
 
 			</div>
