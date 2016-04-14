@@ -40,11 +40,8 @@
 							
 							 <#if Popedom?index_of('e')!=-1>
 							<li >
-                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 著作管理 </span>
+                                <a href="../writtings/writtingsAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 著作管理 </span>
                                 </a>
-                                <ul class="list-unstyled">
-								     <li><a href="../news/writingsAdmin.do">编辑著作</a></li>
-								 </ul>
                             </li>
                            </#if>
                            
