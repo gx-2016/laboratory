@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.edu.njupt.model.News;
 import cn.edu.njupt.model.PicResource;
+import cn.edu.njupt.service.NewsServiceI;
 import cn.edu.njupt.service.PhotoServiceI;
 
 @Controller
@@ -18,14 +20,21 @@ public class IndexController {
 	@Resource(name="photoService")
 	private PhotoServiceI photoServiceI;
 	
-	@RequestMapping("/home.do")
-	public String home(){
-		return "home2";
-	}
+	@Resource(name="newsService")
+	private NewsServiceI newsService;
 	
+	@RequestMapping("/home.do")
+	public String home(ModelMap modelMap){	
+		 	List<News> newsList= newsService.queryNewsforHomeNews(5);	
+		 	modelMap.put("newsList", newsList);
+		  		return "home";
+    }
+
 	@RequestMapping("/news.do")
 	public String news(ModelMap  modelMap){
-		return "news";
+		 	List<News> newsList= newsService.queryAllNews();	
+		 	modelMap.put("newsList", newsList);
+		  	return "news";
 	}
 	
 	@RequestMapping("/learn.do")

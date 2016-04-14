@@ -1,7 +1,6 @@
 package cn.edu.njupt.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -33,30 +32,11 @@ public class NewsController {
 		List<News> newsList = new ArrayList<News>();
 		News news=newsService.queryNewsById(newsId);
 		System.out.println(news.getNewstitle());
-		newsList.add(news); 
+		newsList.add(news);
 		
 		modelMap.put("newsList", newsList);
 		return "news/newsDetails";
 	}
-	
-	@RequestMapping("/toAddNews.do")
-	public String toAddNews(){
-		return "news/addNews";
-	}
-	
-	@RequestMapping("/saveAddNews.do")
-	public String saveNews(HttpServletRequest request){
-		String newsName = request.getParameter("newsName");
-		String newsAbstract = request.getParameter("newsAbstract");
-		String newsContent = request.getParameter("newsContent");
-		News news = new News();
-		news.setNewstitle(newsName);
-		news.setNewsabstract(newsAbstract);
-		news.setNewscontent(newsContent);
-		news.setNewstime(new Date());
-		newsService.insertNews(news);	
-		return "forward:newsAdmin.do";
-	}  
 	
 	
 }
