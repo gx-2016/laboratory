@@ -69,7 +69,7 @@
 										<h2 class="news-events-feed__title">
 											<a href="http://www.adelaide.edu.au/events/"
 												title="Read more What's On">校内</a> <a
-												href="http://www.adelaide.edu.au/events/"
+												href="href="news.do"
 												title="Read More What's On"
 												class="news-events-feed__title-more-link"><span
 												class="btn-icon"></span>More</a>
@@ -78,7 +78,7 @@
 										<#list newsList as news>
 											<ul class="news-events-feed__content">
 												<li class="news-events-feed__content__item"><a
-													href="http://www.adelaide.edu.au/news/news84042.html"
+													href="news/newsDetails.do?id=${news.newsid}"
 													title="Read More About New models predicting where to find fossils">
 														<div class="news-events-feed__date">
 															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>

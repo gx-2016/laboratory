@@ -15,9 +15,7 @@
         <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/plugins/custombox/dist/custombox.min.css" rel="stylesheet">
 
-        <!-- wangEdit-->
-         <link href="../assets/css/wangEditor.css" rel="stylesheet">
-
+      
         <link href="../assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
         <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
@@ -57,8 +55,7 @@
             <#include "../frame/leftAdmin.ftl">
             <!-- Left Sidebar End --> 
 
-			<#include "../news/addNewsModal.ftl">
-
+			
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->                      
@@ -83,9 +80,7 @@
                             <div class="col-sm-12">
                                     <h4 class="m-t-0 header-title">
                                         <b>
-                                            <!-- Full width modal -->
-                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-addNews-modal">新增新闻</button>
-                                            
+                                            <a href="toAddNews.do" class="btn btn-primary " >新增新闻</a>
                                        </b>
                                     </h4>
                                 <div class="card-box table-responsive">
@@ -176,15 +171,12 @@
         <script src="../assets/plugins/custombox/dist/custombox.min.js"></script>
         <script src="../assets/plugins/custombox/dist/legacy.min.js"></script>
         
-		<!-- wangEdit-->
-		<script src="../assets/js/wangEditor.js"></script>
-        
+		
         <script type="text/javascript">
          $(document).ready(function() {
                 $('#datatable').dataTable();
             } );
-         var editor = new wangEditor('newsContext');
-   		 editor.create();
+         
 
         </script>
     
