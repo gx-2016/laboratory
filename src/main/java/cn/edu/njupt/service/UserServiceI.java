@@ -19,9 +19,9 @@ public interface UserServiceI {
 	public User findUserExist(String logonname);
 
 	public int addUser(User user1);
-    
+
 	//后台获取成员信息
 	public List<User> getAllUser();
 
-	
+
 }

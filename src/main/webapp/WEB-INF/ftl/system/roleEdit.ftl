@@ -31,14 +31,16 @@
      <hr>
      <!--分配用户-->
       <div class="row">  
-           <label class="control-label">用户分配:</label><button id="all" >全选</button>/<button id="delAll">全不选</button>
+           <label class="control-label">用户分配:</label>
+           <input type="button" value="全选" class="btn" id="selectAll" onclick="selectAll()">   
+           <input type="button" value="全不选" class="btn" id="unSelect" onclick="unSelect()">
 			  <table id="datatable" class="table  table-striped">
 			    <thead>
 			        <th>选中 </th>
 			        <th>姓名</th>
 			        <th>登陆名</th>
 			    </thead>
-			    <tbody>
+			    <tbody id="list">
 				   <#if userRoleList?exists>
 					    <#list userRoleList as userRole>
 					    <tr>
@@ -48,7 +50,6 @@
 					                 <#else>
 					                 <input type="checkbox"  name="roleuser" value="${userRole.userid}" >
 					             </#if> 
-					             <input type="hidden"  name="roleuser" >
 					        </td>
 					        <td>${userRole.username}</td>
 					        <td>${userRole.logonname}</td>

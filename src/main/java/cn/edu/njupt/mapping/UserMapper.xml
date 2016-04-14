@@ -35,9 +35,8 @@
 	       
   </select>
   
-  
-  <!--查询所有未毕业用户  -->
- <select id="getNotdutyUser" resultMap="BaseResultMap"  parameterType="string">
+ <!--查询所有未毕业用户  -->
+ <select id="getNotdutyUser" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
     from lab_user 
