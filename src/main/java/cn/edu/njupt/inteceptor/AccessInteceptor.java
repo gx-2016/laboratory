@@ -1,5 +1,8 @@
 package cn.edu.njupt.inteceptor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,12 +26,22 @@ public class AccessInteceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
+		//1.获取请求的url
+		String uri = request.getRequestURI();
+		System.out.println(uri);
+		List<String> accessList = new ArrayList<String>();
+		accessList.add("login.do");
+		accessList.add("loginIndex.do");
+		if(accessList.contains(uri)){
+			return true;
+		}
        //1.先判断用户是否登陆，即session中是否有值
 		User user = (User) request.getSession().getAttribute("logonuser");
 		if(null != user){
 			return true;
 		}
 		else {
+			request.getRequestDispatcher("/loginIndex.do").forward(request, response);
 			return false;
 		}
 	}

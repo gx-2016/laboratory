@@ -13,18 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.edu.njupt.model.News;
 import cn.edu.njupt.service.NewsServiceI;
 
+//前端展示news 处理controller
 @Controller
-@RequestMapping("/news")
 public class NewsController {
 	@Resource(name="newsService")
 	private NewsServiceI newsService;
 	
-	@RequestMapping("/newsAdmin.do")
-	public String toNews(ModelMap modelMap){
-		//System.out.println("newsAdmin.do");
-		modelMap.put("newsList",newsService.queryAllNews());
-		return "news/newsAdmin";
+
+	@RequestMapping("/news.do")
+	public String news(ModelMap  modelMap){
+		 	List<News> newsList= newsService.queryAllNews();	
+		 	modelMap.put("newsList", newsList);
+		  	return "news";
 	}
+
 	@RequestMapping("/newsDetails.do")
 	public String showNewsDetails(ModelMap modelMap,HttpServletRequest request){
 		int newsId =Integer.parseInt(request.getParameter("id"));
