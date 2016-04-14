@@ -34,6 +34,7 @@ public class IndexController {
 	public String news(ModelMap  modelMap){
 		 	List<News> newsList= newsService.queryAllNews();	
 		 	modelMap.put("newsList", newsList);
+		 	int j = 0;
 		  	return "news";
 	}
 	
