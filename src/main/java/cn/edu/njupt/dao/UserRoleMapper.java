@@ -55,5 +55,5 @@ public interface UserRoleMapper {
 	 * @Author: 高翔
 	 * @Date: 2016年4月13日
 	 */
-	List<UserRole> findUserRoleByUserId(Integer userid);
+	List<UserRole> findUserRoleByUserId(String userid);
 }

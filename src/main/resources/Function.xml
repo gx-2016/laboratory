@@ -21,6 +21,14 @@
      <ParentCode>news</ParentCode>
      <ParentName>新闻管理</ParentName>
   </Function> 
+  
+   <Function>
+     <FunctionCode>j</FunctionCode>
+     <FunctionName>编辑管理</FunctionName>
+     <ParentCode>news</ParentCode>
+     <ParentName>新闻管理</ParentName>
+  </Function> 
+  
 
   <Function>
      <FunctionCode>d</FunctionCode>
@@ -56,7 +64,7 @@
        
   <Function>
      <FunctionCode>i</FunctionCode>
-     <FunctionName>成员管理</FunctionName>
+     <FunctionName>用户管理</FunctionName>
      <ParentCode>sysmng</ParentCode>
      <ParentName>系统管理</ParentName>
   </Function>

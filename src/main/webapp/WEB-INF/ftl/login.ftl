@@ -34,22 +34,33 @@
 
         <div class="wrapper-page">
 
+           <!-- 提示信息 -->
+		       <#if message??>
+			       <div class="alert alert-warning alert-dismissable">
+					   <button type="button" class="close" data-dismiss="alert" 
+					      aria-hidden="true">
+					      &times;
+					   </button>
+					      <h4><font color="red"><strong>${message}</strong></font></h4>
+				  </div>
+			  </#if>
+		      <!-- /.提示信息 -->
             <div class="text-center">
                 <a href="index.html" class="logo logo-lg"><i class="md md-equalizer"></i> <span>ICV 实验室管理平台</span> </a>
             </div>
 
-            <form class="form-horizontal m-t-20" action="${webRoot}/login" method="post">
+            <form class="form-horizontal m-t-20" action="login.do" method="post">
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="Username" name="username" value="${username!}">
+                        <input class="form-control" type="text" required="" placeholder="logonname" name="logonname" value="${username!}">
                         <i class="md md-account-circle form-control-feedback l-h-34"></i>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" placeholder="Password" name="password">
+                        <input class="form-control" type="password" required="" placeholder="logonpwd" name="logonpwd">
                         <i class="md md-vpn-key form-control-feedback l-h-34"></i>
                     </div>
                 </div>

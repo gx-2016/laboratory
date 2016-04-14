@@ -3,6 +3,7 @@ package cn.edu.njupt.controller;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -37,6 +38,20 @@ public class UserController {
 	@RequestMapping("/userAdmin.do")
 	public String userAdmin(ModelMap map) {
 		List<User> userList = userServiceI.getAllUser();
+		map.put("userList", userList);
+		return "system/userAdmin";
+	}
+	
+	/**
+	 * 
+	 * @Description: 后台管理成员信息
+	 * @Author: zhc
+	 * @Date: 2016年4月13日
+	 */
+	@RequestMapping("/userAdmin.do")
+	public String userAdminByUserId(ModelMap map,Integer userid) {
+		List<User> userList =new ArrayList<User>();
+		userList.add(userServiceI.getUserById(userid));
 		map.put("userList", userList);
 		return "system/userAdmin";
 	}

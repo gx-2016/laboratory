@@ -135,7 +135,7 @@ public class RoleServiceImpl implements RoleServiceI{
 	 * 根据用户id查询用户角色列表
 	 */
 	@Override
-	public List<UserRole> findUserRoleByUserId(Integer userid) {
+	public List<UserRole> findUserRoleByUserId(String userid) {
 		return userRoleMapper.findUserRoleByUserId(userid);
 	}
 	

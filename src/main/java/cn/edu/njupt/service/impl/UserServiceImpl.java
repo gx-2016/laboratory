@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserServiceI{
 
 	
 	 /**
-     * 验证登录名是否存在
+     * 验证登录名是否存在,根据登录名查询用户
      */
 	@Override
 	public User findUserExist(String logonname) {
@@ -61,10 +61,10 @@ public class UserServiceImpl implements UserServiceI{
 
 	@Override
 	public int addUser(User user1) {
-		// TODO 自动生成的方法存根
 		return userMapper.insertSelective(user1);
 	}
-	
+
+
 	
 
    
