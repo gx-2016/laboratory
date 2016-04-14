@@ -20,7 +20,7 @@ public class IndexController {
 	
 	@RequestMapping("/home.do")
 	public String home(){
-		return "home";
+		return "home2";
 	}
 	
 	@RequestMapping("/news.do")
