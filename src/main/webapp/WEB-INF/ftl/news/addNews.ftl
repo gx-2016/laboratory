@@ -56,7 +56,6 @@
             <#include "../frame/leftAdmin.ftl">
             <!-- Left Sidebar End --> 
 
-			
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -78,20 +77,26 @@
                                 </div>
                             </div>
                         </div>
-						<div class="row">
+						<div class="row" >
                             <div class="col-sm-12">
-                                    <h4 class="m-t-0 header-title">
-                                        <b>
-                                            <!-- Full width modal -->
-                                            <a href="toAddNews.do" class="btn btn-primary " >新增新闻</a>
-                                            
-                                       </b>
-                                    </h4>
-                                <div class="card-box table-responsive">
-                                    <div id ="dataList">
-                                    <#include "newsData.ftl">
-                                    </div>
-                                </div>
+                                <div class="row" class="col-md-12" align ="center">
+	                            	<div class="col-md-12" >
+	                                	<div class="form-group"  >
+	                                    	<label for="field-1" class="control-label">新闻标题</label>
+	                                    	<input type="text" class="form-control" id="newsName" name= "newsName" placeholder="新闻标题" style="width:600px">
+	                                	
+	                                    	<label for="field-1" class="control-label">新闻摘要</label>
+	                                    	<textarea type="textarea" class="form-control" id="newsAbstract" name= "newsAbstract" placeholder="新闻摘要" style="min-width:600px;max-width:600px"></textarea>
+	                                		
+	                                		<label for="field-1" class="control-label">新闻内容</label>  
+                                 	   		<#include "../news/textEditor.ftl">
+	                                	
+	                                	</div>
+	                                	<div align="center">
+	                                		<input class="btn btn-primary " onclick="submit()" value="提交"/>
+	                                	</div>
+	                            	</div>
+	                            </div>
                             </div>
                         </div>
                      </div>
@@ -180,7 +185,32 @@
          $(document).ready(function() {
                 $('#datatable').dataTable();
             } );
-         
+         function submit(){
+         	var newsName = $('#newsName').val();
+         	var newsAbstract = $('#newsAbstract').val();
+         	var newsContent = UE.getEditor('editor').getContent();
+         	if(newsName == null|| newsName==""||newsName==undefined){
+         		alert("标题不能为空");
+         	}else if(newsContent == null||newsContent == "" || newsContent == undefined){
+         		alert("内容不能为空");
+         	}else{
+         		if(newsAbstract==null||newsAbstract == ""||newsAbstract==undefined)
+         			newsAbstract=newsName;
+         		$.ajax({
+				type: "post",
+				url: "saveAddNews.do",
+				async: false,
+				data: {
+					newsName:newsName,
+					newsAbstract:newsAbstract,
+					newsContent:newsContent
+				},
+				success: function(data) {
+             		
+        		 },
+			});
+         	}
+         }
         </script>
     
     </body>

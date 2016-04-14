@@ -47,4 +47,10 @@ public class NewsSericeImpl implements NewsServiceI{
 		return newsMapper.selectByPrimaryKey(newsId);
 	}
 
+	@Override
+	public void insertNews(News news) {
+		// TODO Auto-generated method stub
+		newsMapper.insert(news);
+	}
+
 }
