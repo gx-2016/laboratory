@@ -63,11 +63,11 @@
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-research" id="ui-menu-btn-research">
-								<a href="/laboratory/research.do"> <span class="divider-lt">&nbsp;</span> Research <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/writtings.do"> <span class="divider-lt">&nbsp;</span> Writtings <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-projects" id="ui-menu-btn-projects">
-								<a href="/laboratory/projects.do"> <span class="divider-lt">&nbsp;</span> Projects <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/project.do"> <span class="divider-lt">&nbsp;</span> Projects <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						

@@ -53,6 +53,17 @@
 							</#if>
 							
 							
+							<li >
+                                <a href="../share/shareAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 分享管理 </span>
+                                </a>
+                            </li>
+                            
+                            
+							<li >
+                                <a href="../learn/learnAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 学习管理 </span>
+                                </a>
+                            </li>
+							
 							<li class="has_sub">
                                 <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 系统管理 </span>
                                 </a>

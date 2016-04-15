@@ -6,10 +6,16 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
-        <link rel="shortcut icon" href="../assets/images/favicon_1.ico">
+        <link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 
         <title>Minton - Responsive Admin Dashboard Template</title>
 
+ 		
+ 		<!-- DataTables -->
+        <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/custombox/dist/custombox.min.css" rel="stylesheet">
+
+      
         <link href="../assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
         <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
@@ -49,8 +55,7 @@
             <#include "../frame/leftAdmin.ftl">
             <!-- Left Sidebar End --> 
 
-
-
+			
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->                      
@@ -64,15 +69,26 @@
                             <div class="col-sm-12">
                                 <div class="page-title-box">
                                     <ol class="breadcrumb pull-right">
-                                        <li><a href="#">Minton</a></li>
-                                        <li class="active">首页管理</li>
+                                        <li><a href="#">首页</a></li>
+                                        <li class="active">新闻管理</li>
                                     </ol>
                                     <h4 class="page-title">Welcome !</h4>
                                 </div>
                             </div>
                         </div>
-
-                
+						<div class="row">
+                            <div class="col-sm-12">
+                                    <h4 class="m-t-0 header-title">
+                                        <b>
+                                            <a href="toAddNews.do" class="btn btn-primary " >新增新闻</a>
+                                       </b>
+                                    </h4>
+                                <div class="card-box table-responsive">
+                                    <div id ="dataList">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                      </div>
                     <!-- end container -->
                 </div>
@@ -89,7 +105,7 @@
 
 
             <!-- Right Sidebar -->
-            <#include "../frame/rightAdmin.ftl">
+            <#include "/frame/rightAdmin.ftl">
             <!-- /Right-bar -->
 
         </div>
@@ -141,46 +157,25 @@
         <!-- skycons -->
         <script src="../assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
 
-        <!-- Todos app  -->
-        <script src="../assets/pages/jquery.todo.js"></script>
-        
-        <!-- Chat App  -->
-        <script src="../assets/pages/jquery.chat.js"></script>
-        
-        <!-- Page js  -->
-        <script src="../assets/pages/jquery.dashboard.js"></script>
-
+       
         <!-- Custom main Js -->
         <script src="../assets/js/jquery.core.js"></script>
         <script src="../assets/js/jquery.app.js"></script>
-
         
+        <!-- Datatables-->
+        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        
+        <!-- Modal-Effect -->
+        <script src="../assets/plugins/custombox/dist/custombox.min.js"></script>
+        <script src="../assets/plugins/custombox/dist/legacy.min.js"></script>
+        
+		
         <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-                $('.circliful-chart').circliful();
-            });
-
-            /* BEGIN SVG WEATHER ICON */
-            if (typeof Skycons !== 'undefined'){
-            var icons = new Skycons(
-                {"color": "#3bafda"},
-                {"resizeClear": true}
-                ),
-                    list  = [
-                        "clear-day", "clear-night", "partly-cloudy-day",
-                        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                        "fog"
-                    ],
-                    i;
-
-                for(i = list.length; i--; )
-                icons.set(list[i], list[i]);
-                icons.play();
-            };
+         $(document).ready(function() {
+                $('#datatable').dataTable();
+            } );
+         
 
         </script>
     

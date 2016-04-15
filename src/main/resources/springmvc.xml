@@ -82,6 +82,9 @@
 			<mvc:mapping path="/system/*" />
 			<mvc:mapping path="/photo/*" />
 			<mvc:mapping path="/project/*" />
+			<mvc:mapping path="/writtings/*" />
+			<mvc:mapping path="/learn/*" />
+			<mvc:mapping path="/share/*" />
 			<bean class="cn.edu.njupt.inteceptor.AccessInteceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
