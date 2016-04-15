@@ -259,19 +259,6 @@
 	                             -->
 	                         
 	                         <div class="row">
-	                            <!--
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                     <label class="col-sm-4 control-label">性别:</label>
-                                        <div class="col-sm-8">
-                                           <select  id="update_sex" class="form-control" name="sex" >
-													 <option value="0">男</option>
-													 <option value="1">女</option>
-											</select>
-                                        </div>
-	                                </div>
-	                            </div>
-	                            -->
 	                            <div class="col-md-6">
 	                                <div class="form-group">
 	                                     <label class="col-sm-4 control-label">是否毕业</label>
@@ -333,8 +320,6 @@
 	                            -->
 	                            
 	                         </div>
-	                         
-	                          
 
 	                         <div class="row">
 	                           <div class="col-md-6">
@@ -348,7 +333,6 @@
 	                         </div>
 	                         <!--隐藏域主键id-->
 	                         <input type="hidden" class="form-control" id="update_userid" name= "userid" >
-	                         <input type="hidden" class="form-control" id="update_remark" name= "remark" >
 	                         <input type="hidden" class="form-control" id="update_photourl" name= "photourl" >
 	                     </div>
 	                    <div class="modal-footer">
@@ -545,12 +529,34 @@
 			  function update(obj){
 				var tds=$(obj).parent().parent().find('td');
 				var inputs=$(obj).parent().parent().find('input');
-				$('#update_username').val(tds.eq(1).text());
-				$('#update_logonname').val(tds.eq(2).text());
 				
+				$('#update_username').val(tds.eq(1).text());
+				
+				var all_options = document.getElementById("update_sexid").options;
+				for (i=0; i< all_options.length; i++){
+					if (all_options[i].text== tds.eq(2).text()) // 根据option标签的文本来进行判断 测试的代码这里是两个等号
+					{
+					  all_options[i].selected = true;
+					}
+				}
+				
+				
+				$('#update_education').val(tds.eq(3).text());
+				
+				var all_options = document.getElementById("update_isduty").options;
+				for (i=0; i< all_options.length; i++){
+					if (all_options[i].text== tds.eq(4).text()) // 根据option标签的文本来进行判断 测试的代码这里是两个等号
+					{
+					  all_options[i].selected = true;
+					}
+				}
+				
+				$('#update_companyname').val(tds.eq(5).text());
 				
 				$('#update_personpage').val(inputs.eq(0).val());
-			    $('#update_userid').val(inputs.eq(1).val());
+			    $('#update_email').val(inputs.eq(1).val());
+			    $('#update_userid').val(inputs.eq(2).val());
+			    
 				$('#update').modal('show');
 			}
         </script>

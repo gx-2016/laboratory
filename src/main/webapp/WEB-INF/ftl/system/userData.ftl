@@ -63,11 +63,17 @@
 				        
 				        
 				        <td><a onclick="update(this)">修改</a> | <a href="deleteUser.do?userid=${user.userid}" onclick="javascript:return confirm('确实要删除吗？')">删除</a></td>
-				        <#if user.personpage??>
 				        
+				        <#if user.personpage??>
 				         <input type="hidden" name='personpage' value='${user.personpage}'>
 				        <#else>
-				        <td></td>
+				        <input type="hidden" name='personpage' value=''>
+				        </#if>
+				        
+				        <#if user.email??>
+				         <input type="hidden" name='email' value='${user.email}'>
+				        <#else>
+				        <input type="hidden" name='email' value=''>
 				        </#if>
 				        
 				         <input type="hidden" name='userid' value='${user.userid}'>
