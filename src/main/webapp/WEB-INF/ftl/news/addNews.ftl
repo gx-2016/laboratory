@@ -89,7 +89,7 @@
  	                                    	<textarea type="textarea" class="form-control" id="newsAbstract" name= "newsAbstract" placeholder="新闻摘要" style="min-width:600px;max-width:600px"></textarea>
  	                                		
  	                                		<label for="field-1" class="control-label">新闻内容</label>  
-                                  	   		<#include "../news/textEditor1.ftl">
+                                  	   		<#include "../news/textEditor.ftl">
  	                                	
  	                                	</div>
 	                                	<div align="center">
@@ -180,9 +180,6 @@
          <script src="../assets/plugins/custombox/dist/custombox.min.js"></script>
          <script src="../assets/plugins/custombox/dist/legacy.min.js"></script>
          
-         <!--form wysiwig-->
-        <script src="../assets/plugins/tinymce/tinymce.min.js"></script>
-        
         
          <script type="text/javascript">
           $(document).ready(function() {
@@ -191,8 +188,7 @@
           function submit(){
           	var newsName = $('#newsName').val();
           	var newsAbstract = $('#newsAbstract').val();
-          //	var newsContent = UE.getEditor('editor').getContent();
-          	var newsContent = $('#elm1').val();
+            var newsContent = UE.getEditor('editor').getContent();
           	if(newsName == null|| newsName==""||newsName==undefined){
           		alert("标题不能为空");
          	}else if(newsContent == null||newsContent == "" || newsContent == undefined){
@@ -218,33 +214,5 @@
           	}
           }
          </script>
-     
-       <script type="text/javascript">
-        	$(document).ready(function () {
-			    if($("#elm1").length > 0){
-			        tinymce.init({
-			            selector: "textarea#elm1",
-			            theme: "modern",
-			            height:300,
-			            plugins: [
-			                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-			                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-			                "save table contextmenu directionality emoticons template paste textcolor"
-			            ],
-			            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
-			            style_formats: [
-			                {title: 'Bold text', inline: 'b'},
-			                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-			                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-			                {title: 'Example 1', inline: 'span', classes: 'example1'},
-			                {title: 'Example 2', inline: 'span', classes: 'example2'},
-			                {title: 'Table styles'},
-			                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
-			            ]
-			        });
-			    }
-			});
-        </script>
-     
      </body>
  </html>
