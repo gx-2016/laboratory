@@ -2,6 +2,8 @@ package cn.edu.njupt.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import cn.edu.njupt.model.News;
 
 public interface NewsMapper {
@@ -17,7 +19,7 @@ public interface NewsMapper {
 
     int updateByPrimaryKey(News record);
     
-    List<News> queryNews(int num);
-    List<News> queryAllNews();
+    List<News> queryNews(@Param("num")int num,@Param("newsType")String newsType);
+    List<News> queryAllNews(@Param("newsType")String newsType);
     
 }

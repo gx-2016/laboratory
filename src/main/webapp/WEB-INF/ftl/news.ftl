@@ -78,7 +78,7 @@
 										<#list newsList as news>
 											<ul class="news-events-feed__content">
 												<li class="news-events-feed__content__item"><a
-													href="news/newsDetails.do?id=${news.newsid}"
+													href="newsDetails.do?id=${news.newsid}"
 													title="Read More About New models predicting where to find fossils">
 														<div class="news-events-feed__date">
 															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>

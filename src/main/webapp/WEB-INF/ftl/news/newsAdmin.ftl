@@ -178,7 +178,21 @@
          $(document).ready(function() {
                 $('#datatable').dataTable();
             } );
-         
+         /**   
+         function deleteNews(id){
+         	alert
+         	$ajax({
+         		type: "post",
+         		url:"deleteNews.do"
+         		data:{
+         			id:id
+         		},
+         		function:successs(data){
+         			$('#dataList').html(data);
+         		}
+         	});
+         }
+         */
 
         </script>
     

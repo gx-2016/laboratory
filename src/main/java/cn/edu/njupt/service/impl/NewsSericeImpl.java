@@ -26,19 +26,19 @@ public class NewsSericeImpl implements NewsServiceI{
 	@Override
 	public List<News> queryNewsforHomeNews(int num) {
 		// TODO Auto-generated method stub
-		return newsMapper.queryNews(num);
+		return newsMapper.queryNews(num,"1");
 	}
 
 	@Override
 	public List<News> queryNews(int num) {
 		// TODO Auto-generated method stub
-		return newsMapper.queryNews(num);
+		return newsMapper.queryNews(num,"1");
 	}
 
 	@Override
 	public List<News> queryAllNews() {
 		// TODO Auto-generated method stub
-		return newsMapper.queryAllNews();
+		return newsMapper.queryAllNews("1");
 	}
 
 	@Override
@@ -52,6 +52,12 @@ public class NewsSericeImpl implements NewsServiceI{
 	 	// TODO Auto-generated method stub
 	 	newsMapper.insert(news);
 	 }
+
+	@Override
+	public int deleteNewsByID(int newsid) {
+		// TODO Auto-generated method stub
+		return newsMapper.deleteByPrimaryKey(newsid);
+	}
 	 
 
 }

@@ -86,7 +86,7 @@
 															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
 														</div>
 														<div class="news-events-feed__excerpt">
-															<strong>${news.newstitle}</strong> <br>${news.newscontent}
+															<H1><strong>${news.newstitle}</strong></h1> <br>${news.newscontent}
 														</div>
 												</a></li>
 											</ul>
