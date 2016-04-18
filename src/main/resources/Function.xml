@@ -68,5 +68,26 @@
      <ParentCode>sysmng</ParentCode>
      <ParentName>系统管理</ParentName>
   </Function>
+  
+  
+  <Function>
+     <FunctionCode>k</FunctionCode>
+     <FunctionName>增加</FunctionName>
+     <ParentCode>sysop</ParentCode>
+     <ParentName>操作权限</ParentName>
+  </Function>
+  <Function>
+     <FunctionCode>l</FunctionCode>
+     <FunctionName>修改</FunctionName>
+     <ParentCode>sysop</ParentCode>
+     <ParentName>系统管理</ParentName>
+  </Function> 
+       
+  <Function>
+     <FunctionCode>m</FunctionCode>
+     <FunctionName>删除</FunctionName>
+     <ParentCode>sysop</ParentCode>
+     <ParentName>系统管理</ParentName>
+  </Function>
 
 </LaboratoryData>

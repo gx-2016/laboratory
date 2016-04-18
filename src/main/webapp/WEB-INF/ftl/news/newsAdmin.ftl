@@ -79,9 +79,11 @@
 						<div class="row">
                             <div class="col-sm-12">
                                     <h4 class="m-t-0 header-title">
+                                        <#if Popedom?index_of('k')!=-1>
                                         <b>
                                             <a href="toAddNews.do" class="btn btn-primary " >新增新闻</a>
                                        </b>
+                                       </#if>
                                     </h4>
                                 <div class="card-box table-responsive">
                                     <div id ="dataList">
