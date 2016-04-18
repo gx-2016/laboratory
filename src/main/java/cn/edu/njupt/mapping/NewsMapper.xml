@@ -134,4 +134,8 @@
   		select * from lab_news where NewsType = ${newsType}
   		order by NewsTime desc
   </select>
+  <select id="queryAllNewsAndInform" resultMap="BaseResultMap">
+		select * from lab_news 
+  		order by NewsTime desc
+  </select>
 </mapper>

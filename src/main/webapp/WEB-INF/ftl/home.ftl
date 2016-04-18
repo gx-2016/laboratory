@@ -127,25 +127,25 @@
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="http://www.adelaide.edu.au/events/"
-												title="更多">校外连接</a> <a
-												href="http://www.adelaide.edu.au/events/"
+												title="更多">通知公告</a> <a
+												href="#"
 												title="更多"
 												class="news-events-feed__title-more-link"><span
 												class="btn-icon"></span>更多...</a>
 										</h2>
-										<#if newsList?exists>
-										<#list newsList as news>
+										<#if informList?exists>
+										<#list informList as inform>
 											<ul class="news-events-feed__content">
 												<li class="news-events-feed__content__item"><a
-													href="http://www.adelaide.edu.au/news/news84042.html"
+													href="newsDetails.do?id=${inform.newsid}"
 													title="Read More About New models predicting where to find fossils">
 														<div class="news-events-feed__date">
-															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>
-															<span class="news-events-feed__date__day"><strong>${news.newstime?string("dd")}</strong></span>
-															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
+															<span class="news-events-feed__date__day-abbr"><strong>${inform.newstime?string("EEE")}</strong></span>
+															<span class="news-events-feed__date__day"><strong>${inform.newstime?string("dd")}</strong></span>
+															<span class="news-events-feed__date__month--blue">${inform.newstime?string("MMM")}</span>
 														</div>
 														<div class="news-events-feed__excerpt">
-															<strong>${news.newstitle}</strong> <br>${news.newstitle}
+															<strong>${inform.newstitle}</strong> <br>${inform.newstitle}
 														</div>
 												</a></li>
 											</ul>

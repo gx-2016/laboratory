@@ -58,6 +58,13 @@ public class NewsSericeImpl implements NewsServiceI{
 		// TODO Auto-generated method stub
 		return newsMapper.deleteByPrimaryKey(newsid);
 	}
+
+	@Override
+	public List<News> queryInformforHomeInfrom(int num) {
+		// TODO Auto-generated method stub
+		//第二个参数为newstype =2 表示类型为通知
+		return newsMapper.queryNews(5, "2");
+	}
 	 
 
 }

@@ -21,5 +21,6 @@ public interface NewsMapper {
     
     List<News> queryNews(@Param("num")int num,@Param("newsType")String newsType);
     List<News> queryAllNews(@Param("newsType")String newsType);
+    List<News> queryAllNewsAndInform();
     
 }
