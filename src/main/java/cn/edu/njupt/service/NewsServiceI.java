@@ -18,4 +18,5 @@ public interface NewsServiceI {
 	public List<News> queryAllNews();
 	public News queryNewsById(int newsId);
 	public void insertNews(News news);
+	int deleteNewsByID(int newsid);
 }
