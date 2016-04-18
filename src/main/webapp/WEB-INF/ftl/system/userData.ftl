@@ -60,11 +60,16 @@
 					        <td></td>
 				        </#if>
 				        
-				        
-				        
-				        <td><a onclick="update(this)">修改</a> | <a href="deleteUser.do?userid=${user.userid}" onclick="javascript:return confirm('确实要删除吗？')">删除</a></td>
+				        <td>
+				        <#if Popedom?index_of('l')!=-1>
+				        <a onclick="update(this)">修改</a> | 
+				         </#if>
+				        <#if Popedom?index_of('m')!=-1>
+				        <a href="deleteUser.do?userid=${user.userid}" onclick="javascript:return confirm('确实要删除吗？')">删除</a>
+				        </#if>
+				        </td>
+				       
 				        <#if user.personpage??>
-				        
 				         <input type="hidden" name='personpage' value='${user.personpage}'>
 				        <#else>
 				        <td></td>
