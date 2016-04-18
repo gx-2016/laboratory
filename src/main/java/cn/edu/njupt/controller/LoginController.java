@@ -89,5 +89,10 @@ public class LoginController {
 		return "redirect:home/spotlightAdmin.do";
 	}
 	
+	@RequestMapping("/register.do")
+	public String register(){
+		return "register";
+	}
+	
 	
 }
