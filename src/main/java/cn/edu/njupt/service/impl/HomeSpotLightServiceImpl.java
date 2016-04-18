@@ -41,4 +41,12 @@ public class HomeSpotLightServiceImpl implements HomeSpotLightServiceI {
 		return list;
 	}
 
+	/* 
+	 * 删除主页的焦点
+	 */
+	@Override
+	public int deleteSpotlightById(int seqid) {
+		return homeSpotLightMapper.deleteByPrimaryKey(seqid);
+	}
+
 }

@@ -12,7 +12,7 @@
 		        <th>${(spotlight_index) + 1}</th>
 		        <td>${spotlight.spotlightname!}</td>
 		        <td>${spotlight.spotlightpicurl!}</td>
-		        <th><a>删除</a></th>
+		        <th><a href="deleteSpotlight.do?seqid=${spotlight.seqid!}">删除</a></th>
 		    </tr>
 		    </#list>
 	   </#if>

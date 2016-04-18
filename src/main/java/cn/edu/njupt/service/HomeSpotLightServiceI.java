@@ -9,4 +9,6 @@ public interface HomeSpotLightServiceI {
 	public List<HomeSpotLight> getAllHomeSpotLight(); 
 	
 	public  int insert(HomeSpotLight record);
+
+	public int deleteSpotlightById(int parseInt);
 }

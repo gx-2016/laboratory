@@ -1,6 +1,5 @@
 package cn.edu.njupt.model;
 
-import java.util.Date;
 
 public class UserForm {
     private String userid;

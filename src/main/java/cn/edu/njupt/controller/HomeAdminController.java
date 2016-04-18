@@ -56,11 +56,13 @@ public class HomeAdminController {
 			  //上传成功 
               if(flag)
 			   {
-            	   //1.获取上传文件的路径
-            	   String filepath = filetemp.getAbsolutePath();
+            	  //1.获取上传文件的路径
+	           	   String filepath = filetemp.getAbsolutePath().substring(filetemp.getAbsolutePath().lastIndexOf("\\"));
+	           	   System.out.println(filepath);
             	  
             	   //2.封装javabean
             	   HomeSpotLight  spotlight = new HomeSpotLight();
+            	   spotlight.setSpotlightname(spotlightname);
             	   spotlight.setSpotlightpicurl(filepath);
             	   spotlight.setProgresstime(new Date());
             	   spotlight.setRemark(remark);
@@ -113,4 +115,21 @@ public class HomeAdminController {
 		
 	}
 	
+	
+	@RequestMapping(value="/deleteSpotlight.do")
+	public String deleteSpotlight(String seqid,ModelMap map){
+		int result = homeSpotLightService.deleteSpotlightById(Integer.parseInt(seqid));
+		if(result > 0)
+		{
+			map.put("message", "删除焦点成功！");
+			return "forward:spotlightAdmin.do";
+		}
+		else {
+			map.put("message", "删除焦点对象失败！");
+		    return "500";
+		}
+		
+	}
+	
+
 }

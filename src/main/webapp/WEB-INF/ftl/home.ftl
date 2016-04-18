@@ -65,23 +65,22 @@
 					<!-- The container is used to define the width of the slideshow -->
 					<div class="container">
 						<div id="slides" class="slidesjs">
+						<#if spotlights??>
+						<#list spotlights as spotlight>
 							<a
 								href="https://blogs.adelaide.edu.au/eucentre/2016/03/11/shakespeare/"
-								title="The Death of Shakespeare | Public Lecture"
+								<#if spotlight.spotlightname?? >
+								 title="${spotlight.spotlightname}"
+								</#if>
 								onClick="ga('send', 'event', 'Homepage', 'Banner', 'Building Appeal');"><img
-								src="Picture/hp-banner-r-death-shakespeare.jpg"
-								alt="The Death of Shakespeare | Public Lecture"></a> <a
-								href="http://www.adelaide.edu.au/news/news83902.html"
-								title="Sia Furler Institute to foster new generations of artists"
-								onClick="ga('send', 'event', 'Homepage', 'Banner', 'Sia Furler');"><img
-								src="Picture/hp-banner-r-sia-furler.jpg"
-								alt="Sia Furler Institute to foster new generations of artists"></a>
-							<a
-								href="http://www.adelaide.edu.au/give/how/appeals/hmsb-appeal/"
-								title="Help transform health treatment, training and discovery"
-								onClick="ga('send', 'event', 'Homepage', 'Banner', 'Building Appeal');"><img
-								src="Picture/hp-banner-r-building-appeal.jpg"
-								alt="Help transform health treatment, training and discovery"></a>
+								<#if spotlight.spotlightpicurl?? >
+								src="spotlight\${spotlight.spotlightpicurl}"
+								</#if>
+								<#if spotlight.spotlightname?? >
+								alt="${spotlight.spotlightname}"></a>
+								</#if>
+						</#list>
+						</#if>	
 						</div>
 					</div>
 					<!-- End SlidesJS Required: Start Slides -->

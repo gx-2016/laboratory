@@ -71,7 +71,7 @@ public class PhotoAdminController {
 			   {
             	   //1.获取上传文件的路径
             	   String filepath = filetemp.getAbsolutePath().substring(filetemp.getAbsolutePath().lastIndexOf("\\"));
-            	  System.out.println(filepath);
+            	   System.out.println(filepath);
             	   //2.封装javabean
             	   PicResource photo = new PicResource();
             	   photo.setPicname(picname);

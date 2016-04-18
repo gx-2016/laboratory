@@ -53,14 +53,14 @@
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="logonname" name="logonname" value="${username!}">
+                        <input class="form-control" type="text" required="" placeholder="logonname" name="logonname" value="${logonname!}">
                         <i class="md md-account-circle form-control-feedback l-h-34"></i>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" placeholder="logonpwd" name="logonpwd">
+                        <input class="form-control" type="password" required="" placeholder="logonpwd" name="logonpwd" value="${logonpwd!}">
                         <i class="md md-vpn-key form-control-feedback l-h-34"></i>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="form-group">
                     <div class="col-xs-12">
                         <div class="checkbox checkbox-primary">
-                            <input id="checkbox-signup" type="checkbox">
+                            <input id="checkbox-signup"  type="checkbox" name="remeberMe"  value="yes" ${"checked"}>
                             <label for="checkbox-signup">
                                 Remember me
                             </label>
