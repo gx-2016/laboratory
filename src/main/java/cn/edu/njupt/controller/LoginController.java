@@ -91,6 +91,7 @@ public class LoginController {
 	
 	@RequestMapping("/register.do")
 	public String register(){
+
 		return "register";
 	}
 	
