@@ -13,7 +13,7 @@ public interface SystemDDLServiceI {
 
 	int saveDDLListByKeyWord(SystemDDL systemDDL);
 
-	SystemDDL findDDLListByDdlCode(String keyword, Integer ddlcode);
+	SystemDDL findDDLByDdlCode(String keyword, Integer ddlcode);
 	
-	SystemDDL findDDLListByDdlName(String keyword, String ddlname);
+	SystemDDL findDDLByDdlName(String keyword, String ddlname);
 }

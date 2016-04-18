@@ -22,8 +22,8 @@ public interface SystemDDLMapper {
 
 	List<SystemDDL> findDDLListByKeyWord(String keyword);
 
-	SystemDDL findDDLListByDdlCode(HashMap<Object, Object> param);
+	SystemDDL findDDLByDdlCode(HashMap<Object, Object> param);
 
-	SystemDDL findDDLListByDdlName(HashMap<Object, Object> param);
+	SystemDDL findDDLByDdlName(HashMap<Object, Object> param);
 
 }

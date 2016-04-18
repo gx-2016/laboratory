@@ -61,12 +61,12 @@ public class SystemDDLServiceImpl implements SystemDDLServiceI {
 	 * 根据关键字类型和数据项编号查询数据项
 	 */
 	@Override
-	public SystemDDL findDDLListByDdlCode(String keyword, Integer ddlcode) {
+	public SystemDDL findDDLByDdlCode(String keyword, Integer ddlcode) {
 		HashMap<Object, Object> param = new HashMap<Object, Object>();
 		param.put("keyword", keyword);
 		param.put("ddlcode", ddlcode);
 
-		return systemDDLMapper.findDDLListByDdlCode(param);
+		return systemDDLMapper.findDDLByDdlCode(param);
 	}
 
 
@@ -74,12 +74,12 @@ public class SystemDDLServiceImpl implements SystemDDLServiceI {
 	 * 根据关键字类型和数据项名称查询数据项
 	 */
 	@Override
-	public SystemDDL findDDLListByDdlName(String keyword, String ddlname) {
+	public SystemDDL findDDLByDdlName(String keyword, String ddlname) {
 		HashMap<Object, Object> param = new HashMap<Object, Object>();
 		param.put("keyword", keyword);
 		param.put("ddlname", ddlname);
 		
-		return systemDDLMapper.findDDLListByDdlName(param);
+		return systemDDLMapper.findDDLByDdlName(param);
 	}
 	
 

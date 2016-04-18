@@ -86,11 +86,11 @@
 
                 <div class="form-group m-t-30">
                     <div class="col-sm-7">
-                        <a href="pages-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
+                        <a href="#" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
                             password?</a>
                     </div>
                     <div class="col-sm-5 text-right">
-                        <a href="register.do" class="text-muted">Create an account</a>
+                        <a href="registerIndex.do" class="text-muted">Create an account</a>
                     </div>
                 </div>
             </form>

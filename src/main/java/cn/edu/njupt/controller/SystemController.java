@@ -67,7 +67,7 @@ public class SystemController {
 		
 		System.out.println("keyword:"+keyword);
 		//1.根据keyword查询所有的数据项
-		SystemDDL result = systemDDLService.findDDLListByDdlCode( keyword,ddlcode);
+		SystemDDL result = systemDDLService.findDDLByDdlCode( keyword,ddlcode);
 		if( null != result)
 		{
 			System.out.println("存在");
@@ -83,7 +83,7 @@ public class SystemController {
 	@RequestMapping("/findDDLByDdlName.do")
 	public ModelMap findDDLByDdlName(String keyword,String ddlname,ModelMap modelMap){
 		//1.根据keyword查询所有的数据项
-		SystemDDL result = systemDDLService.findDDLListByDdlName( keyword,ddlname);
+		SystemDDL result = systemDDLService.findDDLByDdlName( keyword,ddlname);
 		if( null != result)
 		{
 			System.out.println("存在");

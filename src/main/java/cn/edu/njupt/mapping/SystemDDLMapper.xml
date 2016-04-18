@@ -31,7 +31,7 @@
   </select>
   
   <!-- 根据关键字类型和数据项编号查询数据项-->
-  <select id="findDDLListByDdlCode" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
+  <select id="findDDLByDdlCode" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
     select 
    <include refid="Base_Column_List" />
     from lab_systemddl o
@@ -40,7 +40,7 @@
   </select>
   
    <!-- 根据关键字类型和数据项名称查询数据项-->
-  <select id="findDDLListByDdlName" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
+  <select id="findDDLByDdlName" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
     select 
     <include refid="Base_Column_List" />
     from lab_systemddl o

@@ -48,6 +48,8 @@ public class AccessInteceptor implements HandlerInterceptor {
 		List<String> accessList = new ArrayList<String>();
 		accessList.add("login.do");
 		accessList.add("loginIndex.do");
+		accessList.add("register.do");
+		accessList.add("registerIndex.do");
 		if(accessList.contains(uri)){
 			return true;
 		}

@@ -1,5 +1,6 @@
 package cn.edu.njupt.controller;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
@@ -14,14 +15,20 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import cn.edu.njupt.model.RolePopedom;
 import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.User;
 import cn.edu.njupt.model.UserRole;
 import cn.edu.njupt.service.RoleServiceI;
 import cn.edu.njupt.service.SystemDDLServiceI;
 import cn.edu.njupt.service.UserServiceI;
+import cn.edu.njupt.util.FileUtil;
 import cn.edu.njupt.util.LogonUtils;
+import cn.edu.njupt.util.StringHelper;
 
 @Controller
 public class LoginController {
@@ -79,7 +86,7 @@ public class LoginController {
 						String Popedomtemp = roleServiceI.findRolePopedomByRoleId(userRole.getRoleid()).getPopedomcode();
 					    Popedom+=Popedomtemp;
 					   //2.2根据角色id获取数据字典中角色名称
-					    SystemDDL systemDDL = systemDDLService.findDDLListByDdlCode("角色", Integer.parseInt(userRole.getRoleid()));
+					    SystemDDL systemDDL = systemDDLService.findDDLByDdlCode("角色", Integer.parseInt(userRole.getRoleid()));
 					    userRoleMap.put(systemDDL.getDdlcode()+"", systemDDL.getDdlname());
 					}
 					request.getSession().setAttribute("userRoleMap", userRoleMap);
@@ -119,18 +126,109 @@ public class LoginController {
 		return "redirect:home/spotlightAdmin.do";
 	}
 	
-	
+	//退出系统
  	@RequestMapping("/exit.do")
 	public String exit(HttpSession  httpSession){
  		httpSession.invalidate();
 		return "redirect:loginIndex.do";
  	}
-	
+ 	
+	//注册用户
 	@RequestMapping("/register.do")
-	public String register(){
+	public String register(String username, String logonname, String logonpwd,
+			                String sexid, String birthday, String address,
+			                String email, String mobile, String isduty,
+			                String ondutydate, String personpage, String education,
+			                String companyname, String workdetail, String remark,
+			                HttpServletRequest request,ModelMap map,
+			                @RequestParam("file") CommonsMultipartFile file){
 
+		// 2.封装javabean
+		User user = new User();
+		user.setUsername(username);
+		user.setLogonname(logonname);
+		user.setLogonpwd(logonpwd);
+		user.setSexid(sexid);
+		user.setBirthday(StringHelper.stringConvertDate(birthday));
+		user.setAddress(address);
+		user.setEmail(email);
+		user.setEducation(education);
+		user.setMobile(mobile);
+		user.setIsduty(isduty);
+		System.out.println("isduty:"+isduty);
+		user.setOndutydate(StringHelper.stringConvertDate(ondutydate));
+		user.setPersonpage(personpage);
+		user.setCompanyname(companyname);
+		user.setWorkdetail(workdetail);
+		user.setRemark(remark);
+		
+		if (!file.isEmpty() && file.getContentType().contains("image")) {
+			File filetemp = FileUtil.createFile(file, request,
+					"/system/");
+			boolean flag = FileUtil.copyFile(file, request,
+					"/system/");
+			System.out.println(flag);
+			
+			// 上传成功
+			if (flag) {
+				// 1.获取上传文件的路径
+				String filepath = filetemp.getPath().substring(filetemp.getPath().lastIndexOf("\\"));
+				System.out.println(filepath);
+				user.setPhotourl(filepath);
+			} else {
+				map.put("message", "上传头像失败！");
+				return "500";
+			}
+		}
+
+		int result = userServiceI.addUser(user);
+
+		//如果插入成功影响集返回为1
+		if (result > 0) {
+			map.put("message", "增加成功");
+			//给用户默认角色
+			//1.查询普通用户具有的角色
+			SystemDDL systemDDL = systemDDLService.findDDLByDdlName("角色", "普通用户");
+			//2.获取当前用户id号
+			User user1 = userServiceI.findUserExist(logonname);
+			//3.建立用户角色关联
+			UserRole userRole = new UserRole();
+			userRole.setRoleid(systemDDL.getDdlcode().toString());
+			userRole.setUserid(user1.getUserid().toString());
+			
+			return "redirect:loginIndex.do";
+		} else {
+			map.put("message", "增加失败！");
+			return "500";
+		}
+	}
+	
+
+	@RequestMapping("/registerIndex.do")
+	public String registerIndex(){
 		return "register";
 	}
 	
+	/**
+	 * 后台查询登录名是否存在
+	 * @Description: TODO
+	 * @Author: zhc
+	 * @Date: 2016年4月13日
+	 */
+	@ResponseBody
+	@RequestMapping("/findUserExist.do")
+	public ModelMap findUserExist(ModelMap map,String logonname) {
+		
+		User user = userServiceI.findUserExist(logonname);
+			
+			if (null!=user) {
+				map.put("result", "ok");
+				
+			} else {
+				map.put("result", "error");
+			}
+			return map;
+	}
+    
 	
 }
