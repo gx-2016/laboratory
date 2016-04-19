@@ -117,13 +117,10 @@
 										</#list>
 										</#if>
 									</div>
-
-
 								</div>
 							</div>
 							<div class="span6">
 								<div class="news-events-feed">
-
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="http://www.adelaide.edu.au/events/"
@@ -145,15 +142,13 @@
 															<span class="news-events-feed__date__month--blue">${inform.newstime?string("MMM")}</span>
 														</div>
 														<div class="news-events-feed__excerpt">
-															<strong>${inform.newstitle}</strong> <br>${inform.newstitle}
+															<strong>${inform.newstitle}</strong> <br>${inform.newscontent}
 														</div>
 												</a></li>
 											</ul>
 										</#list>
 										</#if>
 									</div>
-
-
 								</div>
 							</div>
 						</div>

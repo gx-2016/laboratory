@@ -39,6 +39,7 @@ public class NewsAdminController {
  		User user =(User)request.getSession().getAttribute("logonuser");
  		News news = new News();
  		news.setNewsauthor(user.getUsername());
+ 		news.setNewstype("1");
  		news.setNewstitle(newsName);
  		news.setNewsabstract(newsAbstract);
  		news.setNewscontent(newsContent);
@@ -49,11 +50,29 @@ public class NewsAdminController {
 	 	
  	@RequestMapping("/deleteNews.do")
 	public String deleteNews(HttpServletRequest request ){
-		int id = Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
+		int id = Integer.parseInt(request.getParameter("id")); 
 		newsService.deleteNewsByID(id);
 		return "forward:newsAdmin.do";
 	}
+	@RequestMapping("/toAddInform.do")
+	public String toAddInform(){
+		
+		return "news/addInform";
+	}
 	
+	@RequestMapping("/saveAddInform.do")
+	public String saveAddInform(HttpServletRequest request){
+		String informTitle =  request.getParameter("informName");
+		String informContent = request.getParameter("informContent");
+		News inform = new News();
+		User user = (User)request.getSession().getAttribute("logonuser");
+		inform.setNewstitle(informTitle);
+		inform.setNewscontent(informContent);
+		inform.setNewstime(new Date ());
+		inform.setNewsauthor(user.getUsername());
+		inform.setNewstype("2");
+		newsService.insertNews(inform);
+		return "news/addInform";
+	}
 	
 }

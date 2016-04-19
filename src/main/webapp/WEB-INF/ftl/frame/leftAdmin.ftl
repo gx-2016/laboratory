@@ -27,6 +27,7 @@
                                  <ul class="list-unstyled">
                                    <#if Popedom?index_of('j')!=-1>
 								     <li><a href="../news/newsAdmin.do">编辑新闻</a></li>
+								     <li><a href="../news/toAddInform.do">编辑通知</a></li>
 								   </#if>
 								 </ul>
                             </li>
