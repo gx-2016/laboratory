@@ -109,8 +109,8 @@
 															<span class="news-events-feed__date__day"><strong>${news.newstime?string("dd")}</strong></span>
 															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
 														</div>
-														<div class="news-events-feed__excerpt">
-															<strong>${news.newstitle}</strong> <br>${news.newstitle}
+														<div class="news-events-feed__excerpt" style="height:80px;overflow-y:hidden;overflow-x:hidden;">
+															<strong>${news.newstitle}</strong> <br>${news.newsabstract?default("")}
 														</div>
 												</a></li>
 											</ul>
@@ -139,9 +139,9 @@
 														<div class="news-events-feed__date">
 															<span class="news-events-feed__date__day-abbr"><strong>${inform.newstime?string("EEE")}</strong></span>
 															<span class="news-events-feed__date__day"><strong>${inform.newstime?string("dd")}</strong></span>
-															<span class="news-events-feed__date__month--blue">${inform.newstime?string("MMM")}</span>
+															<span class="news-events-feed__date__month--red">${inform.newstime?string("MMM")}</span>
 														</div>
-														<div class="news-events-feed__excerpt">
+														<div class="news-events-feed__excerpt" style="height:80px;overflow:auto;overflow-x:hidden;">
 															<strong>${inform.newstitle}</strong> <br>${inform.newscontent}
 														</div>
 												</a></li>
