@@ -3,7 +3,7 @@
     
     <!-- Page topbar -->
     <div id="page-topbar" class="row topBar">
-      <div class="span6"> <a href="http://www.njupt.edu.cn/" title="Nanjing University Of Posts And Telecommunications" class="btn-uoa-home"> <span class="btn-icon"></span> Njupt </a> </div>
+      <div class="span6"> <a href="http://www.njupt.edu.cn/"  target="_blank" title="Nanjing University Of Posts And Telecommunications" class="btn-uoa-home"> <span class="btn-icon"></span> Njupt </a> </div>
       <div class="span6 search">
         <form action="/cgi-bin/site-bin/top-search.pl" id="topbar-search" class="ui-form ui-tools-form-search no_uniform">
           <input type="text" class="ui-form-text" name="query" placeholder="Search" tabindex="6">

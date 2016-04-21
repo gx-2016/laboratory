@@ -21,30 +21,29 @@
 		<div class="span2 no-mobile">
 			<h4 style="font-size:18px;" class="footer-title">信息服务</h4>
 			<ul>
-				<li style="font-size:15px;"><a href="http://lib.njupt.edu.cn/" title="南邮图书馆">图书馆</a></li>
-				<li style="font-size:15px;"><a href="http://oa.njupt.edu.cn:8080/oa/" title="办公信息">办公信息</a></li>
-				<li style="font-size:15px;"><a href="mailto:xiaozhang@njupt.edu.cn" title="电子邮件">电子邮件</a></li>
-				<li style="font-size:15px;"><a href="http://mail.njupt.edu.cn/" title="电子邮件">电子邮件</a></li>
-				<li style="font-size:15px;"><a href="http://www.njupt.edu.cn/s/1/t/1/p/22/c/16/d/72/list.htm" title="班车时刻表">班车时刻表</a></li>
-				<li style="font-size:15px;"><a href="http://www.njupt.edu.cn/s/1/t/1/p/22/c/16/d/73/list.htm" title="作息时刻表">作息时刻表</a></li>
+				<li style="font-size:15px;"><a href="http://lib.njupt.edu.cn/" target="_blank" title="南邮图书馆">图书馆</a></li>
+				<li style="font-size:15px;"><a href="http://oa.njupt.edu.cn:8080/oa/" target="_blank" title="办公信息">办公信息</a></li>
+				<li style="font-size:15px;"><a href="mailto:xiaozhang@njupt.edu.cn" target="_blank" title="电子邮件">电子邮件</a></li>
+				<li style="font-size:15px;"><a href="http://www.njupt.edu.cn/s/1/t/1/p/22/c/16/d/72/list.htm"  target="_blank" title="班车时刻表">班车时刻表</a></li>
+				<li style="font-size:15px;"><a href="http://www.njupt.edu.cn/s/1/t/1/p/22/c/16/d/73/list.htm"  target="_blank" title="作息时刻表">作息时刻表</a></li>
 			</ul>
 		</div>
 		<div class="span2 no-mobile">
 			<h4 class="footer-title" style="font-size:18px;">学术出版物</h4>
 			<ul>
-				<li style="font-size:15px;"><a href="http://www.scichina.com/" title="中国科学（F）">中国科学（F）</a></li>
-				<li style="font-size:15px;"><a href="http://cjc.ict.ac.cn/" title="计算机学报">计算机学报</a></li>
-				<li style="font-size:15px;"><a href="http://www.jos.org.cn/quanwen.htm" title="软件学报">软件学报</a></li>
-				<li style="font-size:15px;"><a href="http://nysk.njupt.edu.cn/ch/index.aspx" title="南京邮电大学学报">南京邮电大学学报</a></li>
-				<li style="font-size:15px;"><a href="http://www.ijsi.org/IJSI/" title="International Journal of Software and Informatics">International Journal of Software and Informatics</a></li>
+				<li style="font-size:15px;"><a href="http://www.scichina.com/" target="_blank" title="中国科学（F）">中国科学（F）</a></li>
+				<li style="font-size:15px;"><a href="http://cjc.ict.ac.cn/" target="_blank" title="计算机学报">计算机学报</a></li>
+				<li style="font-size:15px;"><a href="http://www.jos.org.cn/quanwen.htm" target="_blank" title="软件学报">软件学报</a></li>
+				<li style="font-size:15px;"><a href="http://nysk.njupt.edu.cn/ch/index.aspx" target="_blank" title="南京邮电大学学报">南京邮电大学学报</a></li>
+				<li style="font-size:15px;"><a href="http://www.ijsi.org/IJSI/" target="_blank" title="International Journal of Software and Informatics">International Journal of Software and Informatics</a></li>
 			</ul>
 		</div>
 		<div class="span2 no-mobile">
 			<h4 class="footer-title" style="font-size:18px;">在线资源</h4>
 			<ul>
-				<li style="font-size:15px;"><a href="http://home.earthlink.net/~dwaha/research/case-based-reasoning.html" title="CBR Resources">CBR Resources</a></li>
-				<li style="font-size:15px;"><a href="http://www-2.cs.cmu.edu/afs/cs/project/cil/ftp/html/vision.html" title="Computer Vision Homepage">Computer Vision Homepage</a></li>
-				<li style="font-size:15px;"><a href="http://www.face-rec.org/" title="Face Recognition Homepage">Face Recognition Homepage</a></li>
+				<li style="font-size:15px;"><a href="http://home.earthlink.net/~dwaha/research/case-based-reasoning.html" target="_blank" title="CBR Resources">CBR Resources</a></li>
+				<li style="font-size:15px;"><a href="http://www-2.cs.cmu.edu/afs/cs/project/cil/ftp/html/vision.html" target="_blank" title="Computer Vision Homepage">Computer Vision Homepage</a></li>
+				<li style="font-size:15px;"><a href="http://www.face-rec.org/" target="_blank" title="Face Recognition Homepage">Face Recognition Homepage</a></li>
 			</ul>
 		</div>
 		<div class="span2">
