@@ -9,7 +9,7 @@ public class WrittingsController {
 	
 	@RequestMapping("/writtings.do")
 	public String learn(ModelMap modelMap){	
-		 return "writtings";
+		 return "writtings2";
     }
 	
 }

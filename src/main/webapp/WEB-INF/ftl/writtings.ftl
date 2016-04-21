@@ -58,6 +58,9 @@
 	<section class="new-home">
 		<div id="page-container" class="container">
 			<div class="row-fluid">
+				
+				
+				<# include "writtings2.ftl">
 				<div class="span12 rowWhite">
 
 					<div class="addPad">
