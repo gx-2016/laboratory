@@ -56,8 +56,7 @@
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-                   
-                   <!-- 中间内容 -->
+
 					<div class="o-layout-container">
 						<div id="secondary_menu" class="o-layout-main-nav">
 							<div class="region region-secondary-menu">
@@ -89,7 +88,6 @@
 
 						<article id="main-content" class="o-layout-main-article">
 							<div class="region region-content">
-								
 								<!-- title -->
 								<div id="block-ua-theme-page-title"
 									class="contextual-region block block-core block-page-title-block">
@@ -98,16 +96,17 @@
 									<h1 class="page-title">
 										<span
 											class="field field--name-title field--type-string field--label-hidden">
-											标题 </span>
+											About the Uni </span>
 									</h1>
 								</div>
-								
 								<!-- content -->
 								<div id="block-ua-theme-content"
 									class="block block-system block-system-main-block">
-									<article role="article" class="contextual-region node node--type-ua-page node--promoted node--view-mode-full" 
-									    about="/about/node/1">
-										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
+									<article role="article"
+										class="contextual-region node node--type-ua-page node--promoted node--view-mode-full"
+										about="/about/node/3">
+										<div
+											data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
 										<div class="node__content">
 											<div
 												class="field field--name-field-ua-page-content field--type-entity-reference-revisions field--label-hidden field__items">
@@ -187,6 +186,7 @@
 			</div>
 		</div>
 	</section>
+
 
 	<#include "frame/footer1.ftl">
 </body>
