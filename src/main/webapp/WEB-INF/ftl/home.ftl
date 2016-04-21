@@ -154,51 +154,94 @@
 						</div>
 					</div>
 					<!-- addPad -->
-
-					<div class="row-fluid">
-
-						<!-- New social markup -->
-						<div id="socialmedia-bar" class="socialmedia-bar">
-							<div class="socialmedia-bar__wrapper">
-								<ul class="socialmedia-bar__list">
-									<li class="socialmedia-bar__item"><a
-										href="//instagram.com/uniofadelaide"
-										title="See our snaps on Instagram"
-										class="btn-icon btn-icon__instagram">Instagram</a></li>
-									<li class="socialmedia-bar__item"><a
-										href="//www.facebook.com/uniofadelaide"
-										title="Friend us on Facebook"
-										class="btn-icon btn-icon__facebook">Facebook</a></li>
-									<li class="socialmedia-bar__item"><a
-										href="//twitter.com/uniofadelaide"
-										title="Follow us on Twitter"
-										class="btn-icon btn-icon__twitter">Twitter</a></li>
-									<li class="socialmedia-bar__item"><a
-										href="//www.linkedin.com/edu/school?id=10217"
-										title="Connect with us on LinkedIn"
-										class="btn-icon btn-icon__linkedin">LinkedIn</a></li>
-									<li class="socialmedia-bar__item"><a
-										href="//www.youtube.com/user/universityofadelaide"
-										title="Watch us on Youtube" class="btn-icon btn-icon__youtube">Youtube</a></li>
-									<li class="socialmedia-bar__item"><a
-										href="//plus.google.com/109424345116380358719/posts"
-										title="See us on Google+" class="btn-icon btn-icon__gplus">Google+</a></li>
-									<li class="socialmedia-bar__item"><a href="/rss/"
-										title="Subscribe to our News &amp; Events RSS"
-										class="btn-icon btn-icon__rss">RSS</a></li>
-									<li class="socialmedia-bar__item"><a
-										href="//blogs.adelaide.edu.au/" title="Read our Blogs"
-										class="btn-icon btn-icon__blogs">Blogs</a></li>
-								</ul>
-								<div class="fb-like" id="facebook-like-page"
-									data-href="http://www.adelaide.edu.au/" data-send="false"
-									data-width="490" data-show-faces="false"
-									data-action="recommend" data-font="arial"></div>
-							</div>
-						</div>
-					</div>
+                    <!--图片-->
+                  
+		                  <div class="row-fluid mbl">
+								<!-- new markup pod -->
+								<div class="span6 home-pod mln__ie7" >
+									<div class="pod" >
+										<div class="pod__title">
+											<h2 align="center">
+												<a href="people.do" title="成员管理">
+													成员管理</a>
+											</h2>
+										</div>
+										<div class="pod__content" style="margin:0px 0px 0px 20px;"> 
+											<a href="people.do"> <img
+												src="assets/images/img_7.jpg">
+										</div>
+									</div>
+								</div>
+									<!-- new markup pod -->
+								<div class="span3 home-pod ">
+									<div class="pod">
+										<div class="pod__title">
+											<h2 align="center">
+												<a href="#" title="科研著作">
+													科研著作</a>
+											</h2>
+										</div>
+										<div class="pod__content">
+											<a href="#"> <img
+												src="assets/images/img_10.jpg">
+										</div>
+									</div>
+								</div>
+									<!-- new markup pod -->
+								<div class="span3 home-pod mln">
+									<div class="pod">
+										<div class="pod__title">
+											<h2 align="center">
+												<a href="#" title="教学辅导">
+													教学辅导</a>
+											</h2>
+										</div>
+										<div class="pod__content" style="margin:0px 10px 0px 0px;">
+											<a href="#"> <img
+												src="assets/images/work_3.jpg">
+										</div>
+									</div>
+								</div>
+									<!-- new markup pod -->
+								<div class="span3 home-pod ">
+									<div class="pod">
+										<div class="pod__title">
+											<h2 align="center">
+												<a href="#" title="ACM竞赛">
+													ACM竞赛</a>
+											</h2>
+										</div>
+										<div class="pod__content">
+											<a href="#"> <img
+												src="assets/images/work_8.jpg">
+										</div>
+									</div>
+								</div>
+								
+									<!-- new markup pod -->
+								<div class="span3 home-pod ">
+									<div class="pod">
+										<div class="pod__title">
+											<h2 align="center">
+												<a href="photos.do" title="生活影集">
+													生活影集</a>
+											</h2>
+										</div>
+										<div class="pod__content" style="margin:0px 10px 0px 0px;">
+											<a href="photos.do"> <img
+												src="assets/images/work_2.jpg">
+										</div>
+									</div>
+								</div>
+								
+					                  
+		                   </div>
+                  
+                 <!--图片-->
+						
 				</div>
 				<!-- /rowWhite -->
+				
 			</div>
 		</div>
 	</section>
@@ -207,3 +250,8 @@
 
 </body>
 </html>
+
+
+
+  
+                   

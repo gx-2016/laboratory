@@ -3,7 +3,7 @@
     
     <!-- Page topbar -->
     <div id="page-topbar" class="row topBar">
-      <div class="span6"> <a href="/seek-light/" title="Nanjing University Of Posts And Telecommunications" class="btn-uoa-home"> <span class="btn-icon"></span> Njupt </a> </div>
+      <div class="span6"> <a href="http://www.njupt.edu.cn/" title="Nanjing University Of Posts And Telecommunications" class="btn-uoa-home"> <span class="btn-icon"></span> Njupt </a> </div>
       <div class="span6 search">
         <form action="/cgi-bin/site-bin/top-search.pl" id="topbar-search" class="ui-form ui-tools-form-search no_uniform">
           <input type="text" class="ui-form-text" name="query" placeholder="Search" tabindex="6">
@@ -30,8 +30,8 @@
     
     <!-- Branding -->
     <div class="row brandCont">
-      <div class="span8 branding-title"> <a href="home.do" title="The Laboratory of ICV" class="branding-title home-title"> The Laboratory <em>of</em> ICV </a> </div>
-      <div class="span4 branding-logo"> <a href="//http://www.njupt.edu.cn//" title="Nanjing University Of Posts And Telecommunications"> <img src="/laboratory/Picture/head_1.gif" alt="The Logo of NJUPT "> </a> </div>
+      <div class="span8 branding-title"> <a href="home.do" title="The Laboratory of ICV" class="branding-title home-title"> The Laboratory of ICV </a> </div>
+      <div class="span4 branding-logo"> <a href="http://www.njupt.edu.cn/" title="Nanjing University Of Posts And Telecommunications"> <img src="/laboratory/Picture/head_1.gif" alt="The Logo of NJUPT "> </a> </div>
     </div>
     
     <!-- Megamenu -->
