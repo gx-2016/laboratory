@@ -47,36 +47,28 @@
 		                </div>
 						<ul class="nav">
 							<li class="parent menu-btn-home" id="ui-menu-btn-home">
-								<a href="/laboratory/home.do"> Home <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/home.do"> 主页 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
-							<li class="parent menu-btn-news" id="ui-menu-btn-news">
-								<a href="/laboratory/news.do"> <span class="divider-lt">&nbsp;</span>News <span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
-							</li>
-							<li class="parent menu-btn-learn" id="ui-menu-btn-learn">
-								<a href="/laboratory/learn.do"> <span class="divider-lt">&nbsp;</span> Learn <span class="divider-dk">&nbsp;</span> </a>
+							<li class="parent menu-btn-people" id="ui-menu-btn-people">
+								<a href="/laboratory/people.do"> <span class="divider-lt">&nbsp;</span> 成员 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-share" id="ui-menu-btn-share">
-								<a href="/laboratory/share.do"> <span class="divider-lt">&nbsp;</span>Share <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/conetst.do"> <span class="divider-lt">&nbsp;</span>竞赛 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-research" id="ui-menu-btn-research">
-								<a href="/laboratory/writtings.do"> <span class="divider-lt">&nbsp;</span> Writtings <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/writtings.do"> <span class="divider-lt">&nbsp;</span> 科研 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
-							<li class="parent menu-btn-projects" id="ui-menu-btn-projects">
-								<a href="/laboratory/project.do"> <span class="divider-lt">&nbsp;</span> Projects <span class="divider-dk">&nbsp;</span> </a>
+							<li class="parent menu-btn-learn" id="ui-menu-btn-learn">
+								<a href="/laboratory/learn.do"> <span class="divider-lt">&nbsp;</span> 教学 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
-						
-							<li class="parent menu-btn-people" id="ui-menu-btn-people">
-								<a href="/laboratory/people.do"> <span class="divider-lt">&nbsp;</span> People <span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
-							</li>
+							
 							<li class="parent menu-btn-photos" id="ui-menu-btn-photos">
-								<a href="/laboratory/photos.do"> <span class="divider-lt">&nbsp;</span>Photos <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/photos.do"> <span class="divider-lt">&nbsp;</span>生活 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						</ul>
