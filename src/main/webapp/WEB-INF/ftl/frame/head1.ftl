@@ -5,26 +5,6 @@
     <div id="page-topbar" class="row topBar">
       <div class="span6"> <a href="http://www.njupt.edu.cn/"  target="_blank" title="Nanjing University Of Posts And Telecommunications" class="btn-uoa-home"> <span class="btn-icon"></span> Njupt </a> </div>
       <div class="span6 search">
-        <form action="/cgi-bin/site-bin/top-search.pl" id="topbar-search" class="ui-form ui-tools-form-search no_uniform">
-          <input type="text" class="ui-form-text" name="query" placeholder="Search" tabindex="6">
-          <div class="ui-form-btn ui-form-btn-select">
-            <div class="ui-search-options">
-              <label for="option-website" class="radio">
-                <input id="option-website" name="search_system" value="website" type="radio" checked="checked" tabindex="2">
-                Website </label>
-              <label for="option-people" class="radio">
-                <input id="option-people" name="search_system" value="people" type="radio" tabindex="3">
-                People </label>
-              <label for="option-library" class="radio">
-                <input id="option-library" name="search_system" value="library" type="radio" tabindex="4">
-                Library </label>
-              <label for="option-degrees" class="radio">
-                <input id="option-degrees" name="search_system" value="degrees" type="radio" tabindex="5">
-                Degrees </label>
-            </div>
-          </div>
-          <input type="submit" class="ui-form-btn ui-form-btn-go" value="Search" title="Search" tabindex="7">
-        </form>
       </div>
     </div>
     
@@ -55,7 +35,7 @@
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-share" id="ui-menu-btn-share">
-								<a href="/laboratory/conetst.do"> <span class="divider-lt">&nbsp;</span>竞赛 <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/contest.do"> <span class="divider-lt">&nbsp;</span>竞赛 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-research" id="ui-menu-btn-research">
