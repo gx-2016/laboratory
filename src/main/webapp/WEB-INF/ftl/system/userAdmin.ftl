@@ -51,10 +51,18 @@
                     <form id="saveUserForm" action="addUser.do" method="post" enctype="multipart/form-data">
 	                    <div class="modal-body">
 	                        <div class="row">
+	                               <div class="col-md-6">
+		                                <div class="form-group">
+		                                    <label for="field-2" class="control-label">姓名</label>
+		                                    <input type="text" class="form-control" id="username" name= "username"  placeholder="输入姓名" >
+		                                </div>
+		                            </div>
+	                                <div class="col-md-6">
 	                                <div class="form-group">
-	                                    <label for="field-2" class="control-label">姓名</label>
-	                                    <input type="text" class="form-control" id="username" name= "username"  placeholder="输入姓名" >
+	                                    <label for="field-2" class="control-label">入学日期</label>
+	                                    <input type="text" class="form-control" id="ondutydate" name= "ondutydate"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly" >
 	                                </div>
+	                            </div>
 	                            
 	                         </div>
 	                          <div class="row">
@@ -143,14 +151,6 @@
 	                         </div>
 	                         <div class="row">
 	                            
-	                            <!--
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                    <label for="field-3" class="control-label">电话</label>
-	                                    <input type="text" class="form-control" id="mobile" name="mobile"  placeholder="输入电话">
-	                                </div>
-	                            </div>
-	                            -->
 	                             <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-2" class="control-label">个人主页</label>
@@ -215,17 +215,8 @@
 													 <option value="1">女</option>
 											</select>
                                         </div>
-	                             </div>
-	                                
-	                             <!--  
-	                            <div class="col-md-6">
-	                                <div class="form-group">
-	                                    <label for="field-3" class="control-label">登录名</label>
-	                                    <input type="text" class="form-control" id="update_logonname" name="logonname"  placeholder="输入登录名">
 	                                </div>
-	                            </div>
-	                            --> 
-	                         </div>
+	                      </div>
 	                         <!--
 	                          <div class="row">
 	                           <div class="col-md-6">
@@ -268,6 +259,12 @@
 													 <option value="1">在读</option>
 											</select>
                                         </div>
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">入学日期</label>
+	                                    <input type="text" class="form-control" id="update_ondutydate" name= "ondutydate"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly" >
 	                                </div>
 	                            </div>
 	                         </div>
@@ -496,6 +493,7 @@
 					//提交新增用户信息	
 	          function saveUser(){
 	             var username = $("#username").val();
+	             var ondutydate = $("#ondutydate").val();
 	             var logonname = $("#logonname").val();
 	             var logonpwd = $("#logonpwd").val();
 	             var isduty = $("#isduty").val();
@@ -504,6 +502,11 @@
 	             
 	             if(username==""){
 	             alert("姓名不能为空");
+	             return false;
+	             }
+	             
+	             if( ondutydate==""){
+	             alert("入学日期不能为空");
 	             return false;
 	             }
 	             
@@ -519,6 +522,11 @@
 	             
 	             if(isduty==""){
 	             alert("是否毕业不能为空");
+	              return false;
+	             }
+	             
+	             if(education==""){
+	             alert("学历不能为空");
 	              return false;
 	             }
 	             
@@ -545,6 +553,8 @@
 				
 				$('#update_education').val(tds.eq(3).text());
 				
+				
+				
 				var all_options = document.getElementById("update_isduty").options;
 				for (i=0; i< all_options.length; i++){
 					if (all_options[i].text== tds.eq(4).text()) // 根据option标签的文本来进行判断 测试的代码这里是两个等号
@@ -553,7 +563,7 @@
 					}
 				}
 				
-				$('#update_companyname').val(tds.eq(5).text());
+				$('#update_ondutydate').val(tds.eq(5).text());
 				
 				$('#update_personpage').val(inputs.eq(0).val());
 			    $('#update_email').val(inputs.eq(1).val());

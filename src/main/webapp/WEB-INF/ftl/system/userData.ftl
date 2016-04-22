@@ -5,7 +5,7 @@
 		        <th>性别</th>
 		        <th>学历</th>
 		        <th>是否毕业</th>
-		        <th>毕业去向</th>
+		        <th>入学日期</th>
 		        <th>编辑</th>
 	
 		    </thead>
@@ -54,12 +54,12 @@
 					        <td></td>
 					    </#if>
 				        
-				        <#if user.companyname??>
-					        <td>${user.companyname}</td>
+				        <#if user.ondutydate??>
+					        <td>${user.ondutydate?string("yyyy-MM-dd")}</td>
 					        <#else>
 					        <td></td>
 				        </#if>
-
+                        
 				        <td>
 				        <#if Popedom?index_of('l')!=-1>
 				        <a onclick="update(this)">修改</a> | 

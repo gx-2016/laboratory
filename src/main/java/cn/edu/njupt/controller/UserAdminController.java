@@ -65,6 +65,7 @@ public class UserAdminController {
     
 	/**
 	 * 
+	 * @throws ParseException 
 	 * @Description: 后台增加成员信息
 	 * @Author: zhc
 	 * @Date: 2016年4月13日
@@ -72,10 +73,14 @@ public class UserAdminController {
 	@RequestMapping("/addUser.do")
 	public String addUser(HttpServletRequest httpServletRequest,
 			ModelMap map, @ModelAttribute UserForm user,
-			@RequestParam("file") CommonsMultipartFile file) {
+			@RequestParam("file") CommonsMultipartFile file) throws ParseException {
 		// 2.封装javabean
 		User user1 = new User();
 		user1.setUsername(user.getUsername());
+		if (null != user.getOndutydate() && !"".equals(user.getOndutydate())) {
+			user1.setOndutydate(new SimpleDateFormat("yyyy").parse(user
+					.getOndutydate()));
+		}
 		user1.setLogonname(user.getLogonname());
 		user1.setLogonpwd(user.getLogonpwd());
 		user1.setSexid(user.getSexid());
