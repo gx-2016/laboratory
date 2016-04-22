@@ -1,5 +1,7 @@
 package cn.edu.njupt.dao;
 
+import java.util.List;
+
 import cn.edu.njupt.model.Writings;
 
 public interface WritingsMapper {
@@ -14,4 +16,6 @@ public interface WritingsMapper {
     int updateByPrimaryKeySelective(Writings record);
 
     int updateByPrimaryKey(Writings record);
+    
+    List<Writings> queryAllWritings();
 }

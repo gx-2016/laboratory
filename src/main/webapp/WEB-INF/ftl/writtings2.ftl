@@ -68,28 +68,50 @@ Released   : 20090731
 			<div id="page-bgbtm">
 				<!-- start content -->
 				<div id="content">
-					<div class="post">
-						<h2 class="title"><strong>Title：</Strong>About This Website</h2>
-						<p class="byline"><small>Posted on August 25th, 2007 by <a href="#">admin</a> | <a href="#">Edit</a></small></p>
-						<div class="entry">
-							<p><strong>abstract:</strong>Proin gravida orci porttitor enim accumsan lacinia. Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-						</div>
-						<p class="meta"><a href="#" class="more">Read More</a></p>
+					<div class="post" id="progect">
+					<#if writingsList?exists>
+					<#list writingsList as writings>
+					<#if writings.writingstype=="1">
+ 						<h4 class="title"><strong></Strong>${writings.writingsname}</h4>
+						<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">Edit</a></small></p>
+						<#--><div class="entry">
+							<p><strong>abstract:</strong></p>
+							<p>${writings.writingsabstract} </p>
+						</div><-->
+						<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p>
+					</#if>
+					</#list>
+					</#if>
 					</div>
 					<div class="post">
-						<h2 class="title">Risus Pellentesque</h2>
-						<p class="byline"><small>Posted on August 25th, 2007 by <a href="#">admin</a> | <a href="#">Edit</a></small></p>
-						
-						<p class="meta"><a href="#" class="more">Read More</a></p>
+						<#if writingsList?exists>
+					<#list writingsList as writings>
+					<#if writings.writingstype=="2">
+ 						<h4 class="title"><strong></Strong>${writings.writingsname}</h4>
+						<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">Edit</a></small></p>
+						<#--><div class="entry">
+							<p><strong>abstract:</strong></p>
+							<p>${writings.writingsabstract} </p>
+						</div><-->
+						<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p>
+					</#if>
+					</#list>
+					</#if>
 					</div>
 					<div class="post">
-						<h2 class="title">Accumsan Porttitor</h2>
-						<p class="byline"><small>Posted on August 25th, 2007 by <a href="#">admin</a> | <a href="#">Edit</a></small></p>
-						<div class="entry">
-							<p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <br />
-							</p>
-						</div>
-						<p class="meta"><a href="#" class="more">Read More</a></p>
+						<#if writingsList?exists>
+					<#list writingsList as writings>
+					<#if writings.writingstype=="3">
+ 						<h4 class="title"><strong></Strong>${writings.writingsname}</h4>
+						<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">Edit</a></small></p>
+						<#--><div class="entry">
+							<p><strong>abstract:</strong></p>
+							<p>${writings.writingsabstract} </p>
+						</div><-->
+						<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p>
+					</#if>
+					</#list>
+					</#if>
 					</div>
 				</div>
 				<!-- end content -->
@@ -113,4 +135,3 @@ Released   : 20090731
 
 </body>
 </html>
-<span style="display:none;"><a href="http://www.mobanwang.com" title="θҳģѥЂ՘">θҳģѥ</a></span>

@@ -126,4 +126,7 @@
       Remark = #{remark,jdbcType=VARCHAR}
     where WtringsID = #{wtringsid,jdbcType=INTEGER}
   </update>
+  <select id="queryAllWritings" resultMap="BaseResultMap">
+  	select * from lab_writings
+  </select>
 </mapper>
