@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.ContestMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.Contest" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="ContestName" property="contestname" jdbcType="VARCHAR" />
+    <result column="ContestDestination" property="contestdestination" jdbcType="VARCHAR" />
+    <result column="ContestTime" property="contesttime" jdbcType="DATE" />
+    <result column="Contest_TeamId" property="contestTeamid" jdbcType="VARCHAR" />
+    <result column="Contest_Award" property="contestAward" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!--查询所有比赛列表   queryAllContests -->
+  <select id="queryAllContests" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_contest
+    order by  ContestTime
+  </select>
+  
+  
+  <sql id="Base_Column_List" >
+    SeqID, ContestName, ContestDestination, ContestTime, Contest_TeamId, Contest_Award
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_contest
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_contest
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.Contest" >
+    insert into lab_contest (SeqID, ContestName, ContestDestination, 
+      ContestTime, Contest_TeamId, Contest_Award
+      )
+    values (#{seqid,jdbcType=INTEGER}, #{contestname,jdbcType=VARCHAR}, #{contestdestination,jdbcType=VARCHAR}, 
+      #{contesttime,jdbcType=DATE}, #{contestTeamid,jdbcType=VARCHAR}, #{contestAward,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.Contest" >
+    insert into lab_contest
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="contestname != null" >
+        ContestName,
+      </if>
+      <if test="contestdestination != null" >
+        ContestDestination,
+      </if>
+      <if test="contesttime != null" >
+        ContestTime,
+      </if>
+      <if test="contestTeamid != null" >
+        Contest_TeamId,
+      </if>
+      <if test="contestAward != null" >
+        Contest_Award,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="contestname != null" >
+        #{contestname,jdbcType=VARCHAR},
+      </if>
+      <if test="contestdestination != null" >
+        #{contestdestination,jdbcType=VARCHAR},
+      </if>
+      <if test="contesttime != null" >
+        #{contesttime,jdbcType=DATE},
+      </if>
+      <if test="contestTeamid != null" >
+        #{contestTeamid,jdbcType=VARCHAR},
+      </if>
+      <if test="contestAward != null" >
+        #{contestAward,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.Contest" >
+    update lab_contest
+    <set >
+      <if test="contestname != null" >
+        ContestName = #{contestname,jdbcType=VARCHAR},
+      </if>
+      <if test="contestdestination != null" >
+        ContestDestination = #{contestdestination,jdbcType=VARCHAR},
+      </if>
+      <if test="contesttime != null" >
+        ContestTime = #{contesttime,jdbcType=DATE},
+      </if>
+      <if test="contestTeamid != null" >
+        Contest_TeamId = #{contestTeamid,jdbcType=VARCHAR},
+      </if>
+      <if test="contestAward != null" >
+        Contest_Award = #{contestAward,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.Contest" >
+    update lab_contest
+    set ContestName = #{contestname,jdbcType=VARCHAR},
+      ContestDestination = #{contestdestination,jdbcType=VARCHAR},
+      ContestTime = #{contesttime,jdbcType=DATE},
+      Contest_TeamId = #{contestTeamid,jdbcType=VARCHAR},
+      Contest_Award = #{contestAward,jdbcType=VARCHAR}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

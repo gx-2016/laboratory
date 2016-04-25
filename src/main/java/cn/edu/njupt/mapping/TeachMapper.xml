@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.TeachMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.Teach" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="CourseName" property="coursename" jdbcType="VARCHAR" />
+    <result column="CourseTearm" property="coursetearm" jdbcType="VARCHAR" />
+    <result column="UserID" property="userid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SeqID, CourseName, CourseTearm, UserID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_teach
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_teach
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.Teach" >
+    insert into lab_teach (SeqID, CourseName, CourseTearm, 
+      UserID)
+    values (#{seqid,jdbcType=INTEGER}, #{coursename,jdbcType=VARCHAR}, #{coursetearm,jdbcType=VARCHAR}, 
+      #{userid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.Teach" >
+    insert into lab_teach
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="coursename != null" >
+        CourseName,
+      </if>
+      <if test="coursetearm != null" >
+        CourseTearm,
+      </if>
+      <if test="userid != null" >
+        UserID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="coursename != null" >
+        #{coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="coursetearm != null" >
+        #{coursetearm,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.Teach" >
+    update lab_teach
+    <set >
+      <if test="coursename != null" >
+        CourseName = #{coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="coursetearm != null" >
+        CourseTearm = #{coursetearm,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        UserID = #{userid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.Teach" >
+    update lab_teach
+    set CourseName = #{coursename,jdbcType=VARCHAR},
+      CourseTearm = #{coursetearm,jdbcType=VARCHAR},
+      UserID = #{userid,jdbcType=INTEGER}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

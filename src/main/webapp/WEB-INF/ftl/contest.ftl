@@ -71,36 +71,34 @@
 
 									<ul class="c-sitenav__level-1">
 										<li
-											class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="/about/" class="c-sitenav__item-link">About the
-												Uni</a>
+											class="c-sitenav__item ">
+											<a href="http://acm.njupt.edu.cn" target="_blank" class="c-sitenav__item-link">南邮ACM平台</a>
 										</li>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
+											class="c-sitenav__item-link " >ACM 历年比赛信息</a></li>
 										<li class="c-sitenav__item "><a href="/about/mission"
-											class="c-sitenav__item-link">Our Mission</a></li>
-										<li class="c-sitenav__item "><a href="/about/focus"
-											class="c-sitenav__item-link">Our Focus</a></li>
-										<li class="c-sitenav__item "><a href="/about/profile"
-											class="c-sitenav__item-link">University Profile</a></li>
+											class="c-sitenav__item-link">ACM 历年比赛信息</a></li>
 									</ul>
 								</nav>
 
 							</div>
 						</div>
 
-						<article id="main-content" class="o-layout-main-article">
+						<article id="main-content" class="o-layout-main-article" >
 							<div class="region region-content">
 								
-								<!-- title -->
+								<!-- title 
 								<div id="block-ua-theme-page-title"
 									class="contextual-region block block-core block-page-title-block">
 									<div
 										data-contextual-id="block:block=ua_theme_page_title:langcode=en"></div>
-									<h1 class="page-title">
+									<h3 class="page-title">
 										<span
 											class="field field--name-title field--type-string field--label-hidden">
-											标题 </span>
-									</h1>
+											ACM 校队历年比赛信息 </span>
+									</h3>
 								</div>
+								-->
 								
 								<!-- content -->
 								<div id="block-ua-theme-content"
@@ -108,6 +106,7 @@
 									<article role="article" class="contextual-region node node--type-ua-page node--promoted node--view-mode-full" 
 									    about="/about/node/1">
 										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
+										<!-- node__content -->
 										<div class="node__content">
 											<div
 												class="field field--name-field-ua-page-content field--type-entity-reference-revisions field--label-hidden field__items">
@@ -116,69 +115,84 @@
 														class="paragraph paragraph--type--text paragraph--view-mode--default">
 														<div
 															class="clearfix text-formatted field field--name-field-text field--type-text-long field--label-hidden field__item">
-															<p class="u-paragraph--intro">The University of
-																Adelaide is a world-class tertiary education and
-																research institution committed to delivering high
-																quality and distinct learning, teaching and research
-																experiences.</p>
-															<p>The University is centred on:</p>
 															<ul>
-																<li>discovering new knowledge</li>
-																<li>pursuing innovation</li>
-																<li>preparing the educated leaders of tomorrow who
-																	are independent, creative thinkers with an
-																	international perspective.</li>
+																<li><h1>2016年</h1></li>
+																 <!--一个比赛信息-->
+																<div class="row">
+															            <div class="span5">
+															              <p class="text-success"><font size="+2"><img style="width:25%" src="Images/golden.png"> <strong>team009</strong></font></p>
+															            </div>
+															            <div class="span7 media-text-right">
+															              <div class="row" ><div class=" alert alert-info media-pull-right width-full" style="width:auto;margin-bottom:5px;float: right;"> 西北工业大学, 西安 @ 2014.10</div></div>
+															              <div class="row" align="right"><div style="display:inline-block;margin-bottom:10px;" class="alert alert-warning"><strong>金牌</strong></div> <div style="display:inline-block;margin-bottom:10px;" class="alert alert-success"><strong>第9名</strong></div></div>
+															            </div>
+														         </div>
+														           <br/>
+														         <!--队员信息-->
+														         														 <div class="row">
+														          	<div class="span4">
+														          	  <p><span class="label label-warning">Leader</span> <span class="label label-success">♂</span> <a href="#" data-toggle="personmodal" data-uid="108">钟亮 Zhong Liang</a></p>
+														          	</div>
+														          	<div class="span4">
+														          	  <p><span class="label label-info">Teamer</span> <span class="label label-success">♂</span> <a href="#" data-toggle="personmodal" data-uid="89"><span data-trigger="hover" data-content="保研福州大学。" data-placement="top" data-toggle="popover" data-original-title="陈靖麟 Chen JingLin">陈靖麟 Chen JingLin</span></a></p>
+														          	</div>
+														          	<div class="span4">
+														          	  <p><span class="label label-info">Teamer</span> <span class="label label-success">♂</span> <a href="#" data-toggle="personmodal" data-uid="107">吴优 Wu You</a></p>
+														          	</div>
+														          </div>
+														           <br/>
+														        <!--图片信息-->
+																<div class="row">
+															          	   <div class="span6 home-pod ">
+																					<div class="pod">
+																						<div class="pod__title">
+																							<h2 align="center">
+																								<a href="#" title="ACM竞赛">
+																									ACM竞赛</a>
+																							</h2>
+																						</div>
+																						<div class="pod__content">
+																							<a href="#"> <img
+																								src="assets/images/work_8.jpg">
+																						</div>
+																					</div>
+																				</div>
+															          	
+															          	  <div class="span6 home-pod ">
+																					<div class="pod">
+																						<div class="pod__title">
+																							<h2 align="center">
+																								<a href="#" title="ACM竞赛">
+																									ACM竞赛</a>
+																							</h2>
+																						</div>
+																						<div class="pod__content">
+																							<a href="#"> <img
+																								src="assets/images/work_8.jpg">
+																						</div>
+																					</div>
+																				</div>
+															          	  
+																 </div>
+                                                                <br/>
+																<li><h1>2015年</h1></li>
 															</ul>
 														</div>
 
 													</div>
 												</div>
-												<div class="field__item">
-													<div
-														class="paragraph paragraph--type--ua-desc-panel-item paragraph--view-mode--default">
-														<div class="c-description-panels__wrap">
-															<section
-																class="c-description-panels c-description-panels--left c-description-panels--small">
-																<div class="c-description-panels__content">
-																	<div class="c-description-panels__item">
-																		<a href="/about/focus"
-																			class="c-description-panels__item-link"> <img
-																			src="/about/sites/default/files/styles/ua_desc_panel/public/HEALTH-01532_UoA.jpg?itok=RvGM8SDd"
-																			width="600" height="392" alt="Our focus"
-																			typeof="foaf:Image" class="image-style-ua-desc-panel">
-																		</a>
-																	</div>
-																	<div class="c-description-panels__body">
-																		<h2 class="c-description-panels__title">
-																			<a class="c-description-panels__title-link"
-																				href="/about/focus"> Our focus </a>
-																		</h2>
-																		<div class="c-description-panels__description">
-
-																			<p>
-																				Our three primary areas of focus are&nbsp;<a
-																					href="/about/focus/#learning-and-teaching">learning
-																					and teaching</a>,&nbsp;<a href="/about/focus/#research">research</a>&nbsp;and&nbsp;<a
-																					href="/about/focus/#engagement">engagement</a>.
-																			</p>
-
-
-																		</div>
-																	</div>
-
-																</div>
-															</section>
-														</div>
-
-													</div>
-												</div>
+												
 											</div>
+										</div>
 
+											
+                                        <!-- node__content 结束-->
 										</div>
 
 									</article>
 
 								</div>
+									<!-- content结束 -->
 
 							</div>
 						</article>

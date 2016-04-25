@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import cn.edu.njupt.model.RolePopedom;
 import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.User;
 import cn.edu.njupt.model.UserRole;
