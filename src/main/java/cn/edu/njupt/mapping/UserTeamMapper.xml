@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.UserTeamMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.UserTeam" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="UserID" property="userid" jdbcType="VARCHAR" />
+    <result column="TeamID" property="teamid" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SeqID, UserID, TeamID, remark
+  </sql>
+  
+   <!--比赛用户队伍表  -->
+  <resultMap id="UserTeamResultMap" type="cn.edu.njupt.model.UserTeam" >
+    <result column="UserID" property="userid" jdbcType="VARCHAR" />
+    <result column="TeamID" property="teamid" jdbcType="VARCHAR" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="SexId" property="sexid" jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- 根据teamid获取用户比赛队伍 -->
+   <select id="findUserTeamByTeamId"   resultMap="UserTeamResultMap" parameterType="string" >
+	  select  b.TeamID ,
+		a.UserID,
+		a.UserName,
+		a.SexId,
+		b.remark
+		from lab_user a join lab_user_team b
+		on a.UserID = b.UserID
+	    <if test="_parameter != null" >
+	      and b.TeamID = #{_parameter}
+	    </if>
+  </select>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user_team
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_user_team
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.UserTeam" >
+    insert into lab_user_team (SeqID, UserID, TeamID, 
+      remark)
+    values (#{seqid,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{teamid,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.UserTeam" >
+    insert into lab_user_team
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="userid != null" >
+        UserID,
+      </if>
+      <if test="teamid != null" >
+        TeamID,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="teamid != null" >
+        #{teamid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.UserTeam" >
+    update lab_user_team
+    <set >
+      <if test="userid != null" >
+        UserID = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="teamid != null" >
+        TeamID = #{teamid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.UserTeam" >
+    update lab_user_team
+    set UserID = #{userid,jdbcType=VARCHAR},
+      TeamID = #{teamid,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

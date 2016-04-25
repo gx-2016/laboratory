@@ -18,9 +18,9 @@ public class ContestSericeImpl implements ContestServiceI{
 	private ContestMapper contestMapper ;
 
 	@Override
-	public List<Contest> queryAllContests() {
+	public List<Contest> queryAllContests(Contest contest) {
 		
-		return contestMapper.queryAllContests();
+		return contestMapper.queryAllContests(contest);
 	}
 	
 
