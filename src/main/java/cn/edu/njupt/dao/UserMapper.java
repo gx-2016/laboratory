@@ -31,7 +31,7 @@ public interface UserMapper {
 
 	List<User> getDoctorUser(String education);
 
-	
+	List<User> getTeachersByType(String type);
 
 
 

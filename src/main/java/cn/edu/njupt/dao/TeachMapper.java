@@ -1,5 +1,7 @@
 package cn.edu.njupt.dao;
 
+import java.util.List;
+
 import cn.edu.njupt.model.Teach;
 
 public interface TeachMapper {
@@ -14,4 +16,6 @@ public interface TeachMapper {
     int updateByPrimaryKeySelective(Teach record);
 
     int updateByPrimaryKey(Teach record);
+    
+    List<Teach> queryTeachsByUserID(int userid);
 }

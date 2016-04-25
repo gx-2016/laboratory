@@ -36,6 +36,8 @@ public class User {
     private String photourl;
 
     private String education;
+    
+    private String type;
 
     private String remark;
     
@@ -182,4 +184,12 @@ public class User {
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
     }
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 }

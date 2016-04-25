@@ -19,11 +19,13 @@
     <result column="PersonPage" property="personpage" jdbcType="VARCHAR" />
     <result column="PhotoUrl" property="photourl" jdbcType="VARCHAR" />
     <result column="Education" property="education" jdbcType="VARCHAR" />
+     <result column="Type" property="education" jdbcType="VARCHAR" />
+    
     <result column="Remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     UserID, CompanyName, WorkDetail, UserName, LogonName, LogonPwd, SexID, Birthday, Address, 
-    Email, Mobile, IsDuty, OnDutyDate, OffDutyDate, PersonPage, PhotoUrl, Education, 
+    Email, Mobile, IsDuty, OnDutyDate, OffDutyDate, PersonPage, PhotoUrl, Education, type,
     Remark
   </sql>
   <!--根据登录名查询用户  -->
@@ -98,14 +100,14 @@
       SexID, Birthday, Address, 
       Email, Mobile, IsDuty, 
       OnDutyDate, OffDutyDate, PersonPage, 
-      PhotoUrl, Education, Remark
+      PhotoUrl, Education,Type, Remark
       )
     values (#{userid,jdbcType=INTEGER}, #{companyname,jdbcType=VARCHAR}, #{workdetail,jdbcType=VARCHAR}, 
       #{username,jdbcType=VARCHAR}, #{logonname,jdbcType=VARCHAR}, #{logonpwd,jdbcType=VARCHAR}, 
       #{sexid,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, #{address,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{isduty,jdbcType=VARCHAR}, 
       #{ondutydate,jdbcType=TIMESTAMP}, #{offdutydate,jdbcType=TIMESTAMP}, #{personpage,jdbcType=VARCHAR}, 
-      #{photourl,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      #{photourl,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR},#{type,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.njupt.model.User" >
@@ -161,6 +163,9 @@
       </if>
       <if test="education != null" >
         Education,
+      </if>
+      <if test="type != null" >
+        Type,
       </if>
       <if test="remark != null" >
         Remark,
@@ -218,6 +223,9 @@
       <if test="education != null" >
         #{education,jdbcType=VARCHAR},
       </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
@@ -274,6 +282,9 @@
       <if test="education != null" >
         Education = #{education,jdbcType=VARCHAR},
       </if>
+      <if test="education != null" >
+        Type = #{type,jdbcType=VARCHAR},
+      </if>
       <if test="remark != null" >
         Remark = #{remark,jdbcType=VARCHAR},
       </if>
@@ -298,7 +309,12 @@
       PersonPage = #{personpage,jdbcType=VARCHAR},
       PhotoUrl = #{photourl,jdbcType=VARCHAR},
       Education = #{education,jdbcType=VARCHAR},
+      Type = #{education,jdbcType=VARCHAR},
       Remark = #{remark,jdbcType=VARCHAR}
     where UserID = #{userid,jdbcType=INTEGER}
   </update>
+  <select id="getTeachersByType" resultMap="BaseResultMap">
+  	select * from lab_user
+  	where Type=#{type}
+  </select>
 </mapper>

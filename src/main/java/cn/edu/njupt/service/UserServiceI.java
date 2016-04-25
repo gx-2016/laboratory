@@ -28,6 +28,8 @@ public interface UserServiceI {
 	public List<User> getMasterUser(String education);
 
 	public List<User> getDoctorUser(String education);
+	
+	List<User> getTeachersByType(String type);
 
 
 }
