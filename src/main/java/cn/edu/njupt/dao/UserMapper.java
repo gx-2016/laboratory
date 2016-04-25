@@ -25,6 +25,12 @@ public interface UserMapper {
 
 	User findUserExist(String logonname);
 
+	List<User> getUndergraduateUser(String education);
+
+	List<User> getMasterUser(String education);
+
+	List<User> getDoctorUser(String education);
+
 	
 
 

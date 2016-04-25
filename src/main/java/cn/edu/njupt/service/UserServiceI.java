@@ -23,5 +23,11 @@ public interface UserServiceI {
 	//后台获取成员信息
 	public List<User> getAllUser();
 
+	public List<User> getUndergraduateUser(String education);
+
+	public List<User> getMasterUser(String education);
+
+	public List<User> getDoctorUser(String education);
+
 
 }

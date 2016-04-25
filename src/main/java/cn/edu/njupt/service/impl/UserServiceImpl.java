@@ -81,5 +81,23 @@ public class UserServiceImpl implements UserServiceI{
 		return userMapper.getAllUser();
 	}
 
+    
+	@Override
+	public List<User> getUndergraduateUser(String education) {
+		return userMapper.getUndergraduateUser(education);
+	}
+
+
+	@Override
+	public List<User> getMasterUser(String education) {
+		return userMapper.getMasterUser(education);
+	}
+
+
+	@Override
+	public List<User> getDoctorUser(String education) {
+		return userMapper.getDoctorUser(education);
+	}
+
 
 }

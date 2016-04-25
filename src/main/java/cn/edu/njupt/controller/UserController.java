@@ -16,16 +16,35 @@ public class UserController {
 	@Resource(name = "userService")
 	private UserServiceI userServiceI;
 
-
-	@RequestMapping("/people.do")
-	public String people(ModelMap  modelMap,String isduty){
-		//未毕业学生信息
-		List<User> peoples = userServiceI.getNotdutyUser(isduty);
-		//已毕业学生信息
-		List<User> isdutypeoples = userServiceI.getIsdutyUser(isduty);
-		modelMap.put("peoples", peoples);
-		modelMap.put("isdutypeoples", isdutypeoples);
-		return "people";
+    /**
+     * 查询本科信息
+     * @Description: TODO
+     * @Author: zhc
+     * @Date: 2016年4月25日
+     */
+	@RequestMapping("/undergraduate.do")
+	public String undergraduate(ModelMap  modelMap,String education){
+		//查询本科信息
+		List<User> undergraduates = userServiceI.getUndergraduateUser(education);
+		modelMap.put("undergraduates", undergraduates);
+		return "undergraduate";
+	}
+	
+	@RequestMapping("/master.do")
+	public String master(ModelMap  modelMap,String education){
+		//查询硕士信息
+		List<User> masters = userServiceI.getMasterUser(education);
+		modelMap.put("masters", masters);
+		return "master";
+	}
+	
+	
+	@RequestMapping("/doctor.do")
+	public String doctor(ModelMap  modelMap,String education){
+		//查询本科信息
+		List<User> doctors = userServiceI.getDoctorUser(education);
+		modelMap.put("doctors", doctors);
+		return "doctor";
 	}
 	
 	

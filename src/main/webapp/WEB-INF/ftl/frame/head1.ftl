@@ -31,7 +31,7 @@
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-people" id="ui-menu-btn-people">
-								<a href="/laboratory/people.do"> <span class="divider-lt">&nbsp;</span> 成员 <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/laboratory/undergraduate.do"> <span class="divider-lt">&nbsp;</span> 成员 <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-share" id="ui-menu-btn-share">

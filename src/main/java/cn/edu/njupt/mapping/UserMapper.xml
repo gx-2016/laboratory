@@ -51,6 +51,29 @@
     where IsDuty = "0";
   </select>
   
+  <!--查询所有本科  -->
+ <select id="getUndergraduateUser" resultMap="BaseResultMap"  parameterType="string">
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user 
+    where Education = "本科" order by OnDutyDate ;
+  </select>
+  
+  <!--查询所有硕士  -->
+ <select id="getMasterUser" resultMap="BaseResultMap"  parameterType="string">
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user 
+    where Education = "硕士" order by OnDutyDate;
+  </select>
+  
+  <!--查询所有博士  -->
+ <select id="getDoctorUser" resultMap="BaseResultMap"  parameterType="string">
+    select 
+    <include refid="Base_Column_List" />
+    from lab_user 
+    where Education = "博士" order by OnDutyDate;
+  </select>
   
   <!--后台查询所有成员信息  -->
  <select id="getAllUser" resultMap="BaseResultMap"  >

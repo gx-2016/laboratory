@@ -162,7 +162,7 @@
 									<div class="pod" >
 										<div class="pod__title">
 											<h2 align="center">
-												<a href="people.do" title="成员管理">
+												<a href="undergraduate.do" title="成员管理">
 													成员管理</a>
 											</h2>
 										</div>
