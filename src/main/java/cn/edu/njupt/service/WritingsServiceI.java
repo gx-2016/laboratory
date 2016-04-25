@@ -14,6 +14,7 @@ import cn.edu.njupt.model.Writings;
  */
 public interface WritingsServiceI {
 	List<Writings> queryWrittings();
+	List<Writings> queryWrittingsbyYear(int year);
 	void saveWritings(Writings writings);
 	int editWritings(Writings writings);
 }

@@ -18,4 +18,5 @@ public interface WritingsMapper {
     int updateByPrimaryKey(Writings record);
     
     List<Writings> queryAllWritings();
+    List<Writings> queryAllWritingsbyYear(int year);
 }

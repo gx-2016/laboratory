@@ -20,13 +20,24 @@ Released   : 20090731
 		global : '/global/v/response1/',
 		english_accept : false
 	};
+	
+	$(function(){
+		$(".subNav").click(function(){
+			$(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+			$(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+			
+			// 修改数字控制速度， slideUp(500)控制卷起速度
+			$(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(300);
+	})	
+})
 </script>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Accomplishable by Free CSS Templates</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="assets/css/writtingsStyle.css" rel="stylesheet" type="text/css" media="screen" />
-
+<script src="assets/js/writingsLeft.js"></script>
+<link href="assets/css/writingsLeft.css" type="text/css" rel="stylesheet">
 <!-- Le styles -->
 <link href="Css/jquery-ui-1.8.13.uoa.css" media="all" rel="stylesheet">
 <link href="Css/df-autocomplete.css" media="all" rel="stylesheet">
@@ -84,7 +95,7 @@ Released   : 20090731
 					</#if>
 					</div>
 					<div class="post">
-						<#if writingsList?exists>
+					<#if writingsList?exists>
 					<#list writingsList as writings>
 					<#if writings.writingstype=="2">
  						<h4 class="title"><strong></Strong>${writings.writingsname}</h4>
@@ -99,10 +110,10 @@ Released   : 20090731
 					</#if>
 					</div>
 					<div class="post">
-						<#if writingsList?exists>
+					<#if writingsList?exists>
 					<#list writingsList as writings>
 					<#if writings.writingstype=="3">
- 						<h4 class="title"><strong></Strong>${writings.writingsname}</h4>
+ 						<h2 class="title"><strong></Strong>${writings.writingsname}</h2>
 						<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">Edit</a></small></p>
 						<#--><div class="entry">
 							<p><strong>abstract:</strong></p>
@@ -117,13 +128,16 @@ Released   : 20090731
 				<!-- end content -->
 				<!-- start sidebar -->
 				<div id="sidebar">
+					<li>
+						<h2><a href="#">按年份</a></h2>
 					<ul>
 						<li>
-							<h2><a href="#">项目</a></h2>				
-							<h2><a href="#">论文</a></h2>		
-							<h2><a href="#">专利</a></h2>					
+						<#list yearlist as year>
+							<a href="#">${year}</a>			
+						</#list>					
 						</li>
 					</ul>
+					<li>
 				</div>
 				<!-- end sidebar -->
 				<div style="clear:both">&nbsp;</div>

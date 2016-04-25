@@ -129,4 +129,8 @@
   <select id="queryAllWritings" resultMap="BaseResultMap">
   	select * from lab_writings
   </select>
+  <select id="queryAllWritingsbyYear" resultMap="BaseResultMap">
+  	select * from lab_writings 
+where DATE_FORMAT(WritingsTime,"%Y")=#{year}
+  </select>
 </mapper>

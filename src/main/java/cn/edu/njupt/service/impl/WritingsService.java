@@ -42,4 +42,10 @@ public class WritingsService implements WritingsServiceI{
 		return 0;
 	}
 
+	@Override
+	public List<Writings> queryWrittingsbyYear(int year) {
+		// TODO Auto-generated method stub
+		return writingsMapper.queryAllWritingsbyYear(year);
+	}
+
 }
