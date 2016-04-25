@@ -177,12 +177,12 @@
 									<div class="pod">
 										<div class="pod__title">
 											<h2 align="center">
-												<a href="#" title="科研著作">
+												<a href="writtings.do" title="科研著作">
 													科研著作</a>
 											</h2>
 										</div>
 										<div class="pod__content">
-											<a href="#"> <img
+											<a href="writtings.do"> <img
 												src="assets/images/img_10.jpg">
 										</div>
 									</div>
@@ -192,12 +192,12 @@
 									<div class="pod">
 										<div class="pod__title">
 											<h2 align="center">
-												<a href="#" title="教学辅导">
+												<a href="learn.do" title="教学辅导">
 													教学辅导</a>
 											</h2>
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">
-											<a href="#"> <img
+											<a href="learn.do"> <img
 												src="assets/images/work_3.jpg">
 										</div>
 									</div>
@@ -207,12 +207,12 @@
 									<div class="pod">
 										<div class="pod__title">
 											<h2 align="center">
-												<a href="#" title="ACM竞赛">
+												<a href="contest.do" title="ACM竞赛">
 													ACM竞赛</a>
 											</h2>
 										</div>
 										<div class="pod__content">
-											<a href="#"> <img
+											<a href="contest.do"> <img
 												src="assets/images/work_8.jpg">
 										</div>
 									</div>
