@@ -70,15 +70,13 @@
 									</div>
 
 									<ul class="c-sitenav__level-1">
-										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
-											class="c-sitenav__item-link " >教师姓名</a></li>
-										<ul>
+										<#list teacherList as teacher>
+											<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+												<a href="learn.do?teacherID=${teacher.userid}"class="c-sitenav__item-link " >${teacher.username}</a><br>
+											</li>
+										</#list>
 											
-											<#list teacherList as teacher>
-												<li><a href="learn.do?teacherID=${teacher.userid}">[${teacher.username}]</a></li>
-											</#list>
-											
-										</ul>
+										
 										
 									</ul>
 								</nav>
