@@ -79,4 +79,7 @@
       UserID = #{userid,jdbcType=INTEGER}
     where SeqID = #{seqid,jdbcType=INTEGER}
   </update>
+  <select id="queryTeachsByUserID" resultMap="BaseResultMap">
+  	select * from lab_teach where UserId=#{userid}
+  </select>
 </mapper>

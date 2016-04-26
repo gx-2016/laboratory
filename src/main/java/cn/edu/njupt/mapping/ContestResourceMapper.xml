@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.ContestResourceMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.ContestResource" >
+    <id column="SeqID" property="seqid" jdbcType="INTEGER" />
+    <result column="ContestResourceName" property="contestresourcename" jdbcType="VARCHAR" />
+    <result column="ContestResourceURL" property="contestresourceurl" jdbcType="VARCHAR" />
+    <result column="ContestResourceAbstract" property="contestresourceabstract" jdbcType="VARCHAR" />
+    <result column="ContestID" property="contestid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SeqID, ContestResourceName, ContestResourceURL, ContestResourceAbstract, ContestID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_contest_resource
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_contest_resource
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.ContestResource" >
+    insert into lab_contest_resource (SeqID, ContestResourceName, ContestResourceURL, 
+      ContestResourceAbstract, ContestID)
+    values (#{seqid,jdbcType=INTEGER}, #{contestresourcename,jdbcType=VARCHAR}, #{contestresourceurl,jdbcType=VARCHAR}, 
+      #{contestresourceabstract,jdbcType=VARCHAR}, #{contestid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.ContestResource" >
+    insert into lab_contest_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        SeqID,
+      </if>
+      <if test="contestresourcename != null" >
+        ContestResourceName,
+      </if>
+      <if test="contestresourceurl != null" >
+        ContestResourceURL,
+      </if>
+      <if test="contestresourceabstract != null" >
+        ContestResourceAbstract,
+      </if>
+      <if test="contestid != null" >
+        ContestID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="contestresourcename != null" >
+        #{contestresourcename,jdbcType=VARCHAR},
+      </if>
+      <if test="contestresourceurl != null" >
+        #{contestresourceurl,jdbcType=VARCHAR},
+      </if>
+      <if test="contestresourceabstract != null" >
+        #{contestresourceabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="contestid != null" >
+        #{contestid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.ContestResource" >
+    update lab_contest_resource
+    <set >
+      <if test="contestresourcename != null" >
+        ContestResourceName = #{contestresourcename,jdbcType=VARCHAR},
+      </if>
+      <if test="contestresourceurl != null" >
+        ContestResourceURL = #{contestresourceurl,jdbcType=VARCHAR},
+      </if>
+      <if test="contestresourceabstract != null" >
+        ContestResourceAbstract = #{contestresourceabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="contestid != null" >
+        ContestID = #{contestid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.ContestResource" >
+    update lab_contest_resource
+    set ContestResourceName = #{contestresourcename,jdbcType=VARCHAR},
+      ContestResourceURL = #{contestresourceurl,jdbcType=VARCHAR},
+      ContestResourceAbstract = #{contestresourceabstract,jdbcType=VARCHAR},
+      ContestID = #{contestid,jdbcType=INTEGER}
+    where SeqID = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

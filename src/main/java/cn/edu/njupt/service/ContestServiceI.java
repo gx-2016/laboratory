@@ -10,5 +10,5 @@ import cn.edu.njupt.model.Contest;
  * @Date 2016年4月22日
  */
 public interface ContestServiceI {
-	public List<Contest> queryAllContests();
+	public List<Contest> queryAllContests(Contest contest);
 }

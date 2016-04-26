@@ -110,4 +110,11 @@ public class UserServiceImpl implements UserServiceI{
 	}
 
 
+	@Override
+	public List<User> getTeachersByType(String type) {
+		// TODO Auto-generated method stub
+		return userMapper.getTeachersByType(type);
+	}
+
+
 }

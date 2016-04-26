@@ -70,14 +70,14 @@
 									</div>
 
 									<ul class="c-sitenav__level-1">
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
+											class="c-sitenav__item-link " >ACM 校外比赛</a></li>
+										<li class="c-sitenav__item"><a href="#"
+											class="c-sitenav__item-link " >ACM 校内比赛</a></li>
 										<li
 											class="c-sitenav__item ">
-											<a href="http://acm.njupt.edu.cn" target="_blank" class="c-sitenav__item-link">南邮ACM平台</a>
+											<a href="http://acm.njupt.edu.cn" target="_blank" class="c-sitenav__item-link">南邮NOJ平台</a>
 										</li>
-										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
-											class="c-sitenav__item-link " >ACM 历年比赛信息</a></li>
-										<li class="c-sitenav__item "><a href="/about/mission"
-											class="c-sitenav__item-link">ACM 历年比赛信息</a></li>
 									</ul>
 								</nav>
 
@@ -115,42 +115,72 @@
 														class="paragraph paragraph--type--text paragraph--view-mode--default">
 														<div
 															class="clearfix text-formatted field field--name-field-text field--type-text-long field--label-hidden field__item">
-															<ul>
-																<li><h1>2016年</h1></li>
-																 <!--一个比赛信息-->
-																<div class="row">
-															            <div class="span5">
-															              <p class="text-success"><font size="+2"><img style="width:25%" src="Images/golden.png"> <strong>team009</strong></font></p>
-															            </div>
-															            <div class="span7 media-text-right">
-															              <div class="row" ><div class=" alert alert-info media-pull-right width-full" style="width:auto;margin-bottom:5px;float: right;"> 西北工业大学, 西安 @ 2014.10</div></div>
-															              <div class="row" align="right"><div style="display:inline-block;margin-bottom:10px;" class="alert alert-warning"><strong>金牌</strong></div> <div style="display:inline-block;margin-bottom:10px;" class="alert alert-success"><strong>第9名</strong></div></div>
-															            </div>
-														         </div>
-														           <br/>
-														         <!--队员信息-->
-														         														 <div class="row">
-														          	<div class="span4">
-														          	  <p><span class="label label-warning">Leader</span> <span class="label label-success">♂</span> <a href="#" data-toggle="personmodal" data-uid="108">钟亮 Zhong Liang</a></p>
-														          	</div>
-														          	<div class="span4">
-														          	  <p><span class="label label-info">Teamer</span> <span class="label label-success">♂</span> <a href="#" data-toggle="personmodal" data-uid="89"><span data-trigger="hover" data-content="保研福州大学。" data-placement="top" data-toggle="popover" data-original-title="陈靖麟 Chen JingLin">陈靖麟 Chen JingLin</span></a></p>
-														          	</div>
-														          	<div class="span4">
-														          	  <p><span class="label label-info">Teamer</span> <span class="label label-success">♂</span> <a href="#" data-toggle="personmodal" data-uid="107">吴优 Wu You</a></p>
-														          	</div>
-														          </div>
-														           <br/>
+                                                              <!--time控制输出年份-->
+                                                               <#assign time ="">
+                                                              
+                                                                <#if contestList??>
+                                                                   <#list contestList as contest>
+	                                                                      <#if (contest.contesttime?string('yyyy-MM-dd') != time)>
+	                                                                      <br/>
+	                                                                      <h1>Year —— ${contest.contesttime?string('yyyy')} </h1>
+	                                                                      </#if>
+	                                                                      <!--一个比赛信息-->
+																			<div class="row">
+																		            <div class="span5">
+																		              <p class="text-success"><font size="+2"><img style="width:25%" src="Images/golden.png"> <strong>${contest.contestTeamName}</strong></font></p>
+																		            </div>
+																		            <div class="span7 media-text-right">
+																		              <div class="row" ><div class=" alert alert-info media-pull-right width-full" style="width:auto;margin-bottom:5px;float: right;"> ${contest.contestdestination} @ ${contest.contesttime?string('yyyy-MM')}</div></div>
+																		              <#if contest.contestAward??>
+																		              <div class="row" align="right"><div style="display:inline-block;margin-bottom:10px;" class="alert alert-warning"><strong>${contest.contestAward}</strong></div> 
+																		              <#else>
+																		              <div class="row" align="right"><div style="display:inline-block;margin-bottom:10px;" class="alert alert-warning"><strong>未知</strong></div> 
+																		              </#if>
+																		              <#if contest.contestRank??>
+																		              <div style="display:inline-block;margin-bottom:10px;" class="alert alert-success"><strong>${contest.contestRank}</strong></div></div>
+																		              <#else>
+																		              <div style="display:inline-block;margin-bottom:10px;" class="alert alert-success"><strong>未知</strong></div></div>
+																		              </#if>
+																		            </div>
+																	         </div>
+																	           <br/>
+																	        <!--队员信息-->
+																	      <div class="row">
+	                                                                      <#list contest.userTeams as userTeam>
+																	           <#if (userTeam.remark == 'leader')>
+																	          	<div class="span${contest.size}">
+																	          	  <p><span class="label label-warning">${userTeam.remark}</span> 
+																	          	      <#if (userTeam.sexid == '0')>
+																	          	      <span class="label label-success">♂</span> 
+																	          	     <#else>
+																	          	     <span class="label label-success">♀</span> 
+																	          	      </#if>
+																	          	      <a href="#" data-toggle="personmodal" data-uid="108">${userTeam.username}</a></p>
+																	          	</div>
+																	          	<#else>
+																	          	 <div class="span${contest.size}">
+																	          	  <p><span class="label label-info">${userTeam.remark}</span> 
+																	          	    <#if (userTeam.sexid == '0')>
+																	          	      <span class="label label-success">♂</span> 
+																	          	     <#else>
+																	          	     <span class="label label-success">♀</span> 
+																	          	      </#if>
+																	          	   <a href="#" data-toggle="personmodal" data-uid="89"><span data-trigger="hover" data-content="保研福州大学。" data-placement="top" data-toggle="popover" data-original-title="陈靖麟 Chen JingLin">${userTeam.username}</span></a></p>
+																	          	 </div>
+																	           </#if>
+	                                                                      </#list>
+	                                                                       </div>
+	                                                                       <br/>
+	                                                                       <#assign time ="${contest.contesttime?string('yyyy-MM-dd')}">
+                                                                   </#list>
+                                                                </#if>
+                                                                
+																
+														        
 														        <!--图片信息-->
 																<div class="row">
 															          	   <div class="span6 home-pod ">
 																					<div class="pod">
-																						<div class="pod__title">
-																							<h2 align="center">
-																								<a href="#" title="ACM竞赛">
-																									ACM竞赛</a>
-																							</h2>
-																						</div>
 																						<div class="pod__content">
 																							<a href="#"> <img
 																								src="assets/images/work_8.jpg">
@@ -160,12 +190,6 @@
 															          	
 															          	  <div class="span6 home-pod ">
 																					<div class="pod">
-																						<div class="pod__title">
-																							<h2 align="center">
-																								<a href="#" title="ACM竞赛">
-																									ACM竞赛</a>
-																							</h2>
-																						</div>
 																						<div class="pod__content">
 																							<a href="#"> <img
 																								src="assets/images/work_8.jpg">
@@ -174,9 +198,7 @@
 																				</div>
 															          	  
 																 </div>
-                                                                <br/>
-																<li><h1>2015年</h1></li>
-															</ul>
+                                                              
 														</div>
 
 													</div>

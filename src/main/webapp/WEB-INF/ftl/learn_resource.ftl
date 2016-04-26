@@ -26,8 +26,6 @@
 <link href="Css/jquery-ui-1.8.13.uoa.css" media="all" rel="stylesheet">
 <link href="Css/df-autocomplete.css" media="all" rel="stylesheet">
 <link href="Css/styles.min.css" media="screen" rel="stylesheet">
-<!-- <link href="Css/print.min.css" media="print" rel="stylesheet" /> -->
-
 <!--[if lt IE 9]>
       <script src="Scripts/html5.js"></script>
     <![endif]-->
@@ -52,37 +50,93 @@
 </head>
 
 <body>
-
 	<#include "frame/head1.ftl">
 	<!--page content-->
 	<section class="new-home">
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-
-					<div class="addPad">
-						<!-- News and Events feeds -->
-						<div class="row-fluid">
-							<div class="span12">
-							   <div class="news-events-feed">
-									<div class="news-events-feed__wrapper">
-										<h2 class="news-events-feed__title">
-											<a href="http://www.adelaide.edu.au/events/"
-												title="Read more What's On">学习资料</a> <a
-												href="http://www.adelaide.edu.au/events/"
-												title="Read More What's On"
-												class="news-events-feed__title-more-link"><span
-												class="btn-icon"></span>More</a>
-										</h2>
+                   
+                   <!-- 中间内容 -->
+					<div class="o-layout-container">
+						<div id="secondary_menu" class="o-layout-main-nav">
+							<div class="region region-secondary-menu">
+								<nav class="c-sitenav js-sitenav" aria-label="Site Menu"
+									role="navigation">
+									<div class="c-sitenav__item c-sitenav__toggle">
+										<a href="#block-sitemenu-menu" class="c-sitenav__item-link">
+											<i class="ua-icon-menu"></i> Site Menu
+										</a>
 									</div>
-								</div>
+
+									<ul class="c-sitenav__level-1">
+										<#list teacherList as teacher>
+											<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+												<a href="learn.do?teacherID=${teacher.userid}"class="c-sitenav__item-link " >${teacher.username}</a><br>
+											</li>
+										</#list>
+											
+										
+										
+									</ul>
+								</nav>
+
 							</div>
 						</div>
-					</div>
-					<!-- addPad -->
 
+						<article id="main-content" class="o-layout-main-article" >
+							<div class="region region-content">
+								<!-- content -->
+								<div id="block-ua-theme-content"
+									class="block block-system block-system-main-block">
+									<article role="article" class="contextual-region node node--type-ua-page node--promoted node--view-mode-full" 
+									    about="/about/node/1">
+										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
+										<h1>课程</h1>
+										<div class="post" id="progect">
+											<#if teachList?exists>
+											<#list teachList as teach>
+											
+						 						<h6 class="title"><strong>Title：</Strong>${teach.coursename}</h6>
+												<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p>
+												<#--><div class="entry">
+													<p><strong>abstract:</strong></p>
+													<p>${writings.writingsabstract} </p>
+												</div>
+												<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p><-->
+											
+											</#list>
+											</#if>
+											</div>
+											
+											<#-->
+											<h1>专利</h1>
+											<div class="post">
+											<#if writingsList?exists>
+											<#list writingsList as writings>
+											<#if writings.writingstype=="3">
+						 						<h6 class="title"><strong>Title：</Strong>${writings.writingsname}</h6>
+												<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">DONWORDLOAD</a></small></p>
+												<div class="entry">
+													<p><strong>abstract:</strong></p>
+													<p>${writings.writingsabstract} </p>
+												</div>
+												<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p>
+											</#if>
+											</#list>
+											</#if>
+											</div>
+											<-->
+
+									</article>
+
+								</div>
+									<!-- content结束 -->
+
+							</div>
+						</article>
+					</div>
 				</div>
-				<!-- /rowWhite -->
 			</div>
 		</div>
 	</section>
