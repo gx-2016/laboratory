@@ -3,6 +3,7 @@ package cn.edu.njupt.service;
 import java.util.List;
 
 import cn.edu.njupt.model.Contest;
+import cn.edu.njupt.model.ContestResource;
 
 /**
  * @Author gx
@@ -11,4 +12,7 @@ import cn.edu.njupt.model.Contest;
  */
 public interface ContestServiceI {
 	public List<Contest> queryAllContests(Contest contest);
+
+	public List<ContestResource> findContestResourceByContestId(
+			Integer contestid);
 }

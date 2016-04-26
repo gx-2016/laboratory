@@ -33,7 +33,6 @@ public class WrittingsController {
 		else {
 			reqYear=year;
 		}
-		System.out.println(reqYear);
 		modelMap.put("writingsList", writingsService.queryWrittingsbyYear(reqYear));
 		Vector yearlist=new Vector<Integer>();
 		for(int i = year;i>=2010;i--)

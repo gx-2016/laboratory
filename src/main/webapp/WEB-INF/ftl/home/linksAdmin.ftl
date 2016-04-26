@@ -129,8 +129,10 @@
                             <div class="col-sm-12">
                                     <h4 class="m-t-0 header-title">
                                         <b>
+                                        <#if Popedom?index_of('l')!=-1>
                                             <!-- Full width modal -->
                                             <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">新增链接</button>
+                                          </#if>
                                        </b>
                                     </h4>
                                 <div class="card-box table-responsive">

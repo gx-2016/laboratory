@@ -8,6 +8,15 @@
     <result column="ContestResourceAbstract" property="contestresourceabstract" jdbcType="VARCHAR" />
     <result column="ContestID" property="contestid" jdbcType="INTEGER" />
   </resultMap>
+  
+  <!-- 根据比赛的id号查询所有的比赛资源 -->  
+  <select id="findContestResourceByContestId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_contest_resource
+    where ContestID = #{contestid,jdbcType=INTEGER}
+  </select>
+  
   <sql id="Base_Column_List" >
     SeqID, ContestResourceName, ContestResourceURL, ContestResourceAbstract, ContestID
   </sql>

@@ -12,7 +12,9 @@
 		        <td>${(link_index)+1}</td>
 		        <td>${link.linkname!}</td>
 		        <td>${link.linkurl!}</td>
+		         <#if Popedom?index_of('n')!=-1>
 		        <th><a>删除</a></th>
+		         </#if>
 		    </tr>
 		    </#list>
 	   </#if>

@@ -132,7 +132,7 @@
                          <div class="row">
                             <div class="col-sm-12">
                                     <h4 class="m-t-0 header-title">
-                                       <#if Popedom?index_of('k')!=-1>
+                                       <#if Popedom?index_of('l')!=-1>
                                         <b>
                                             <!-- Full width modal -->
                                             <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">新增焦点</button>

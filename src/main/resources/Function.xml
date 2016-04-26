@@ -4,87 +4,95 @@
 
   <Function>
      <FunctionCode>a</FunctionCode>
-     <FunctionName>首页焦点管理</FunctionName>
+     <FunctionName>焦点管理</FunctionName>
      <ParentCode>home</ParentCode>
      <ParentName>首页管理</ParentName>
   </Function>    
   <Function>
      <FunctionCode>b</FunctionCode>
-     <FunctionName>首页链接管理</FunctionName>
+     <FunctionName>链接管理</FunctionName>
      <ParentCode>home</ParentCode>
      <ParentName>首页管理</ParentName>
   </Function>
 
-  <Function>
-     <FunctionCode>c</FunctionCode>
-     <FunctionName>新闻管理</FunctionName>
-     <ParentCode>news</ParentCode>
-     <ParentName>新闻管理</ParentName>
-  </Function> 
   
    <Function>
-     <FunctionCode>j</FunctionCode>
+     <FunctionCode>c</FunctionCode>
      <FunctionName>编辑管理</FunctionName>
      <ParentCode>news</ParentCode>
      <ParentName>新闻管理</ParentName>
   </Function> 
   
+   <Function>
+     <FunctionCode>d</FunctionCode>
+     <FunctionName>编辑通知</FunctionName>
+     <ParentCode>news</ParentCode>
+     <ParentName>新闻管理</ParentName>
+  </Function> 
+  
 
   <Function>
-     <FunctionCode>d</FunctionCode>
-     <FunctionName>项目管理</FunctionName>
-     <ParentCode>project</ParentCode>
-     <ParentName>项目管理</ParentName>
+     <FunctionCode>e</FunctionCode>
+     <FunctionName>竞赛管理</FunctionName>
+     <ParentCode>contest</ParentCode>
+     <ParentName>竞赛管理</ParentName>
+  </Function> 
+  
+  <Function>
+     <FunctionCode>f</FunctionCode>
+     <FunctionName>教学管理</FunctionName>
+     <ParentCode>contest</ParentCode>
+     <ParentName>教学管理</ParentName>
   </Function> 
   <Function>
-     <FunctionCode>e</FunctionCode>
+     <FunctionCode>g</FunctionCode>
      <FunctionName>著作管理</FunctionName>
      <ParentCode>Wrtings</ParentCode>
      <ParentName>著作管理</ParentName>
   </Function>  
   <Function>
-     <FunctionCode>f</FunctionCode>
-     <FunctionName>影集管理</FunctionName>
+     <FunctionCode>h</FunctionCode>
+     <FunctionName>生活管理</FunctionName>
      <ParentCode>photo</ParentCode>
-     <ParentName>影集管理</ParentName>
+     <ParentName>生活管理</ParentName>
   </Function> 
      
   <Function>
-     <FunctionCode>g</FunctionCode>
+     <FunctionCode>i</FunctionCode>
      <FunctionName>角色管理</FunctionName>
      <ParentCode>sysmng</ParentCode>
      <ParentName>系统管理</ParentName>
   </Function>
-  <Function>
-     <FunctionCode>h</FunctionCode>
-     <FunctionName>数据字典维护</FunctionName>
-     <ParentCode>sysmng</ParentCode>
-     <ParentName>系统管理</ParentName>
-  </Function> 
        
   <Function>
-     <FunctionCode>i</FunctionCode>
+     <FunctionCode>j</FunctionCode>
      <FunctionName>用户管理</FunctionName>
      <ParentCode>sysmng</ParentCode>
      <ParentName>系统管理</ParentName>
   </Function>
   
-  
   <Function>
      <FunctionCode>k</FunctionCode>
+     <FunctionName>数据字典</FunctionName>
+     <ParentCode>sysmng</ParentCode>
+     <ParentName>系统管理</ParentName>
+  </Function> 
+  
+  <Function>
+     <FunctionCode>l</FunctionCode>
      <FunctionName>增加</FunctionName>
      <ParentCode>sysop</ParentCode>
      <ParentName>操作权限</ParentName>
   </Function>
   <Function>
-     <FunctionCode>l</FunctionCode>
+     <FunctionCode>m</FunctionCode>
      <FunctionName>修改</FunctionName>
      <ParentCode>sysop</ParentCode>
      <ParentName>系统管理</ParentName>
   </Function> 
        
   <Function>
-     <FunctionCode>m</FunctionCode>
+     <FunctionCode>n</FunctionCode>
      <FunctionName>删除</FunctionName>
      <ParentCode>sysop</ParentCode>
      <ParentName>系统管理</ParentName>

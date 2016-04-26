@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.njupt.model.Contest;
+import cn.edu.njupt.model.ContestResource;
 import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.UserTeam;
 import cn.edu.njupt.service.ContestServiceI;
@@ -40,7 +41,6 @@ public class ContestController {
 		
 		//2.根据比赛的类型，获取所有比赛列表，按日期排序。
 		List<Contest> contestList = contestService.queryAllContests(contest);
-		System.out.println("size:"+contestList.size());
 		Integer teamId ;
 		//3.遍历比赛列表，通过teamId查询比赛队伍信息
 		for (Contest contest2 : contestList) {
@@ -55,8 +55,17 @@ public class ContestController {
 		  List<UserTeam> userTeams = teamService.findUserTeamByTeamId(teamId+"");
 		  contest2.setUserTeams(userTeams);
 		  //设置页面上span的宽度
-		  contest2.setSize(12/userTeams.size());
-		  System.out.println("size"+ userTeams.size());
+		  if(userTeams.size()>0){
+			  contest2.setSize(12/userTeams.size());
+		  }
+		  else{
+			  contest2.setSize(6);
+		  }
+		 
+		  //获取比赛资源，图片为主
+		  Integer contestid = contest2.getContestid();
+		  List<ContestResource> contestResource = contestService.findContestResourceByContestId(contestid);
+		  contest2.setContestResource(contestResource);
 		}
 		modelMap.put("contestList", contestList);
 		

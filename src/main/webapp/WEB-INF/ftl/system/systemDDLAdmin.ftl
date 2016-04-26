@@ -147,8 +147,10 @@
 		                          <div class="card-box table-responsive">
 		                           <h4 class="m-t-0 header-title">
                                         <b>
+                                          <#if Popedom?index_of('l')!=-1>
                                             <!-- Full width modal -->
                                             <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">增加选项</button>
+                                        </#if>
                                        </b>
                                     </h4>
 		                                <div id ="dataList">

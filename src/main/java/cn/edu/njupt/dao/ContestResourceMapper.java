@@ -1,5 +1,7 @@
 package cn.edu.njupt.dao;
 
+import java.util.List;
+
 import cn.edu.njupt.model.ContestResource;
 
 public interface ContestResourceMapper {
@@ -14,4 +16,6 @@ public interface ContestResourceMapper {
     int updateByPrimaryKeySelective(ContestResource record);
 
     int updateByPrimaryKey(ContestResource record);
+
+	List<ContestResource> findContestResourceByContestId(Integer contestid);
 }

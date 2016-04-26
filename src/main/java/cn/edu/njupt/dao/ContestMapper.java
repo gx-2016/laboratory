@@ -18,4 +18,5 @@ public interface ContestMapper {
     int updateByPrimaryKey(Contest record);
 
 	List<Contest> queryAllContests(Contest contest);
+
 }

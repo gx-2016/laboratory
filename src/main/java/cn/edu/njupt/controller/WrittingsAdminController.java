@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WrittingsAdminController {
 
 	@RequestMapping("/writtingsAdmin.do")
-	public String learnAdmin(ModelMap modelMap){
+	public String writtingsAdmin(ModelMap modelMap){
 		return "writtings/writtingsAdmin";
 	}
 }

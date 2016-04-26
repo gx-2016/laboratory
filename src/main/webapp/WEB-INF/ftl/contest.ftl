@@ -171,34 +171,37 @@
 	                                                                      </#list>
 	                                                                       </div>
 	                                                                       <br/>
+	                                                                       <!--图片信息-->
+	                                                                        <#if contest.contestResource?? >
+		                                                                        <#list contest.contestResource as contestResource>
+																					 <div class="row">
+																		          	      <div class="span6 home-pod ">
+																							 <div class="pod">
+																								 <div class="pod__content">
+																									<a href="#"> <img
+																										src="contest/${contestResource.contestresourceurl}" style="height:280px;">
+																								 </div>
+																							 </div>
+																						  </div>
+																				  	 </div>
+																	           </#list>	
+																	         <#else>
+																			      <div class="row">
+																		          	  <div class="span8 home-pod ">
+																							<div class="pod">
+																								<div class="pod__content">
+																									<a href="#"> <img
+																										src="assets/images/work_8.jpg">
+																								</div>
+																							</div>
+																					  </div>
+																				 </div>
+																			</#if>	 
+	                                                                       
 	                                                                       <#assign time ="${contest.contesttime?string('yyyy-MM-dd')}">
                                                                    </#list>
                                                                 </#if>
                                                                 
-																
-														        
-														        <!--图片信息-->
-																<div class="row">
-															          	   <div class="span6 home-pod ">
-																					<div class="pod">
-																						<div class="pod__content">
-																							<a href="#"> <img
-																								src="assets/images/work_8.jpg">
-																						</div>
-																					</div>
-																				</div>
-															          	
-															          	  <div class="span6 home-pod ">
-																					<div class="pod">
-																						<div class="pod__content">
-																							<a href="#"> <img
-																								src="assets/images/work_8.jpg">
-																						</div>
-																					</div>
-																				</div>
-															          	  
-																 </div>
-                                                              
 														</div>
 
 													</div>

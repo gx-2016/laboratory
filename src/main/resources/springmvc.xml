@@ -85,6 +85,7 @@
 			<mvc:mapping path="/writtings/*" />
 			<mvc:mapping path="/learn/*" />
 			<mvc:mapping path="/share/*" />
+			<mvc:mapping path="/contest/*" />
 			<bean class="cn.edu.njupt.inteceptor.AccessInteceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>

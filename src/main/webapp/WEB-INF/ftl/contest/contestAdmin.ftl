@@ -1,126 +1,199 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6 menu-present" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7 menu-present" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8 menu-present" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9 menu-present" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="en" class="gtIE9 menu-present">
-<!--<![endif]-->
-<head>
-<script type="text/javascript">
-	var uoa_data = {
-		ga_id : 'UA-7185376-1',
-		ga_domain : '.nupt.edu.cn',
-		tms : false,
-		global : '/global/v/response1/',
-		english_accept : false
-	};
-</script>
-<meta charset="utf-8">
-<title>The ICV Laboratory</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
 
-<!-- Le styles -->
-<link href="Css/jquery-ui-1.8.13.uoa.css" media="all" rel="stylesheet">
-<link href="Css/df-autocomplete.css" media="all" rel="stylesheet">
-<link href="Css/styles.min.css" media="screen" rel="stylesheet">
-<!-- <link href="Css/print.min.css" media="print" rel="stylesheet" /> -->
+        <link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 
-<!--[if lt IE 9]>
-      <script src="Scripts/html5.js"></script>
-    <![endif]-->
+        <title>Minton - Responsive Admin Dashboard Template</title>
 
-<!-- Fav and touch icons -->
-<link rel="shortcut icon"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="global/v/response1/img/apple-touch-icon-144-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="global/v/response1/img/apple-touch-icon-114-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="global/v/response1/img/apple-touch-icon-72-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" sizes="57x57"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
-<link rel="apple-touch-icon-precomposed"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
-<link rel="apple-touch-icon"
-	href="global/v/response1/img/apple-touch-icon-57-precomposed.png" />
-<script src="Scripts/production.min.js"></script>
+ 		
+ 		<!-- DataTables -->
+        <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/custombox/dist/custombox.min.css" rel="stylesheet">
 
-</head>
+      
+        <link href="../assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+        <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+        <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
-<body>
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/core.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/components.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/pages.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/menu.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css">
 
-	<#include "frame/head1.ftl">
-	<!--page content-->
-	<section class="new-home">
-		<div id="page-container" class="container">
-			<div class="row-fluid">
-				<div class="span12 rowWhite">
+        <script src="../assets/js/modernizr.min.js"></script>
 
-					<div class="addPad">
-						<!-- News and Events feeds -->
-						<div  class="row-fluid">
-							<div class="span10">
-							   <div class="news-events-feed">
-									<div class="news-events-feed__wrapper">
-										<h2 class="news-events-feed__title">
-											<a href="http://www.adelaide.edu.au/events/"
-												title="Read more What's On">校内</a> <a
-												href="href="news.do"
-												title="Read More What's On"
-												class="news-events-feed__title-more-link"><span
-												class="btn-icon"></span>More</a>
-										</h2>
-										<#if newsList?exists>
-										<#list newsList as news>
-											<ul class="news-events-feed__content">
-												<li class="news-events-feed__content__item"><a
-													href="newsDetails.do?id=${news.newsid}"
-													title="Read More About New models predicting where to find fossils">
-														<div class="news-events-feed__date">
-															<span class="news-events-feed__date__day-abbr"><strong>${news.newstime?string("EEE")}</strong></span>
-															<span class="news-events-feed__date__day"><strong>${news.newstime?string("dd")}</strong></span>
-															<span class="news-events-feed__date__month--blue">${news.newstime?string("MMM")}</span>
-														</div>
-														<div class="news-events-feed__excerpt">
-															<strong>${news.newstitle}</strong> <br>${news.newscontent}
-														</div>
-												</a></li>
-											</ul>
-										</#list>
-										</#if>
-									</div>
-								</div>
-							</div>
-							<!--
-							<div class="span6">
-								<div class="news-events-feed">
-									<div class="news-events-feed__wrapper">
-										<h2 class="news-events-feed__title">
-											<a href="http://www.adelaide.edu.au/events/"
-												title="Read more What's On">行业</a> <a
-												href="http://www.adelaide.edu.au/events/"
-												title="Read More What's On"
-												class="news-events-feed__title-more-link"><span
-												class="btn-icon"></span>More</a>
-										</h2>
-									</div>
-								</div>
-							</div>
-							-->
-						</div>
-					</div>
-					<!-- addPad -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 
-				</div>
-				<!-- /rowWhite -->
-			</div>
-		</div>
-	</section>
+        
+    </head>
 
-	<#include "frame/footer1.ftl">
-</body>
+
+    <body class="fixed-left">
+        
+        <!-- Begin page -->
+        <div id="wrapper">
+        
+            <!-- Top Bar Start -->
+           <#include "../frame/headAdmin.ftl">
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <#include "../frame/leftAdmin.ftl">
+            <!-- Left Sidebar End --> 
+
+			
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <ol class="breadcrumb pull-right">
+                                        <li><a href="#">首页</a></li>
+                                        <li class="active">比赛管理</li>
+                                    </ol>
+                                    <h4 class="page-title">Welcome !</h4>
+                                </div>
+                            </div>
+                        </div>
+						<div class="row">
+                            <div class="col-sm-12">
+                                    <h4 class="m-t-0 header-title">
+                                        <#if Popedom?index_of('l')!=-1>
+                                        <b>
+                                            <a href="toAddNews.do" class="btn btn-primary " >新增获奖比赛</a>
+                                       </b>
+                                       </#if>
+                                    </h4>
+                                <div class="card-box table-responsive">
+                                    <div id ="dataList">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                    <!-- end container -->
+                </div>
+                <!-- end content -->
+
+                <footer class="footer text-right">
+                    2016 © Minton.
+                </footer>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- Right Sidebar -->
+            <#include "/frame/rightAdmin.ftl">
+            <!-- /Right-bar -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+    
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- Plugins  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/detect.js"></script>
+        <script src="../assets/js/fastclick.js"></script>
+        <script src="../assets/js/jquery.slimscroll.js"></script>
+        <script src="../assets/js/jquery.blockUI.js"></script>
+        <script src="../assets/js/waves.js"></script>
+        <script src="../assets/js/wow.min.js"></script>
+        <script src="../assets/js/jquery.nicescroll.js"></script>
+        <script src="../assets/js/jquery.scrollTo.min.js"></script>
+        <script src="../assets/plugins/switchery/switchery.min.js"></script>
+
+        <!-- Moment  -->
+        <script src="../assets/plugins/moment/moment.js"></script>
+        
+        <!-- Counter Up  -->
+        <script src="../assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+        <script src="../assets/plugins/counterup/jquery.counterup.min.js"></script>
+        
+        <!-- Sweet Alert  -->
+        <script src="../assets/plugins/sweetalert/dist/sweetalert.min.js"></script>
+        
+        <!-- flot Chart -->
+        <script src="../assets/plugins/flot-chart/jquery.flot.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.time.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.pie.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+        <script src="../assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+
+        <!-- circliful Chart -->
+        <script src="../assets/plugins/jquery-circliful/js/jquery.circliful.min.js"></script>
+        <script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+        <!-- skycons -->
+        <script src="../assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
+
+       
+        <!-- Custom main Js -->
+        <script src="../assets/js/jquery.core.js"></script>
+        <script src="../assets/js/jquery.app.js"></script>
+        
+        <!-- Datatables-->
+        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        
+        <!-- Modal-Effect -->
+        <script src="../assets/plugins/custombox/dist/custombox.min.js"></script>
+        <script src="../assets/plugins/custombox/dist/legacy.min.js"></script>
+        
+		
+        <script type="text/javascript">
+         $(document).ready(function() {
+                $('#datatable').dataTable();
+            } );
+         /**   
+         function deleteNews(id){
+         	alert
+         	$ajax({
+         		type: "post",
+         		url:"deleteNews.do"
+         		data:{
+         			id:id
+         		},
+         		function:successs(data){
+         			$('#dataList').html(data);
+         		}
+         	});
+         }
+         */
+
+        </script>
+    
+    </body>
 </html>

@@ -13,7 +13,7 @@
 		        <td style="WORD-WRAP: break-word" width="35%">${photo.picname!}</td>
 		        <td style="WORD-WRAP: break-word" width="45%">${photo.picurl!}</td>
 		        <th style="WORD-WRAP: break-word" width="10%">
-		        <#if Popedom?index_of('m')!=-1>
+		        <#if Popedom?index_of('n')!=-1>
 		        <a href="photoDelete.do?seqid=${photo.seqid}" onclick="javascript:return confirm('确实要删除吗？')">删除</a>
 		        </#if>
 		        </th>

@@ -32,10 +32,20 @@ public class Contest {
     //业务逻辑
     private List<UserTeam> userTeams;
     
+    private List<ContestResource> contestResource; //比赛资源，如图片
+    
     private Integer size;
     
     
-    public Integer getSize() {
+    public List<ContestResource> getContestResource() {
+		return contestResource;
+	}
+
+	public void setContestResource(List<ContestResource> contestResource) {
+		this.contestResource = contestResource;
+	}
+
+	public Integer getSize() {
 		return size;
 	}
 
