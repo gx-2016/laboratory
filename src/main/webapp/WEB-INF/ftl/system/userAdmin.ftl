@@ -145,7 +145,7 @@
 	                          <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-2" class="control-label">学历</label>
-	                                    <input type="text" class="form-control" id="education" name= "education"  placeholder="输入学历">
+	                                    <input type="text" class="form-control" id="education" name= "education"  placeholder="本科、硕士、博士">
 	                                </div>
 	                            </div>
 	                         </div>
@@ -279,7 +279,7 @@
 	                          <div class="col-md-6">
 	                                <div class="form-group">
 	                                    <label for="field-2" class="control-label">学历</label>
-	                                    <input type="text" class="form-control" id="update_education" name= "education"  placeholder="输入学历">
+	                                    <input type="text" class="form-control" id="update_education" name= "education"  placeholder="本科、硕士、博士">
 	                                </div>
 	                            </div>
 	                         </div>

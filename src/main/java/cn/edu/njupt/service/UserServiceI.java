@@ -2,6 +2,7 @@ package cn.edu.njupt.service;
 
 import java.util.List;
 
+import cn.edu.njupt.model.PersonPageWithBLOBs;
 import cn.edu.njupt.model.User;
 
 public interface UserServiceI {
@@ -28,6 +29,8 @@ public interface UserServiceI {
 	public List<User> getMasterUser(String education);
 
 	public List<User> getDoctorUser(String education);
+
+	public List<PersonPageWithBLOBs> getPersonalPage(Integer userid);
 
 
 }

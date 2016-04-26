@@ -78,7 +78,7 @@ public class UserAdminController {
 		User user1 = new User();
 		user1.setUsername(user.getUsername());
 		if (null != user.getOndutydate() && !"".equals(user.getOndutydate())) {
-			user1.setOndutydate(new SimpleDateFormat("yyyy").parse(user
+			user1.setOndutydate(new SimpleDateFormat("yyyy-MM-dd").parse(user
 					.getOndutydate()));
 		}
 		user1.setLogonname(user.getLogonname());

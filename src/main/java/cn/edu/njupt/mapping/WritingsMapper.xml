@@ -10,6 +10,7 @@
     <result column="WritingsPeople" property="writingspeople" jdbcType="VARCHAR" />
     <result column="WritingsQuote" property="writingsquote" jdbcType="VARCHAR" />
     <result column="Remark" property="remark" jdbcType="VARCHAR" />
+    <result column="PersonpageId" property="personpageId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     WtringsID, WritingsName, WritingsAbstract, WritingsType, WritingsTime, WritingsPeople, 

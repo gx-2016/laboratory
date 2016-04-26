@@ -26,6 +26,8 @@
     Email, Mobile, IsDuty, OnDutyDate, OffDutyDate, PersonPage, PhotoUrl, Education, 
     Remark
   </sql>
+  
+  
   <!--根据登录名查询用户  -->
   <select id="findUserExist" resultMap="BaseResultMap" parameterType="string" >
     select 

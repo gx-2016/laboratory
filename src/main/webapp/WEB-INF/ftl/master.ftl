@@ -112,8 +112,10 @@
 														class="paragraph paragraph--type--text paragraph--view-mode--default">
 														<div
 															class="clearfix text-formatted field field--name-field-text field--type-text-long field--label-hidden field__item">
-															<a href="#" class="u-paragraph--intro">• 陈志 </a>
-															<nobr>- 博士, 教授, 博导</nobr>
+															<a href="http://yjs.njupt.edu.cn/epstar/web/outer/dsfc_ny_.jsp?dsgh=20070027" class="u-paragraph--intro">
+															• 陈志 </a>  <nobr>- 博士, 教授, 硕导</nobr> &nbsp &nbsp&nbsp&nbsp
+															<a href="http://yjs.njupt.edu.cn/epstar/web/outer/dsfc_ny_.jsp?dsgh=20100052" class="u-paragraph--intro">
+															• 岳文静 </a>  <nobr>- 博士, 教授, 硕导</nobr>  
 														</div>
 													</div>
 												</div>
@@ -146,7 +148,7 @@
 																								<div class="span3" >
 																									<div >
 																										<#if master.username??>
-																										<a href="#">
+																										<a href="personalPage.do?userid=${master.userid}">
 																								        • <b style="color:blue;font-size:18px;">${master.username}</b>
 																								        </a>
 																								        </#if>

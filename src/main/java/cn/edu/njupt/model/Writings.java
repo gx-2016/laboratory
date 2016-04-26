@@ -18,8 +18,19 @@ public class Writings {
     private String writingsquote;
 
     private String remark;
+    
+    private String personpageId;
+    
 
-    public Integer getWtringsid() {
+    public String getPersonpageId() {
+		return personpageId;
+	}
+
+	public void setPersonpageId(String personpageId) {
+		this.personpageId = personpageId;
+	}
+
+	public Integer getWtringsid() {
         return wtringsid;
     }
 

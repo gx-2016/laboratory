@@ -48,4 +48,10 @@ public class WritingsService implements WritingsServiceI{
 		return writingsMapper.queryAllWritingsbyYear(year);
 	}
 
+	@Override
+	public Writings findWrtingsById(Integer wtringsid) {
+		// TODO 自动生成的方法存根
+		return writingsMapper.selectByPrimaryKey(wtringsid);
+	}
+
 }

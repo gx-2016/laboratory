@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.njupt.dao.PersonPageMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.njupt.model.PersonPage" >
+    <id column="PersonpageId" property="personpageid" jdbcType="INTEGER" />
+    <result column="UserID" property="userid" jdbcType="INTEGER" />
+    <result column="WtringsID" property="wtringsid" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.edu.njupt.model.PersonPageWithBLOBs" extends="BaseResultMap" >
+    <result column="Supervisor" property="supervisor" jdbcType="LONGVARCHAR" />
+    <result column="Biography" property="biography" jdbcType="LONGVARCHAR" />
+    <result column="Research" property="research" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    PersonpageId, UserID, WtringsID
+  </sql>
+  <sql id="Blob_Column_List" >
+    Supervisor, Biography, Research
+  </sql>
+  
+   
+  <!--根据userid查询个人主页信息  -->
+  
+   <resultMap id="PersonalPageResultMap" type="cn.edu.njupt.model.PersonPageWithBLOBs" extends="BaseResultMap" >
+    <result column="Supervisor" property="supervisor" jdbcType="LONGVARCHAR" />
+    <result column="Biography" property="biography" jdbcType="LONGVARCHAR" />
+    <result column="Research" property="research" jdbcType="LONGVARCHAR" />
+    <result column="MailAddress" property="mailAddress" jdbcType="LONGVARCHAR" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="LogonName" property="logonname" jdbcType="VARCHAR" />
+    <result column="Education" property="education" jdbcType="VARCHAR" />
+     <result column="PhotoUrl" property="photourl" jdbcType="VARCHAR" />
+      <result column="Email" property="email" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getPersonalPage" resultMap="PersonalPageResultMap" parameterType="java.lang.Integer" >
+    select 
+    p.PersonpageId, p.UserID, w.WtringsID,u.UserName,u.LogonName,u.Education,u.PhotoUrl,u.Email,
+    p.Supervisor, p.Biography, p.Research,p.MailAddress
+    from lab_personpage p,lab_user u,lab_writings w
+    where p.UserID = u.UserID and p.PersonpageId = w.PersonpageId and p.UserID=#{userid,jdbcType=INTEGER}
+  </select>
+  <!--结束  -->
+  
+  
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lab_personpage
+    where PersonpageId = #{personpageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lab_personpage
+    where PersonpageId = #{personpageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
+    insert into lab_personpage (PersonpageId, UserID, WtringsID, 
+      Supervisor, Biography, Research
+      )
+    values (#{personpageid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{wtringsid,jdbcType=INTEGER}, 
+      #{supervisor,jdbcType=LONGVARCHAR}, #{biography,jdbcType=LONGVARCHAR}, #{research,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
+    insert into lab_personpage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="personpageid != null" >
+        PersonpageId,
+      </if>
+      <if test="userid != null" >
+        UserID,
+      </if>
+      <if test="wtringsid != null" >
+        WtringsID,
+      </if>
+      <if test="supervisor != null" >
+        Supervisor,
+      </if>
+      <if test="biography != null" >
+        Biography,
+      </if>
+      <if test="research != null" >
+        Research,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="personpageid != null" >
+        #{personpageid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="wtringsid != null" >
+        #{wtringsid,jdbcType=INTEGER},
+      </if>
+      <if test="supervisor != null" >
+        #{supervisor,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="biography != null" >
+        #{biography,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="research != null" >
+        #{research,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
+    update lab_personpage
+    <set >
+      <if test="userid != null" >
+        UserID = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="wtringsid != null" >
+        WtringsID = #{wtringsid,jdbcType=INTEGER},
+      </if>
+      <if test="supervisor != null" >
+        Supervisor = #{supervisor,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="biography != null" >
+        Biography = #{biography,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="research != null" >
+        Research = #{research,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where PersonpageId = #{personpageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
+    update lab_personpage
+    set UserID = #{userid,jdbcType=INTEGER},
+      WtringsID = #{wtringsid,jdbcType=INTEGER},
+      Supervisor = #{supervisor,jdbcType=LONGVARCHAR},
+      Biography = #{biography,jdbcType=LONGVARCHAR},
+      Research = #{research,jdbcType=LONGVARCHAR}
+    where PersonpageId = #{personpageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.PersonPage" >
+    update lab_personpage
+    set UserID = #{userid,jdbcType=INTEGER},
+      WtringsID = #{wtringsid,jdbcType=INTEGER}
+    where PersonpageId = #{personpageid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -6,7 +6,9 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.edu.njupt.dao.PersonPageMapper;
 import cn.edu.njupt.dao.UserMapper;
+import cn.edu.njupt.model.PersonPageWithBLOBs;
 import cn.edu.njupt.model.User;
 import cn.edu.njupt.service.UserServiceI;
 
@@ -15,6 +17,9 @@ public class UserServiceImpl implements UserServiceI{
 
 	@Resource(name = "userMapper")
 	private UserMapper userMapper;
+	
+	@Resource(name = "personPageMapper")
+	private PersonPageMapper personPageMapper;
 	
 
 	@Override
@@ -97,6 +102,11 @@ public class UserServiceImpl implements UserServiceI{
 	@Override
 	public List<User> getDoctorUser(String education) {
 		return userMapper.getDoctorUser(education);
+	}
+
+    //获取个人主页信息
+	public List<PersonPageWithBLOBs> getPersonalPage(Integer userid) {
+		return personPageMapper.getPersonalPage(userid);
 	}
 
 
