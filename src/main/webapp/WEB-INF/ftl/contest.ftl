@@ -70,9 +70,9 @@
 									</div>
 
 									<ul class="c-sitenav__level-1">
-										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="contest.do?contestType=校外"
 											class="c-sitenav__item-link " >ACM 校外比赛</a></li>
-										<li class="c-sitenav__item"><a href="#"
+										<li class="c-sitenav__item"><a href="contest.do?contestType=校内"
 											class="c-sitenav__item-link " >ACM 校内比赛</a></li>
 										<li
 											class="c-sitenav__item ">
@@ -172,32 +172,33 @@
 	                                                                       </div>
 	                                                                       <br/>
 	                                                                       <!--图片信息-->
+	                                                                        <div class="row">
 	                                                                        <#if contest.contestResource?? >
 		                                                                        <#list contest.contestResource as contestResource>
-																					 <div class="row">
-																		          	      <div class="span6 home-pod ">
-																							 <div class="pod">
-																								 <div class="pod__content">
-																									<a href="#"> <img
-																										src="contest/${contestResource.contestresourceurl}" style="height:280px;">
+																		          	      <#if contestResource.contestresourceurl??>
+																			          	      <div class="span6 home-pod ">
+																								 <div class="pod">
+																									 <div class="pod__content">
+																										<img
+																											src="contest/${contestResource.contestresourceurl}" style="height:280px;">
+																									 </div>
 																								 </div>
-																							 </div>
-																						  </div>
-																				  	 </div>
+																							  </div>
+																						  <#else>
+																				          	  <div class="span6 home-pod ">
+																									<div class="pod">
+																										<div class="pod__content">
+																											 <img
+																												src="assets/images/work_8.jpg">
+																										</div>
+																									</div>
+																							  </div>
+																						  </#if>
 																	           </#list>	
-																	         <#else>
-																			      <div class="row">
-																		          	  <div class="span8 home-pod ">
-																							<div class="pod">
-																								<div class="pod__content">
-																									<a href="#"> <img
-																										src="assets/images/work_8.jpg">
-																								</div>
-																							</div>
-																					  </div>
-																				 </div>
 																			</#if>	 
-	                                                                       
+	                                                                       </div>
+	                                                                       <br/>
+	                                                                       <br/>
 	                                                                       <#assign time ="${contest.contesttime?string('yyyy-MM-dd')}">
                                                                    </#list>
                                                                 </#if>

@@ -23,9 +23,9 @@ public class ContestSericeImpl implements ContestServiceI{
 	private ContestResourceMapper contestResourceMapper ;
 
 	@Override
-	public List<Contest> queryAllContests(Contest contest) {
+	public List<Contest> queryAllContestsByType(Contest contest) {
 		
-		return contestMapper.queryAllContests(contest);
+		return contestMapper.queryAllContestsByType(contest);
 	}
 
 	/**
@@ -41,6 +41,38 @@ public class ContestSericeImpl implements ContestServiceI{
 			Integer contestid) {
 
 		return contestResourceMapper.findContestResourceByContestId(contestid);
+	}
+
+	/*
+	 * 保存比赛获奖信息
+	 */
+	@Override
+	public int insert(Contest contest) {
+		return contestMapper.insert(contest);
+	}
+
+	/*
+	 *  查询所有比赛获奖信息
+	 */
+	@Override
+	public List<Contest> queryAllContests() {
+		return contestMapper.queryAllContests();
+	}
+
+	/*
+	 * 根据名称和组别获取contestId
+	 */
+	@Override
+	public Contest findContestByNameAndTeamId(Contest contest) {
+		return contestMapper.findContestByNameAndTeamId(contest);
+	}
+
+	/* 
+	 * 保存比赛的图片资源文件
+	 */
+	@Override
+	public int inserContestResource(ContestResource contestResource) {
+		return contestResourceMapper.insertSelective(contestResource);
 	}
 	
 	

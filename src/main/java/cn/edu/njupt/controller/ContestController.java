@@ -3,6 +3,7 @@ package cn.edu.njupt.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,18 +30,21 @@ public class ContestController {
 	private TeamServiceI  teamService;
 	
 	@RequestMapping("/contest.do")
-	public String contest(ModelMap modelMap){	
+	public String contest(ModelMap modelMap,HttpServletRequest request){	
 		//1.从数据字典中读出比赛的类型
 		Contest contest = new Contest();
-		String contestType = "";
-		SystemDDL systemDDL = systemDDLService.findDDLByDdlName("比赛类型", "校外");
+		String contestType = request.getParameter("contestType");
+		if(null == contestType ||"".equals(contestType.trim()) ){
+			contestType = "校外";
+		}
+		SystemDDL systemDDL = systemDDLService.findDDLByDdlName("比赛类型", contestType);
 		if(null!=systemDDL){
 			 contestType = systemDDL.getDdlcode()+"";
 			 contest.setContestType(contestType);
 		}
 		
 		//2.根据比赛的类型，获取所有比赛列表，按日期排序。
-		List<Contest> contestList = contestService.queryAllContests(contest);
+		List<Contest> contestList = contestService.queryAllContestsByType(contest);
 		Integer teamId ;
 		//3.遍历比赛列表，通过teamId查询比赛队伍信息
 		for (Contest contest2 : contestList) {

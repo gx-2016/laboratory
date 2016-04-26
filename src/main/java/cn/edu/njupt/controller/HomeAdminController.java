@@ -57,7 +57,7 @@ public class HomeAdminController {
               if(flag)
 			   {
             	  //1.获取上传文件的路径
-	           	   String filepath = filetemp.getAbsolutePath().substring(filetemp.getAbsolutePath().lastIndexOf("\\"));
+	           	   String filepath = filetemp.getPath().substring(filetemp.getPath().lastIndexOf("\\"));
 	           	   System.out.println(filepath);
             	  
             	   //2.封装javabean

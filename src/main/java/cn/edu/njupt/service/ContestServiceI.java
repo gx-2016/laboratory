@@ -11,8 +11,17 @@ import cn.edu.njupt.model.ContestResource;
  * @Date 2016年4月22日
  */
 public interface ContestServiceI {
-	public List<Contest> queryAllContests(Contest contest);
+	public List<Contest> queryAllContestsByType(Contest contest);
 
 	public List<ContestResource> findContestResourceByContestId(
 			Integer contestid);
+
+	public int insert(Contest contest);
+
+	public List<Contest> queryAllContests();
+
+	public Contest findContestByNameAndTeamId(Contest contest);
+
+	public int inserContestResource(ContestResource contestResource);
+
 }

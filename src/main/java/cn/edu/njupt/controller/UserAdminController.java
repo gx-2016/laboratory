@@ -3,6 +3,7 @@ package cn.edu.njupt.controller;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -41,6 +42,19 @@ public class UserAdminController {
 		return "system/userAdmin";
 	}
 	
+	/**
+	 * 
+	 * @Description: 后台管理成员信息
+	 * @Author: zhc
+	 * @Date: 2016年4月13日
+	 */
+	@RequestMapping("/userAdminByUserId.do")
+	public String userAdminByUserId(String  logonname,ModelMap map) {
+		List<User> userList = new ArrayList<User>();
+		userList.add(userServiceI.findUserExist(logonname));
+		map.put("userList", userList);
+		return "system/userAdmin";
+	}
 	
 	/**
 	 * 后台查询登录名是否存在

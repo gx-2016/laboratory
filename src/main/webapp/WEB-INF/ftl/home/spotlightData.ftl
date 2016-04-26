@@ -3,7 +3,9 @@
         <th>序号</th>
         <th>标题</th>
         <th>图片地址</th>
+        <#if Popedom?index_of('n')!=-1>
         <th>操作</th>
+         </#if>
     </thead>
     <tbody>
 	   <#if spotlights?exists>

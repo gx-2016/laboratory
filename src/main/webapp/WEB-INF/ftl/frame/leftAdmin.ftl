@@ -80,12 +80,13 @@
                                 <#if Popedom?index_of('i')!=-1>
                                     <li><a href="../role/roleAdmin.do">角色管理</a></li>
                                  </#if>
-                                 <!--根据用户角色，管理员可以管理所有，普通用户只能编辑自己-->
+                                 <!--根据用户角色，管理员可以管理所有，普通用户只能编辑自己;
+                                                                                   此处的hashmap的key值对应管理员的数据字典中的ddlcode-->
                                     <#if userRoleMap?? >
-		                                   <#if userRoleMap['j']?? >
+		                                   <#if userRoleMap['1']?? >
 										     <li><a href="../user/userAdmin.do">用户管理</a></li>
 							               <#else>
-							                  <li><a href="../user/userAdminByUserId.do?userid=${logonuser.userid}">用户管理</a></li>
+							                  <li><a href="../user/userAdminByUserId.do?logonname=${logonuser.logonname}">用户管理</a></li>
 							               </#if>
 								    </#if>
 								      

@@ -18,18 +18,20 @@ public class Contest {
     private Date contesttime;
 
     private String contestTeamid;
-    
-    private String contestTeamName;
 
     private String contestAward;
     
     private String contestRank;
     
     private String contestType;
-
-    private String contestResourceId;
     
+   
+
     //业务逻辑
+    private String contestTypeName;
+    
+    private String contestTeamName;
+    
     private List<UserTeam> userTeams;
     
     private List<ContestResource> contestResource; //比赛资源，如图片
@@ -37,7 +39,15 @@ public class Contest {
     private Integer size;
     
     
-    public List<ContestResource> getContestResource() {
+    public String getContestTypeName() {
+		return contestTypeName;
+	}
+
+	public void setContestTypeName(String contestTypeName) {
+		this.contestTypeName = contestTypeName;
+	}
+
+	public List<ContestResource> getContestResource() {
 		return contestResource;
 	}
 
@@ -60,14 +70,6 @@ public class Contest {
 
 	public void setUserTeams(List<UserTeam> userTeams) {
 		this.userTeams = userTeams;
-	}
-
-	public String getContestResourceId() {
-		return contestResourceId;
-	}
-
-	public void setContestResourceId(String contestResourceId) {
-		this.contestResourceId = contestResourceId;
 	}
 
 	public String getContestRank() {

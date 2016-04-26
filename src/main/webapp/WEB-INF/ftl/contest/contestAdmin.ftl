@@ -30,6 +30,8 @@
 
         <script src="../assets/js/modernizr.min.js"></script>
 
+         <!--引入日期控件-->
+        <script src="../assets/My97DatePicker/WdatePicker.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -42,7 +44,99 @@
 
 
     <body class="fixed-left">
-        
+        <!-- 新增模态框 modal -->
+        <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">新增焦点</h4>
+                    </div>
+                    <!--新增的form表单-->
+                    <form id="saveContestForm" action="saveContest.do" method="post" enctype="multipart/form-data">
+	                    <div class="modal-body">
+	                        <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-1" class="control-label">比赛名称</label>
+	                                    <input type="text" class="form-control" id="contestname" name= "contestname" placeholder="比赛名称">
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-2" class="control-label">比赛地点</label>
+	                                    <input type="text" class="form-control" id="contestdestination" name="contestdestination" placeholder="比赛地点">
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                        
+	                             <label class="col-sm-2 control-label">比赛组名:</label>
+		                             <div class="col-sm-4">
+			                              <select  class="form-control col-md-4" id="contestTeamid" name= "contestTeamid" >
+											    <option value="">--请选择--</option>
+												<#if teamList??>
+													<#list teamList as team>
+													 <option value='${team.ddlcode}'>${team.ddlname}</option>
+													</#list>
+												</#if>
+											</select>
+									</div>
+									 <label class="col-sm-2 control-label">比赛类型:</label>
+		                             <div class="col-sm-4">
+			                              <select   class="form-control col-md-4" id="contestType" name="contestType" >
+											    <option value="">--请选择--</option>
+												<#if contestTypeList??>
+													<#list contestTypeList as contestType>
+													 <option value='${contestType.ddlcode}'>${contestType.ddlname}</option>
+													</#list>
+												</#if>
+											</select>
+									</div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-5" class="control-label">比赛获奖</label>
+	                                    <input type="text" class="form-control" id="contestAward" name= "contestAward" placeholder="比赛获奖">
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-6" class="control-label">比赛排名</label>
+	                                    <input type="text" class="form-control" id="contestRank" name="contestRank" placeholder="比赛排名">
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                          <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="field-6" class="control-label">比赛时间</label>
+	                                    <input type="text" class="form-control" id="contesttime" name="contesttime" placeholder="比赛时间"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly">
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <div class="fileupload btn btn-primary waves-effect waves-light">
+	                                        <span><i class="ion-upload m-r-5"></i>上传图片</span>
+	                                        <input type="file" class="upload form-control" id="file" name="file" placeholder="选择图片">
+                                        </div>
+                                        <!--
+	                                    <input type="file" class="form-control" id="file" name="file" placeholder="选择图片">-->
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">关闭</button>
+	                        <input type="sunbmit" class="btn btn-default btn-info" onclick="saveContest()" value="保存"/>
+	                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+       <!-- /.modal -->
+       
         <!-- Begin page -->
         <div id="wrapper">
         
@@ -63,7 +157,17 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
+                        <!-- 提示信息 -->
+					       <#if message??>
+						       <div class="alert alert-success alert-dismissable">
+								   <button type="button" class="close" data-dismiss="alert" 
+								      aria-hidden="true">
+								      &times;
+								   </button>
+								      ${message}
+							  </div>
+						  </#if>
+					      <!-- /.提示信息 -->
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -81,12 +185,14 @@
                                     <h4 class="m-t-0 header-title">
                                         <#if Popedom?index_of('l')!=-1>
                                         <b>
-                                            <a href="toAddNews.do" class="btn btn-primary " >新增获奖比赛</a>
+                                          <!-- Full width modal -->
+                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">新增获奖比赛</button>
                                        </b>
                                        </#if>
                                     </h4>
                                 <div class="card-box table-responsive">
                                     <div id ="dataList">
+                                    <#include "contestData.ftl">
                                     </div>
                                 </div>
                             </div>
@@ -177,22 +283,46 @@
          $(document).ready(function() {
                 $('#datatable').dataTable();
             } );
-         /**   
-         function deleteNews(id){
-         	alert
-         	$ajax({
-         		type: "post",
-         		url:"deleteNews.do"
-         		data:{
-         			id:id
-         		},
-         		function:successs(data){
-         			$('#dataList').html(data);
-         		}
-         	});
-         }
-         */
-
+        
+            function  saveContest()
+            {
+               var contestname = $("#contestname").val();
+               var contestdestination = $("#contestdestination").val();
+               var contesttime = $("#contesttime").val();
+               var contestTeamid = $("#contestTeamid").val();
+               var contestAward = $("#contestAward").val();
+               var contestRank = $("#contestRank").val();
+               var contestType = $("#contestType").val();
+               
+               if(contestname =="")
+               {
+                alert("比赛名不能为空！");
+                return false;
+               }
+                if(contestdestination =="")
+               {
+                alert("比赛地点不能为空！");
+                return false;
+               } 
+               if(contestTeamid =="")
+               {
+                alert("比赛组别不能为空！");
+                return false;
+               }
+                 if(contestType =="")
+               {
+                alert("比赛类型不能为空！");
+                return false;
+               }
+                 if(contesttime =="")
+               {
+                alert("比赛时间不能为空！");
+                return false;
+               }
+               else{
+                  $("#saveContestForm").submit();
+                }
+            }
         </script>
     
     </body>

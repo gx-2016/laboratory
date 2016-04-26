@@ -3,7 +3,9 @@
         <th>序号</th>
         <th>链接标题</th>
         <th>链接地址</th>
+        <#if Popedom?index_of('n')!=-1>
         <th>操作</th>
+         </#if>
     </thead>
     <tbody>
 	   <#if links?exists>

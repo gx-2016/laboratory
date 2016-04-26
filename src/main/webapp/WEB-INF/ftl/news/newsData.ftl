@@ -3,7 +3,9 @@
         <th>序号</th>
         <th>新闻标题</th>
         <th>上传者</th>
+         <#if Popedom?index_of('n')!=-1>
         <th>操作</th>
+         </#if>
     </thead>
     <tbody>
 	   <#if newsList?exists>

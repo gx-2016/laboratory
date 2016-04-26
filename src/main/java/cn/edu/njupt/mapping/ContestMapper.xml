@@ -8,11 +8,30 @@
     <result column="ContestTime" property="contesttime" jdbcType="DATE" />
     <result column="Contest_TeamId" property="contestTeamid" jdbcType="VARCHAR" />
     <result column="Contest_Award" property="contestAward" jdbcType="VARCHAR" />
+    <result column="Contest_Rank" property="contestRank" jdbcType="VARCHAR" />
     <result column="Contest_Type" property="contestType" jdbcType="VARCHAR" />
   </resultMap>
   
+  <!--查询所有比赛   queryAllContests -->
+  <select id="queryAllContests" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_contest
+     order by  ContestTime desc
+  </select>
+  
+   <!--根据比赛名称和组别获取比赛id  -->
+  <select id="findContestByNameAndTeamId" resultMap="BaseResultMap" parameterType="cn.edu.njupt.model.Contest" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_contest
+    where ContestName = #{contestname,jdbcType=VARCHAR} and
+     Contest_TeamId = #{contestTeamid,jdbcType=VARCHAR}
+  </select>
+  
+  
   <!--根据比赛类型查询所有比赛   queryAllContests -->
-  <select id="queryAllContests" resultMap="BaseResultMap" parameterType="cn.edu.njupt.model.Contest" >
+  <select id="queryAllContestsByType" resultMap="BaseResultMap" parameterType="cn.edu.njupt.model.Contest" >
     select 
     <include refid="Base_Column_List" />
     from lab_contest
@@ -22,26 +41,30 @@
   
   
   <sql id="Base_Column_List" >
-    ContestID, ContestName, ContestDestination, ContestTime, Contest_TeamId, Contest_Award,Contest_Type
+    ContestID, ContestName, ContestDestination, ContestTime, Contest_TeamId, Contest_Award,Contest_Rank,Contest_Type
   </sql>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from lab_contest
     where ContestID = #{contestid,jdbcType=INTEGER}
   </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from lab_contest
     where ContestID = #{contestid,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="cn.edu.njupt.model.Contest" >
     insert into lab_contest (ContestID, ContestName, ContestDestination, 
-      ContestTime, Contest_TeamId, Contest_Award
+      ContestTime, Contest_TeamId, Contest_Award,Contest_Rank,Contest_type
       )
     values (#{contestid,jdbcType=INTEGER}, #{contestname,jdbcType=VARCHAR}, #{contestdestination,jdbcType=VARCHAR}, 
-      #{contesttime,jdbcType=DATE}, #{contestTeamid,jdbcType=VARCHAR}, #{contestAward,jdbcType=VARCHAR}
-      )
+      #{contesttime,jdbcType=DATE}, #{contestTeamid,jdbcType=VARCHAR}, #{contestAward,jdbcType=VARCHAR}, #{contestRank,jdbcType=VARCHAR}
+      , #{contestType,jdbcType=VARCHAR})
   </insert>
+  
   <insert id="insertSelective" parameterType="cn.edu.njupt.model.Contest" >
     insert into lab_contest
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -63,6 +86,12 @@
       <if test="contestAward != null" >
         Contest_Award,
       </if>
+       <if test="contestRank != null" >
+        Contest_Rank,
+      </if>
+      <if test="contestType != null" >
+        Contest_Type,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="contestid != null" >
@@ -82,6 +111,12 @@
       </if>
       <if test="contestAward != null" >
         #{contestAward,jdbcType=VARCHAR},
+      </if>
+       <if test="contestRank != null" >
+        #{contestRank,jdbcType=VARCHAR},
+      </if>
+       <if test="contestType != null" >
+        #{contestType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -103,6 +138,12 @@
       <if test="contestAward != null" >
         Contest_Award = #{contestAward,jdbcType=VARCHAR},
       </if>
+       <if test="contestRank != null" >
+        Contest_Award = #{contestRank,jdbcType=VARCHAR},
+      </if>
+       <if test="contestType != null" >
+        Contest_Type = #{contestType,jdbcType=VARCHAR},
+      </if>
     </set>
     where ContestID = #{contestid,jdbcType=INTEGER}
   </update>
@@ -112,7 +153,9 @@
       ContestDestination = #{contestdestination,jdbcType=VARCHAR},
       ContestTime = #{contesttime,jdbcType=DATE},
       Contest_TeamId = #{contestTeamid,jdbcType=VARCHAR},
-      Contest_Award = #{contestAward,jdbcType=VARCHAR}
+      Contest_Award = #{contestAward,jdbcType=VARCHAR},
+      Contest_Rank = #{contestRank,jdbcType=VARCHAR},
+      Contest_Type = #{contestType,jdbcType=VARCHAR}
     where ContestID = #{contestid,jdbcType=INTEGER}
   </update>
 </mapper>
