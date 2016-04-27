@@ -54,4 +54,12 @@ public class WritingsService implements WritingsServiceI{
 		return writingsMapper.selectByPrimaryKey(wtringsid);
 	}
 
+	/*
+	 * 根据PersonpageId查询所有相关著作
+	 */
+	@Override
+	public List<Writings> findWrtingsByPersonpageId(Integer personpageid) {
+		return writingsMapper.findWrtingsByPersonpageId(personpageid);
+	}
+
 }

@@ -32,7 +32,7 @@ public interface UserServiceI {
 	
 	List<User> getTeachersByType(String type);
 
-	public List<PersonPageWithBLOBs> getPersonalPage(Integer userid);
+	public PersonPageWithBLOBs getPersonalPage(Integer userid);
 
 
 }

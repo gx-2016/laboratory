@@ -4,24 +4,23 @@
   <resultMap id="BaseResultMap" type="cn.edu.njupt.model.PersonPage" >
     <id column="PersonpageId" property="personpageid" jdbcType="INTEGER" />
     <result column="UserID" property="userid" jdbcType="INTEGER" />
-    <result column="WtringsID" property="wtringsid" jdbcType="INTEGER" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.edu.njupt.model.PersonPageWithBLOBs" extends="BaseResultMap" >
     <result column="Supervisor" property="supervisor" jdbcType="LONGVARCHAR" />
     <result column="Biography" property="biography" jdbcType="LONGVARCHAR" />
     <result column="Research" property="research" jdbcType="LONGVARCHAR" />
+    <result column="MailAddress" property="mailAddress" jdbcType="LONGVARCHAR" />
   </resultMap>
   
   <sql id="Base_Column_List" >
-    PersonpageId, UserID, WtringsID
+    PersonpageId, UserID
   </sql>
   <sql id="Blob_Column_List" >
-    Supervisor, Biography, Research
+    Supervisor, Biography, Research,MailAddress
   </sql>
   
    
   <!--根据userid查询个人主页信息  -->
-  
    <resultMap id="PersonalPageResultMap" type="cn.edu.njupt.model.PersonPageWithBLOBs" extends="BaseResultMap" >
     <result column="Supervisor" property="supervisor" jdbcType="LONGVARCHAR" />
     <result column="Biography" property="biography" jdbcType="LONGVARCHAR" />
@@ -34,11 +33,12 @@
       <result column="Email" property="email" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getPersonalPage" resultMap="PersonalPageResultMap" parameterType="java.lang.Integer" >
-    select 
-    p.PersonpageId, p.UserID, w.WtringsID,u.UserName,u.LogonName,u.Education,u.PhotoUrl,u.Email,
-    p.Supervisor, p.Biography, p.Research,p.MailAddress
-    from lab_personpage p,lab_user u,lab_writings w
-    where p.UserID = u.UserID and p.PersonpageId = w.PersonpageId and p.UserID=#{userid,jdbcType=INTEGER}
+   select 
+    p.PersonpageId, p.UserID,u.UserName,u.LogonName,u.Education,
+    u.PhotoUrl,u.Email,p.Supervisor, p.Biography, p.Research,p.MailAddress
+    from lab_personpage p join lab_user u
+    on p.UserID = u.UserID 
+    where p.UserID=#{userid,jdbcType=INTEGER}
   </select>
   <!--结束  -->
   

@@ -12,6 +12,16 @@
     <result column="Remark" property="remark" jdbcType="VARCHAR" />
     <result column="PersonpageId" property="personpageId" jdbcType="INTEGER" />
   </resultMap>
+  
+  <!-- 根据personpageid获取著作集合 -->
+  <select id="findWrtingsByPersonpageId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lab_writings
+    where PersonpageId = #{personpageId,jdbcType=INTEGER}
+  </select>
+  
+  
   <sql id="Base_Column_List" >
     WtringsID, WritingsName, WritingsAbstract, WritingsType, WritingsTime, WritingsPeople, 
     WritingsQuote, Remark

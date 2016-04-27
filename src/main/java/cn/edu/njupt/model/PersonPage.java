@@ -5,8 +5,6 @@ public class PersonPage {
 
     private Integer userid;
 
-    private Integer wtringsid;
-
     public Integer getPersonpageid() {
         return personpageid;
     }
@@ -22,12 +20,17 @@ public class PersonPage {
     public void setUserid(Integer userid) {
         this.userid = userid;
     }
+    
+    //非业务逻辑字段
+    private Integer writingsid;
 
-    public Integer getWtringsid() {
-        return wtringsid;
-    }
+	public Integer getWritingsid() {
+		return writingsid;
+	}
 
-    public void setWtringsid(Integer wtringsid) {
-        this.wtringsid = wtringsid;
-    }
+	public void setWritingsid(Integer writingsid) {
+		this.writingsid = writingsid;
+	}
+    
+    
 }

@@ -19,4 +19,14 @@ public interface WritingsMapper {
     
     List<Writings> queryAllWritings();
     List<Writings> queryAllWritingsbyYear(int year);
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @param personpageid
+	 * @Parameter: @return
+	 * @Return:List<Writings>
+	 * @Author: 高翔
+	 * @Date: 2016年4月27日
+	 */
+	List<Writings> findWrtingsByPersonpageId(Integer personpageid);
 }

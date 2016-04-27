@@ -1,10 +1,7 @@
 package cn.edu.njupt.dao;
 
-import java.util.List;
-
 import cn.edu.njupt.model.PersonPage;
 import cn.edu.njupt.model.PersonPageWithBLOBs;
-import cn.edu.njupt.model.User;
 
 public interface PersonPageMapper {
     int deleteByPrimaryKey(Integer personpageid);
@@ -21,5 +18,5 @@ public interface PersonPageMapper {
 
     int updateByPrimaryKey(PersonPage record);
 
-	List<PersonPageWithBLOBs> getPersonalPage(Integer userid);
+	PersonPageWithBLOBs getPersonalPage(Integer userid);
 }

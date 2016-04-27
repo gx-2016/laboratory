@@ -61,16 +61,13 @@ public class UserController {
 		//1.查询个人主页信息
 		PersonPageWithBLOBs bloBs = new PersonPageWithBLOBs();
 		
-		//多表联合查询个人著作信息
-		List<PersonPageWithBLOBs> personalPages = userServiceI.getPersonalPage(userid);
+		//查询个人主页相关信息
+		bloBs = userServiceI.getPersonalPage(userid);
+		//查询著作信息
 		List<Writings> writings = new ArrayList<Writings>();
-		for (PersonPageWithBLOBs personPageWithBLOBs : personalPages) {
-			bloBs = personPageWithBLOBs;
-			Writings writing =  writingsService.findWrtingsById(personPageWithBLOBs.getWtringsid());
-			writings.add(writing);
-		}
-		
-		modelMap.put("bloBs", bloBs);
+		writings =  writingsService.findWrtingsByPersonpageId(bloBs.getPersonpageid());
+			
+	    modelMap.put("bloBs", bloBs);
 		modelMap.put("writings", writings);
 		return "personalPage";
 	}

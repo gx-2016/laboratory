@@ -104,16 +104,21 @@ public class UserServiceImpl implements UserServiceI{
 		return userMapper.getDoctorUser(education);
 	}
 
-    //获取个人主页信息
-	public List<PersonPageWithBLOBs> getPersonalPage(Integer userid) {
-		return personPageMapper.getPersonalPage(userid);
-	}
 
 
 	@Override
 	public List<User> getTeachersByType(String type) {
 		// TODO Auto-generated method stub
 		return userMapper.getTeachersByType(type);
+	}
+
+
+	/*
+	 * 根据用户id获取个人主页相关信息
+	 */
+	@Override
+	public PersonPageWithBLOBs getPersonalPage(Integer userid) {
+		return personPageMapper.getPersonalPage(userid);
 	}
 
 

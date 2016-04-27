@@ -10,6 +10,19 @@ public class PersonPageWithBLOBs extends PersonPage {
     
 	private String mailAddress;
 	
+	
+    //著作业务逻辑字段
+    private Integer writingsid;
+
+	public Integer getWritingsid() {
+		return writingsid;
+	}
+
+	public void setWritingsid(Integer writingsid) {
+		this.writingsid = writingsid;
+	}
+
+	//用户信息的业务逻辑字段
 	private String username;
 
     private String logonname;
@@ -60,15 +73,16 @@ public class PersonPageWithBLOBs extends PersonPage {
 			this.photourl = photourl;
 		}
 
-	public String getMailAddress() {
-		return mailAddress;
-	}
 
-	public void setMailAddress(String mailAddress) {
-		this.mailAddress = mailAddress;
-	}
+    public String getMailAddress() {
+			return mailAddress;
+		}
 
-    public String getSupervisor() {
+		public void setMailAddress(String mailaddress) {
+			this.mailAddress = mailaddress;
+		}
+
+	public String getSupervisor() {
         return supervisor;
     }
 

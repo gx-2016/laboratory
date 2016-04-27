@@ -163,7 +163,6 @@ BODY {
             <DIV class=style1 align=left>
               <#if writings??>
               <#list writings as writing >
-<<<<<<< HEAD
 			               <#if writing.writingspeople??>
 					          ${writing.writingspeople}
 						    <#else>
@@ -180,25 +179,6 @@ BODY {
 			               <#else>
 			                </#if> 
 			                <br> 
-=======
-               <#if writing.writingspeople??>
-		        ${writing.writingspeople}
-			    <#else>
-		       </#if>
-               
-               .&nbsp;&nbsp; 
-               <#if writing.writingsname??>
-               ${writing.writingsname}
-               <#else>
-                </#if> 
-                .&nbsp;&nbsp; @
-               <#if writing.writingstime??>
-               ${writing.writingstime?string("yyyy-MM-dd")}
-               <#else>
-                </#if> 
-                
-                <br> 
->>>>>>> origin/master
                 </#list>
               </#if> 
 			 
