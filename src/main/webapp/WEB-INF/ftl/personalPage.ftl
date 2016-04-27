@@ -43,12 +43,14 @@ BODY {
 <table height="210" width="100%" border="0">
   <tbody>
   <tr>
-    <td width="220" height="210"><img height="209" alt="
-    <#if bloBs.username??> 
-    ${bloBs.username} 
-    <#else>
-    </#if>"
-    src="system/${bloBs.photourl}"/>
+    <td width="220" height="210">
+   
+   <#if bloBs.photourl??> 
+   <img height="209"  src="system/${bloBs.photourl}"/>
+   <#else>
+   <img height="209"  src="assets/images/person3.jpg"/>
+   </#if>
+   
      </td>
 
     <td width="30"></td>
@@ -163,23 +165,21 @@ BODY {
               <#if writings??>
               <#list writings as writing >
                <#if writing.writingspeople??>
-               
-               <#if writing.writingspeople??> 
-	       ${writing.writingspeople}
-		    <#else>
-		    </#if>
+		        ${writing.writingspeople}
+			    <#else>
+		       </#if>
                
                .&nbsp;&nbsp; 
-                </#if> 
                <#if writing.writingsname??>
                ${writing.writingsname}
-               <#else>.&nbsp;&nbsp; @
+               <#else>
                 </#if> 
-                
+                .&nbsp;&nbsp; @
                <#if writing.writingstime??>
                ${writing.writingstime?string("yyyy-MM-dd")}
                <#else>
                 </#if> 
+                
                 <br> 
                 </#list>
               </#if> 
@@ -214,13 +214,13 @@ BODY {
                 <br>
                     National Key Laboratory for Novel Software 
                   Technology<br>Nanjing University of Posts and Telecommunications, Mailbox 328<br>Nanjing 
-                  210046, China</span></td></tr>
+                  210003, China</span></td></tr>
               <tr>
                 <td class="style2" valign="bottom" height="22">Laboratory:</td></tr>
               <tr>
 
-                <td class="style1" valign="top" height="21"><span class="norm">328, 
-                  Building of Computer Science and Technology , Xianlin Campus of Nanjing University of Posts and Telecommunications</span></td></tr>
+                <td class="style1" valign="top" height="21"><span class="norm">416, 
+                  Building of Computer Science and Technology , sanpailou Campus of Nanjing University of Posts and Telecommunications</span></td></tr>
 
                 <td class="style2" valign="bottom" height="22">Email:</td></tr>
               <tr>
