@@ -227,7 +227,7 @@
 									<div class="pod">
 										<div class="pod__title">
 											<h2 align="center">
-												<a href=photos.do" title="生活影集">
+												<a href="photos.do" title="生活影集">
 													生活影集</a>
 											</h2>
 										</div>

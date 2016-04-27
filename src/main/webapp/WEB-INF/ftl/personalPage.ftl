@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<!-- saved from url=(0118)file:///C:/Users/sylar/Desktop/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/Hu%20peng,%20LAMDA%20Group%20at%20NJU.htm -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
 <title> 
 <#if bloBs.username??> 
@@ -43,13 +42,11 @@ BODY {
 <table height="210" width="100%" border="0">
   <tbody>
   <tr>
-    <td width="220" height="210"><img height="209" alt="
-    <#if bloBs.username??> 
-    ${bloBs.username} 
-    <#else>
-    </#if>"
-    src="system/${bloBs.photourl}"/>
-     </td>
+    <td width="220" height="210">
+     <#if bloBs.photourl??> 
+     <img height="209" src="system/${bloBs.photourl}" />
+     </#if>
+    </td>
 
     <td width="30"></td>
     <td width="425">
@@ -162,25 +159,22 @@ BODY {
             <DIV class=style1 align=left>
               <#if writings??>
               <#list writings as writing >
-               <#if writing.writingspeople??>
-               
-               <#if writing.writingspeople??> 
-	       ${writing.writingspeople}
-		    <#else>
-		    </#if>
-               
-               .&nbsp;&nbsp; 
-                </#if> 
-               <#if writing.writingsname??>
-               ${writing.writingsname}
-               <#else>.&nbsp;&nbsp; @
-                </#if> 
-                
-               <#if writing.writingstime??>
-               ${writing.writingstime?string("yyyy-MM-dd")}
-               <#else>
-                </#if> 
-                <br> 
+			               <#if writing.writingspeople??>
+					          ${writing.writingspeople}
+						    <#else>
+						    </#if>
+			               
+			               .&nbsp;&nbsp; 
+			               <#if writing.writingsname??>
+			                 ${writing.writingsname}
+			               <#else>.&nbsp;&nbsp; @
+			                </#if> 
+			                
+			               <#if writing.writingstime??>
+			                 ${writing.writingstime?string("yyyy-MM-dd")}
+			               <#else>
+			                </#if> 
+			                <br> 
                 </#list>
               </#if> 
 			 

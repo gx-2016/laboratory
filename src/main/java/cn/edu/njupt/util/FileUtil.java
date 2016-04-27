@@ -64,6 +64,7 @@ public class FileUtil {
 			   file2 = new File(path,fileName.substring(0,fileName.lastIndexOf("."))+"_"+new Date().getTime() + fileType); //新建一个文件
 		   }else{
 			   fileDir.mkdirs();
+			   file2 = new File(path,fileName.substring(0,fileName.lastIndexOf("."))+"_"+new Date().getTime() + fileType); //新建一个文件
 		   }
 		return file2;
 	}
