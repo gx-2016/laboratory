@@ -3,6 +3,7 @@ package cn.edu.njupt.controller;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -96,12 +97,12 @@ public class LoginController {
 						request.getSession().setAttribute("Popedom", Popedom);
 					}
 					else{
-						map.put("message", "该用户还没有分配权限！");
+						map.put("message", "该用户还没有分配权限!请联系管理员");
 						return "login";
 					}
 				}
 				else{
-					map.put("message", "该用户还没有分配角色！");
+					map.put("message", "该用户还没有分配角色！请联系管理员");
 					return "login";
 				}
 			}
@@ -112,7 +113,7 @@ public class LoginController {
 			
 		}
 		else{
-			map.put("message", "不存在该用户！");
+			map.put("message", "不存在该用户！请先注册！");
 			return "login";
 		}
 		//记住我的功能
@@ -194,6 +195,9 @@ public class LoginController {
 			UserRole userRole = new UserRole();
 			userRole.setRoleid(systemDDL.getDdlcode().toString());
 			userRole.setUserid(user1.getUserid().toString());
+			List<UserRole> list = new ArrayList<UserRole>();
+			list.add(userRole);
+			roleServiceI.insertUserRole(list);
 			
 			return "redirect:loginIndex.do";
 		} else {

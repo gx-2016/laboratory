@@ -68,7 +68,7 @@
 						<#if spotlights??>
 						<#list spotlights as spotlight>
 							<a
-								href="https://blogs.adelaide.edu.au/eucentre/2016/03/11/shakespeare/"
+								href="#"
 								<#if spotlight.spotlightname?? >
 								 title="${spotlight.spotlightname}"
 								</#if>
@@ -92,7 +92,7 @@
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="news.do"
-												title="阅读更多新闻">最新校内新闻</a> <a
+												title="阅读更多新闻">最新新闻</a> <a
 												href="news.do"
 												title="阅读更多新闻"
 												class="news-events-feed__title-more-link"><span
@@ -167,7 +167,7 @@
 											</h2>
 										</div>
 										<div class="pod__content" style="margin:0px 0px 0px 20px;"> 
-											<a href="people.do"> <img
+											<a href="undergraduate.do"> <img
 												src="assets/images/img_7.jpg">
 										</div>
 									</div>
@@ -183,7 +183,7 @@
 										</div>
 										<div class="pod__content">
 											<a href="writtings.do"> <img
-												src="assets/images/img_10.jpg">
+												src="assets/images/img_2.jpg">
 										</div>
 									</div>
 								</div>
@@ -198,7 +198,7 @@
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">
 											<a href="learn.do"> <img
-												src="assets/images/work_3.jpg">
+												src="assets/images/work_1.jpg">
 										</div>
 									</div>
 								</div>
@@ -229,7 +229,7 @@
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">
 											<a href="photos.do"> <img
-												src="assets/images/work_2.jpg">
+												src="assets/images/work_10.jpg">
 										</div>
 									</div>
 								</div>

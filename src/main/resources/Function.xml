@@ -41,7 +41,7 @@
   <Function>
      <FunctionCode>f</FunctionCode>
      <FunctionName>教学管理</FunctionName>
-     <ParentCode>contest</ParentCode>
+     <ParentCode>learn</ParentCode>
      <ParentName>教学管理</ParentName>
   </Function> 
   <Function>
