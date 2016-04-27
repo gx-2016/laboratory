@@ -61,10 +61,10 @@
 				        </#if>
                         
 				        <td>
-				        <#if Popedom?index_of('l')!=-1>
+				        <#if Popedom?index_of('m')!=-1>
 				        <a onclick="update(this)">修改</a> | 
 				         </#if>
-				        <#if Popedom?index_of('m')!=-1>
+				        <#if Popedom?index_of('n')!=-1>
 				        <a href="deleteUser.do?userid=${user.userid}" onclick="javascript:return confirm('确实要删除吗？')">删除</a>
 				        </#if>
 				        </td>
