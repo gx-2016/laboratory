@@ -168,7 +168,8 @@
 										</div>
 										<div class="pod__content" style="margin:0px 0px 0px 20px;"> 
 											<a href="undergraduate.do"> <img
-												src="assets/images/img_7.jpg">
+												src="assets/images/img_7.jpg"></a>
+												<a href="undergraduate.do"  class="pod__action-btn" >More</a>
 										</div>
 									</div>
 								</div>
@@ -183,12 +184,13 @@
 										</div>
 										<div class="pod__content">
 											<a href="writtings.do"> <img
-												src="assets/images/img_2.jpg">
+												src="assets/images/img_10.jpg"></a>
+												<a href="writtings.do"  class="pod__action-btn" >More</a>
 										</div>
 									</div>
 								</div>
 									<!-- new markup pod -->
-								<div class="span3 home-pod mln">
+								<div class="span3 home-pod ">
 									<div class="pod">
 										<div class="pod__title">
 											<h2 align="center">
@@ -198,7 +200,8 @@
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">
 											<a href="learn.do"> <img
-												src="assets/images/work_1.jpg">
+												src="assets/images/work_1.jpg"></a>
+												<a href="learn.do"  class="pod__action-btn" >More</a>
 										</div>
 									</div>
 								</div>
@@ -213,23 +216,25 @@
 										</div>
 										<div class="pod__content">
 											<a href="contest.do"> <img
-												src="assets/images/work_8.jpg">
+												src="assets/images/work_8.jpg"></a>
+												<a href="contest.do"  class="pod__action-btn" >More</a>
 										</div>
 									</div>
 								</div>
 								
 									<!-- new markup pod -->
-								<div class="span3 home-pod ">
+								<div class="span3 home-pod">
 									<div class="pod">
 										<div class="pod__title">
 											<h2 align="center">
-												<a href="photos.do" title="生活影集">
+												<a href=photos.do" title="生活影集">
 													生活影集</a>
 											</h2>
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">
 											<a href="photos.do"> <img
-												src="assets/images/work_10.jpg">
+												src="assets/images/work_2.jpg"></a>
+												<a href="photos.do"  class="pod__action-btn" >More</a>
 										</div>
 									</div>
 								</div>
