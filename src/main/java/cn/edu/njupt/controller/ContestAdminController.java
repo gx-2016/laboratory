@@ -71,7 +71,7 @@ public class ContestAdminController {
 		return "contest/contestAdmin";
 	}
 	
-	@Transactional(isolation=Isolation.DEFAULT)
+	@Transactional(readOnly=false,isolation=Isolation.DEFAULT)
 	@RequestMapping(value="/saveContest.do", method = RequestMethod.POST)
 	public String saveContest(String contestname,String contestdestination,
 			                    String contesttime,String contestTeamid,

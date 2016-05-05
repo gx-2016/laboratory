@@ -66,7 +66,7 @@
 			<table align="center">
 				<tbody >
 					<tr>
-						<td style="font-size:15px;">南京邮电大学  ©copyright 2016 authored by 高翔、王峰</td>
+						<td style="font-size:15px;">南京邮电大学  ©copyright 2016 authored by 高翔、王峰、张洪成</td>
 					</tr>
 				</tbody>
 			</table>
