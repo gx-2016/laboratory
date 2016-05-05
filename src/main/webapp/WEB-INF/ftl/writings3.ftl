@@ -15,6 +15,15 @@
 		global : '/global/v/response1/',
 		english_accept : false
 	};
+	
+	function locationPatent(flag){
+		if(flag==0)
+			window.location.hash="#progect";
+		else if(flag==1)
+			window.location.hash="#pape";
+		else if(flag==2)
+			window.location.hash="#patent";
+	}
 </script>
 <meta charset="utf-8">
 <title>The ICV Laboratory</title>
@@ -70,15 +79,21 @@
 									</div>
 
 									<ul class="c-sitenav__level-1">
-										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
-											class="c-sitenav__item-link " >按年份</a></li>
-										<ul>
-											<li>
-											<#list yearlist as year>
-												<a href="writtings.do?year=${year}">[${year}]</a>
-											</#list>
-											</li>
-										</ul>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<button  class="c-sitenav__item-link " onclick="locationPatent(0)" >科研项目</button></li>
+										
+										
+									</ul>
+									<ul class="c-sitenav__level-1">
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<button  class="c-sitenav__item-link " onclick="locationPatent(1)" >科研论文</button></li>
+										
+										
+									</ul>
+									<ul class="c-sitenav__level-1">
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<button  class="c-sitenav__item-link " onclick="locationPatent(2)" >科研专利</button></li>
+										
 										
 									</ul>
 								</nav>
@@ -108,8 +123,9 @@
 									<article role="article" class="contextual-region node node--type-ua-page node--promoted node--view-mode-full" 
 									    about="/about/node/1">
 										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
-										<h1>项目</h1>
+										
 										<div class="post" id="progect">
+										<h1>项目</h1>
 											<#if writingsList?exists>
 											<#list writingsList as writings>
 											<#if writings.writingstype=="1">
@@ -124,8 +140,9 @@
 											</#list>
 											</#if>
 											</div>
+											
+											<div class="post" id="pape">
 											<h1>论文</h1>
-											<div class="post">
 											<#if writingsList?exists>
 											<#list writingsList as writings>
 											<#if writings.writingstype=="2">
@@ -140,8 +157,9 @@
 											</#list>
 											</#if>
 											</div>
+											
+											<div class="post" id="patent">
 											<h1>专利</h1>
-											<div class="post">
 											<#if writingsList?exists>
 											<#list writingsList as writings>
 											<#if writings.writingstype=="3">
