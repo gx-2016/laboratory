@@ -189,13 +189,14 @@
           	var newsName = $('#newsName').val();
           	var newsAbstract = $('#newsAbstract').val();
             var newsContent = UE.getEditor('editor').getContent();
+            var newsText = UE.getEditor('editor').getPlainTxt();
           	if(newsName == null|| newsName==""||newsName==undefined){
           		alert("标题不能为空");
          	}else if(newsContent == null||newsContent == "" || newsContent == undefined){
           		alert("内容不能为空");
           	}else{
-          		if(newsAbstract==null||newsAbstract == ""||newsAbstract==undefined)
-          			newsAbstract=newsName;
+          		//if(newsAbstract==null||newsAbstract == ""||newsAbstract==undefined)
+          			//newsAbstract=newsName;
           		$.ajax({
  				type: "post",
  				url: "saveAddNews.do",
@@ -203,7 +204,8 @@
  				data: {
  					newsName:newsName,
  					newsAbstract:newsAbstract,
- 					newsContent:newsContent
+ 					newsContent:newsContent,
+ 					newsText:newsText
  					},
  					success: function(data) {
               		  alert("提交成功");

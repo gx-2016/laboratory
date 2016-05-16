@@ -36,6 +36,16 @@ public class NewsAdminController {
  		String newsName = request.getParameter("newsName");
  		String newsAbstract = request.getParameter("newsAbstract");
  		String newsContent = request.getParameter("newsContent");
+ 		String newsText = request.getParameter("newsText");
+ 	
+ 		try {
+ 			if(newsAbstract.length()==0)
+ 	 			newsAbstract=newsText.substring(0,140)+"...";
+		} catch (Exception e) {
+			// TODO: handle exception
+			newsAbstract=newsText;
+		}
+ 		
  		User user =(User)request.getSession().getAttribute("logonuser");
  		News news = new News();
  		news.setNewsauthor(user.getUsername());
