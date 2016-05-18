@@ -1,5 +1,6 @@
 package cn.edu.njupt.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.njupt.model.User;
@@ -25,13 +26,15 @@ public interface UserMapper {
 
 	User findUserExist(String logonname);
 
-	List<User> getUndergraduateUser(String education);
+	List<User> getUndergraduateUser();
 
-	List<User> getMasterUser(String education);
+	List<User> getMasterUser();
 
-	List<User> getDoctorUser(String education);
+	List<User> getDoctorUser();
 
 	List<User> getTeachersByType(String type);
+
+	List<User> getStudentsByType(HashMap<String, String> map);
 
 
 

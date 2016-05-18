@@ -26,7 +26,7 @@
 			                
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
-                                <a class="btn" href="/laboratory/exit.do">退出系统</a>
+                                <a class="btn" href="/iacn/exit.do">退出系统</a>
                                 </li>
                             </ul>
                         </div>

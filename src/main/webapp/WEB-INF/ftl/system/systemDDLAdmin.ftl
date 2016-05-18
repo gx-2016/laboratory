@@ -46,7 +46,6 @@
                         <h4 class="modal-title">新增选项</h4>
                     </div>
                     <!--新增的form表单-->
-                    <form id="saveSpotlightForm" action="saveSpotlight.do" method="post" enctype="multipart/form-data">
 	                    <div class="modal-body">
 	                        
 	                        <div class="row">
@@ -78,7 +77,6 @@
 	                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">关闭</button>
 	                        <button type="button"  class="btn btn-default btn-info" onclick="saveDDL()" data-dismiss="modal">保存</button>
 	                    </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -111,7 +109,19 @@
                                         <li><a href="#">Minton</a></li>
                                         <li class="active">数据字典管理</li>
                                     </ol>
-                                    <h4 class="page-title">Welcome !</h4>
+                                     <div class="form-group " >
+                                        <label class="col-sm-1 control-label">类型列表:</label>
+                                        <div class="col-sm-2">
+                                           <select  id="keyword" class="form-control" name="keyword"  onchange="changetype()">
+											    <option value="-1">--增加类型和选项--</option>
+												<#if keyWordList??>
+													<#list keyWordList as keyWord>
+													 <option>${keyWord}</option>
+													</#list>
+												</#if>
+											</select>
+                                        </div>
+								  </div>
                                 </div>
                             </div>
                         </div>
@@ -130,20 +140,6 @@
 						  </#if>
 					      <!-- /.提示信息 -->
 		                    <div class="row">
-		                         <div class="form-group " >
-                                        <label class="col-sm-1 control-label">类型列表:</label>
-                                        <div class="col-sm-2">
-                                           <select  id="keyword" class="form-control" name="keyword"  onchange="changetype()">
-											    <option value="-1">--增加类型和选项--</option>
-												<#if keyWordList??>
-													<#list keyWordList as keyWord>
-													 <option>${keyWord}</option>
-													</#list>
-												</#if>
-											</select>
-                                        </div>
-								  </div>
-								  <br/>
 		                          <div class="card-box table-responsive">
 		                           <h4 class="m-t-0 header-title">
                                         <b>

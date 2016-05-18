@@ -22,15 +22,15 @@ public class PersonPage {
     }
     
     //非业务逻辑字段
-    private Integer writingsid;
-
-	public Integer getWritingsid() {
-		return writingsid;
-	}
-
-	public void setWritingsid(Integer writingsid) {
-		this.writingsid = writingsid;
-	}
+   // private Integer writingsid;
+//
+//	public Integer getWritingsid() {
+//		return writingsid;
+//	}
+//
+//	public void setWritingsid(Integer writingsid) {
+//		this.writingsid = writingsid;
+//	}
     
     
 }

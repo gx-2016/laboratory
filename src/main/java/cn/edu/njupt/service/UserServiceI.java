@@ -24,15 +24,37 @@ public interface UserServiceI {
 	//后台获取成员信息
 	public List<User> getAllUser();
 
-	public List<User> getUndergraduateUser(String education);
+	public List<User> getUndergraduateUser();
 
-	public List<User> getMasterUser(String education);
+	public List<User> getMasterUser();
 
-	public List<User> getDoctorUser(String education);
+	public List<User> getDoctorUser();
 	
-	List<User> getTeachersByType(String type);
+	public PersonPageWithBLOBs getPersonalPageByUserId(Integer userid);
+	
+	public List<User> getTeachersByType(String type);
 
-	public PersonPageWithBLOBs getPersonalPage(Integer userid);
+	public List<User> getStudentsByType(String string, String education);
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @param user
+	 * @Parameter: @param area
+	 * @Return:void
+	 * @Author: 高翔
+	 * @Date: 2016年5月18日
+	 */
+	public void savePersonPage(User user, String[] area);
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @param user
+	 * @Parameter: @param area
+	 * @Return:void
+	 * @Author: 高翔
+	 * @Date: 2016年5月18日
+	 */
+	public void updatePersonPage(User user, String[] area);
 
 
 }

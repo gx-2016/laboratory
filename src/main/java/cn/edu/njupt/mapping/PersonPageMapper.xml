@@ -10,32 +10,41 @@
     <result column="Biography" property="biography" jdbcType="LONGVARCHAR" />
     <result column="Research" property="research" jdbcType="LONGVARCHAR" />
     <result column="MailAddress" property="mailAddress" jdbcType="LONGVARCHAR" />
+    <result column="field_1" property="field_1" jdbcType="LONGVARCHAR" />
+    <result column="field_2" property="field_2" jdbcType="LONGVARCHAR" />
+    <result column="field_3" property="field_3" jdbcType="LONGVARCHAR" />
+    <result column="field_4" property="field_4" jdbcType="LONGVARCHAR" />
+    <result column="field_5" property="field_5" jdbcType="LONGVARCHAR" />
+    <result column="field_6" property="field_6" jdbcType="LONGVARCHAR" />
+    <result column="field_7" property="field_7" jdbcType="LONGVARCHAR" />
+    <result column="field_8" property="field_8" jdbcType="LONGVARCHAR" />
+    <result column="field_9" property="field_9" jdbcType="LONGVARCHAR" />
+    <result column="field_10" property="field_10" jdbcType="LONGVARCHAR" />
   </resultMap>
   
   <sql id="Base_Column_List" >
     PersonpageId, UserID
   </sql>
   <sql id="Blob_Column_List" >
-    Supervisor, Biography, Research,MailAddress
+    Supervisor, Biography, Research,MailAddress ,field_1 ,field_2 ,field_3
+     ,field_4 ,field_5 ,field_6 ,field_7 ,field_8 ,field_9 ,field_10
   </sql>
   
    
   <!--根据userid查询个人主页信息  -->
-   <resultMap id="PersonalPageResultMap" type="cn.edu.njupt.model.PersonPageWithBLOBs" extends="BaseResultMap" >
-    <result column="Supervisor" property="supervisor" jdbcType="LONGVARCHAR" />
-    <result column="Biography" property="biography" jdbcType="LONGVARCHAR" />
-    <result column="Research" property="research" jdbcType="LONGVARCHAR" />
-    <result column="MailAddress" property="mailAddress" jdbcType="LONGVARCHAR" />
+   <resultMap id="PersonalPageResultMap" type="cn.edu.njupt.model.PersonPageWithBLOBs" extends="ResultMapWithBLOBs" >
     <result column="UserName" property="username" jdbcType="VARCHAR" />
     <result column="LogonName" property="logonname" jdbcType="VARCHAR" />
     <result column="Education" property="education" jdbcType="VARCHAR" />
      <result column="PhotoUrl" property="photourl" jdbcType="VARCHAR" />
       <result column="Email" property="email" jdbcType="VARCHAR" />
   </resultMap>
-  <select id="getPersonalPage" resultMap="PersonalPageResultMap" parameterType="java.lang.Integer" >
+  <select id="getPersonalPageByUserId" resultMap="PersonalPageResultMap" parameterType="java.lang.Integer" >
    select 
     p.PersonpageId, p.UserID,u.UserName,u.LogonName,u.Education,
     u.PhotoUrl,u.Email,p.Supervisor, p.Biography, p.Research,p.MailAddress
+    ,field_1 ,field_2 ,field_3,field_4 ,field_5 ,field_6 ,field_7 ,field_8 
+    ,field_9 ,field_10
     from lab_personpage p join lab_user u
     on p.UserID = u.UserID 
     where p.UserID=#{userid,jdbcType=INTEGER}
@@ -56,12 +65,18 @@
     where PersonpageId = #{personpageid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
-    insert into lab_personpage (PersonpageId, UserID, WtringsID, 
-      Supervisor, Biography, Research
-      )
-    values (#{personpageid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{wtringsid,jdbcType=INTEGER}, 
-      #{supervisor,jdbcType=LONGVARCHAR}, #{biography,jdbcType=LONGVARCHAR}, #{research,jdbcType=LONGVARCHAR}
-      )
+    insert into lab_personpage (PersonpageId, UserID, MailAddress, 
+      Supervisor, Biography, Research, 
+      field_1, field_2, field_3, 
+      field_4, field_5, field_6, 
+      field_7, field_8, field_9, 
+      field_10)
+    values (#{personpageid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{mailAddress,jdbcType=LONGVARCHAR}, 
+      #{supervisor,jdbcType=LONGVARCHAR}, #{biography,jdbcType=LONGVARCHAR}, #{research,jdbcType=LONGVARCHAR}, 
+      #{field_1,jdbcType=LONGVARCHAR}, #{field_2,jdbcType=LONGVARCHAR}, #{field_3,jdbcType=LONGVARCHAR}, 
+      #{field_4,jdbcType=LONGVARCHAR}, #{field_5,jdbcType=LONGVARCHAR}, #{field_6,jdbcType=LONGVARCHAR}, 
+      #{field_7,jdbcType=LONGVARCHAR}, #{field_8,jdbcType=LONGVARCHAR}, #{field_9,jdbcType=LONGVARCHAR}, 
+      #{field_10,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
     insert into lab_personpage
@@ -72,8 +87,8 @@
       <if test="userid != null" >
         UserID,
       </if>
-      <if test="wtringsid != null" >
-        WtringsID,
+      <if test="MailAddress != null" >
+        mailAddress,
       </if>
       <if test="supervisor != null" >
         Supervisor,
@@ -84,6 +99,36 @@
       <if test="research != null" >
         Research,
       </if>
+      <if test="field_1 != null" >
+        field_1,
+      </if>
+      <if test="field_2 != null" >
+        field_2,
+      </if>
+      <if test="field_3 != null" >
+        field_3,
+      </if>
+      <if test="field_4 != null" >
+        field_4,
+      </if>
+      <if test="field_5 != null" >
+        field_5,
+      </if>
+      <if test="field_6 != null" >
+        field_6,
+      </if>
+      <if test="field_7 != null" >
+        field_7,
+      </if>
+      <if test="field_8 != null" >
+        field_8,
+      </if>
+      <if test="field_9 != null" >
+        field_9,
+      </if>
+      <if test="field_10 != null" >
+        field_10,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="personpageid != null" >
@@ -92,8 +137,8 @@
       <if test="userid != null" >
         #{userid,jdbcType=INTEGER},
       </if>
-      <if test="wtringsid != null" >
-        #{wtringsid,jdbcType=INTEGER},
+      <if test="mailAddress != null" >
+        #{mailAddress,jdbcType=LONGVARCHAR},
       </if>
       <if test="supervisor != null" >
         #{supervisor,jdbcType=LONGVARCHAR},
@@ -104,6 +149,36 @@
       <if test="research != null" >
         #{research,jdbcType=LONGVARCHAR},
       </if>
+      <if test="field_1 != null" >
+        #{field_1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_2 != null" >
+        #{field_2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_3 != null" >
+        #{field_3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_4 != null" >
+        #{field_4,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_5 != null" >
+        #{field_5,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_6 != null" >
+        #{field_6,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_7 != null" >
+        #{field_7,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_8 != null" >
+        #{field_8,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_9 != null" >
+        #{field_9,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_10 != null" >
+        #{field_10,jdbcType=LONGVARCHAR},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
@@ -112,8 +187,8 @@
       <if test="userid != null" >
         UserID = #{userid,jdbcType=INTEGER},
       </if>
-      <if test="wtringsid != null" >
-        WtringsID = #{wtringsid,jdbcType=INTEGER},
+      <if test="mailAddress != null" >
+        MailAddress = #{mailAddress,jdbcType=LONGVARCHAR},
       </if>
       <if test="supervisor != null" >
         Supervisor = #{supervisor,jdbcType=LONGVARCHAR},
@@ -124,22 +199,61 @@
       <if test="research != null" >
         Research = #{research,jdbcType=LONGVARCHAR},
       </if>
+      <if test="field_1 != null" >
+        field_1 = #{field_1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_2 != null" >
+        field_2 = #{field_2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_3 != null" >
+        field_3 = #{field_3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_4 != null" >
+        field_4 = #{field_4,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_5 != null" >
+        field_5 = #{field_5,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_6 != null" >
+        field_6 = #{field_6,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_7 != null" >
+        field_7 = #{field_7,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_8 != null" >
+        field_8 = #{field_8,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_9 != null" >
+        field_9 = #{field_9,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="field_10 != null" >
+        field_10 = #{field_10,jdbcType=LONGVARCHAR},
+      </if>
     </set>
     where PersonpageId = #{personpageid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.edu.njupt.model.PersonPageWithBLOBs" >
     update lab_personpage
     set UserID = #{userid,jdbcType=INTEGER},
-      WtringsID = #{wtringsid,jdbcType=INTEGER},
+      MailAddress = #{mailAddress,jdbcType=LONGVARCHAR},
       Supervisor = #{supervisor,jdbcType=LONGVARCHAR},
       Biography = #{biography,jdbcType=LONGVARCHAR},
-      Research = #{research,jdbcType=LONGVARCHAR}
+      Research = #{research,jdbcType=LONGVARCHAR},
+      field_1 = #{field_1,jdbcType=LONGVARCHAR},
+      field_2 = #{field_2,jdbcType=LONGVARCHAR},
+      field_3 = #{field_3,jdbcType=LONGVARCHAR},
+      field_4 = #{field_4,jdbcType=LONGVARCHAR},
+      field_5 = #{field_5,jdbcType=LONGVARCHAR},
+      field_6 = #{field_6,jdbcType=LONGVARCHAR},
+      field_7 = #{field_7,jdbcType=LONGVARCHAR},
+      field_8 = #{field_8,jdbcType=LONGVARCHAR},
+      field_9 = #{field_9,jdbcType=LONGVARCHAR},
+      field_10 = #{field_10,jdbcType=LONGVARCHAR}
     where PersonpageId = #{personpageid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.edu.njupt.model.PersonPage" >
     update lab_personpage
-    set UserID = #{userid,jdbcType=INTEGER},
-      WtringsID = #{wtringsid,jdbcType=INTEGER}
+    set UserID = #{userid,jdbcType=INTEGER}
     where PersonpageId = #{personpageid,jdbcType=INTEGER}
   </update>
 </mapper>

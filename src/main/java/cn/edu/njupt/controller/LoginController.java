@@ -155,19 +155,20 @@ public class LoginController {
 		user.setEducation(education);
 		user.setMobile(mobile);
 		user.setIsduty(isduty);
-		System.out.println("isduty:"+isduty);
+//		System.out.println("isduty:"+isduty);
 		user.setOndutydate(StringHelper.stringConvertDate(ondutydate));
 		user.setPersonpage(personpage);
 		user.setCompanyname(companyname);
 		user.setWorkdetail(workdetail);
 		user.setRemark(remark);
+		user.setType("2");//默认是学生
 		
 		if (!file.isEmpty() && file.getContentType().contains("image")) {
 			File filetemp = FileUtil.createFile(file, request,
 					"/system/");
 			boolean flag = FileUtil.copyFile(file, request,
 					"/system/");
-			System.out.println(flag);
+//			System.out.println(flag);
 			
 			// 上传成功
 			if (flag) {
@@ -197,7 +198,7 @@ public class LoginController {
 			userRole.setUserid(user1.getUserid().toString());
 			List<UserRole> list = new ArrayList<UserRole>();
 			list.add(userRole);
-			roleServiceI.insertUserRole(list);
+			roleServiceI.insertUserRole(list,systemDDL.getDdlcode().toString());
 			
 			return "redirect:loginIndex.do";
 		} else {

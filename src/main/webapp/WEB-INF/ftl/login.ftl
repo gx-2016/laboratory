@@ -10,13 +10,13 @@
 
         <title>ICV - 实验室管理平台</title>
 
-        <link href="/laboratory/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="/laboratory/assets/css/core.css" rel="stylesheet" type="text/css">
-        <link href="/laboratory/assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="/laboratory/assets/css/components.css" rel="stylesheet" type="text/css">
-        <link href="/laboratory/assets/css/pages.css" rel="stylesheet" type="text/css">
-        <link href="/laboratory/assets/css/menu.css" rel="stylesheet" type="text/css">
-        <link href="/laboratory/assets/css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/core.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/components.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/pages.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/menu.css" rel="stylesheet" type="text/css">
+        <link href="/iacn/assets/css/responsive.css" rel="stylesheet" type="text/css">
 
         <script src="assets/js/modernizr.min.js"></script>
 
@@ -102,20 +102,20 @@
         </script>
 
         <!-- Main  -->
-        <script src="/laboratory/assets/js/jquery.min.js"></script>
-        <script src="/laboratory/assets/js/bootstrap.min.js"></script>
-        <script src="/laboratory/assets/js/detect.js"></script>
-        <script src="/laboratory/assets/js/fastclick.js"></script>
-        <script src="/laboratory/assets/js/jquery.slimscroll.js"></script>
-        <script src="/laboratory/assets/js/jquery.blockUI.js"></script>
-        <script src="/laboratory/assets/js/waves.js"></script>
-        <script src="/laboratory/assets/js/wow.min.js"></script>
-        <script src="/laboratory/assets/js/jquery.nicescroll.js"></script>
-        <script src="/laboratory/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="/iacn/assets/js/jquery.min.js"></script>
+        <script src="/iacn/assets/js/bootstrap.min.js"></script>
+        <script src="/iacn/assets/js/detect.js"></script>
+        <script src="/iacn/assets/js/fastclick.js"></script>
+        <script src="/iacn/assets/js/jquery.slimscroll.js"></script>
+        <script src="/iacn/assets/js/jquery.blockUI.js"></script>
+        <script src="/iacn/assets/js/waves.js"></script>
+        <script src="/iacn/assets/js/wow.min.js"></script>
+        <script src="/iacn/assets/js/jquery.nicescroll.js"></script>
+        <script src="/iacn/assets/js/jquery.scrollTo.min.js"></script>
 
         <!-- Custom main Js -->
-        <script src="/laboratory/assets/js/jquery.core.js"></script>
-        <script src="/laboratory/assets/js/jquery.app.js"></script>
+        <script src="/iacn/assets/js/jquery.core.js"></script>
+        <script src="/iacn/assets/js/jquery.app.js"></script>
 	
 	</body>
 </html>

@@ -4,6 +4,7 @@ import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -17,10 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import cn.edu.njupt.model.PersonPageWithBLOBs;
+import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.User;
 import cn.edu.njupt.model.UserForm;
+import cn.edu.njupt.service.SystemDDLServiceI;
 import cn.edu.njupt.service.UserServiceI;
 import cn.edu.njupt.util.FileUtil;
+import cn.edu.njupt.util.ReflectClazz;
 
 @Controller
 @RequestMapping("/user")
@@ -28,6 +33,8 @@ public class UserAdminController {
 	@Resource(name = "userService")
 	private UserServiceI userServiceI;
 
+	@Resource(name="systemDDLService")
+	private SystemDDLServiceI systemDDLService;
 	
 	/**
 	 * 
@@ -40,6 +47,65 @@ public class UserAdminController {
 		List<User> userList = userServiceI.getAllUser();
 		map.put("userList", userList);
 		return "system/userAdmin";
+	}
+	
+	
+	/**
+	 * 
+	 * @Description: 后台管理成员信息
+	 * @Author: zhc
+	 * @Date: 2016年4月13日
+	 */
+	@RequestMapping("/personalPageAdmin.do")
+	public String personalPageAdmin(ModelMap map,HttpServletRequest req) {
+		System.out.println("UserAdminController.personalPageAdmin()");
+		//1.session中获取登陆用户
+		User user = (User)(req.getSession().getAttribute("logonuser"));
+		
+		//2.查询个人主页上可手动添加的数据项
+		List<SystemDDL> personpageSystemDDLs = systemDDLService.findDDLListByKeyWord("个人主页数据项");
+		//3.查询个人主页上数据项对应的数据
+		PersonPageWithBLOBs personpage =userServiceI.getPersonalPageByUserId(user.getUserid());
+		HashMap<String, Object> ddlmap = null;
+		if(null != personpage){
+			//3.1封装个人主页的数据项map,key为 userid value是一个数据项map
+			ddlmap = new HashMap<String, Object>();
+			for (SystemDDL systemDDL2 : personpageSystemDDLs) {
+			     Object object = ReflectClazz.getFieldValue(personpage, "field_"+systemDDL2.getDdlcode()); 
+				 if(null != object){
+						ddlmap.put(systemDDL2.getDdlname(),object) ;
+				 }
+			}
+		}
+	    if(null==ddlmap || ddlmap.size() == 0){
+	    	map.put("isexistpage", "no");
+	    }else if(null != ddlmap && ddlmap.size() > 0){
+	    	map.put("isexistpage", "yes");
+	    }
+		map.put("personpageSystemDDLs", personpageSystemDDLs);
+		map.put("ddlmap", ddlmap);
+		return "system/personPageAdmin";
+	}
+	@RequestMapping("/savePersonPage.do")
+	public String savePersonPage(ModelMap map,HttpServletRequest req,@RequestParam("area[]") String area[]) {
+		//1.session中获取登陆用户
+		User user = (User)(req.getSession().getAttribute("logonuser"));
+		//2.保存用户个人主页
+		userServiceI.savePersonPage(user,area);
+		
+		map.put("message", "保存成功！");
+		return "system/personPageData";
+	}
+
+	@RequestMapping("/updatePersonPage.do")
+	public String updatePersonPage(ModelMap map,HttpServletRequest req,@RequestParam("area[]") String area[]) {
+		//1.session中获取登陆用户
+		User user = (User)(req.getSession().getAttribute("logonuser"));
+		//2.更新用户个人主页
+		userServiceI.updatePersonPage(user,area);
+		
+		map.put("message", "更新成功！");
+		return "system/personPageData";
 	}
 	
 	/**

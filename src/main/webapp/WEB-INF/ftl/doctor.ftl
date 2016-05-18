@@ -59,6 +59,7 @@
                    
                    <!-- 中间内容 -->
 					<div class="o-layout-container">
+					 <!--左边菜单-->
 						<div id="secondary_menu" class="o-layout-main-nav">
 							<div class="region region-secondary-menu">
 								<nav class="c-sitenav js-sitenav" aria-label="Site Menu"
@@ -68,35 +69,26 @@
 											<i class="ua-icon-menu"></i> Site Menu
 										</a>
 									</div>
-
 									<ul class="c-sitenav__level-1">
-										<li
+									    <li class="c-sitenav__item"><a href="teacher.do"
+											class="c-sitenav__item-link">老师</a></li>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+										<a href="doctor.do" class="c-sitenav__item-link">博士</a></li>
+										<li class="c-sitenav__item "><a href="master.do"
+											class="c-sitenav__item-link">硕士</a></li>
+											<li
 											class="c-sitenav__item ">
 											<a href="undergraduate.do" class="c-sitenav__item-link">本科</a>
 										</li>
-										<li class="c-sitenav__item "><a href="master.do"
-											class="c-sitenav__item-link">硕士</a></li>
-										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="doctor.do"
-											class="c-sitenav__item-link">博士</a></li>
 									</ul>
 								</nav>
-
 							</div>
 						</div>
+						<!--end 左边菜单-->
 
 						<article id="main-content" class="o-layout-main-article">
 							<div class="region region-content">
 								
-								<!-- title -->
-								<div class="field__item">
-									<div id="block-ua-theme-page-title"
-										class="contextual-region block block-core block-page-title-block">
-										<div
-											data-contextual-id="block:block=ua_theme_page_title:langcode=en"></div>
-											<p style="color:red;font-size:23px;">
-												负责人</p>
-									</div>
-								</div>
 								
 								<!-- content -->
 								<div id="block-ua-theme-content"
@@ -119,19 +111,6 @@
 														</div>
 													</div>
 												</div>
-												<br><br>
-										<!-- 二级title -->
-												<div id="block-ua-theme-page-title"
-													class="contextual-region block block-core block-page-title-block">
-													<div
-														data-contextual-id="block:block=ua_theme_page_title:langcode=en"></div>
-														<span  style="color:red;font-size:23px;"
-															class="field field--name-title field--type-string field--label-hidden">
-														        成员</span>
-												</div>
-												<br>
-												<span>(按年级排序)</span>
-												<br><br>
 													<div
 														class="paragraph paragraph--type--ua-desc-panel-item paragraph--view-mode--default"
 														>

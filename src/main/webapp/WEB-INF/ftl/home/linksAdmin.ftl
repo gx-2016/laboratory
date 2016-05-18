@@ -108,7 +108,14 @@
                                         <li><a href="#">Minton</a></li>
                                         <li class="active">链接管理</li>
                                     </ol>
-                                    <h4 class="page-title">Welcome !</h4>
+                                    <h4 class="m-t-0 header-title">
+                                        <b>
+                                        <#if Popedom?index_of('l')!=-1>
+                                            <!-- Full width modal -->
+                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">新增链接</button>
+                                          </#if>
+                                       </b>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -127,14 +134,6 @@
 					      <!-- /.提示信息 -->
                          <div class="row">
                             <div class="col-sm-12">
-                                    <h4 class="m-t-0 header-title">
-                                        <b>
-                                        <#if Popedom?index_of('l')!=-1>
-                                            <!-- Full width modal -->
-                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">新增链接</button>
-                                          </#if>
-                                       </b>
-                                    </h4>
                                 <div class="card-box table-responsive">
                                     <div id ="dataList">
                                     <#include "linksData.ftl">

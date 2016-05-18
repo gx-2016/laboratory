@@ -18,5 +18,5 @@ public interface PersonPageMapper {
 
     int updateByPrimaryKey(PersonPage record);
 
-	PersonPageWithBLOBs getPersonalPage(Integer userid);
+	PersonPageWithBLOBs getPersonalPageByUserId(Integer userid);
 }

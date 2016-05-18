@@ -72,17 +72,16 @@
                                         <li><a href="#">首页</a></li>
                                         <li class="active">新闻管理</li>
                                     </ol>
-                                    <h4 class="page-title">Welcome !</h4>
+                                     <h4 class="m-t-0 header-title">
+                                        <b>
+                                            <a href="toAddNews.do" class="btn btn-primary " >新增新闻</a>
+                                       </b>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
 						<div class="row">
                             <div class="col-sm-12">
-                                    <h4 class="m-t-0 header-title">
-                                        <b>
-                                            <a href="toAddNews.do" class="btn btn-primary " >新增新闻</a>
-                                       </b>
-                                    </h4>
                                 <div class="card-box table-responsive">
                                     <div id ="dataList">
                                     </div>

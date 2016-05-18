@@ -30,7 +30,7 @@ public interface RoleServiceI {
 	 * @Author: 高翔
 	 * @Date: 2016年4月12日
 	 */
-	int insertUserRole(List<UserRole> list);
+	int insertUserRole(List<UserRole> list,String roleid);
 
 	/**
 	 * @Description: TODO

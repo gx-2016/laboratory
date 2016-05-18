@@ -59,6 +59,7 @@
                    
                    <!-- 中间内容 -->
 					<div class="o-layout-container">
+					   <!--左边菜单-->
 						<div id="secondary_menu" class="o-layout-main-nav">
 							<div class="region region-secondary-menu">
 								<nav class="c-sitenav js-sitenav" aria-label="Site Menu"
@@ -70,33 +71,23 @@
 									</div>
 
 									<ul class="c-sitenav__level-1">
-										<li
-											class="c-sitenav__item ">
-											<a href="undergraduate.do" class="c-sitenav__item-link">本科</a>
-										</li>
+									<li class="c-sitenav__item"><a href="teacher.do"
+											class="c-sitenav__item-link">老师</a></li>
+											<!--
+										<li class="c-sitenav__item-link"><a href="doctor.do"
+											class="c-sitenav__item-link">博士</a></li>-->
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="master.do"
 											class="c-sitenav__item-link">硕士</a></li>
-										<li class="c-sitenav__item "><a href="doctor.do"
-											class="c-sitenav__item-link">博士</a></li>
+										<li class="c-sitenav__item ">	<a href="undergraduate.do" class="c-sitenav__item-link">本科</a></li>
 									</ul>
-								</nav>
+								  </nav>
 
-							</div>
-						</div>
-
+							  </div>
+						   </div>
+                        <!--end 左边菜单-->
+                          
 						<article id="main-content" class="o-layout-main-article">
 							<div class="region region-content">
-								
-								<!-- title -->
-								<div class="field__item">
-									<div id="block-ua-theme-page-title"
-										class="contextual-region block block-core block-page-title-block">
-										<div
-											data-contextual-id="block:block=ua_theme_page_title:langcode=en"></div>
-											<p style="color:red;font-size:23px;">
-												负责人</p>
-									</div>
-								</div>
 								
 								<!-- content -->
 								<div id="block-ua-theme-content"
@@ -105,74 +96,39 @@
 									    about="/about/node/1">
 										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
 										<div class="node__content">
-											<div
-												class="field field--name-field-ua-page-content field--type-entity-reference-revisions field--label-hidden field__items">
-												<div class="field__item">
-													<div
-														class="paragraph paragraph--type--text paragraph--view-mode--default">
-														<div
-															class="clearfix text-formatted field field--name-field-text field--type-text-long field--label-hidden field__item">
-															<a href="http://yjs.njupt.edu.cn/epstar/web/outer/dsfc_ny_.jsp?dsgh=20070027" class="u-paragraph--intro">
-															• 陈志 </a>  <nobr>- 博士, 教授, 硕导</nobr> &nbsp &nbsp&nbsp&nbsp
-															<a href="http://yjs.njupt.edu.cn/epstar/web/outer/dsfc_ny_.jsp?dsgh=20100052" class="u-paragraph--intro">
-															• 岳文静 </a>  <nobr>- 博士, 教授, 硕导</nobr>  
-														</div>
-													</div>
-												</div>
-												<br><br>
-										<!-- 二级title -->
-												<div id="block-ua-theme-page-title"
-													class="contextual-region block block-core block-page-title-block">
-													<div
-														data-contextual-id="block:block=ua_theme_page_title:langcode=en"></div>
-														<span  style="color:red;font-size:23px;"
-															class="field field--name-title field--type-string field--label-hidden">
-														        成员</span>
-												</div>
-												<br>
-												<span>(按年级排序)</span>
-												<br><br>
-													<div
-														class="paragraph paragraph--type--ua-desc-panel-item paragraph--view-mode--default"
-														>
-														<div class="c-description-panels__wrap" >
-															  <section>
-																		<div>
-																		<#assign leftindex =4>
-																					<#assign rightindex =1>
-																					<#if masters? exists>
-																					 <#list masters as master>
-																						 <#if leftindex % 4 ==0>
-																						 <div class="row-fluid" >
-																						 </#if>
-																								<div class="span3" >
-																									<div >
-																										<#if master.username??>
-																										<a href="personalPage.do?userid=${master.userid}">
-																								        • <b style="color:blue;font-size:18px;">${master.username}</b>
-																								        </a>
-																								        </#if>
-																								        
-																										<#if master.ondutydate??>
-																										<nobr align="center">${master.ondutydate?string("yyyy")} -</nobr>
-																										</#if>
-																									</div>
-																								</div>
-																								
-																								<#if rightindex % 4 ==0>
-																									 </div>
-																								</#if>
-																								 <#assign leftindex = leftindex+1>
-																								 <#assign rightindex = rightindex+1>
-																							 </#list>
-																		                     </#if>		
-																		        </div>
-																		<div>
-																</section>
-														</div>
-
-													</div>
-											</div>
+											  <section>
+														<div>
+														<#assign leftindex =4>
+																	<#assign rightindex =1>
+																	<#if masters? exists>
+																	 <#list masters as master>
+																		 <#if leftindex % 4 ==0>
+																		 <div class="row-fluid" >
+																		 </#if>
+																				<div class="span3" >
+																					<div >
+																						<#if master.username??>
+																						<a href="personalPage.do?userid=${master.userid}">
+																				        • <b style="color:blue;font-size:18px;">${master.username}</b>
+																				        </a>
+																				        </#if>
+																				        
+																						<#if master.ondutydate??>
+																						<nobr align="center">${master.ondutydate?string("yyyy")} -</nobr>
+																						</#if>
+																					</div>
+																				</div>
+																				
+																				<#if rightindex % 4 ==0>
+																					 </div>
+																				</#if>
+																				 <#assign leftindex = leftindex+1>
+																				 <#assign rightindex = rightindex+1>
+																			 </#list>
+														                     </#if>		
+														        </div>
+														<div>
+												</section>
 
 										</div>
 

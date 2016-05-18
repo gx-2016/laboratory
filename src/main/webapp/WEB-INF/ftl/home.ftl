@@ -92,7 +92,7 @@
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="news.do"
-												title="阅读更多新闻">最新新闻</a> <a
+												title="阅读更多新闻"><strong>最新新闻</strong></a> <a
 												href="news.do"
 												title="阅读更多新闻"
 												class="news-events-feed__title-more-link"><span
@@ -124,7 +124,7 @@
 									<div class="news-events-feed__wrapper">
 										<h2 class="news-events-feed__title">
 											<a href="http://www.adelaide.edu.au/events/"
-												title="更多">通知公告</a> <a
+												title="更多"><strong>通知公告</strong></a> <a
 												href="#"
 												title="更多"
 												class="news-events-feed__title-more-link"><span
@@ -160,16 +160,17 @@
 								<!-- new markup pod -->
 								<div class="span6 home-pod mln__ie7" >
 									<div class="pod" >
-										<div class="pod__title">
-											<h2 align="center">
-												<a href="undergraduate.do" title="成员管理">
-													成员管理</a>
+										<div class="pod__title" >
+											<h2 align="center" >
+											    <a href="teacher.do" title="科研著作">
+													<strong><font color="#b38808">成员管理</font></strong></a>
+													
 											</h2>
 										</div>
 										<div class="pod__content" style="margin:0px 0px 0px 20px;"> 
-											<a href="undergraduate.do"> <img
+											<a href="teacher.do"> <img
 												src="assets/images/img_7.jpg"></a>
-												<a href="undergraduate.do"  class="pod__action-btn" >More</a>
+												<a href="teacher.do"  class="pod__action-btn" >More</a>
 										</div>
 									</div>
 								</div>
@@ -179,7 +180,7 @@
 										<div class="pod__title">
 											<h2 align="center">
 												<a href="writtings.do" title="科研著作">
-													科研著作</a>
+													<strong><font color="#b38808">科研著作</font></strong></a>
 											</h2>
 										</div>
 										<div class="pod__content">
@@ -195,7 +196,7 @@
 										<div class="pod__title">
 											<h2 align="center">
 												<a href="learn.do" title="教学辅导">
-													教学辅导</a>
+													<strong><font color="#b38808">教学辅导</font></strong></a>
 											</h2>
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">
@@ -211,7 +212,7 @@
 										<div class="pod__title">
 											<h2 align="center">
 												<a href="contest.do" title="ACM竞赛">
-													ACM竞赛</a>
+													<strong><font color="#b38808">ACM竞赛</font></strong></a>
 											</h2>
 										</div>
 										<div class="pod__content">
@@ -228,7 +229,7 @@
 										<div class="pod__title">
 											<h2 align="center">
 												<a href="photos.do" title="生活影集">
-													生活影集</a>
+													<strong><font color="#b38808">生活影集</font></strong></a>
 											</h2>
 										</div>
 										<div class="pod__content" style="margin:0px 10px 0px 0px;">

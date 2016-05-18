@@ -2,7 +2,7 @@
   <div class="container"> 
     <div class="row">
 	<div class="span12 tagline">
-		<a href="#" title="seek LIGHT"> <img src="/laboratory/Picture/ui-tagline-seek-light.png" alt="seek LIGHT"> </a>
+		<a href="#" title="seek LIGHT"> <img src="/iacn/Picture/ui-tagline-seek-light.png" alt="seek LIGHT"> </a>
 	</div>
 </div>
 
@@ -49,7 +49,7 @@
 		<div class="span2">
 			<div class="prefix_1 vcard">
 				<div class="logo">
-					<a href="http://www.njupt.edu.cn/" title="Nanjing University Of Posts And Telecommunications"><img src="/laboratory/Picture/1111.jpg" alt="Nanjing University Of Posts And Telecommunications"></a> 
+					<a href="http://www.njupt.edu.cn/" title="Nanjing University Of Posts And Telecommunications"><img src="/iacn/Picture/iacn_bg2.png" alt="Nanjing University Of Posts And Telecommunications"></a> 
 				</div>
 				<div class="address" style="font-size:12px;">
 				  地址：南京市新模范马路66号<br>

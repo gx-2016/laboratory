@@ -31,7 +31,7 @@ public class LearnController {
 	@RequestMapping("/learn.do")
 	public String learn(HttpServletRequest request,ModelMap modelMap){	
 		SystemDDL systemDDL = systemDDLService.findDDLByDdlName("用户类型", "老师");
-		List teacherList = new ArrayList<User>();
+		List<User> teacherList = new ArrayList<User>();
 		teacherList= userService.getTeachersByType(systemDDL.getDdlcode().toString());
 		modelMap.put("teacherList", teacherList);
 		Integer teacherID=0;

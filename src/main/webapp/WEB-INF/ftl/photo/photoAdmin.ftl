@@ -113,14 +113,7 @@
                                         <li><a href="#">Minton</a></li>
                                         <li class="active">首页管理</li>
                                     </ol>
-                                    <h4 class="page-title">Welcome !</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="row">
-                            <div class="col-sm-12">
-                                    <h4 class="m-t-0 header-title">
+                                     <h4 class="m-t-0 header-title">
                                       <#if Popedom?index_of('l')!=-1>
                                         <b>
                                             <!-- Full width modal -->
@@ -128,6 +121,12 @@
                                        </b>
                                        </#if>
                                     </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-sm-12">
                                 <div class="card-box table-responsive">
                                     <div id ="dataList">
                                     <#include "photoData.ftl">

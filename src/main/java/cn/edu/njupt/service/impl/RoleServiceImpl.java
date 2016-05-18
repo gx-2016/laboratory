@@ -12,6 +12,9 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.edu.njupt.dao.RolePopedomMapper;
 import cn.edu.njupt.dao.UserRoleMapper;
@@ -126,8 +129,11 @@ public class RoleServiceImpl implements RoleServiceI{
 	/*
 	 * 保存用户角色关联 
 	 */
+	@Transactional(readOnly=false,isolation=Isolation.DEFAULT,propagation=Propagation.REQUIRED)
 	@Override
-	public int insertUserRole(List<UserRole> list) {
+	public int insertUserRole(List<UserRole> list,String roleid) {
+		//根据角色id删除角色和用户关联
+		this.deleteRoleUserById(roleid);
 		return userRoleMapper.insertUserRole(list);
 	}
 	

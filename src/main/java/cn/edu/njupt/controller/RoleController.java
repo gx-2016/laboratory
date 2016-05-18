@@ -7,9 +7,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,7 +62,6 @@ public class RoleController {
 		return "system/roleEdit";
 	}
 	
-	@Transactional(readOnly=false,isolation=Isolation.DEFAULT,propagation=Propagation.REQUIRED)
 	@ResponseBody
 	@RequestMapping("/roleSave.do")
 	public ModelMap roleSave(ModelMap map,String roleid,String rolepadom,@RequestParam("roleuser[]") String roleuser[])
@@ -78,9 +74,7 @@ public class RoleController {
 			popedom.setRoleid(Integer.parseInt(roleid));
 			popedom.setPopedomcode(rolepadom);
 			roleServiceI.insertRolePadom(popedom);
-			
-			//根据角色id删除角色和用户关联
-			 roleServiceI.deleteRoleUserById(roleid);
+					
 			 List<UserRole> list = new ArrayList<UserRole>();
 			//2.保存角色和用户关联
 	         for (String string : roleuser) {
@@ -89,7 +83,11 @@ public class RoleController {
 	        	 userRole.setUserid(string);
 	        	 list.add(userRole);
 			}	
-	         roleServiceI.insertUserRole(list);
+	     	/** 更新用戶角色关系：通过事物保证操作的原子性
+	     	 * 1.根据角色id删除角色和用户关联
+	     	 * 2.重新插入
+	     	 */
+	         roleServiceI.insertUserRole(list,roleid);
 	         map.put("message", "修改成功！");
 			
 		} catch (Exception e) {

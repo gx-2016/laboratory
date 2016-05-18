@@ -60,7 +60,8 @@ public class AccessInteceptor implements HandlerInterceptor {
 		}
 		else {
 			log.info(new Date()+": session失效！");
-			response.sendRedirect("/laboratory/loginIndex.do");
+			//System.out.println(request.getServletContext().getContextPath()+"/loginIndex.do");
+			response.sendRedirect(request.getServletContext().getContextPath()+"/loginIndex.do");
 			return false;
 		}
 	}

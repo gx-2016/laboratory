@@ -63,28 +63,24 @@
                                         <li><a href="#">Minton</a></li>
                                         <li class="active">角色管理</li>
                                     </ol>
-                                    <h4 class="page-title">Welcome !</h4>
+			                          <div class="form-group" >
+				                             <label class="col-sm-1 control-label">角色列表:</label>
+				                             <div class="col-sm-2">
+					                              <select  id="keyword" class="form-control col-md-4" name="keyword"  onchange="selectRole()">
+													    <option value="-1">--请选择--</option>
+														<#if roleList??>
+															<#list roleList as role>
+															 <option value='${role.ddlcode}'>${role.ddlname}</option>
+															</#list>
+														</#if>
+													</select>
+											</div>
+									  </div>
                                 </div>
                             </div>
                         </div>
                         
                         <!--Page-Content-->
-                        <div class="row" >
-	                          <div class="form-group" >
-		                             <label class="col-sm-1 control-label">角色列表:</label>
-		                             <div class="col-sm-2">
-			                              <select  id="keyword" class="form-control col-md-4" name="keyword"  onchange="selectRole()">
-											    <option value="-1">--请选择--</option>
-												<#if roleList??>
-													<#list roleList as role>
-													 <option value='${role.ddlcode}'>${role.ddlname}</option>
-													</#list>
-												</#if>
-											</select>
-									</div>
-							  </div>
-					   </div>
-					   <hr>
                           <div id ="dataList">
                             <!-- 提示信息 -->
 					       <#if message??>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <LaboratoryData>
-
+<!--权限用小写字母标识，现在的权限  abc..o 最后一个到o ,若增加功能,在相应的模块下面添加 -->
   <Function>
      <FunctionCode>a</FunctionCode>
      <FunctionName>焦点管理</FunctionName>
@@ -78,6 +78,13 @@
      <ParentName>系统管理</ParentName>
   </Function> 
   
+    <Function>
+     <FunctionCode>o</FunctionCode>
+     <FunctionName>个人主页</FunctionName>
+     <ParentCode>sysmng</ParentCode>
+     <ParentName>系统管理</ParentName>
+  </Function>
+  
   <Function>
      <FunctionCode>l</FunctionCode>
      <FunctionName>增加</FunctionName>
@@ -88,14 +95,16 @@
      <FunctionCode>m</FunctionCode>
      <FunctionName>修改</FunctionName>
      <ParentCode>sysop</ParentCode>
-     <ParentName>系统管理</ParentName>
+     <ParentName>操作权限</ParentName>
   </Function> 
        
   <Function>
      <FunctionCode>n</FunctionCode>
      <FunctionName>删除</FunctionName>
      <ParentCode>sysop</ParentCode>
-     <ParentName>系统管理</ParentName>
+     <ParentName>操作权限</ParentName>
   </Function>
+  
+ 
 
 </LaboratoryData>

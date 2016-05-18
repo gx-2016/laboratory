@@ -90,6 +90,9 @@
 							               </#if>
 								    </#if>
 								      
+								        <#if Popedom?index_of('o')!=-1>
+								  	       <li><a href="../user/personalPageAdmin.do">个人主页</a></li>
+                                        </#if>
 								      
 								      <#if Popedom?index_of('k')!=-1>
 								  	 <li><a href="../system/systemDDLAdmin.do">数据字典</a></li>

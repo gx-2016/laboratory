@@ -369,7 +369,14 @@
                                         <li><a href="#">Minton</a></li>
                                         <li class="active">用户管理</li>
                                     </ol>
-                                    <h4 class="page-title">Welcome !</h4>
+                                    <h4 class="m-t-0 header-title">
+                                       <#if Popedom?index_of('l')!=-1>
+                                        <b>
+                                            <!-- Full width modal -->
+                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">增加用户</button>
+                                       </b>
+                                        </#if>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -388,14 +395,6 @@
 						  </#if>
 					      <!-- /.提示信息 -->
 		                          <div class="card-box table-responsive">
-		                           <h4 class="m-t-0 header-title">
-                                       <#if Popedom?index_of('l')!=-1>
-                                        <b>
-                                            <!-- Full width modal -->
-                                            <button class="btn btn-primary waves-effect waves-light m-t-10" data-toggle="modal" data-target="#con-close-modal">增加用户</button>
-                                       </b>
-                                        </#if>
-                                    </h4>
                                     <div id ="dataList">
                                        <#include "userData.ftl">
                                     </div>

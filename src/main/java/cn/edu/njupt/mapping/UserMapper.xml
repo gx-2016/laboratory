@@ -19,8 +19,7 @@
     <result column="PersonPage" property="personpage" jdbcType="VARCHAR" />
     <result column="PhotoUrl" property="photourl" jdbcType="VARCHAR" />
     <result column="Education" property="education" jdbcType="VARCHAR" />
-     <result column="Type" property="education" jdbcType="VARCHAR" />
-    
+     <result column="Type" property="type" jdbcType="VARCHAR" />
     <result column="Remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -56,7 +55,7 @@
   </select>
   
   <!--查询所有本科  -->
- <select id="getUndergraduateUser" resultMap="BaseResultMap"  parameterType="string">
+ <select id="getUndergraduateUser" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
     from lab_user 
@@ -64,20 +63,32 @@
   </select>
   
   <!--查询所有硕士  -->
- <select id="getMasterUser" resultMap="BaseResultMap"  parameterType="string">
+ <select id="getMasterUser" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
     from lab_user 
-    where Education = "硕士" order by OnDutyDate;
+    where Education = "硕士"  order by OnDutyDate;
   </select>
   
   <!--查询所有博士  -->
- <select id="getDoctorUser" resultMap="BaseResultMap"  parameterType="string">
+ <select id="getDoctorUser" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
     from lab_user 
-    where Education = "博士" order by OnDutyDate;
+    where Education = "博士"  order by OnDutyDate;
   </select>
+  
+   <!--查询所有老师  -->
+	  <select id="getTeachersByType" resultMap="BaseResultMap" parameterType="string">
+  	   select * from lab_user
+       	where Type =#{type,jdbcType=VARCHAR}
+      </select>
+  
+   <!--根据学历  查询所有学生-->
+	  <select id="getStudentsByType" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+  	   select * from lab_user
+       	where Education =#{education,jdbcType=VARCHAR} and Type = #{type,jdbcType=VARCHAR} order by OnDutyDate;
+      </select>
   
   <!--后台查询所有成员信息  -->
  <select id="getAllUser" resultMap="BaseResultMap"  >
@@ -315,8 +326,4 @@
       Remark = #{remark,jdbcType=VARCHAR}
     where UserID = #{userid,jdbcType=INTEGER}
   </update>
-  <select id="getTeachersByType" resultMap="BaseResultMap">
-  	select * from lab_user
-  	where Type=#{type}
-  </select>
 </mapper>
