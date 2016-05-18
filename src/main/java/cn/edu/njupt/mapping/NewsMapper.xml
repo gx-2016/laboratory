@@ -127,15 +127,15 @@
   </update>
   <select id="queryNews" resultMap="BaseResultMap" >
   		select * from lab_news  where NewsType = ${newsType} 
-  		order by NewsTime  desc
+  		order by NewsID  desc
   		limit ${num}
   </select>
   <select id = "queryAllNews" resultMap="BaseResultMap" >
   		select * from lab_news where NewsType = ${newsType}
-  		order by NewsTime desc
+  		order by NewsID desc
   </select>
   <select id="queryAllNewsAndInform" resultMap="BaseResultMap">
 		select * from lab_news 
-  		order by NewsTime desc
+  		order by NewsID desc
   </select>
 </mapper>

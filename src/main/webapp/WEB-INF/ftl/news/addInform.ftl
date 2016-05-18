@@ -187,6 +187,7 @@
           function informsubmit(){
           	var informName = $('#informName').val();
           	var informContent = UE.getEditor('editor').getContent();
+          	var informText = UE.getEditor('editor').getPlainTxt();
           	if(informName == null|| informName==""||informName==undefined){
           		alert("标题不能为空");
          	}else if(informContent == null||informContent == "" || informContent == undefined){
@@ -198,7 +199,8 @@
  				async: false,
  				data: {
  					informName:informName,
- 					informContent:informContent
+ 					informContent:informContent,
+ 					informText:informText
  					},
  					success: function(data) {
               		  alert("提交成功");

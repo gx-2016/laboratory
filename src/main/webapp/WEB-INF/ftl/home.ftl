@@ -142,7 +142,7 @@
 															<span class="news-events-feed__date__month--red">${inform.newstime?string("MMM")}</span>
 														</div>
 														<div class="news-events-feed__excerpt" style="height:80px;overflow:auto;overflow-x:hidden;">
-															<strong>${inform.newstitle}</strong> <br>${inform.newscontent}
+															<strong>${inform.newstitle}</strong> <br>${inform.newsabstract?default("")}
 														</div>
 												</a></li>
 											</ul>

@@ -74,10 +74,22 @@ public class NewsAdminController {
 	public String saveAddInform(HttpServletRequest request){
 		String informTitle =  request.getParameter("informName");
 		String informContent = request.getParameter("informContent");
+		String informText = request.getParameter("informText");
+		System.out.println(informText);
+		String informAbstract =null;
+		try {
+			informAbstract=informText.substring(0,140)+"...";
+		} catch (Exception e) {
+			// TODO: handle exception
+			informAbstract=informText;
+		}
+		System.out.println(informAbstract);
 		News inform = new News();
 		User user = (User)request.getSession().getAttribute("logonuser");
 		inform.setNewstitle(informTitle);
 		inform.setNewscontent(informContent);
+		inform.setNewsabstract(informAbstract);
+		System.out.println(inform.getNewsabstract());
 		inform.setNewstime(new Date ());
 		inform.setNewsauthor(user.getUsername());
 		inform.setNewstype("2");
