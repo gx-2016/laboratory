@@ -49,7 +49,7 @@
 		<div class="span2">
 			<div class="prefix_1 vcard">
 				<div class="logo">
-					<a href="http://www.njupt.edu.cn/" title="Nanjing University Of Posts And Telecommunications"><img src="/iacn/Picture/iacn_bg2.png" alt="Nanjing University Of Posts And Telecommunications"></a> 
+					<a href="home.do" ><img src="/iacn/Picture/111.png" ></a> 
 				</div>
 				<div class="address" style="font-size:12px;">
 				  地址：南京市新模范马路66号<br>

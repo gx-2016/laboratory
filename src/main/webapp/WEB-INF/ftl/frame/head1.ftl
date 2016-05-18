@@ -3,7 +3,7 @@
     
     <!-- Page topbar -->
     <div id="page-topbar" class="row topBar">
-      <div class="span6"> <a href="http://www.njupt.edu.cn/"  target="_blank" title="Nanjing University Of Posts And Telecommunications" class="btn-uoa-home"> <span class="btn-icon"></span> IACN GROUP </a> </div>
+      <div class="span6"> <a href="home.do"  class="btn-uoa-home"> <span class="btn-icon"></span> Iacn Group </a> </div>
       <div class="span6 search">
       </div>
     </div>
@@ -26,7 +26,7 @@
 		                </div>
 						<ul class="nav">
 							<li class="parent menu-btn-about" id="ui-menu-btn-about">
-								<a href="/iacn/home.do"><span class="divider-lt">&nbsp;</span><strong> 关于</strong><span class="divider-dk">&nbsp;</span> </a>
+								<a href="/iacn/about.do"><span class="divider-lt">&nbsp;</span><strong>关于</strong><span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-study" id="ui-menu-btn-study">
