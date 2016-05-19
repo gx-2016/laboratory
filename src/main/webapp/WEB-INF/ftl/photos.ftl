@@ -61,8 +61,24 @@
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-					<br>
-
+				
+					<!--面包屑导航-->
+					<div class="region region-breadcrumb">
+					    <div id="block-ua-theme-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+					        <nav class="c-site-breadcrumb" aria-label="You are here">
+					        <ol class="c-site-breadcrumb__list">
+					          <li class="c-site-breadcrumb__list-item">
+					                  <a href="home.do">首页</a>
+					              </li>
+					          <li class="c-site-breadcrumb__list-item">
+					                      <a href="photos.do">生活</a>
+					              </li>
+					              <li class="c-site-breadcrumb__list-item">
+					              </li>
+					        </ol>
+						  </nav>
+					  </div>
+					  <br>
 					<div class="addPad">
 						<!-- News and Events feeds -->
 						
