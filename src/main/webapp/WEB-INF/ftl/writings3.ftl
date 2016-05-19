@@ -81,8 +81,6 @@
 									<ul class="c-sitenav__level-1">
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
 											<button  class="c-sitenav__item-link " onclick="locationPatent(0)" >科研项目</button></li>
-										
-										
 									</ul>
 									<ul class="c-sitenav__level-1">
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">

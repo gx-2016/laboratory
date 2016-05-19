@@ -1,21 +1,18 @@
 package cn.edu.njupt.model;
 
 public class Teach {
-    private Integer seqid;
+    private Integer teachid;
 
     private String coursename;
 
     private String coursetearm;
 
     private Integer userid;
+    
+    private Integer teachtype;
+    
 
-    public Integer getSeqid() {
-        return seqid;
-    }
 
-    public void setSeqid(Integer seqid) {
-        this.seqid = seqid;
-    }
 
     public String getCoursename() {
         return coursename;
@@ -40,4 +37,22 @@ public class Teach {
     public void setUserid(Integer userid) {
         this.userid = userid;
     }
+
+	public Integer getTeachid() {
+		return teachid;
+	}
+
+	public void setTeachid(Integer teachid) {
+		this.teachid = teachid;
+	}
+
+	public Integer getTeachtype() {
+		return teachtype;
+	}
+
+	public void setTeachtype(Integer teachtype) {
+		this.teachtype = teachtype;
+	}
+
+
 }

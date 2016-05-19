@@ -75,9 +75,6 @@
 												<a href="learn.do?teacherID=${teacher.userid}"class="c-sitenav__item-link " >${teacher.username}</a><br>
 											</li>
 										</#list>
-											
-										
-										
 									</ul>
 								</nav>
 
@@ -95,44 +92,28 @@
 										<h1>课程</h1>
 										<div class="post" id="progect">
 											<#if teachList?exists>
-											<#list teachList as teach>
-											
-						 						<h6 class="title"><strong>Title：</Strong>${teach.coursename}</h6>
-												<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p>
-												<#--><div class="entry">
-													<p><strong>abstract:</strong></p>
-													<p>${writings.writingsabstract} </p>
-												</div>
-												<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p><-->
-											
-											</#list>
+												<#list teachList as teach>
+												<#if teach.teachtype==1>
+						 							<h6 class="title"><strong>Title：</Strong>《${teach.coursename}》</h6>
+													<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p>
+												</#if>
+												</#list>
 											</#if>
-											</div>
-											
-											<#-->
-											<h1>专利</h1>
-											<div class="post">
-											<#if writingsList?exists>
-											<#list writingsList as writings>
-											<#if writings.writingstype=="3">
-						 						<h6 class="title"><strong>Title：</Strong>${writings.writingsname}</h6>
-												<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">DONWORDLOAD</a></small></p>
-												<div class="entry">
-													<p><strong>abstract:</strong></p>
-													<p>${writings.writingsabstract} </p>
-												</div>
-												<p class="meta"><a href="#" class="more">DONWORDLOAD</a></p>
+										</div>
+										<h1>教改项目</h1>
+										<div class="post" id="progect" >
+											<#if teachList?exists>
+												<#list teachList as teach>
+												<#if teach.teachtype==2>
+						 							<h6 class="title"><strong>Title：</Strong>《${teach.coursename}》<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p></h6>
+													
+												</#if>
+												</#list>
 											</#if>
-											</#list>
-											</#if>
-											</div>
-											<-->
-
+										</div>
 									</article>
-
 								</div>
 									<!-- content结束 -->
-
 							</div>
 						</article>
 					</div>
