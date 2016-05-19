@@ -49,7 +49,7 @@
 		<div class="span2">
 			<div class="prefix_1 vcard">
 				<div class="logo">
-					<a href="home.do" ><img src="/iacn/Picture/111.png" ></a> 
+					<a href="home.do" ><img src="/iacn/Picture/iacn_bg3.png" ></a> 
 				</div>
 				<div class="address" style="font-size:12px;">
 				  地址：南京市新模范马路66号<br>

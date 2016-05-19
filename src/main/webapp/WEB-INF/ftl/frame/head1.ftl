@@ -11,7 +11,7 @@
     <!-- Branding -->
     <div class="row brandCont">
       <div class="span8 branding-title"> <a href="home.do" title="The Group of IACN" class="branding-title home-title"> 智能算法和认知网络研究组</a> </div>
-      <div class="span4 branding-logo">  <img src="/iacn/Picture/iacn_bg3.png" alt="The Logo of NJUPT ">  </div>
+      <div class="span4 branding-logo">  <img src="/iacn/Picture/iacn_bg2.png" alt="The Logo of NJUPT ">  </div>
     </div>
     
     <!-- Megamenu -->
