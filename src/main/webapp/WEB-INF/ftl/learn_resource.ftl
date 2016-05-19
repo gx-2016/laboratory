@@ -105,8 +105,8 @@
 											<#if teachList?exists>
 												<#list teachList as teach>
 												<#if teach.teachtype==2>
-						 							<h6 class="title"><strong>Title：</Strong>《${teach.coursename}》<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p></h6>
-													
+						 							<h6 class="title"><strong>Title：</Strong>《${teach.coursename}》</h6>
+													<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p>
 												</#if>
 												</#list>
 											</#if>
