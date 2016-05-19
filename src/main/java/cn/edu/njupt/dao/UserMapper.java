@@ -32,7 +32,7 @@ public interface UserMapper {
 
 	List<User> getDoctorUser();
 
-	List<User> getTeachersByType(String type);
+	List<User> getUsersByType(String type);
 
 	List<User> getStudentsByType(HashMap<String, String> map);
 

@@ -1,14 +1,3 @@
-<!-- 提示信息 -->
-       <#if message??>
-	       <div class="alert alert-success alert-dismissable">
-			   <button type="button" class="close" data-dismiss="alert" 
-			      aria-hidden="true">
-			      &times;
-			   </button>
-			      ${message}
-		  </div>
-	  </#if>
-      <!-- /.提示信息 -->
 <div class="col-lg-12">
 	 <ul class="nav nav-tabs tabs tabs-top">
 	       <#if personpageSystemDDLs? exists>

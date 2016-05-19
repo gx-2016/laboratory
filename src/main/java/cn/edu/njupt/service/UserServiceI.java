@@ -1,8 +1,10 @@
 package cn.edu.njupt.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.njupt.model.PersonPageWithBLOBs;
+import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.User;
 
 public interface UserServiceI {
@@ -32,7 +34,7 @@ public interface UserServiceI {
 	
 	public PersonPageWithBLOBs getPersonalPageByUserId(Integer userid);
 	
-	public List<User> getTeachersByType(String type);
+	public List<User> getUsersByType(String type);
 
 	public List<User> getStudentsByType(String string, String education);
 
@@ -55,6 +57,18 @@ public interface UserServiceI {
 	 * @Date: 2016年5月18日
 	 */
 	public void updatePersonPage(User user, String[] area);
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @param teachers
+	 * @Parameter: @param personpageSystemDDLs
+	 * @Parameter: @return
+	 * @Return:HashMap<String,HashMap<String,Object>>
+	 * @Author: 高翔
+	 * @Date: 2016年5月18日
+	 */
+	public HashMap<String, HashMap<String, Object>> getUsersPersonpageMap(
+			List<User> users, List<SystemDDL> personpageSystemDDLs);
 
 
 }

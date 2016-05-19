@@ -70,6 +70,17 @@
 								  </div>
                                 </div>
                             </div>
+                             <!-- 提示信息 -->
+						       <#if message??>
+							       <div class="alert alert-success alert-dismissable">
+									   <button type="button" class="close" data-dismiss="alert" 
+									      aria-hidden="true">
+									      &times;
+									   </button>
+									      ${message}
+								  </div>
+							  </#if>
+						      <!-- /.提示信息 -->
                         </div>
                         
                         <!--Page-Content-->
@@ -211,18 +222,16 @@
 					$('textarea[name="area"]').each(function(){ 
 					  area.push(tinyMCE.editors[index++].getContent()); 
 					}); 
-					alert(area);
 					
 			        //保存选中的关键字对应的数据项
 		           	$.ajax({
 							type: "post",
 							url: url,
-							dataType:"json", 
 							data: {
 							  "area" : area
 							},
 							 success: function(data) {
-					             $("#dataList").html(data);
+					              alert(data.message);
 					         },
 						});
 	               }

@@ -86,26 +86,28 @@ public class UserAdminController {
 		map.put("ddlmap", ddlmap);
 		return "system/personPageAdmin";
 	}
+	@ResponseBody
 	@RequestMapping("/savePersonPage.do")
-	public String savePersonPage(ModelMap map,HttpServletRequest req,@RequestParam("area[]") String area[]) {
+	public ModelMap savePersonPage(ModelMap map,HttpServletRequest req,@RequestParam("area[]") String area[]) {
 		//1.session中获取登陆用户
 		User user = (User)(req.getSession().getAttribute("logonuser"));
 		//2.保存用户个人主页
 		userServiceI.savePersonPage(user,area);
 		
 		map.put("message", "保存成功！");
-		return "system/personPageData";
+		return map;
 	}
 
+	@ResponseBody
 	@RequestMapping("/updatePersonPage.do")
-	public String updatePersonPage(ModelMap map,HttpServletRequest req,@RequestParam("area[]") String area[]) {
+	public ModelMap updatePersonPage(ModelMap map,HttpServletRequest req,@RequestParam("area[]") String area[]) {
 		//1.session中获取登陆用户
 		User user = (User)(req.getSession().getAttribute("logonuser"));
 		//2.更新用户个人主页
 		userServiceI.updatePersonPage(user,area);
 		
 		map.put("message", "更新成功！");
-		return "system/personPageData";
+		return map;
 	}
 	
 	/**
@@ -181,7 +183,7 @@ public class UserAdminController {
 			if (flag) {
 				// 1.获取上传文件的路径
 				String filepath = filetemp.getAbsolutePath().substring(filetemp.getAbsolutePath().lastIndexOf("\\"));
-				System.out.println(filepath);
+//				System.out.println(filepath);
 				user1.setPhotourl(filepath);
 			} else {
 				map.put("message", "上传头像失败！");

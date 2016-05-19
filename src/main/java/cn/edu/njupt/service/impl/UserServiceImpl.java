@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cn.edu.njupt.dao.PersonPageMapper;
 import cn.edu.njupt.dao.UserMapper;
 import cn.edu.njupt.model.PersonPageWithBLOBs;
+import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.User;
 import cn.edu.njupt.service.UserServiceI;
 import cn.edu.njupt.util.ReflectClazz;
@@ -120,8 +121,8 @@ public class UserServiceImpl implements UserServiceI{
 	 *  根据用户类型 获取老师主页相关信息
 	 */
 	@Override
-	public List<User> getTeachersByType(String type) {
-		return userMapper.getTeachersByType(type);
+	public List<User> getUsersByType(String type) {
+		return userMapper.getUsersByType(type);
 	}
 	
 	/*
@@ -172,6 +173,35 @@ public class UserServiceImpl implements UserServiceI{
 			ReflectClazz.setFieldValue(bloBs, "field_"+ index++, string.trim());
 		}
 		personPageMapper.updateByPrimaryKeySelective(bloBs);
+	}
+
+
+	/* 
+	 * 获取老师个人主页信息
+	 */
+	@Override
+	public HashMap<String, HashMap<String, Object>> getUsersPersonpageMap(
+			List<User> users, List<SystemDDL> personpageSystemDDLs) {
+		    //封装每个老师的数据项map,key为 userid value是一个数据项map
+		    HashMap<String, HashMap<String, Object>> userPersonpageMap;
+		    //封装一个老师的数据项map,key为 ddlname value是一个数据项数据项内容
+			HashMap<String, Object> map;
+			userPersonpageMap = new HashMap<String,  HashMap<String,Object>>();
+			for (User user : users) {
+				PersonPageWithBLOBs teacherPersonpage = this.getPersonalPageByUserId(user.getUserid());
+			    if(null != teacherPersonpage ){
+				   map = new HashMap<String, Object>();
+					for (SystemDDL systemDDL2 : personpageSystemDDLs) {
+					     Object object = ReflectClazz.getFieldValue(teacherPersonpage, "field_"+systemDDL2.getDdlcode());
+						if(null != object){
+							map.put(systemDDL2.getDdlname(),object) ;
+						}
+					}
+					userPersonpageMap.put(user.getUserid().toString(), map);
+			   }
+			}
+			return userPersonpageMap;
+		
 	}
 
 

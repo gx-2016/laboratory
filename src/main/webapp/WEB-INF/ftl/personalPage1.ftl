@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6 menu-present" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7 menu-present" lang="en"> <![endif]-->
@@ -56,42 +58,36 @@
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-                   
+                   <!--面包屑导航-->
+					<div class="region region-breadcrumb">
+					    <div id="block-ua-theme-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+					        <nav class="c-site-breadcrumb" aria-label="You are here">
+					        <ol class="c-site-breadcrumb__list">
+					          <li class="c-site-breadcrumb__list-item">
+					                  <a href="home.do">首页</a>
+					              </li>
+					          <li class="c-site-breadcrumb__list-item">
+					                     <a href="team.do">  团队</a>
+					              </li>
+					               <li class="c-site-breadcrumb__list-item">
+					                                        个人主页
+					              </li>
+					        </ol>
+						  </nav>
+					  </div>
+				  </div>
                    <!-- 中间内容 -->
 					<div class="o-layout-container">
-					 <!--左边菜单-->
-						<div id="secondary_menu" class="o-layout-main-nav">
-							<div class="region region-secondary-menu">
-								<nav class="c-sitenav js-sitenav" aria-label="Site Menu" role="navigation">
-									<ul class="c-sitenav__level-1">
-									    <li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="/iacn/teacher.do"
-											class="c-sitenav__item-link">老师</a></li>
-										<!--
-										<li class="c-sitenav__item ">
-										<a href="/iacn/student/doctor.do" class="c-sitenav__item-link">博士</a>
-										</li>
-										-->
-										<li class="c-sitenav__item "><a href="/iacn/student/master.do"
-											class="c-sitenav__item-link">硕士</a></li>
-											<li
-											class="c-sitenav__item ">
-											<a href="/iacn/student/undergraduate.do" class="c-sitenav__item-link">本科</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-						<!--end 左边菜单-->
-                        
+					
 						<article id="main-content" class="o-layout-main-article">
 							<div class="region region-content">
 								<!-- content -->
-			                      <#if teachers? exists>
-									 <#list teachers as teacher>
+			                      <#if users? exists>
+									 <#list users as user>
 										 <div class="row-fluid" >
 												<div class="span3" >
-														<#if teacher.photourl??>
-												        <img height="209"  src="system/${teacher.photourl}"/>
+														<#if user.photourl??>
+												        <img height="209"  src="system/${user.photourl}"/>
 													    <#else>
 													     <img height="209"  src="assets/images/person3.jpg"/>
 													     </#if>
@@ -99,47 +95,57 @@
 												<div class="span3" >
 													<table border='0' class="table">
 													    <tr>
-														<#if teacher.username??>
-												        <h3><td>姓名：</td><td>${teacher.username}</td> </h3> 
+														<#if user.username??>
+												        <h3><td>姓名：</td><td>${user.username}</td> </h3> 
 												        </#if>
 												         </tr>
 												         <tr>
-												        <#if teacher.education??>
-												          </nobr><td>学历：</td><td> ${teacher.education}</td></nobr>
+												        <#if user.education??>
+												          <nobr><td>学历：</td><td> ${user.education}</td></nobr>
+												        </#if>
+												        </tr>
+												         <tr>
+												        <#if user.education??>
+												          <nobr><td>学历：</td><td> ${user.education}</td></nobr>
 												        </#if>
 												        </tr>
 												       </table>
 												</div>
+												
 											</div>
-										    <br/>
-                                            <hr/>
-                                             <!--每个栏目锚点-->
-                                             <div class="row-fluid" >
-                                            <#if teacherPersonpageMap? exists>
-									              <#list teacherPersonpageMap?keys as userid>
-										              <#if (userid == teacher.userid?string) >
-										                 <#list teacherPersonpageMap[userid]?keys as ddlname>
-															<a href="#${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
-													      </#list>
-													  </#if>	
-										          </#list>
-			                                   </#if>	
-			                                  </div>	
-				                             <!--end 每个栏目锚点-->
-				                             
+											<br/>
+											<br/>
+											  <!--每个栏目锚点-->
+											  <div align="right">
+		                                         <div class="row-fluid span12" >
+		                                        <#if personpageMap? exists>
+										              <#list personpageMap?keys as userid>
+											              <#if (userid == user.userid?string) >
+											                 <#list personpageMap[userid]?keys as ddlname>
+																<a href="#${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
+														      </#list>
+														  </#if>	
+											          </#list>
+				                                   </#if>	
+				                                  </div>	
+				                            </div>	
+					                             <!--end 每个栏目锚点-->
+                                           <div class="page-header">
+				                            </div>
 			                                 <!--数据项对应个人主页表中具体字段的内容-->
-											    <#if teacherPersonpageMap? exists>
-									              <#list teacherPersonpageMap?keys as userid>
-										              <#if (userid == teacher.userid?string) >
-										                 <#list teacherPersonpageMap[userid]?keys as ddlname>
+											    <#if personpageMap? exists>
+									              <#list personpageMap?keys as userid>
+										              <#if (userid == user.userid?string) >
+										                 <#list personpageMap[userid]?keys as ddlname>
+												                <div class="page-header" >
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
 													           <p><a name="${ddlname}"></a><h3>${ddlname}</h3> </p>
 														       <font face="Times New Roman" size="4">
 														       <div class="row-fluid">
-														         ${(teacherPersonpageMap[userid])[ddlname]}
+														         ${(personpageMap[userid])[ddlname]}
 														       </div>
 														       </font>
-														       <hr/>
+														        </div>
 													      </#list>
 											          </#if>
 										          </#list>
@@ -149,6 +155,7 @@
 									 </#list>
 				                   </#if>		
 			                  <!-- end content -->
+			                  
 							</div>
 						</article>
 						

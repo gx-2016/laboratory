@@ -30,7 +30,7 @@
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-study" id="ui-menu-btn-study">
-								<a href="/iacn/teacher.do"> <span class="divider-lt">&nbsp;</span><strong>团队</strong> <span class="divider-dk">&nbsp;</span> </a>
+								<a href="/iacn/teamAll.do"> <span class="divider-lt">&nbsp;</span><strong>团队</strong> <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						

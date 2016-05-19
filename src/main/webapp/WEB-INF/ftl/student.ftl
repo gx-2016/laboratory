@@ -86,7 +86,7 @@
 											  <a href="/iacn/student/undergraduate.do" class="c-sitenav__item-link">本科</a>
 										    </li>
 									    <#else>
-											<li class="c-sitenav__item "> 
+											<li class="c-sitenav__item"> 
 											<a href="/iacn/student/undergraduate.do" class="c-sitenav__item-link">本科</a>
 											</li>
 										</#if>
@@ -102,7 +102,7 @@
 			                      <#if students? exists>
 									 <#list students as student>
 										 <div class="row-fluid" >
-												<div class="span4" >
+												<div class="span3" >
 														<#if student.photourl??>
 												        <img height="209"  src="system/${student.photourl}"/>
 													    <#else>
@@ -110,10 +110,7 @@
 													     </#if>
 												</div>
 												
-												<div class="span2" >
-												</div>
-												
-												<div class="span4" >
+												<div class="span3" >
 													<table border='0' class="table">
 													    <tr>
 														<#if student.username??>

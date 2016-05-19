@@ -78,8 +78,8 @@
     where Education = "博士"  order by OnDutyDate;
   </select>
   
-   <!--查询所有老师  -->
-	  <select id="getTeachersByType" resultMap="BaseResultMap" parameterType="string">
+   <!--根据类型，查询所有用户  -->
+	  <select id="getUsersByType" resultMap="BaseResultMap" parameterType="string">
   	   select * from lab_user
        	where Type =#{type,jdbcType=VARCHAR}
       </select>
