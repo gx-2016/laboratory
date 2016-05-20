@@ -92,11 +92,11 @@
 											<a href="#undergraduate" class="c-sitenav__item-link">本科</a>
 										</li><br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="teamAll.do" class="c-sitenav__item-link">所有显示</a>
+											<a href="#dutyUser" class="c-sitenav__item-link">往届学生</a>
 										</li>
 										<br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="#dutyUser" class="c-sitenav__item-link">往届学生</a>
+											<a href="teamAll.do" class="c-sitenav__item-link">主页所有显示</a>
 										</li>
 										<br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">

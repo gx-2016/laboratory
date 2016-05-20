@@ -137,7 +137,7 @@
 													     <img height="209"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
-												<div class="span4" >
+												<div class="span6" >
 													<table border='0' class="table">
 													    <tr>
 														<#if teacher.username??>
@@ -164,7 +164,7 @@
 										              <#list teacherPersonpageMap?keys as userid>
 											              <#if (userid == teacher.userid?string) >
 											                 <#list teacherPersonpageMap[userid]?keys as ddlname>
-																<a href="#${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
+																<a href="#${teacher.username}_${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
 														      </#list>
 														  </#if>	
 											          </#list>
@@ -180,7 +180,7 @@
 										                 <#list teacherPersonpageMap[userid]?keys as ddlname>
 												                <div class="page-header" >
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
-													           <p><a name="${ddlname}"></a><h3>${ddlname}</h3> </p>
+													           <p><a id="${teacher.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
 														       <font face="Times New Roman" size="4">
 														       <div class="row-fluid">
 														         ${(teacherPersonpageMap[userid])[ddlname]}
@@ -231,7 +231,7 @@
 													     <img height="209"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
-												<div class="span3" >
+												<div class="span6" >
 													<table border='0' class="table">
 													    <tr>
 														<#if master.username??>
@@ -241,6 +241,11 @@
 												         <tr>
 												        <#if master.education??>
 												          </nobr><td>学历：</td><td> ${master.education}</td></nobr>
+												        </#if>
+												        </tr>
+												         <tr>
+												        <#if master.email??>
+												          <nobr><td>邮箱：</td><td> ${master.email}</td></nobr>
 												        </#if>
 												        </tr>
 												       </table>
@@ -253,7 +258,7 @@
 									              <#list masterPersonpageMap?keys as userid>
 										              <#if (userid == master.userid?string) >
 										                 <#list masterPersonpageMap[userid]?keys as ddlname>
-															<a href="#${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
+															<a href="#${master.username}_${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
 													      </#list>
 													  </#if>	
 										          </#list>
@@ -269,7 +274,7 @@
 										                 <#list masterPersonpageMap[userid]?keys as ddlname>
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
 												                <div class="page-header">
-													           <p><a name="${ddlname}"></a><h3>${ddlname}</h3> </p>
+													           <p><a id="${master.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
 														       <font face="Times New Roman" size="4">
 														       <div class="row-fluid">
 														         ${(masterPersonpageMap[userid])[ddlname]}
@@ -317,7 +322,7 @@
 													     <img height="209"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
-												<div class="span3" >
+												<div class="span6" >
 													<table border='0' class="table">
 													    <tr>
 														<#if undergratuate.username??>
@@ -327,6 +332,11 @@
 												         <tr>
 												        <#if undergratuate.education??>
 												          </nobr><td>学历：</td><td> ${undergratuate.education}</td></nobr>
+												        </#if>
+												        </tr>
+												          <tr>
+												        <#if undergratuate.email??>
+												          <td>邮箱：</td><td> ${undergratuate.email}</td>
 												        </#if>
 												        </tr>
 												       </table>
@@ -339,7 +349,7 @@
 									              <#list undergratuatePersonpageMap?keys as userid>
 										              <#if (userid == undergratuate.userid?string) >
 										                 <#list undergratuatePersonpageMap[userid]?keys as ddlname>
-															<a href="#${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
+															<a href="#${undergratuate.username}_${ddlname}" target="_self"><strong> <font face="Times New Roman" size="4">[${ddlname}]</font></strong></a>&nbsp;&nbsp;
 													      </#list>
 													  </#if>	
 										          </#list>
@@ -355,7 +365,7 @@
 										                 <#list undergratuatePersonpageMap[userid]?keys as ddlname>
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
 													           <div class="page-header">
-													           <p><a name="${ddlname}"></a><h3>${ddlname}</h3> </p>
+													           <p><a id="${undergratuate.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
 														       <font face="Times New Roman" size="4">
 														       <div class="row-fluid">
 														         ${(undergratuatePersonpageMap[userid])[ddlname]}

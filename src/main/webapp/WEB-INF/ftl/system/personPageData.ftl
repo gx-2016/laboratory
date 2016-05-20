@@ -57,7 +57,27 @@
 									     <!--end 富文本编辑器-->
 									    </#if>
 							  </#list>
-					     </#if>
+					     <#else>
+						      <div class="alert alert-success alert-dismissable">
+								   <button type="button" class="close" data-dismiss="alert" 
+								      aria-hidden="true">
+								      &times;
+								   </button>
+								      您个人主页的该数据还没有内容
+							  </div>
+							  <!--富文本编辑器-->
+						      <div class="row">
+								<div class="col-sm-12">
+									<div class="card-box">
+										<form method="post">
+											<textarea  name="area">
+							               </textarea>
+										</form>
+									</div>
+								</div>
+							</div>
+						     <!--end 富文本编辑器-->
+					 </#if>	     
 		           </div>
 	           </#list>
 		    </#if>

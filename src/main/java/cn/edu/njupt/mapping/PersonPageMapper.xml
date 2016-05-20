@@ -87,7 +87,7 @@
       <if test="userid != null" >
         UserID,
       </if>
-      <if test="MailAddress != null" >
+      <if test="mailAddress != null" >
         mailAddress,
       </if>
       <if test="supervisor != null" >
