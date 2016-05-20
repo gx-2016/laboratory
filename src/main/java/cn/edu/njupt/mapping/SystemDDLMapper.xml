@@ -48,7 +48,65 @@
     and o.DdlName = #{ddlname,jdbcType=VARCHAR}
   </select>
   
-  
+  <!-- 获取数据字典中竞赛队伍队员 -->
+  <resultMap id="contestTeam" type="cn.edu.njupt.model.SystemDDL" extends="BaseResultMap">
+    <collection property="users" javaType="java.util.Set" ofType="cn.edu.njupt.model.User">
+	      <id column="UserID" property="userid" jdbcType="INTEGER" />
+	     <result column="UserName" property="username" jdbcType="VARCHAR" />
+	     <result column="SexID" property="sexid" jdbcType="VARCHAR" />
+	     <result column="Email" property="email" jdbcType="VARCHAR" />
+	     <result column="Mobile" property="mobile" jdbcType="VARCHAR" />
+	     <result column="PhotoUrl" property="photourl" jdbcType="VARCHAR" />
+	      <result column="remark" property="remark" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
+  <select id="getAllContestTeam" resultMap="contestTeam" >
+     select  
+        b.TeamID ,b.remark,s.DdlName,
+		a.UserID UserID,
+		a.UserName UserName,
+		a.SexId SexID,
+		a.Email Email,
+		a.Mobile Mobile,
+		a.PhotoUrl PhotoUrl
+		from lab_user a join lab_user_team b
+		on a.UserID = b.UserID
+		join lab_systemddl s 
+		on s.DdlCode = b.TeamID
+		where s.Keyword = '队伍名称';
+  </select>
+   <!-- end 获取数据字典中竞赛队伍队员 -->
+   
+   
+   <!-- 获取数据字典中竞赛队伍比赛信息-->
+  <resultMap id="teamContestInfo" type="cn.edu.njupt.model.SystemDDL" extends="BaseResultMap">
+    <collection property="contests" javaType="java.util.Set" ofType="cn.edu.njupt.model.Contest">
+	   <id column="ContestID" property="contestid" jdbcType="INTEGER" />
+    <result column="ContestName" property="contestname" jdbcType="VARCHAR" />
+    <result column="ContestDestination" property="contestdestination" jdbcType="VARCHAR" />
+    <result column="ContestTime" property="contesttime" jdbcType="DATE" />
+    <result column="Contest_TeamId" property="contestTeamid" jdbcType="VARCHAR" />
+    <result column="Contest_Award" property="contestAward" jdbcType="VARCHAR" />
+    <result column="Contest_Rank" property="contestRank" jdbcType="VARCHAR" />
+    <result column="Contest_Type" property="contestType" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
+  <select id="getAllTeamContestInfo" resultMap="teamContestInfo" >
+     select  
+        s.DdlName,
+		c.ContestName,
+		c.ContestDestination,
+		c.ContestTime,
+		c.Contest_Award,
+		c.Contest_Rank,
+		c.Contest_Type
+		from  lab_contest c
+		join lab_systemddl s 
+		on s.DdlCode =  c.Contest_TeamId
+		where s.Keyword = '队伍名称';
+  </select>
+   <!-- end 获取数据字典中竞赛队伍信息 -->
+   
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

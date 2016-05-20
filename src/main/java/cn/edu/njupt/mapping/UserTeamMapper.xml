@@ -12,26 +12,67 @@
   </sql>
   
    <!--比赛用户队伍表  -->
-  <resultMap id="UserTeamResultMap" type="cn.edu.njupt.model.UserTeam" >
-    <result column="UserID" property="userid" jdbcType="VARCHAR" />
-    <result column="TeamID" property="teamid" jdbcType="VARCHAR" />
+  <resultMap id="UserTeamResultMap" type="cn.edu.njupt.model.UserTeam"  extends="BaseResultMap">
     <result column="UserName" property="username" jdbcType="VARCHAR" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="SexId" property="sexid" jdbcType="VARCHAR" />
+     <result column="flag" property="flag" jdbcType="VARCHAR" />
   </resultMap>
-  <!-- 根据teamid获取用户比赛队伍 -->
-   <select id="findUserTeamByTeamId"   resultMap="UserTeamResultMap" parameterType="string" >
-	  select  b.TeamID ,
+  <!-- 根据teamid获取用户比赛队伍,左外链接 -->
+   <select id="findExistUserTeamByTeamId"   resultMap="UserTeamResultMap" parameterType="string" >
+	  select distinct case  b.TeamID 
+	    when  
+		  <if test="_parameter != null" >
+	        #{_parameter}
+	      </if>
+	     then '1' else '0' end as flag,
 		a.UserID,
 		a.UserName,
 		a.SexId,
 		b.remark
-		from lab_user a join lab_user_team b
+		from lab_user a  join lab_user_team b
 		on a.UserID = b.UserID
 	    <if test="_parameter != null" >
 	      and b.TeamID = #{_parameter}
 	    </if>
   </select>
+  
+  <!-- 根据teamid获取用户比赛队伍 -->
+   <select id="findUserTeamByTeamId"   resultMap="UserTeamResultMap" parameterType="string" >
+	  select   b.TeamID 
+	    when  
+		  <if test="_parameter != null" >
+	        #{_parameter}
+	      </if>
+	     then '1' else '0' end as flag,
+		a.UserID,
+		a.UserName,
+		a.SexId,
+		b.remark
+		from lab_user a left join lab_user_team b
+		on a.UserID = b.UserID
+	    <if test="_parameter != null" >
+	      and b.TeamID = #{_parameter}
+	    </if>
+  </select>
+  
+  
+  <!-- 根据teamid 删除用户队伍关联 -->
+  <delete id="deleteTeamUserById" parameterType="java.lang.Integer" >
+    delete from lab_user_team
+    where TeamID = #{teamid,jdbcType=INTEGER}
+  </delete>
+  
+  <!-- 根据list 保存用户和队伍关联 -->
+   <insert id="insertUserTeam" useGeneratedKeys="true" parameterType="java.util.List">  
+    <selectKey resultType="long" keyProperty="SeqID" order="AFTER">  
+        SELECT  
+        LAST_INSERT_ID()  
+    </selectKey>  
+    insert into lab_user_team( UserID, TeamID,remark)  values 
+    <foreach collection="list" item="item" index="index" separator="," >  
+      ( #{item.userid,jdbcType=VARCHAR}, #{item.teamid,jdbcType=VARCHAR},  #{item.remark,jdbcType=VARCHAR})
+    </foreach>  
+</insert>  
   
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

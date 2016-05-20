@@ -69,7 +69,7 @@
 					              </li>
 					              <li class="c-site-breadcrumb__list-item">
 					                     <#if type??>
-					                      ${type}
+					                   <span class="label label-success">   ${type}</span>
 					                      </#if>
 					              </li>
 					        </ol>
@@ -94,9 +94,17 @@
 											class="c-sitenav__item-link">硕士</a></li><br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
 											<a href="#undergraduate" class="c-sitenav__item-link">本科</a>
+										</li>
+										<br>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<a href="#dutyUser" class="c-sitenav__item-link">往届学生</a>
+										</li>
+										<br>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<a href="team.do" class="c-sitenav__item-link">主页精简显示</a>
 										</li><br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="team.do" class="c-sitenav__item-link">精简显示</a>
+											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link">修改个人主页</a>
 										</li>
 									</ul>
 								</nav>
@@ -129,7 +137,7 @@
 													     <img height="209"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
-												<div class="span3" >
+												<div class="span4" >
 													<table border='0' class="table">
 													    <tr>
 														<#if teacher.username??>
@@ -142,8 +150,8 @@
 												        </#if>
 												        </tr>
 												         <tr>
-												        <#if teacher.education??>
-												          </nobr><td>学历：</td><td> ${teacher.education}</td></nobr>
+												        <#if teacher.email??>
+												          </nobr><td>邮箱：</td><td> ${teacher.email}</td></nobr>
 												        </#if>
 												        </tr>
 												       </table>
@@ -366,9 +374,70 @@
 								</div>
 								 </#if>			
 			                  <!-- end content -->
-			                  
-			                  
-			                  
+			                 <br/>
+			                  <!--content  往届毕业生-->
+			                    <div class="news-events-feed">
+									<div class="news-events-feed__wrapper">
+										<h2 class="news-events-feed__title">
+								         <a id="dutyUser" href="dutyUser.do">
+								          <strong>
+								            <font color="#b38808"> 往届毕业生 MORE</font>
+								          </strong>
+								         </a>
+								        </h2>
+								        <ul class="news-events-feed__content">
+									
+										<div class="row" align="center">
+										          <table  class="table " >
+												    <thead>
+												        <th>编号</th>
+												        <th>姓名</th>
+												        <th>学历</th>
+												        <th>入学时间</th>
+												        <th>毕业去向</th>
+												        <th>邮箱</th>
+											
+												    </thead>
+												    <tbody>
+													   <#if isdutypeoples?exists>
+														    <#list isdutypeoples as isdutypeople>
+														    <tr>
+														        <td>${(isdutypeople_index)+1}</td>
+														        <td align="center">${isdutypeople.username}</td>
+														        
+														        <#if isdutypeople.education??>
+														        <td>${isdutypeople.education}</td>
+														        <#else>
+														        <td></td>
+														        </#if>
+														         
+														          <#if isdutypeople.ondutydate??>
+														        <td>${isdutypeople.ondutydate?string('yyyy')}级</td>
+														        <#else>
+														        <td></td>
+														        </#if>
+														        
+														        <#if isdutypeople.companyname??>
+															        <td>${isdutypeople.companyname}</td>
+															        <#else>
+															        <td></td>
+														        </#if>
+														        <#if isdutypeople.email??>
+															        <td>${isdutypeople.email}</td>
+															        <#else>
+															        <td></td>
+														        </#if>
+														    </tr>
+														    </#list>
+													   </#if>
+												    </tbody>
+												</table>
+										  </div>
+									  </div>
+			                     </ul>
+				               </div>
+							</div>	
+			                  <!--end content -->
 							</div>
 						</article>
 						

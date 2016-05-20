@@ -13,7 +13,7 @@ public interface UserServiceI {
 
 	public List<User> getNotdutyUser(String isduty);
 
-	public List<User> getIsdutyUser(String isduty);
+	public List<User> getIsdutyUser();
 
 	public int updateUser(User user); 
 	

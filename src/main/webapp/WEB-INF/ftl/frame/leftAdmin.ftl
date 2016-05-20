@@ -39,8 +39,16 @@
 							
 							 <#if Popedom?index_of('e')!=-1>
 							<li >
-                                <a href="../contest/contestAdmin.do" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 比赛管理 </span>
+                                <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> 比赛管理 </span>
                                 </a>
+                                <ul class="list-unstyled">
+                                   <#if Popedom?index_of('e')!=-1>
+								     <li><a href="../contest/contestAdmin.do"> 比赛管理</a></li>
+								   </#if>
+								   <#if Popedom?index_of('p')!=-1>
+								     <li><a href="../contest/contestTeamAdmin.do">队伍成员管理</a></li>
+								   </#if>
+								 </ul>
                             </li>
                             </#if>
 							

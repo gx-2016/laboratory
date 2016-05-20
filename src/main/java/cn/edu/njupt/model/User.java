@@ -41,6 +41,7 @@ public class User {
 
     private String remark;
     
+    
 	public Integer getUserid() {
         return userid;
     }

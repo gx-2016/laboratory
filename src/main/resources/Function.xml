@@ -39,6 +39,13 @@
   </Function> 
   
   <Function>
+     <FunctionCode>p</FunctionCode>
+     <FunctionName>队伍成员管理</FunctionName>
+     <ParentCode>contest</ParentCode>
+     <ParentName>竞赛管理</ParentName>
+  </Function> 
+  
+  <Function>
      <FunctionCode>f</FunctionCode>
      <FunctionName>教学管理</FunctionName>
      <ParentCode>learn</ParentCode>

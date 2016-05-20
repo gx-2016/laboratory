@@ -56,7 +56,24 @@
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-                   
+                   <!--面包屑导航-->
+					<div class="region region-breadcrumb">
+					    <div id="block-ua-theme-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+					        <nav class="c-site-breadcrumb" aria-label="You are here">
+					        <ol class="c-site-breadcrumb__list">
+					          <li class="c-site-breadcrumb__list-item">
+					                  <a href="home.do">首页</a>
+					              </li>
+					           <li class="c-site-breadcrumb__list-item">
+					                   <a href="contest.do?contestType=校外"> 竞赛</a>
+					            </li>
+					            <li class="c-site-breadcrumb__list-item">
+					                                   <span class="label label-success">    获奖比赛</span>
+					            </li>
+					        </ol>
+						  </nav>
+					  </div>
+				  </div>
                    <!-- 中间内容 -->
 					<div class="o-layout-container">
 						<div id="secondary_menu" class="o-layout-main-nav">
@@ -71,11 +88,12 @@
 
 									<ul class="c-sitenav__level-1">
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="contest.do?contestType=校外"
-											class="c-sitenav__item-link " >ACM 校外比赛</a></li>
-										<li class="c-sitenav__item"><a href="contest.do?contestType=校内"
-											class="c-sitenav__item-link " >ACM 校内比赛</a></li>
-										<li
-											class="c-sitenav__item ">
+											class="c-sitenav__item-link " >ACM　比赛获奖</a></li><br/>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="contestTeam.do"
+											class="c-sitenav__item-link " >ACM　队伍介绍</a></li><br/>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
+											class="c-sitenav__item-link " >ACM　介绍</a></li><br/>
+									    <li class="c-sitenav__item c-sitenav__current c-sitenav__active">
 											<a href="http://acm.njupt.edu.cn" target="_blank" class="c-sitenav__item-link">南邮NOJ平台</a>
 										</li>
 									</ul>
@@ -117,17 +135,26 @@
 															class="clearfix text-formatted field field--name-field-text field--type-text-long field--label-hidden field__item">
                                                               <!--time控制输出年份-->
                                                                <#assign time ="">
-                                                              
                                                                 <#if contestList??>
                                                                    <#list contestList as contest>
 	                                                                      <#if (contest.contesttime?string('yyyy-MM-dd') != time)>
-	                                                                      <br/>
-	                                                                      <h1>Year —— ${contest.contesttime?string('yyyy')} </h1>
+	                                                                      <div class="news-events-feed">
+																				<div class="news-events-feed__wrapper">
+																					<h2 class="news-events-feed__title">
+																			          <a id="teacher" href="teacher.do" > 
+																			           <strong>
+																			            <font color="#b38808">
+																			              DATE&nbsp;&nbsp;&nbsp;&nbsp; ${contest.contesttime?string('yyyy-MM-dd')}
+																			            </font>
+																			          </strong>
+																			          </a>
+																			        </h2>
 	                                                                      </#if>
 	                                                                      <!--一个比赛信息-->
-																			<div class="row">
+	                                                                       <ul class="news-events-feed__content">
+																			<div class="row-fluid">
 																		            <div class="span5">
-																		              <p class="text-success"><font size="+2"><img style="width:25%" src="Images/golden.png"> <strong>${contest.contestTeamName}</strong></font></p>
+																		              <p class="text-success"><font size="+2"><img style="width:12%" src="Images/golden.png"> <strong>${contest.contestTeamName}</strong></font></p>
 																		            </div>
 																		            <div class="span7 media-text-right">
 																		              <div class="row" ><div class=" alert alert-info media-pull-right width-full" style="width:auto;margin-bottom:5px;float: right;"> ${contest.contestdestination} @ ${contest.contesttime?string('yyyy-MM')}</div></div>
@@ -145,7 +172,7 @@
 																	         </div>
 																	           <br/>
 																	        <!--队员信息-->
-																	      <div class="row">
+																	      <div class="row-fluid">
 	                                                                      <#list contest.userTeams as userTeam>
 																	           <#if (userTeam.remark == 'leader')>
 																	          	<div class="span${contest.size}">
@@ -155,7 +182,7 @@
 																	          	     <#else>
 																	          	     <span class="label label-success">♀</span> 
 																	          	      </#if>
-																	          	      <a href="#" data-toggle="personmodal" data-uid="108">${userTeam.username}</a></p>
+																	          	      <a href="personalPage.do?userid=${userTeam.userid}" data-toggle="personmodal" data-uid="108">${userTeam.username}</a></p>
 																	          	</div>
 																	          	<#else>
 																	          	 <div class="span${contest.size}">
@@ -165,14 +192,13 @@
 																	          	     <#else>
 																	          	     <span class="label label-success">♀</span> 
 																	          	      </#if>
-																	          	   <a href="#" data-toggle="personmodal" data-uid="89"><span data-trigger="hover" data-content="保研福州大学。" data-placement="top" data-toggle="popover" data-original-title="陈靖麟 Chen JingLin">${userTeam.username}</span></a></p>
+																	          	   <a href="personalPage.do?userid=${userTeam.userid}" data-toggle="personmodal" data-uid="89">${userTeam.username}</a></p>
 																	          	 </div>
 																	           </#if>
 	                                                                      </#list>
 	                                                                       </div>
-	                                                                       <br/>
 	                                                                       <!--图片信息-->
-	                                                                        <div class="row">
+	                                                                        <div class="row-fluid">
 	                                                                        <#if contest.contestResource?? >
 		                                                                        <#list contest.contestResource as contestResource>
 																		          	      <#if contestResource.contestresourceurl??>
@@ -180,7 +206,7 @@
 																								 <div class="pod">
 																									 <div class="pod__content">
 																										<img
-																											src="contest/${contestResource.contestresourceurl}" style="height:280px;">
+																											src="contest/${contestResource.contestresourceurl}" style="height:250px;">
 																									 </div>
 																								 </div>
 																							  </div>
@@ -197,9 +223,11 @@
 																	           </#list>	
 																			</#if>	 
 	                                                                       </div>
-	                                                                       <br/>
-	                                                                       <br/>
 	                                                                       <#assign time ="${contest.contesttime?string('yyyy-MM-dd')}">
+                                                                        </ul>
+													                   </div>
+																	</div>	
+                                                                   <br/> <br/>
                                                                    </#list>
                                                                 </#if>
                                                                 

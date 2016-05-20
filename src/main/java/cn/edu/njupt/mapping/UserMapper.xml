@@ -47,11 +47,12 @@
   </select>
   
   <!--查询所有已毕业用户  -->
- <select id="getIsdutyUser" resultMap="BaseResultMap"  parameterType="string">
+ <select id="getIsdutyUser" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
     from lab_user 
-    where IsDuty = "0";
+    where IsDuty = "0"
+    order by OnDutyDate desc;
   </select>
   
   <!--查询所有本科  -->

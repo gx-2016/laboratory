@@ -16,4 +16,22 @@ public interface SystemDDLServiceI {
 	SystemDDL findDDLByDdlCode(String keyword, Integer ddlcode);
 	
 	SystemDDL findDDLByDdlName(String keyword, String ddlname);
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @return
+	 * @Return:List<SystemDDL>
+	 * @Author: 高翔
+	 * @Date: 2016年5月20日
+	 */
+	List<SystemDDL> getAllContestTeam();
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @return
+	 * @Return:List<SystemDDL>
+	 * @Author: 高翔
+	 * @Date: 2016年5月20日
+	 */
+	List<SystemDDL> getAllTeamContestInfo();
 }

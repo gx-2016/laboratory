@@ -20,7 +20,7 @@ public interface UserMapper {
 
 	List<User> getNotdutyUser(String isduty);
 	
-	List<User> getIsdutyUser(String isduty);
+	List<User> getIsdutyUser();
 	
 	List<User> getAllUser();
 

@@ -14,7 +14,15 @@ public class UserTeam {
     
     private String sexid;
     
-    
+    private String flag;
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
 
 	public String getUsername() {
 		return username;

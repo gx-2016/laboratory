@@ -1,25 +1,27 @@
 package cn.edu.njupt.controller;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import cn.edu.njupt.model.Contest;
 import cn.edu.njupt.model.ContestResource;
 import cn.edu.njupt.model.SystemDDL;
+import cn.edu.njupt.model.UserTeam;
 import cn.edu.njupt.service.ContestServiceI;
 import cn.edu.njupt.service.SystemDDLServiceI;
+import cn.edu.njupt.service.TeamServiceI;
 import cn.edu.njupt.util.FileUtil;
 import cn.edu.njupt.util.StringHelper;
 
@@ -31,6 +33,9 @@ public class ContestAdminController {
 	@Resource(name="contestService")
 	private ContestServiceI contestService;
 
+	@Resource(name="teamService")
+	private TeamServiceI teamService;
+	
 	@Resource(name="systemDDLService")
 	private SystemDDLServiceI  systemDDLService;
 	
@@ -71,7 +76,77 @@ public class ContestAdminController {
 		return "contest/contestAdmin";
 	}
 	
-	@Transactional(readOnly=false,isolation=Isolation.DEFAULT)
+	/**
+	 * @Description: 管理队员
+	 * @Parameter: @param modelMap
+	 * @Parameter: @return
+	 * @Return:String
+	 * @Author: 高翔
+	 * @Date: 2016年5月20日
+	 */
+	@RequestMapping("/contestTeamAdmin.do")
+	public String contestTeamAdmin(ModelMap modelMap){
+		//1.数据字典查询所有的队伍类型
+	    List<SystemDDL> teamList = systemDDLService.findDDLListByKeyWord("队伍名称");
+	 
+	    modelMap.put("teamList", teamList);
+		return "contest/contestTeamAdmin";
+	}
+
+	@RequestMapping("/teamEdit.do")
+	public String roleEdit(ModelMap map,HttpServletRequest request,String teamid)
+	{
+		//3.查询该team所有的用户
+		List<UserTeam> userTeamList = teamService.findUserTeamByTeamId(teamid);
+		
+		map.put("userTeamList", userTeamList);
+		return "contest/teamEdit";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/teamSave.do")
+	public ModelMap teamSave(ModelMap map,HttpServletRequest request,String teamid,@RequestParam("teamuser[]") String teamuser[],@RequestParam("remark[]") String remark[])
+	{
+		try {
+			 List<UserTeam> list = new ArrayList<UserTeam>();
+			//2.保存角色和用户关联
+	         for (int i=0;i< teamuser.length ;i++) {
+	        	 UserTeam userTeam = new UserTeam();
+	        	 userTeam.setTeamid(teamid);
+	        	 userTeam.setUserid(teamuser[i]);
+	        	 userTeam.setRemark(remark[i]);
+	        	 list.add(userTeam);
+			}	
+	     	/** 更新用戶角色关系：通过事物保证操作的原子性
+	     	 * 1.根据角色id删除角色和用户关联
+	     	 * 2.重新插入
+	     	 */
+	         teamService.insertUserTeam(list,teamid);
+	         map.put("message", "修改成功！");
+			
+		} catch (Exception e) {
+			 map.put("message", "修改失败！");
+		e.printStackTrace();
+		}
+		return map;
+	}
+	/**
+	 * @Description: 保存比赛
+	 * @Parameter: @param contestname
+	 * @Parameter: @param contestdestination
+	 * @Parameter: @param contesttime
+	 * @Parameter: @param contestTeamid
+	 * @Parameter: @param contestRank
+	 * @Parameter: @param contestAward
+	 * @Parameter: @param contestType
+	 * @Parameter: @param file
+	 * @Parameter: @param httpServletRequest
+	 * @Parameter: @param map
+	 * @Parameter: @return
+	 * @Return:String
+	 * @Author: 高翔
+	 * @Date: 2016年5月20日
+	 */
 	@RequestMapping(value="/saveContest.do", method = RequestMethod.POST)
 	public String saveContest(String contestname,String contestdestination,
 			                    String contesttime,String contestTeamid,

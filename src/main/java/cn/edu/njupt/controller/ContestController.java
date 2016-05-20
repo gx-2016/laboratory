@@ -56,7 +56,7 @@ public class ContestController {
 		       contest2.setContestTeamName(contestTeamName);
 		    }
 		    //3.2从用户队伍表中查询到用户队伍关联关系和用户信息
-		  List<UserTeam> userTeams = teamService.findUserTeamByTeamId(teamId+"");
+		  List<UserTeam> userTeams = teamService.findExistUserTeamByTeamId(teamId+"");
 		  contest2.setUserTeams(userTeams);
 		  //设置页面上span的宽度
 		  if(userTeams.size()>0){
@@ -74,6 +74,16 @@ public class ContestController {
 		modelMap.put("contestList", contestList);
 		
 		return "contest";
+    }
+	
+	@RequestMapping("/contestTeam.do")
+	public String contestTeam(ModelMap modelMap,HttpServletRequest request){	
+		//1.获取所有的比赛队伍
+		List<SystemDDL> contestTeamDDls = systemDDLService.getAllContestTeam();
+		List<SystemDDL> teamContestInfos = systemDDLService.getAllTeamContestInfo();
+		modelMap.put("contestTeamDDls", contestTeamDDls);
+		modelMap.put("teamContestInfos", teamContestInfos);
+		return "contestTeam";
     }
 	
 }

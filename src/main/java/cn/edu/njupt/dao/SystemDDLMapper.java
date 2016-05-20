@@ -26,4 +26,22 @@ public interface SystemDDLMapper {
 
 	SystemDDL findDDLByDdlName(HashMap<Object, Object> param);
 
+	/**
+	 * @Description: TODO
+	 * @Parameter: @return
+	 * @Return:List<SystemDDL>
+	 * @Author: 高翔
+	 * @Date: 2016年5月20日
+	 */
+	List<SystemDDL> getAllContestTeam();
+
+	/**
+	 * @Description: TODO
+	 * @Parameter: @return
+	 * @Return:List<SystemDDL>
+	 * @Author: 高翔
+	 * @Date: 2016年5月20日
+	 */
+	List<SystemDDL> getAllTeamContestInfo();
+
 }

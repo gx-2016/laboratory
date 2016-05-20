@@ -29,7 +29,7 @@
 								<a href="/iacn/about.do"><span class="divider-lt">&nbsp;</span><strong>关于</strong><span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
-							<li class="parent menu-btn-study" id="ui-menu-btn-study">
+							<li class="parent menu-btn-study" id="ui-menu-btn-team">
 								<a href="/iacn/teamAll.do"> <span class="divider-lt">&nbsp;</span><strong>团队</strong> <span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
@@ -44,8 +44,8 @@
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							
-							<li class="parent menu-btn-share" id="ui-menu-btn-share">
-								<a href="/iacn/contest.do"> <span class="divider-lt">&nbsp;</span><strong>竞赛 </strong><span class="divider-dk">&nbsp;</span> </a>
+							<li class="parent menu-btn-contest" id="ui-menu-btn-contest">
+								<a href="/iacn/contest.do?contestType=校外"> <span class="divider-lt">&nbsp;</span><strong>竞赛 </strong><span class="divider-dk">&nbsp;</span> </a>
 								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							

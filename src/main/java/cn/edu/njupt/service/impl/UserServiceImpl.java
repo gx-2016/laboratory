@@ -47,9 +47,9 @@ public class UserServiceImpl implements UserServiceI{
 	 * 查询所有已毕业学生
 	 */
 	@Override
-	public List<User> getIsdutyUser(String isduty) {
+	public List<User> getIsdutyUser() {
 		
-		return userMapper.getIsdutyUser(isduty);
+		return userMapper.getIsdutyUser();
 	}
 	
 	@Override

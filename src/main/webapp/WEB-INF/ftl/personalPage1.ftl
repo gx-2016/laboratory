@@ -70,7 +70,7 @@
 					                     <a href="team.do">  团队</a>
 					              </li>
 					               <li class="c-site-breadcrumb__list-item">
-					                                        个人主页
+					                                        <span class="label label-success"> 个人主页</span>
 					              </li>
 					        </ol>
 						  </nav>

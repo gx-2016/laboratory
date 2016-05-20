@@ -81,6 +81,24 @@ public class SystemDDLServiceImpl implements SystemDDLServiceI {
 		
 		return systemDDLMapper.findDDLByDdlName(param);
 	}
+
+
+	/*
+	 * 查询所有竞赛队伍信息
+	 */
+	@Override
+	public List<SystemDDL> getAllContestTeam() {
+		return systemDDLMapper.getAllContestTeam();
+	}
+
+
+	/* 
+	 * 查询所有竞赛信息
+	 */
+	@Override
+	public List<SystemDDL> getAllTeamContestInfo() {
+		return systemDDLMapper.getAllTeamContestInfo();
+	}
 	
 
 }

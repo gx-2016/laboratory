@@ -65,7 +65,7 @@
 					                  <a href="home.do">首页</a>
 					              </li>
 					          <li class="c-site-breadcrumb__list-item">
-					                                      团队
+					                                     <span class="label label-success"> 团队</span>
 					              </li>
 					        </ol>
 						  </nav>
@@ -93,6 +93,14 @@
 										</li><br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
 											<a href="teamAll.do" class="c-sitenav__item-link">所有显示</a>
+										</li>
+										<br>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<a href="#dutyUser" class="c-sitenav__item-link">往届学生</a>
+										</li>
+										<br>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link">修改个人主页</a>
 										</li>
 									</ul>
 								</nav>
@@ -291,7 +299,70 @@
 				                   </div>
 								</div>	
 			                  <!-- end content -->
-			                  
+			                  <br/>
+			                   <!--content  往届毕业生-->
+			                   <div class="news-events-feed">
+									<div class="news-events-feed__wrapper">
+										<h2 class="news-events-feed__title">
+								         <a id="dutyUser" href="dutyUser.do">
+								          <strong>
+								            <font color="#b38808"> 往届毕业生 MORE</font>
+								          </strong>
+								         </a>
+								        </h2>
+								        <ul class="news-events-feed__content">
+									
+										<div class="row" align="center">
+										          <table  class="table " >
+												    <thead>
+												        <th>编号</th>
+												        <th>姓名</th>
+												        <th>学历</th>
+												        <th>入学时间</th>
+												        <th>毕业去向</th>
+												        <th>邮箱</th>
+											
+												    </thead>
+												    <tbody>
+													   <#if isdutypeoples?exists>
+														    <#list isdutypeoples as isdutypeople>
+														    <tr>
+														        <td>${(isdutypeople_index)+1}</td>
+														        <td align="center">${isdutypeople.username}</td>
+														        
+														        <#if isdutypeople.education??>
+														        <td>${isdutypeople.education}</td>
+														        <#else>
+														        <td></td>
+														        </#if>
+														         
+														          <#if isdutypeople.ondutydate??>
+														        <td>${isdutypeople.ondutydate?string('yyyy')}级</td>
+														        <#else>
+														        <td></td>
+														        </#if>
+														        
+														        <#if isdutypeople.companyname??>
+															        <td>${isdutypeople.companyname}</td>
+															        <#else>
+															        <td></td>
+														        </#if>
+														        <#if isdutypeople.email??>
+															        <td>${isdutypeople.email}</td>
+															        <#else>
+															        <td></td>
+														        </#if>
+														    </tr>
+														    </#list>
+													   </#if>
+												    </tbody>
+												</table>
+										  </div>
+									  </div>
+			                     </ul>
+				               </div>
+							</div>	
+			                  <!--end content -->
 			                  
 			                  
 							</div>

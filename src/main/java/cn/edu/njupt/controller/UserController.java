@@ -79,6 +79,22 @@ public class UserController {
 //	}
 	
 	/**
+	 * @Description: 查询往届毕业生信息
+	 * @Parameter: @param modelMap
+	 * @Parameter: @return
+	 * @Return:String
+	 * @Author: 高翔
+	 * @Date: 2016年5月19日
+	 */
+	@RequestMapping("/dutyUser.do")
+	public String dutyUser(ModelMap  modelMap){
+		//1.查询往届学生信息
+		List<User>  users = userServiceI.getIsdutyUser();
+		modelMap.put("isdutypeoples", users);
+		return "people";
+	}
+	
+	/**
 	 * @Description: 查询所有教师个人主页
 	 * @Parameter: @param modelMap
 	 * @Parameter: @return
@@ -226,6 +242,9 @@ public class UserController {
 			undergratuatePersonpageMap = userServiceI.getUsersPersonpageMap(undergratuates, personpageSystemDDLs);
 		}
 		
+		//1.查询往届学生信息
+		List<User>  users = userServiceI.getIsdutyUser();
+		modelMap.put("isdutypeoples", users);
 		
 		modelMap.put("teachers", teachers);
 		modelMap.put("teacherPersonpageMap", teacherPersonpageMap);
@@ -279,6 +298,9 @@ public class UserController {
 			undergratuatePersonpageMap = userServiceI.getUsersPersonpageMap(undergratuates, personpageSystemDDLs);
 		}
 		
+		//1.查询往届学生信息
+		List<User>  users = userServiceI.getIsdutyUser();
+		modelMap.put("isdutypeoples", users);
 		
 		modelMap.put("teachers", teachers);
 		modelMap.put("teacherPersonpageMap", teacherPersonpageMap);
