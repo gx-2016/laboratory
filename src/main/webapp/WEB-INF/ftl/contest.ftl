@@ -154,7 +154,7 @@
 	                                                                       <ul class="news-events-feed__content">
 																			<div class="row-fluid">
 																		            <div class="span5">
-																		              <p class="text-success"><font size="+2"><img style="width:12%" src="Images/golden.png"> <strong>${contest.contestTeamName}</strong></font></p>
+																		              <p class="text-success"><font size="4px"><img style="width:12%" src="Images/golden.png"> <strong>${contest.contestTeamName}</strong></font></p>
 																		            </div>
 																		            <div class="span7 media-text-right">
 																		              <div class="row" ><div class=" alert alert-info media-pull-right width-full" style="width:auto;margin-bottom:5px;float: right;"> ${contest.contestdestination} @ ${contest.contesttime?string('yyyy-MM')}</div></div>

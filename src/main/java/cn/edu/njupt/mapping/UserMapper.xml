@@ -88,7 +88,9 @@
    <!--根据学历  查询所有学生-->
 	  <select id="getStudentsByType" resultMap="BaseResultMap" parameterType="java.util.HashMap">
   	   select * from lab_user
-       	where Education =#{education,jdbcType=VARCHAR} and Type = #{type,jdbcType=VARCHAR} order by OnDutyDate;
+       	where Education =#{education,jdbcType=VARCHAR} and Type = #{type,jdbcType=VARCHAR} 
+       	and IsDuty = "1"
+       	order by OnDutyDate;
       </select>
   
   <!--后台查询所有成员信息  -->

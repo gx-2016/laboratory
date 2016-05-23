@@ -200,16 +200,17 @@
 	        //全部选择
 			function selectAll(){  
 			  $("input[name='roleuser']").each(function(){
-			   $(this).attr("checked",true);
+			   $(this).prop("checked",true);
 			  });  
 			 }
 			 
 			 //取消选择
 			function unSelect(){  
 			  $("input[name='roleuser']").each(function(){
-			   $(this).attr("checked",false);
+			   $(this).prop("checked",false);
 			  });  
 			 }
+			 
         </script>
         
     </body>
