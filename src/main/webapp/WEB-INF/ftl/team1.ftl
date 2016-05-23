@@ -96,11 +96,11 @@
 										</li>
 										<br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="teamAll.do" class="c-sitenav__item-link">主页所有显示</a>
+											<a href="teamAll.do" class="c-sitenav__item-link" >主页所有显示</a>
 										</li>
 										<br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link">修改个人主页</a>
+											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link"  target="_blank">修改个人主页</a>
 										</li>
 									</ul>
 								</nav>
@@ -135,9 +135,9 @@
 												       <div class="pod__content" style="margin:0px 0px 0px 20px;"> 
 															<a href="personalPage.do?userid=${teacher.userid}"> 
 																<#if teacher.photourl??>
-														        <img height="209"  src="system/${teacher.photourl}"/>
+														        <img height="166px" width="166px"  src="system/${teacher.photourl}"/>
 															    <#else>
-															     <img height="209"  src="assets/images/person3.jpg"/>
+															     <img height="166px" width="166px"  src="assets/images/person3.jpg"/>
 															     </#if>
 													   	     </a>
 														     <a herf="personalPage.do?userid=${teacher.userid}"  class="pod__action-btn" >More</a>
@@ -197,9 +197,9 @@
 												     <div class="pod__content" style="margin:0px 0px 0px 20px;"> 
 															<a href="personalPage.do?userid=${master.userid}"> 
 																<#if master.photourl??>
-														        <img height="209"  src="system/${master.photourl}"/>
+														        <img height="166px" width="166px"  src="system/${master.photourl}"/>
 															    <#else>
-															     <img height="209"  src="assets/images/person3.jpg"/>
+															     <img height="166px" width="166px"  src="assets/images/person3.jpg"/>
 															     </#if>
 													   	     </a>
 														     <a href="personalPage.do?userid=${master.userid}"  class="pod__action-btn" >More</a>
@@ -259,9 +259,9 @@
 													  <div class="pod__content" style="margin:0px 0px 0px 20px;"> 
 														<a href="personalPage.do?userid=${undergratuate.userid}"> 
 															<#if undergratuate.photourl??>
-													        <img height="209"  src="system/${undergratuate.photourl}"/>
+													        <img height="166px" width="166px"  src="system/${undergratuate.photourl}"/>
 														    <#else>
-														     <img height="209"  src="assets/images/person3.jpg"/>
+														     <img height="166px" width="166px"  src="assets/images/person3.jpg"/>
 														     </#if>
 												   	     </a>
 													     <a href="personalPage.do?userid=${undergratuate.userid}"  class="pod__action-btn" >More</a>

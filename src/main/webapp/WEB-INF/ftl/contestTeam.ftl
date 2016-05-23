@@ -114,29 +114,36 @@
 																			            <font color="#b38808">
 																			            <!--锚点-->
 																			             <a id="${ddl.ddlname}"> </a> 
-																			             ${ddl.ddlname}成员介绍
+																			             ${ddl.ddlname}  
 																			            </font>
-																			           <a href="#${ddl.ddlname}" class="degreefinder__btn-red"> <font color="white">比赛介绍</font></a>
 																			          </strong>
 																			        </h2>
 																	        <!--队员信息-->
 																	      <ul class="news-events-feed__content">
+																	     <div class="span7"> 
+																	     <span class="btn btn-info">成员介绍</span>
+																	     </div> 
+																	      <div class="span5" align="right"> 
+																		     <a href="#${ddl.ddlname}" class="btn btn-info"> 
+																		     <font color="white">比赛介绍</font>
+																		     </a>
+																	      </div><br/><br/>
 																	      </#if>
 																		        <#list  ddl.users as user>
 																			           <#if (user.remark == 'leader')>
 																			          	  <span class="label label-warning">${user.remark}</span> 
 																			          	      <#if (user.sexid == '0')>
-																			          	      <span class="label label-success">♂</span> 
+																			          	      <span class="label label-warning">♂</span> 
 																			          	     <#else>
-																			          	     <span class="label label-success">♀</span> 
+																			          	     <span class="label label-warning">♀</span> 
 																			          	      </#if>
 																			          	      <a href="personalPage.do?userid=${user.userid}" data-toggle="personmodal" data-uid="108">${user.username}</a><br><br>
 																			          	<#else>
 																			          	  <span class="label label-info">${user.remark}</span> 
 																			          	    <#if (user.sexid == '0')>
-																			          	      <span class="label label-success">♂</span> 
+																			          	      <span class="label label-info">♂</span> 
 																			          	     <#else>
-																			          	     <span class="label label-success">♀</span> 
+																			          	     <span class="label label-info">♀</span> 
 																			          	      </#if>
 																			          	   <a href="personalPage.do?userid=${user.userid}" data-toggle="personmodal" data-uid="89">${user.username}</a>&nbsp;&nbsp&nbsp;&nbsp;
 																			          	 </#if> 
@@ -172,17 +179,25 @@
 								                  <a id="${teamContestInfo.ddlname}"></a>
 								                   ${teamContestInfo.ddlname}比赛介绍
 								            </font>
-								           <a  class="degreefinder__btn-red" href="#${teamContestInfo.ddlname}"><font color="white"> 队伍介绍</font></a>
 								           </strong>
 								        </h2>
 						        <!--比赛信息-->
 						      <ul class="news-events-feed__content">
+						        <div class="span7"> 
+								       <a href="#${teamContestInfo.ddlname}" class="btn btn-info"> 
+									     <font color="white">成员介绍</font>
+									     </a>
+								     </div> 
+								      <div class="span5" align="right"> 
+									   
+									     <span class="btn btn-info">比赛介绍</span>
+								      </div><br/><br/>
 						      </#if>
-							       
+							     
                                          <#list  teamContestInfo.contests as contest>
                                                  <div class="row-fluid">
 											            <div class="span5">
-											              <p class="text-success"><font size="4"><img style="width:6%" src="Images/golden.png"> <strong>${teamContestInfo.ddlname}</strong></font></p>
+											              <p class="text-primary"><font size="4"><img style="width:8%" src="Images/golden.png"> <strong>${teamContestInfo.ddlname}</strong></font></p>
 											            </div>
 											            <div class="span7 media-text-right">
 											              <div class="row" ><div class=" alert alert-info media-pull-right width-full" style="width:auto;margin-bottom:5px;float: right;"> ${contest.contestdestination} @ ${contest.contesttime?string('yyyy-MM')}</div></div>
@@ -198,6 +213,7 @@
 											              </#if>
 											            </div>
 										         </div>
+										       <br/><br/>
 										  </#list>
 								      
 				             <#if teamContestInfo.ddlname != ddlname>

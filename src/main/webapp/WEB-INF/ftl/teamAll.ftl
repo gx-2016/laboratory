@@ -101,10 +101,10 @@
 										</li>
 										<br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="team.do" class="c-sitenav__item-link">主页精简显示</a>
+											<a href="team.do" class="c-sitenav__item-link">主页精简显示</a> 
 										</li><br>
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link">修改个人主页</a>
+											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link"  target="_blank">修改个人主页</a>
 										</li>
 									</ul>
 								</nav>
@@ -132,9 +132,9 @@
 										 <div class="row-fluid" >
 												<div class="span3" >
 														<#if teacher.photourl??>
-												        <img height="209"  src="system/${teacher.photourl}"/>
+												        <img height="166px" width="166px"  src="system/${teacher.photourl}"/>
 													    <#else>
-													     <img height="209"  src="assets/images/person3.jpg"/>
+													     <img height="166px" width="166px"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
 												<div class="span6" >
@@ -226,9 +226,9 @@
 										 <div class="row-fluid" >
 												<div class="span3" >
 														<#if master.photourl??>
-												        <img height="209"  src="system/${master.photourl}"/>
+												        <img height="166px" width="166px"  src="system/${master.photourl}"/>
 													    <#else>
-													     <img height="209"  src="assets/images/person3.jpg"/>
+													     <img height="166px" width="166px"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
 												<div class="span6" >
@@ -317,9 +317,9 @@
 										 <div class="row-fluid" >
 												<div class="span3" >
 														<#if undergratuate.photourl??>
-												        <img height="209"  src="system/${undergratuate.photourl}"/>
+												        <img height="166px" width="166px"  src="system/${undergratuate.photourl}"/>
 													    <#else>
-													     <img height="209"  src="assets/images/person3.jpg"/>
+													     <img height="166px" width="166px"  src="assets/images/person3.jpg"/>
 													     </#if>
 												</div>
 												<div class="span6" >
