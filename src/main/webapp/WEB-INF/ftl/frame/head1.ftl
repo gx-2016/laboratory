@@ -27,31 +27,25 @@
 						<ul class="nav">
 							<li class="parent menu-btn-about" id="ui-menu-btn-about">
 								<a href="/iacn/about.do"><span class="divider-lt">&nbsp;</span><strong>关于</strong><span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							<li class="parent menu-btn-study" id="ui-menu-btn-team">
 								<a href="/iacn/teamAll.do"> <span class="divider-lt">&nbsp;</span><strong>团队</strong> <span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						
 							<li class="parent menu-btn-research" id="ui-menu-btn-research">
 								<a href="/iacn/writtings.do"> <span class="divider-lt">&nbsp;</span> <strong>科研 </strong><span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							
 							<li class="parent menu-btn-learn" id="ui-menu-btn-learn">
 								<a href="/iacn/learn.do"> <span class="divider-lt">&nbsp;</span><strong> 教学 </strong><span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							
 							<li class="parent menu-btn-contest" id="ui-menu-btn-contest">
 								<a href="/iacn/contest.do?contestType=校外"> <span class="divider-lt">&nbsp;</span><strong>竞赛 </strong><span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 							
-							<li class="parent menu-btn-study hovering" id="ui-menu-btn-photos">
+							<li class="parent menu-btn-study " id="ui-menu-btn-photos">
 								<a href="/iacn/photos.do"> <span class="divider-lt">&nbsp;</span> <strong>生活</strong> <span class="divider-dk">&nbsp;</span> </a>
-								<div class="ui-menu-child ui-menu-imgcols"></div>
 							</li>
 						</ul>
 					</div>
