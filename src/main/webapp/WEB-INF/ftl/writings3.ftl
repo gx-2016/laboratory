@@ -123,11 +123,11 @@
 										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
 										
 										<div class="post" id="progect">
-										<h1>项目</h1>
+										<h5 class="title">项目</h5>
 											<#if writingsList?exists>
 											<#list writingsList as writings>
 											<#if writings.writingstype=="1">
-						 						<h6 class="title"><strong>Title：</Strong>${writings.writingsname}</h6>
+						 						<h7 class="title"><strong>Title：${writings.writingsname}</Strong></h7>
 												<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">DONWORDLOAD</a></small></p>
 												<#--><div class="entry">
 													<p><strong>abstract:</strong></p>
@@ -140,11 +140,11 @@
 											</div>
 											
 											<div class="post" id="pape">
-											<h1>论文</h1>
+											<h5 class="title">论文</h5>
 											<#if writingsList?exists>
 											<#list writingsList as writings>
 											<#if writings.writingstype=="2">
-						 						<h6 class="title"><strong>Title：</Strong>${writings.writingsname}</h6>
+						 						<h7 class="title"><strong>Title：${writings.writingsname}</Strong></h7>
 												<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">DONWORDLOAD</a></small></p>
 												<#--><div class="entry">
 													<p><strong>abstract:</strong></p>
@@ -157,11 +157,11 @@
 											</div>
 											
 											<div class="post" id="patent">
-											<h1>专利</h1>
+											<h5 class="title">专利</h5>
 											<#if writingsList?exists>
 											<#list writingsList as writings>
 											<#if writings.writingstype=="3">
-						 						<h6 class="title"><strong>Title：</Strong>${writings.writingsname}</h6>
+						 						<h7 class="title"><strong>Title：${writings.writingsname}<strong></h7>
 												<p class="byline"><small>Posted on&nbsp; ${writings.writingstime?string("yyyy-MM")}&nbsp;by&nbsp;<a href="#">${writings.writingspeople}</a> | <a href="#">DONWORDLOAD</a></small></p>
 												<#--><div class="entry">
 													<p><strong>abstract:</strong></p>

@@ -89,23 +89,23 @@
 									<article role="article" class="contextual-region node node--type-ua-page node--promoted node--view-mode-full" 
 									    about="/about/node/1">
 										<div data-contextual-id="node:node=3:changed=1461039976&amp;langcode=en"></div>
-										<h1>课程</h1>
+										<h5 class="title">课程</h5>
 										<div class="post" id="progect">
 											<#if teachList?exists>
 												<#list teachList as teach>
 												<#if teach.teachtype==1>
-						 							<h6 class="title"><strong>Title：</Strong>《${teach.coursename}》</h6>
+						 							<h7 class="title"><strong>Title：《${teach.coursename}》</Strong></h7>
 													<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p>
 												</#if>
 												</#list>
 											</#if>
 										</div>
-										<h1>教改项目</h1>
+										<h5 class="title">教改项目</h5>
 										<div class="post" id="progect" >
 											<#if teachList?exists>
 												<#list teachList as teach>
 												<#if teach.teachtype==2>
-						 							<h6 class="title"><strong>Title：</Strong>《${teach.coursename}》</h6>
+						 							<h7 class="title"><strong>Title：《${teach.coursename}》</Strong></h7>
 													<p class="byline"><small>Posted on&nbsp; &nbsp;by&nbsp;<a href="#"></a> | <a href="#">DONWORDLOAD</a></small></p>
 												</#if>
 												</#list>

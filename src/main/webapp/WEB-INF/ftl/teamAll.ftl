@@ -181,7 +181,7 @@
 												                <div class="page-header" >
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
 													           <p><a id="${teacher.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
-														       <font face="Times New Roman" size="4">
+														       <font face="Times New Roman" size="3">
 														       <div class="row-fluid">
 														         ${(teacherPersonpageMap[userid])[ddlname]}
 														       </div>
