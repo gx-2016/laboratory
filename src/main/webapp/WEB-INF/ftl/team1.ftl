@@ -99,9 +99,11 @@
 											<a href="teamAll.do" class="c-sitenav__item-link" >主页所有显示</a>
 										</li>
 										<br>
+										<!--
 										<li class="c-sitenav__item c-sitenav__current c-sitenav__active">
 											<a href="user/personalPageAdmin.do" class="c-sitenav__item-link"  target="_blank">修改个人主页</a>
 										</li>
+										-->
 									</ul>
 								</nav>
 							</div>

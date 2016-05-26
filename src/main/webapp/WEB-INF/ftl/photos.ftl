@@ -137,7 +137,7 @@
 					<!-- addPad -->
 					<hr>
 					<div align="center">
-			         <input type='button'value='加载更多' id='divContentt' class="degreefinder__btn-red" 	onclick='ShowOrHide();' />
+			         <input type='button'value='加载更多' id='divContentt' class="btn btn-info" 	onclick='ShowOrHide();' />
 			         </div>
 			         <br>
 				</div>
