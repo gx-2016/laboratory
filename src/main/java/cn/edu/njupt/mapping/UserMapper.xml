@@ -89,7 +89,6 @@
 	  <select id="getStudentsByType" resultMap="BaseResultMap" parameterType="java.util.HashMap">
   	   select * from lab_user
        	where Education =#{education,jdbcType=VARCHAR} and Type = #{type,jdbcType=VARCHAR} 
-       	and IsDuty = "1"
        	order by OnDutyDate;
       </select>
   

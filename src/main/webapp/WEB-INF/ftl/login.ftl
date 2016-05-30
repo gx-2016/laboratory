@@ -34,6 +34,34 @@
 
         <div class="wrapper-page">
 
+               <!-- 新增模态框 modal -->
+        <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">找回密码</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">用户名</label>
+                                   <input class="form-control" type="text" required="" id="forget_logonname" name="forget_logonname" placeholder="找回密码的用户名" >
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+	                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">关闭</button>
+	                        <input type="sunbmit" class="btn btn-default btn-info" onclick="forgetPassword()" value="确定"/>
+	                 </div>
+	               
+	               </div>
+	            </div>
+	          </div>
+
            <!-- 提示信息 -->
 		       <#if message??>
 			       <div class="alert alert-warning alert-dismissable">
@@ -86,7 +114,7 @@
 
                 <div class="form-group m-t-30">
                     <div class="col-sm-7">
-                        <a href="#" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
+                        <a href="#"  data-toggle="modal" data-target="#con-close-modal" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
                             password?</a>
                     </div>
                     <div class="col-sm-5 text-right">
@@ -118,4 +146,28 @@
         <script src="/iacn/assets/js/jquery.app.js"></script>
 	
 	</body>
+	
+	<script type="text/javascript">
+	  function forgetPassword(){
+	     var forget_logonname = $("#forget_logonname").val();
+	     if(forget_logonname == "")
+	     {
+	       alert("请您先输入用户名！");
+	       return false;
+	     }
+
+	      $.ajax({
+					type: "post",
+					url: "forgetPassword.do",
+					data: {
+						forget_logonname:forget_logonname
+					},
+					 success: function(data) {
+					    $('#con-close-modal').modal('hide');
+				        alert(data.result);
+			         },
+				});
+	  }
+	</script>
+	
 </html>

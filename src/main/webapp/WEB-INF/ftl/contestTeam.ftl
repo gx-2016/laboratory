@@ -80,25 +80,16 @@
 								<nav class="c-sitenav js-sitenav" aria-label="Site Menu"
 									role="navigation">
 
+								
 									<ul class="c-sitenav__level-1">
-										<li
-											class="c-sitenav__item c-sitenav__current c-sitenav__active"><a
-											href="contest.do?contestType=校外"
-											class="c-sitenav__item-link ">ACM 比赛获奖</a></li>
-										<br />
-										<li
-											class="c-sitenav__item c-sitenav__current c-sitenav__active"><a
-											href="contestTeam.do" class="c-sitenav__item-link ">ACM
-												队伍介绍</a></li>
-										<br />
-										<li
-											class="c-sitenav__item c-sitenav__current c-sitenav__active"><a
-											href="#" class="c-sitenav__item-link ">ACM 介绍</a></li>
-										<br />
-										<li
-											class="c-sitenav__item c-sitenav__current c-sitenav__active">
-											<a href="http://acm.njupt.edu.cn" target="_blank"
-											class="c-sitenav__item-link">南邮NOJ平台</a>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="contest.do?contestType=校外"
+											class="c-sitenav__item-link " >ACM　比赛获奖</a></li><br/>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="contestTeam.do"
+											class="c-sitenav__item-link " >ACM　队伍介绍</a></li><br/>
+										<li class="c-sitenav__item c-sitenav__current c-sitenav__active"><a href="#"
+											class="c-sitenav__item-link " >ACM　介绍</a></li><br/>
+									    <li class="c-sitenav__item c-sitenav__current c-sitenav__active">
+											<a href="http://acm.njupt.edu.cn" target="_blank" class="c-sitenav__item-link">南邮NOJ平台</a>
 										</li>
 									</ul>
 								</nav>
@@ -186,7 +177,8 @@
 									<div class="span5" align="right">
 										<span class="btn btn-success">比赛介绍</span>
 									</div>
-									<br /> 
+									<br> 
+									<br> 
 									</#if> <#list teamContestInfo.contests as contest>
 									<div class="row-fluid">
 										<div class="span5">

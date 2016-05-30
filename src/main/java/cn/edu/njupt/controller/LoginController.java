@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+
+
+import cn.edu.njupt.mail.SimpleMailSender;
 import cn.edu.njupt.model.SystemDDL;
 import cn.edu.njupt.model.User;
 import cn.edu.njupt.model.UserRole;
@@ -234,5 +237,35 @@ public class LoginController {
 			return map;
 	}
     
+	/**
+	 * @Description: 忘记密码
+	 * @Parameter: @param map
+	 * @Parameter: @param logonname
+	 * @Parameter: @return
+	 * @Return:ModelMap
+	 * @Author: 高翔
+	 * @Date: 2016年5月30日
+	 */
+	@ResponseBody
+	@RequestMapping("/forgetPassword.do")
+	public ModelMap forgetPassword(ModelMap map,String forget_logonname) {
+		User user = userServiceI.findUserExist(forget_logonname);
+			if (null!=user) {
+				String pwd = user.getLogonpwd();
+				String email = user.getEmail();
+				
+				String address = email;
+				String subject ="密码找回";
+				String content = user.getLogonname()+"，您的注册ICV后台管理密码为："+pwd;
+				SimpleMailSender.sendMail(address, subject, content);
+				
+				map.put("result", "密码已经发送至您注册的邮箱！");
+				
+			} else {
+				map.put("result", "该用户还没注册！");
+			}
+			return map;
+	}
+	
 	
 }

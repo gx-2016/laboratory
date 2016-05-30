@@ -180,21 +180,21 @@
 									              <#list teacherPersonpageMap?keys as userid>
 										              <#if (userid == teacher.userid?string) >
 										                 <#list teacherPersonpageMap[userid]?keys as ddlname>
-												                <div class="page-header" >
+												              <!--<div class="page-header">-->
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
-													           <p><a id="${teacher.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
+													           <p><a id="${teacher.username}_${ddlname}"></a><h5>${ddlname}</h5> </p>
 														       <font face="Times New Roman" size="3">
 														       <div class="row-fluid">
 														         ${(teacherPersonpageMap[userid])[ddlname]}
 														       </div>
 														       </font>
-														        </div>
+														        <!--</div>-->
 													      </#list>
 											          </#if>
 										          </#list>
 			                                   </#if>		
 				                              <!--end 数据项对应个人主页表中具体字段的内容-->
-				                             	
+				                             	<br><br>
 									 </#list>
 				                    </ul>
 				                   </div>
@@ -276,7 +276,7 @@
 										                 <#list masterPersonpageMap[userid]?keys as ddlname>
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
 												                <div class="page-header">
-													           <p><a id="${master.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
+													           <p><a id="${master.username}_${ddlname}"></a><h5>${ddlname}</h5> </p>
 														       <font face="Times New Roman" size="4">
 														       <div class="row-fluid">
 														         ${(masterPersonpageMap[userid])[ddlname]}
@@ -366,14 +366,14 @@
 										              <#if (userid == master.userid?string) >
 										                 <#list undergratuatePersonpageMap[userid]?keys as ddlname>
 												               <!--每个栏目锚点 对应数据字典中的     数据项名称-->
-													           <div class="page-header">
-													           <p><a id="${undergratuate.username}_${ddlname}"></a><h3>${ddlname}</h3> </p>
+													          <!--<div class="page-header">--> 
+													           <p><a id="${undergratuate.username}_${ddlname}"></a><h5>${ddlname}</h5> </p>
 														       <font face="Times New Roman" size="4">
 														       <div class="row-fluid">
 														         ${(undergratuatePersonpageMap[userid])[ddlname]}
 														       </div>
 														       </font>
-														       </div">
+														       <!--</div>-->
 													      </#list>
 											          </#if>
 										          </#list>

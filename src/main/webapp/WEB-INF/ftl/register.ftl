@@ -82,11 +82,11 @@
 	               	<div class="form-group">
 		              <label class="col-sm-3 control-label">生日</label>
 			          <div class="col-sm-2">
-			             <input type="text" class="form-control" id="birthday" name= "birthday" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly">
+			             <input type="text" class="form-control" id="birthday" name= "birthday" required onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly">
 			          </div>
 		              <label class="col-sm-2 control-label">入学日期</label>
 			          <div class="col-sm-2">
-			            <input type="text" class="form-control" id="ondutydate" name= "ondutydate"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly" >
+			            <input type="text" class="form-control" id="ondutydate" required name= "ondutydate"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly="readonly" >
 			          </div>
 					</div>
 					
