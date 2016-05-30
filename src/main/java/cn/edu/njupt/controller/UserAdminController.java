@@ -69,11 +69,13 @@ public class UserAdminController {
 		HashMap<String, Object> ddlmap = null;
 		if(null != personpage){
 			//3.1封装个人主页的数据项map,key为 userid value是一个数据项map
-			ddlmap = new HashMap<String, Object>();
 			for (SystemDDL systemDDL2 : personpageSystemDDLs) {
 			     Object object = ReflectClazz.getFieldValue(personpage, "field_"+systemDDL2.getDdlcode()); 
 				 if(null != object){
-						ddlmap.put(systemDDL2.getDdlname(),object) ;
+					    if(null == ddlmap){
+					       ddlmap = new HashMap<String, Object>();
+					    }
+			     ddlmap.put(systemDDL2.getDdlname(),object) ;
 				 }
 			}
 		}
@@ -81,9 +83,10 @@ public class UserAdminController {
 	    	map.put("isexistpage", "no");
 	    }else if(null != ddlmap && ddlmap.size() > 0){
 	    	map.put("isexistpage", "yes");
+	    	map.put("ddlmap", ddlmap);
 	    }
 		map.put("personpageSystemDDLs", personpageSystemDDLs);
-		map.put("ddlmap", ddlmap);
+		
 		return "system/personPageAdmin";
 	}
 	@ResponseBody
