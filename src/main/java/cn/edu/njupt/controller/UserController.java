@@ -271,13 +271,18 @@ public class UserController {
 		//2查询老师的个人主页信息
 		//2.1查询老师信息
 		SystemDDL systemDDL = systemDDLService.findDDLByDdlName("用户类型", "老师");
-		List<User> teachers =  userServiceI.getUsersByType(systemDDL.getDdlcode().toString());
-		//2.2封装每个老师的数据项map,key为 userid value是一个数据项map
-		HashMap<String, HashMap<String,Object>> teacherPersonpageMap = new HashMap<String,  HashMap<String,Object>>();
-		if(null !=teachers && teachers.size()>0)
-		{
-			teacherPersonpageMap = userServiceI.getUsersPersonpageMap(teachers, personpageSystemDDLs);
-		}
+		List<User> teachers = null;
+		HashMap<String, HashMap<String,Object>> teacherPersonpageMap  = null;
+	    if(null!= systemDDL){
+	    	teachers =  userServiceI.getUsersByType(systemDDL.getDdlcode().toString());
+			//2.2封装每个老师的数据项map,key为 userid value是一个数据项map
+			teacherPersonpageMap = new HashMap<String,  HashMap<String,Object>>();
+			if(null !=teachers && teachers.size()>0)
+			{
+				teacherPersonpageMap = userServiceI.getUsersPersonpageMap(teachers, personpageSystemDDLs);
+			}
+	    }
+	
 
 		//3查询老师的个人主页信息
 		//3.1查询硕士学生信息

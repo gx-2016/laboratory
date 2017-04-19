@@ -8,72 +8,77 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd  
    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd" >
+   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<context:component-scan base-package="cn.edu.njupt.controller"/>
-	
-	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+	<context:component-scan base-package="cn.edu.njupt.controller" />
+
+	<bean
+		class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
 	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"></bean>
 
 	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
 	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
-		  <property name="messageConverters">      
-        <list>    
-          <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />    
-         <!--避免IE执行Ajax,下载文件 -->
-          <bean class="org.springframework.http.converter.StringHttpMessageConverter">    
-                <property name="supportedMediaTypes">    
-                    <list>    
-                        <value>text/plain;charset=UTF-8</value>    
-                        <value>application/json;charset=UTF-8</value>    
-                    </list>    
-                </property>    
-            </bean>    
-        </list>     
-    </property>      
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+				<!--避免IE执行Ajax,下载文件 -->
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
 	</bean>
 
-	<bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">  
-	    <property name="location" value="classpath:freemarker.properties"/>
-	</bean>  
-	
-	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
-	    <property name="freemarkerSettings" ref="freemarkerConfiguration"/>  
-	    <property name="templateLoaderPath">  
-	        <value>/WEB-INF/ftl/</value>
-	    </property>  
-	    <property name="freemarkerVariables">  
-	        <map>  
-	            <entry key="xml_escape" value-ref="fmXmlEscape" />  
-	        </map>  
-	    </property>  
-	</bean>  
-	
-	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>  
-	
+	<bean id="freemarkerConfiguration"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:freemarker.properties" />
+	</bean>
+
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="freemarkerSettings" ref="freemarkerConfiguration" />
+		<property name="templateLoaderPath">
+			<value>/WEB-INF/ftl/</value>
+		</property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+
 	<bean id="viewResolverFtl"
-	 class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">    
-		<property name="viewClass" value="cn.edu.njupt.util.RichFreeMarkerView"/> 
-		<property name="suffix" value=".ftl" />  
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass" value="cn.edu.njupt.util.RichFreeMarkerView" />
+		<property name="suffix" value=".ftl" />
 		<property name="contentType" value="text/html;charset=utf-8" />
 		<property name="exposeRequestAttributes" value="true" />
 		<property name="exposeSessionAttributes" value="true" />
 		<property name="exposeSpringMacroHelpers" value="true" />
-		<property name="requestContextAttribute" value="request"/>
-	</bean>
-	
-    <!--文件上传 -->
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		    <property name="defaultEncoding" value="gbk"/> <!-- 默认编码 (ISO-8859-1) -->  
-		    <property name="maxInMemorySize" value="1024000"/> <!-- 最大内存大小 (10240)-->  
-		    <property name="uploadTempDir" value="/upload/"/> <!-- 上传后的目录名 (WebUtils#TEMP_DIR_CONTEXT_ATTRIBUTE) -->  
-		    <property name="maxUploadSize" value="-1"/> <!-- 最大文件大小，-1为无限止(-1) -->  
+		<property name="requestContextAttribute" value="request" />
 	</bean>
 
-    <mvc:interceptors>
-		 <!-- 拦截所有springmvc的url！ -->
+	<!--文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="gbk" /> <!-- 默认编码 (ISO-8859-1) -->
+		<property name="maxInMemorySize" value="1024000" /> <!-- 最大内存大小 (10240) -->
+		<property name="uploadTempDir" value="/upload/" /> <!-- 上传后的目录名 (WebUtils#TEMP_DIR_CONTEXT_ATTRIBUTE) -->
+		<property name="maxUploadSize" value="-1" /> <!-- 最大文件大小，-1为无限止(-1) -->
+	</bean>
+
+	<mvc:interceptors>
+		<!-- 拦截所有springmvc的url！ -->
 		<mvc:interceptor>
 			<mvc:mapping path="/user/*" />
 			<mvc:mapping path="/news/*" />
@@ -89,5 +94,5 @@
 			<bean class="cn.edu.njupt.inteceptor.AccessInteceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
-    
+
 </beans>

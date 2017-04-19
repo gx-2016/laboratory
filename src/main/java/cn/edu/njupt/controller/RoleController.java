@@ -64,7 +64,7 @@ public class RoleController {
 	
 	@ResponseBody
 	@RequestMapping("/roleSave.do")
-	public ModelMap roleSave(ModelMap map,String roleid,String rolepadom,@RequestParam("roleuser[]") String roleuser[])
+	public ModelMap roleSave(ModelMap map,String roleid,String rolepadom,@RequestParam(value="roleuser[]",required = false) String roleuser[])
 	{
 		try {
 			//根据角色id删除角色和权限关联
@@ -77,17 +77,24 @@ public class RoleController {
 					
 			 List<UserRole> list = new ArrayList<UserRole>();
 			//2.保存角色和用户关联
-	         for (String string : roleuser) {
-	        	 UserRole userRole = new UserRole();
-	        	 userRole.setRoleid(roleid);
-	        	 userRole.setUserid(string);
-	        	 list.add(userRole);
-			}	
-	     	/** 更新用戶角色关系：通过事物保证操作的原子性
-	     	 * 1.根据角色id删除角色和用户关联
-	     	 * 2.重新插入
-	     	 */
-	         roleServiceI.insertUserRole(list,roleid);
+			 if(null!=roleuser){
+				   for (String string : roleuser) {
+			        	 UserRole userRole = new UserRole();
+			        	 userRole.setRoleid(roleid);
+			        	 userRole.setUserid(string);
+			        	 list.add(userRole);
+					}	
+					/** 更新用戶角色关系：通过事物保证操作的原子性
+			     	 * 1.根据角色id删除角色和用户关联
+			     	 * 2.重新插入
+			     	 */
+				   roleServiceI.insertUserRole(list,roleid);
+			 }
+			 else{
+				 roleServiceI.deleteRoleUserById(roleid);
+			 }
+	     
+	        
 	         map.put("message", "修改成功！");
 			
 		} catch (Exception e) {

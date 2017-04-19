@@ -56,7 +56,7 @@
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-                   <!--面包屑导航-->
+                   <!--面包屑导航
 					<div class="region region-breadcrumb">
 					    <div id="block-ua-theme-breadcrumbs" class="block block-system block-system-breadcrumb-block">
 					        <nav class="c-site-breadcrumb" aria-label="You are here">
@@ -74,6 +74,7 @@
 						  </nav>
 					  </div>
 				  </div>
+				  -->
                    <!-- 中间内容 -->
 					<div class="o-layout-container">
 						<div id="secondary_menu" class="o-layout-main-nav">

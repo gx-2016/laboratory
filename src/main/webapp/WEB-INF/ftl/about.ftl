@@ -64,13 +64,13 @@
 		<div id="page-container" class="container">
 			<div class="row-fluid">
 				<div class="span12 rowWhite">
-                     <!--面包屑导航-->
+                     <!--面包屑导航  
 					<div class="region region-breadcrumb">
 					    <div id="block-ua-theme-breadcrumbs" class="block block-system block-system-breadcrumb-block">
 					        <nav class="c-site-breadcrumb" aria-label="You are here">
 					        <ol class="c-site-breadcrumb__list">
 					          <li class="c-site-breadcrumb__list-item">
-					                  <a href="home.do">首页</a>
+					                  <a href="home.do"><strong>首页</strong></a>
 					              </li>
 					          <li class="c-site-breadcrumb__list-item">
 					                      <a href="about.do">关于</a>
@@ -80,7 +80,9 @@
 					        </ol>
 						  </nav>
 					  </div>
-					  
+					   </div>
+					   -->
+					
 	                  <div class="row-fluid mbl">
 								<!-- new markup pod -->
 								<div class="span7 home-pod ">
