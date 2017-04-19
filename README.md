@@ -1,6 +1,6 @@
 # laboratory
 
-项目架构： Spring3.2.0 + Spring MVC3.2.0 mybatis3.1.1 + freemarker2.3.20
+项目架构： Spring3.2.0 + Spring MVC3.2.0 + mybatis3.1.1 + freemarker2.3.20
 项目管理： Maven + git，  github地址：https://github.com/gx-2016/laboratory
 开发环境： Eclipse Java EE，Version: Kepler Release .
            JDK 1.7
